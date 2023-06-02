@@ -1,5 +1,7 @@
+'use client';
 import Image from 'next/image';
 import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 const Testimonial = () => {
   return (
@@ -40,98 +42,126 @@ const Testimonial = () => {
         </div>
       </div>
 
-      <div className="overflow-x-auto flex flex-row items-start justify-start gap-[39px] text-9xl">
-        <div className="rounded-6xl bg-ghostwhite shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] h-[412px] flex flex-col pt-8 pb-0 pr-[29px] pl-8 box-border items-start justify-start gap-[19px]">
-          <div className="w-[314px] flex flex-row items-start justify-start gap-[20px]">
-            <Image
-              width={85}
-              height={85}
-              className="relative rounded-[50%] w-[85px] h-[85px] object-cover"
-              alt=""
-              src="/images/homepage/ellipse-80@2x.png"
-            />
-
-            <div className="flex-1 flex flex-row items-start justify-start">
-              <div className="w-80 flex flex-col items-start justify-start gap-[10px]">
-                <div className="self-stretch relative capitalize">
-                  <span>
-                    <strong>TOYOTA</strong>
-                  </span>
-                  <span className="text-lg">
-                    <span>, </span>
-                    <span>Sr. Vehicle Analyst</span>
-                  </span>
-                </div>
-                <div className="relative text-xl capitalize">Victoria Ellis</div>
-              </div>
-            </div>
-          </div>
-          <div className="relative text-base leading-[32px] text-gray-500 inline-block w-[397px]">
-            I’ve received excellent research services from RILA GLOBAL over the past 3 years during my time at Toyota
-            Motor North America. RILA’s professionalism andindustry knowledge is an asset to us and will continue to be
-            to other global social media leaders and partners.
-          </div>
-        </div>
-        <div className="rounded-6xl bg-ghostwhite shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] h-[412px] flex flex-col py-8 pr-[19px] pl-8 box-border items-start justify-start gap-[19px]">
-          <div className="flex flex-row items-start justify-start gap-[20px]">
-            <Image
-              width={85}
-              height={85}
-              className="relative rounded-[50%] w-[85px] h-[85px] object-cover"
-              alt=""
-              src="/images/homepage/ellipse-801@2x.png"
-            />
-
-            <div className="flex flex-col items-start justify-start">
-              <div className="flex flex-col items-start justify-start gap-[10px]">
-                <div className="relative capitalize inline-block w-[270px]">
-                  <strong>
-                    <span>CAPSULE,</span>
-                  </strong>
-                  <span className="text-lg">
-                    <strong> </strong>
-                    <span>Operations Training and Development</span>
-                  </span>
-                </div>
-                <div className="relative text-xl capitalize">Lilly M.</div>
-              </div>
-            </div>
-          </div>
-          <div className="relative text-base leading-[32px] text-gray-500 inline-block w-[400px]">
-            RILA was extremely efficient, proactive, and knowledgeable. She explained very well what she was doing and
-            going to do for our organization and helped us achieve it; great communication! She is intelligent,
-            friendly, and well versed in the space. I highly recommend her work!
-          </div>
-        </div>
-        <div
-          className="rounded-6xl bg-ghostwhite shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] w-[451px] h-[412px] flex flex-col py-8 pr-[73px] pl-8 box-border items-start justify-start gap-[19px]"
-          data-scroll-to="frameContainer"
+      <div className="overflow-x-auto no-scrollbar p-[10px] flex flex-row items-start justify-start gap-[39px] text-9xl">
+        <Swiper
+          spaceBetween={30}
+          slidesPerView={2}
+          grabCursor={true}
+          onSlideChange={() => console.log('slide change')}
+          onSwiper={(swiper) => console.log(swiper)}
+          breakpoints={{
+            425: {
+              slidesPerView: 1,
+              spaceBetween: 20,
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 40,
+            },
+            1024: {
+              slidesPerView: 2,
+              spaceBetween: 50,
+            },
+          }}
         >
-          <div className="flex flex-row items-start justify-start gap-[20px]">
-            <Image
-              width={85}
-              height={85}
-              className="relative rounded-[50%] w-[85px] h-[85px] object-cover"
-              alt=""
-              src="/images/homepage/ellipse-802@2x.png"
-            />
+          <SwiperSlide>
+            <div className="m-[10px] rounded-6xl bg-ghostwhite shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] sm:h-[450px] h-[390px] flex flex-col pt-8 pb-0 pr-[29px] pl-8 box-border items-start justify-start gap-[19px]">
+              <div className=" flex flex-row items-start justify-start gap-[20px]">
+                <Image
+                  width={85}
+                  height={85}
+                  className="relative rounded-[50%] w-[85px] h-[85px] object-cover"
+                  alt=""
+                  src="/images/homepage/ellipse-80@2x.png"
+                />
 
-            <div className="flex flex-col items-start justify-start">
-              <div className="flex flex-col items-start justify-start gap-[10px]">
-                <strong className="relative capitalize inline-block w-[401px]">
-                  <p className="m-0">GVTC</p>
-                  <p className="m-0">Communications</p>
-                </strong>
-                <div className="relative text-xl capitalize">John H.</div>
+                <div className="flex-1 flex flex-row items-start justify-start">
+                  <div className="w-80 flex flex-col items-start justify-start gap-[10px]">
+                    <div className="self-stretch relative capitalize">
+                      <span>
+                        <strong>TOYOTA</strong>
+                      </span>
+                      <span className="text-lg">
+                        <span>, </span>
+                        <span>Sr. Vehicle Analyst</span>
+                      </span>
+                    </div>
+                    <div className="relative text-xl capitalize">Victoria Ellis</div>
+                  </div>
+                </div>
+              </div>
+              <div className="relative text-base leading-[32px] text-gray-500 inline-block ">
+                I’ve received excellent research services from RILA GLOBAL over the past 3 years during my time at
+                Toyota Motor North America. RILA’s professionalism andindustry knowledge is an asset to us and will
+                continue to be to other global social media leaders and partners.
               </div>
             </div>
-          </div>
-          <div className="relative text-base leading-[32px] text-gray-500 inline-block w-[400px]">
-            At GVTC, we take a strategic approach of surrounding ourselves with talented and brilliant partners and then
-            letting them do their thing. RILA GLOBAL is at the very top of the list when it comes to social media
-            analytics and we are so very pleased to have them as a partner.
-          </div>
-        </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="m-[10px] rounded-6xl bg-ghostwhite shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] sm:h-[450px] h-[390px] flex flex-col py-8 pr-[19px] pl-8 box-border items-start justify-start gap-[19px]">
+              <div className="flex flex-row items-start justify-start gap-[20px]">
+                <Image
+                  width={85}
+                  height={85}
+                  className="relative rounded-[50%] w-[85px] h-[85px] object-cover"
+                  alt=""
+                  src="/images/homepage/ellipse-801@2x.png"
+                />
+
+                <div className="flex flex-col items-start justify-start">
+                  <div className="flex flex-col items-start justify-start gap-[10px]">
+                    <div className="relative capitalize inline-block w-[270px]">
+                      <strong>
+                        <span>CAPSULE,</span>
+                      </strong>
+                      <span className="text-lg">
+                        <strong> </strong>
+                        <span>Operations Training and Development</span>
+                      </span>
+                    </div>
+                    <div className="relative text-xl capitalize">Lilly M.</div>
+                  </div>
+                </div>
+              </div>
+              <div className="relative text-base leading-[32px] text-gray-500 inline-block">
+                RILA was extremely efficient, proactive, and knowledgeable. She explained very well what she was doing
+                and going to do for our organization and helped us achieve it; great communication! She is intelligent,
+                friendly, and well versed in the space. I highly recommend her work!
+              </div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div
+              className=" m-[10px] rounded-6xl bg-ghostwhite shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] sm:h-[450px] h-[390px] flex flex-col py-8 pr-[73px] pl-8 box-border items-start justify-start gap-[19px]"
+              data-scroll-to="frameContainer"
+            >
+              <div className="flex flex-row items-start justify-start gap-[20px]">
+                <Image
+                  width={85}
+                  height={85}
+                  className="relative rounded-[50%] w-[85px] h-[85px] object-cover"
+                  alt=""
+                  src="/images/homepage/ellipse-802@2x.png"
+                />
+
+                <div className="flex flex-col items-start justify-start">
+                  <div className="flex flex-col items-start justify-start gap-[10px]">
+                    <strong className="relative capitalize inline-block ">
+                      <p className="m-0">GVTC</p>
+                      <p className="m-0">Communications</p>
+                    </strong>
+                    <div className="relative text-xl capitalize">John H.</div>
+                  </div>
+                </div>
+              </div>
+              <div className="relative text-base leading-[32px] text-gray-500 inline-block">
+                At GVTC, we take a strategic approach of surrounding ourselves with talented and brilliant partners and
+                then letting them do their thing. RILA GLOBAL is at the very top of the list when it comes to social
+                media analytics and we are so very pleased to have them as a partner.
+              </div>
+            </div>
+          </SwiperSlide>
+        </Swiper>
       </div>
     </div>
   );

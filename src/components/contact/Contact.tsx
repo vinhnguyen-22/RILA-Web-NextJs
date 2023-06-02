@@ -1,7 +1,32 @@
+'use client';
 import Image from 'next/image';
-import React from 'react';
+import React, { useState } from 'react';
+import AccordionItem from './accordion/AccordionItem';
+
+const questionItems = [
+  {
+    title: 'Do I need to have a social listening tool to get started with RILA ?',
+    desc: 'Do I need to have a social listening tool to get started with RILA ?',
+  },
+
+  {
+    title: 'Can RILA help me choose the right in-house social listening vendor ?',
+    desc: 'Can RILA help me choose the right in-house social listening vendor ?',
+  },
+  {
+    title: 'How fast can RILA deliver a social listening report ?',
+    desc: 'How fast can RILA deliver a social listening report ?',
+  },
+];
 
 const Contact = () => {
+  const [open, setOpen] = useState<any>(false);
+
+  const toggle = (index: any) => {
+    if (open === index) return setOpen(null);
+    setOpen(index);
+  };
+
   return (
     <div className="container mx-auto text-5xl ">
       <div className="rounded-[56px] shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] ">
@@ -35,51 +60,17 @@ const Contact = () => {
           <div className="grid grid-cols-12">
             <div className="sm:col-span-12 md:col-span-8 lg:col-span-8">
               <div className="flex flex-col items-start justify-start ">
-                <div className="h-[1px] w-full bg-black"></div>
-                <div className="flex flex-row items-center justify-start">
-                  <div className="flex flex-row py-8 px-2.5 box-border items-center justify-start">
-                    <div className="relative leading-[36px] text-xl">
-                      Do I need to have a social listening tool to get started with RILA?
-                    </div>
-                  </div>
-                  <Image
-                    width={6}
-                    height={6}
-                    className="relative w-6 h-6 overflow-hidden shrink-0"
-                    alt=""
-                    src="/images/homepage/materialsymbolsaddcirclerounded.svg"
-                  />
-                </div>
-                <div className="h-[1px] w-full bg-black"></div>
-                <div className="flex flex-row items-center justify-start">
-                  <div className=" flex flex-row py-8 px-2.5 box-border items-center justify-start">
-                    <div className="relative leading-[36px] text-xl">
-                      Can RILA help me choose the right in-house social listening vendor?
-                    </div>
-                  </div>
-                  <Image
-                    className="relative w-6 h-6 overflow-hidden shrink-0"
-                    width={6}
-                    height={6}
-                    alt=""
-                    src="/images/homepage/materialsymbolsaddcirclerounded.svg"
-                  />
-                </div>
-                <div className="h-[1px] w-full bg-black"></div>
-                <div className="flex flex-row items-center justify-start">
-                  <div className="flex-1 flex flex-row py-8 px-2.5 items-center justify-start">
-                    <div className="relative leading-[36px] text-xl">
-                      How fast can RILA deliver a social listening report?
-                    </div>
-                  </div>
-                  <Image
-                    className="relative w-6 h-6 overflow-hidden shrink-0"
-                    width={6}
-                    height={6}
-                    alt=""
-                    src="/images/homepage/materialsymbolsaddcirclerounded.svg"
-                  />
-                </div>
+                {questionItems.map((data, index) => {
+                  return (
+                    <AccordionItem
+                      key={index}
+                      open={index === open}
+                      title={data.title}
+                      desc={data.desc}
+                      toggle={() => toggle(index)}
+                    />
+                  );
+                })}
                 <div className="h-[1px] w-full bg-black"></div>
               </div>
             </div>

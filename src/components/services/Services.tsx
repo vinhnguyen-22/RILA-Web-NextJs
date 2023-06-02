@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
 const serviceItems = [
@@ -8,7 +9,7 @@ const serviceItems = [
     content:
       'RILA’s Research Solutions provide insightful research that drives strategic business decisions. Our proven methodologies and data frameworks are built around your business, priorities, and concerns. Our offerings scale to meet your needs.',
     imgArrow: '/images/homepage/arrow-14.svg',
-    color: 'navy',
+    color: 'navy-100',
   },
 
   {
@@ -102,10 +103,13 @@ const Services = () => {
                         <div className="text-start w-[100%] text-lg leading-[28px] text-lightslategray inline-block ">
                           <p className="m-0">{item.content}</p>
                         </div>
-                        <div className="flex flex-row items-center justify-start gap-[15px] text-base text-slateblue">
-                          <div className={`leading-[28px] font-medium text-${item.color}`}>Know More</div>
+                        <Link
+                          href="/"
+                          className={`flex flex-row items-center justify-start gap-[15px] text-${item.color}`}
+                        >
+                          <span className={`leading-[28px] font-medium text-${item.color}`}>Know More</span>
                           <Image width={66} height={66} className=" w-[19px] h-[14.73px]" alt="" src={item.imgArrow} />
-                        </div>
+                        </Link>
                       </div>
                     </div>
                   </div>

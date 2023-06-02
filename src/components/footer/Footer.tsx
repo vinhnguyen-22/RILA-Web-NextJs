@@ -80,17 +80,17 @@ const Footer = () => {
                     About Us
                   </Link>
                 </li>
-                <li>
+                <li className="mb-4">
                   <Link href="https://tailwindcss.com/" className="hover:underline">
                     Careers
                   </Link>
                 </li>
-                <li>
+                <li className="mb-4">
                   <Link href="https://tailwindcss.com/" className="hover:underline">
                     Press
                   </Link>
                 </li>
-                <li>
+                <li className="mb-4">
                   <Link href="https://tailwindcss.com/" className="hover:underline">
                     Contact Us
                   </Link>
@@ -105,17 +105,17 @@ const Footer = () => {
                     Our Service
                   </Link>
                 </li>
-                <li>
+                <li className="mb-4">
                   <Link href="https://discord.gg/4eeurUVvTy" className="hover:underline">
                     Case Studies
                   </Link>
                 </li>
-                <li>
+                <li className="mb-4">
                   <Link href="https://discord.gg/4eeurUVvTy" className="hover:underline">
                     Our Work
                   </Link>
                 </li>
-                <li>
+                <li className="mb-4">
                   <Link href="https://discord.gg/4eeurUVvTy" className="hover:underline">
                     Our Blog
                   </Link>
@@ -130,7 +130,7 @@ const Footer = () => {
                     Privacy Policy
                   </Link>
                 </li>
-                <li>
+                <li className="mb-4">
                   <Link href="#" className="hover:underline">
                     Terms &amp; Conditions
                   </Link>
