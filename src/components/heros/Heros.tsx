@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 import Services from '../services/Services';
+import Link from 'next/link';
 
 const Heros = () => {
   return (
@@ -15,9 +16,12 @@ const Heros = () => {
               Professional and Research Services for Social Listening - Trusted by the World{"'"}s Biggest Brands.
             </div>
 
-            <button className="mt-[31px] rounded-51xl bg-red-200 w-[193px] h-[55px] flex flex-row py-5 px-6 box-border items-center justify-center text-white">
+            <Link
+              href="/about"
+              className="mt-[31px] rounded-51xl bg-red-200 w-[193px] h-[55px] flex flex-row py-5 px-6 box-border items-center justify-center text-white"
+            >
               <strong className="relative leading-[20px] capitalize">Contact Us</strong>
-            </button>
+            </Link>
           </div>
         </div>
 

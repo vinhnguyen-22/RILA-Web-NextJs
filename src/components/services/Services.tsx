@@ -9,7 +9,7 @@ const serviceItems = [
     content:
       'RILA’s Research Solutions provide insightful research that drives strategic business decisions. Our proven methodologies and data frameworks are built around your business, priorities, and concerns. Our offerings scale to meet your needs.',
     imgArrow: '/images/homepage/arrow-14.svg',
-    color: 'navy-100',
+    color: 'navy-200',
   },
 
   {
@@ -23,16 +23,16 @@ const serviceItems = [
 
   {
     icon: '/images/homepage/group-18998.svg',
-    title: 'Data Analysis & Reporting',
+    title: 'Language Packages',
     content:
       "Unlock insights across cultures and borders with RILA's Query Writing and Reporting Services. Leverage our expertise in 32+ languages for comprehensive social listening data analysis. Contact our team for the complete list of supported languages and coverage.",
     imgArrow: '/images/homepage/arrow-143.svg',
-    color: 'gray-500',
+    color: 'gray-300',
   },
 
   {
     icon: '/images/homepage/group-18999.svg',
-    title: 'Data Analysis & Reporting',
+    title: 'Training & Consulting',
     content:
       'Empower your team with our customized social listening training solutions. Our expert trainers offer tailored user adoption courses to maximize the value of your social listening efforts. Discover success through our personalized training programs.',
     imgArrow: '/images/homepage/arrow-142.svg',
@@ -104,7 +104,7 @@ const Services = () => {
                           <p className="m-0">{item.content}</p>
                         </div>
                         <Link
-                          href="/"
+                          href="/about"
                           className={`flex flex-row items-center justify-start gap-[15px] text-${item.color}`}
                         >
                           <span className={`leading-[28px] font-medium text-${item.color}`}>Know More</span>

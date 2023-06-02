@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
-            <Link href="/" className="flex items-center">
+            <Link href="/about" className="flex items-center">
               <Image
                 width={107}
                 height={10}
@@ -67,16 +67,19 @@ const Footer = () => {
               </div>
             </div>
 
-            <button className="mt-[31px] rounded-51xl bg-red-200 w-[193px] h-[55px] flex flex-row py-5 px-6 box-border items-center justify-center text-white">
+            <Link
+              href="/about"
+              className="mt-[31px] rounded-51xl bg-red-200 w-[193px] h-[55px] flex flex-row py-5 px-6 box-border items-center justify-center text-white"
+            >
               <strong className="relative leading-[20px] capitalize">Contact Us</strong>
-            </button>
+            </Link>
           </div>
           <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
             <div>
               <h2 className="mb-6 text-5xl font-semibold text-gray-200 capitalize ">Company</h2>
               <ul className="text-lightslategray-200  font-medium">
                 <li className="mb-4">
-                  <Link href="/" className="hover:underline">
+                  <Link href="/about" className="hover:underline">
                     About Us
                   </Link>
                 </li>

@@ -58,25 +58,22 @@ const Header = () => {
           <div
             className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${navbar ? 'block' : 'hidden'}`}
           >
-            <ul
-              className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0
-            "
-            >
+            <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
               <li className="text-xl leading-[32px] text-gray-300 hover:text-indigo-200">
-                <Link href="/">Home</Link>
+                <Link href="/about">Home</Link>
               </li>
               <li className="text-xl leading-[32px] text-gray-300 hover:text-indigo-200">
-                <Link href="/">About US</Link>
+                <Link href="/about">About US</Link>
               </li>
               <li className="text-xl leading-[32px] text-gray-300 hover:text-indigo-200">
-                <Link href="/">Service</Link>
+                <Link href="/about">Service</Link>
               </li>
               <li className="text-xl leading-[32px] text-gray-300 hover:text-indigo-200">
-                <Link href="/">Resources</Link>
+                <Link href="/about">Resources</Link>
               </li>
               <li>
                 <Link
-                  href="/"
+                  href="/about"
                   className="hidden md:flex lg:flex rounded-51xl bg-tomato-100 w-36 h-[40px] flex flex-row box-border items-center justify-center text-white hover:bg-red-200"
                 >
                   <span className="relative leading-[20px] capitalize inline-block w-[77px] shrink-0">Let’s Talk</span>
@@ -86,7 +83,7 @@ const Header = () => {
 
             <div className="mt-3 space-y-2 lg:hidden md:inline-block">
               <Link
-                href="/"
+                href="/about"
                 className="rounded-51xl bg-tomato-100 w-[100%] h-[40px] flex flex-row box-border items-center justify-center text-white hover:bg-red-200"
               >
                 <span className="relative leading-[20px] capitalize inline-block w-[77px] shrink-0">Let’s Talk</span>

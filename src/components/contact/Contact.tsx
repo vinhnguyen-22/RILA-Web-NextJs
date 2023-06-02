@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import React, { useState } from 'react';
 import AccordionItem from './accordion/AccordionItem';
+import Link from 'next/link';
 
 const questionItems = [
   {
@@ -97,11 +98,14 @@ const Contact = () => {
                             placeholder="Enter your Email"
                           />
                         </div>
-                        <div className="rounded-51xl bg-tomato-100 w-36 h-[62px] flex flex-row py-5 px-6 box-border items-center justify-center text-white">
-                          <b className="relative leading-[20px] capitalize inline-block w-[77px] shrink-0">
+                        <Link
+                          href={'/about'}
+                          className="rounded-51xl bg-tomato-100 w-36 h-[62px] flex flex-row py-5 px-6 box-border items-center justify-center text-white"
+                        >
+                          <strong className="relative leading-[20px] capitalize inline-block w-[77px] font-bold shrink-0">
                             Let’s Talk
-                          </b>
-                        </div>
+                          </strong>
+                        </Link>
                       </div>
                     </div>
                     <div className="relative w-[119.93px] h-6 text-xl text-tomato-100">
