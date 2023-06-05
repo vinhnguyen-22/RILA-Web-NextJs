@@ -11,10 +11,10 @@ async function main() {
         const outDir = path.join(process.cwd(), "/out");
         console.log("Loading static files...")
         await new FtpDeploy().deploy({
-            user: process.env.FTP_USER, // Your credentials
-            password: process.env.FTP_PASS, // Your credentials
-            host: process.env.FTP_HOST, // Your credentials
-            port: process.env.FTP_PORT, // Your credentials
+            user: process.env.FTP_USER,
+            password: process.env.FTP_PASS,
+            host: process.env.FTP_HOST,
+            port: process.env.FTP_PORT,
 
             localRoot: outDir, // Location of build files in project
             remoteRoot: "/", // Upload location on remote, replace with subfolder on FTP-server if required
