@@ -22,7 +22,7 @@ const Testimonial = () => {
         <div className="col-span-12 flex items-center justify-center lg:col-span-4 md:col-span-4 relative my-[20px]">
           <div className="absolute top-0 right-0 flex justify-center sm:w-[100%] md:w-initial">
             <div
-              className="flex items-center justify-center rounded-[50%]  w-[85px] h-[85px] mr-[20px]"
+              className="flex cursor-pointer hover:opacity-75 items-center justify-center rounded-[50%]  w-[85px] h-[85px] mr-[20px]"
               onClick={() => swiperRef.current.slidePrev()}
             >
               <Image
@@ -35,7 +35,7 @@ const Testimonial = () => {
             </div>
 
             <div
-              className="flex items-center justify-center rounded-[50%] bg-red-300 shadow-[0px_2px_2px_rgba(0,_0,_0,_0.1)] w-[85px] h-[85px]"
+              className="flex cursor-pointer hover:opacity-75 items-center justify-center rounded-[50%] bg-red-300 shadow-[0px_2px_2px_rgba(0,_0,_0,_0.1)] w-[85px] h-[85px]"
               onClick={() => swiperRef.current.slideNext()}
             >
               <Image
