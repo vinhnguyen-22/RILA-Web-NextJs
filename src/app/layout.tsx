@@ -25,7 +25,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" dir={'ltr'}>
       <head></head>
-      <body className={font.className}>
+      <body suppressHydrationWarning={true} className={font.className}>
         <GlobalProvider>
           <div className="flex flex-col min-h-[100vh] bg-white">
             <Header />

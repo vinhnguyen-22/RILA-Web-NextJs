@@ -1,9 +1,12 @@
 'use client';
 import Image from 'next/image';
-import React from 'react';
+import { useRef } from 'react';
+import { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 const Testimonial = () => {
+  const swiperRef = useRef<any>();
+
   return (
     <div className="container mx-auto py-[78px] mt-[21px]">
       <div className="grid grid-cols-12 mb-[72px]">
@@ -18,7 +21,10 @@ const Testimonial = () => {
 
         <div className="col-span-12 flex items-center justify-center lg:col-span-4 md:col-span-4 relative my-[20px]">
           <div className="absolute top-0 right-0 flex justify-center sm:w-[100%] md:w-initial">
-            <div className="flex items-center justify-center rounded-[50%]  w-[85px] h-[85px] mr-[20px]">
+            <div
+              className="flex items-center justify-center rounded-[50%]  w-[85px] h-[85px] mr-[20px]"
+              onClick={() => swiperRef.current.slidePrev()}
+            >
               <Image
                 className="w-[89px] h-[89px]"
                 alt=""
@@ -28,7 +34,10 @@ const Testimonial = () => {
               />
             </div>
 
-            <div className="flex items-center justify-center rounded-[50%] bg-red-300 shadow-[0px_2px_2px_rgba(0,_0,_0,_0.1)] w-[85px] h-[85px]">
+            <div
+              className="flex items-center justify-center rounded-[50%] bg-red-300 shadow-[0px_2px_2px_rgba(0,_0,_0,_0.1)] w-[85px] h-[85px]"
+              onClick={() => swiperRef.current.slideNext()}
+            >
               <Image
                 className=" bottom-[80.93%] left-[87.92%] max-w-full overflow-hidden max-h-full cursor-pointer"
                 alt=""
@@ -47,8 +56,11 @@ const Testimonial = () => {
           spaceBetween={30}
           slidesPerView={2}
           grabCursor={true}
+          modules={[Navigation]}
           onSlideChange={() => console.log('slide change')}
-          onSwiper={(swiper) => console.log(swiper)}
+          onSwiper={(swiper) => {
+            swiperRef.current = swiper;
+          }}
           breakpoints={{
             425: {
               slidesPerView: 1,
