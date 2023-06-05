@@ -10,12 +10,12 @@ const Header = () => {
     <nav className="w-full fixed z-10 bg-white shadow">
       <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
         <div>
-          <div className="flex items-center justify-between py-3 md:py-5 md:block">
+          <div className="flex items-center justify-between py-3 md:block">
             <Link href="/">
               <Image
-                width={107}
-                height={10}
-                className="w-[107px] h-10 object-cover"
+                width={90}
+                height={9}
+                className="w-[90px] h-9"
                 alt=""
                 src="/images/homepage/logo-transparent2e1551993152468-1@2x.png"
               />
@@ -59,34 +59,34 @@ const Header = () => {
             className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${navbar ? 'block' : 'hidden'}`}
           >
             <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-              <li className="text-xl leading-[32px] text-gray-300 hover:text-indigo-200">
+              <li className="text-md font-semibold leading-[32px] text-gray-300 hover:text-red-300 duration-200">
                 <Link href="/about">Home</Link>
               </li>
-              <li className="text-xl leading-[32px] text-gray-300 hover:text-indigo-200">
-                <Link href="/about">About US</Link>
+              <li className="text-md font-semibold leading-[32px] text-gray-300 hover:text-red-300 duration-200">
+                <Link href="/about">About Us</Link>
               </li>
-              <li className="text-xl leading-[32px] text-gray-300 hover:text-indigo-200">
+              <li className="text-md font-semibold leading-[32px] text-gray-300 hover:text-red-300 duration-200">
                 <Link href="/about">Service</Link>
               </li>
-              <li className="text-xl leading-[32px] text-gray-300 hover:text-indigo-200">
+              <li className="text-md font-semibold leading-[32px] text-gray-300 hover:text-red-300 duration-200">
                 <Link href="/about">Resources</Link>
               </li>
               <li>
                 <Link
                   href="/about"
-                  className="hidden md:flex lg:flex rounded-51xl bg-tomato-100 w-36 h-[40px] flex flex-row box-border items-center justify-center text-white hover:bg-red-200"
+                  className="hidden md:flex lg:flex rounded-51xl bg-tomato-100 w-36 h-[40px] flex-row box-border items-center justify-center text-white hover:bg-red-200"
                 >
-                  <span className="relative leading-[20px] capitalize inline-block w-[77px] shrink-0">Let’s Talk</span>
+                  <span className="relative font-semibold leading-[20px] capitalize inline-block w-[77px] shrink-0">Let’s Talk</span>
                 </Link>
               </li>
             </ul>
 
-            <div className="mt-3 space-y-2 lg:hidden md:inline-block">
+            <div className="mt-3 space-y-2 md:hidden">
               <Link
                 href="/about"
                 className="rounded-51xl bg-tomato-100 w-[100%] h-[40px] flex flex-row box-border items-center justify-center text-white hover:bg-red-200"
               >
-                <span className="relative leading-[20px] capitalize inline-block w-[77px] shrink-0">Let’s Talk</span>
+                <span className="relative font-semibold leading-[20px] capitalize inline-block w-[77px] shrink-0">Let’s Talk</span>
               </Link>
             </div>
           </div>
