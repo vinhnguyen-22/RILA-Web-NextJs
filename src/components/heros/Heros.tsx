@@ -1,7 +1,7 @@
-import Image from 'next/image';
-import React from 'react';
-import Services from '../services/Services';
-import Link from 'next/link';
+import Image from "next/image";
+import React from "react";
+import Services from "../services/Services";
+import Link from "next/link";
 
 const Heros = () => {
   return (
@@ -13,20 +13,28 @@ const Heros = () => {
               Turn Social Listening data into actionable insights
             </strong>
             <div className="lg:text-xl md:text-md font-medium text-sm lg:leading-[38px] md:leading-[28px] leading-[28px] capitalize inline-block pr-6">
-              Professional and Research Services for Social Listening - Trusted by the World&apos;s Biggest Brands.
+              Professional and Research Services for Social Listening - Trusted
+              by the World&apos;s Biggest Brands.
             </div>
 
             <Link
               href="/about"
               className="mt-[31px] rounded-full bg-red-200 w-[193px] h-[55px] flex flex-row py-5 px-6 box-border items-center justify-center text-white"
             >
-              <strong className="relative lg:text-md text-sm capitalize">Contact Us</strong>
+              <strong className="relative lg:text-md text-sm capitalize">
+                Contact Us
+              </strong>
             </Link>
           </div>
         </div>
 
         <div className="col-span-12 md:col-span-5 lg:col-span-5 lg:-mt-8">
-          <Image width={600} height={400} src={'/images/homepage/image-banner.jpg'} unoptimized alt="" />
+          <Image
+            width={600}
+            height={400}
+            src={"/images/homepage/image-banner.jpg"}
+            alt=""
+          />
         </div>
       </div>
 
@@ -40,9 +48,10 @@ const Heros = () => {
               <div className="lg:text-xl md:text-lg text-sm lg:leading-[50px] md:leading-[42px] leading-[30px] font-semibold flex items-center shrink-0">
                 <span className="w-full">
                   <p className="m-0">
-                    <span className="capitalize">RILA GLOBAL CONSULTING </span>is a boutique social listening agency
-                    located in New York City. We study consumers, brands, markets, and trends, offering tailored research and
-                    insight to clients globally.
+                    <span className="capitalize">RILA GLOBAL CONSULTING </span>
+                    is a boutique social listening agency located in New York
+                    City. We study consumers, brands, markets, and trends,
+                    offering tailored research and insight to clients globally.
                   </p>
                 </span>
               </div>
