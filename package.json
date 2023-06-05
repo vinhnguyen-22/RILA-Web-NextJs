@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy": "next build && node ./scripts/deploy.mjs"
   },
   "dependencies": {
     "@types/node": "20.2.5",
@@ -26,6 +27,8 @@
     "typescript": "5.0.4"
   },
   "devDependencies": {
-    "@types/react-collapse": "^5.0.1"
+    "@types/react-collapse": "^5.0.1",
+    "dotenv": "^16.1.4",
+    "ftp-deploy": "^2.4.4"
   }
 }
