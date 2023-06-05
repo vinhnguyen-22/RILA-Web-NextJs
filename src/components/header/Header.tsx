@@ -17,6 +17,7 @@ const Header = () => {
                 height={9}
                 className="w-[90px] h-9"
                 alt=""
+                unoptimized 
                 src="/images/homepage/logo-transparent2e1551993152468-1@2x.png"
               />
             </Link>
