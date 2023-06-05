@@ -9,12 +9,12 @@ type AccordionItemProps = {
 };
 const AccordionItem = ({ open, toggle, title, desc }: AccordionItemProps) => (
   <>
-    <div className="h-[1px] w-full bg-black"></div>
-    <div className="flex flex-row items-center justify-start" onClick={toggle}>
-      <div className="flex flex-row py-8 px-2.5 box-border items-center justify-start">
-        <div className="relative leading-[36px] text-lg">{title}</div>
+    <div className="h-[1px] w-full bg-black px-2.5 "></div>
+    <div className="flex flex-row w-full items-center justify-between" onClick={toggle}>
+      <div className="flex flex-row py-8 box-border items-center justify-start">
+        <div className="relative leading-[36px] text-xl">{title}</div>
       </div>
-      <div className="text-white font-bold text-xl">
+      <div className="text-white font-bold text-xl justify-end">
         {open ? (
           <div className="w-[20px] h-[20px] bg-red-200 rounded-[20px]">
             <AiOutlineMinus />
@@ -28,7 +28,7 @@ const AccordionItem = ({ open, toggle, title, desc }: AccordionItemProps) => (
     </div>
 
     <Collapse isOpened={open}>
-      <div className="bg-white px-[20px] pb-[20px] text-xl">{desc}</div>
+      <div className="bg-white pb-[20px] text-xl">{desc}</div>
     </Collapse>
   </>
 );

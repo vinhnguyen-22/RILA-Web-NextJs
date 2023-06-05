@@ -57,7 +57,7 @@ const Activities = () => {
             </div>
 
             <div className="h-[500px] p-[15px]">
-              <div className="relative rounded-6xl bg-white px-[10px] pt-[30px] pb-[100px] h-[100%] shadow-[0px_10px_50px_rgba(1,_13,_130,_0.12)] flex flex-col items-start justify-start gap-[15px]">
+              <div className="relative rounded-6xl px-6 bg-white pt-[30px] pb-[100px] h-[100%] shadow-[0px_10px_50px_rgba(1,_13,_130,_0.12)] flex flex-col items-start justify-start gap-[15px]">
                 <Image height={60} width={60} alt="" src={item.icon} />
                 <div className="absolute top-[-7%] md:right-[-10%] lg:right-[-10%] right-[-3%] w-[53px] h-[53px]">
                   <div
@@ -67,7 +67,7 @@ const Activities = () => {
                   </div>
                 </div>
                 <div className="leading-[144%] font-semibold inline-block w-[119px]">{item.title}</div>
-                <div className="text-lg leading-[175%] text-lightslategray-200 inline-block  h-[148px] shrink-0">
+                <div className="text-base leading-[175%] text-lightslategray-200 inline-block h-[148px] shrink-0">
                   {item.content}
                 </div>
               </div>
