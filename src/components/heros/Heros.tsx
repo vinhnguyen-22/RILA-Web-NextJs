@@ -10,7 +10,7 @@ const Heros = () => {
         <div className="col-span-12 md:col-span-6 lg:col-span-6">
           <div className=" text-gray-500">
             <strong className="text-[44px] sm:mb-[20px] md:leading-[80px] lg:leading-[80px] capitalize inline-block text-black  ">
-              turn Social Listening data into actionable insights
+              Turn Social Listening data into actionable insights
             </strong>
             <div className="leading-[32px] capitalize inline-block ">
               Professional and Research Services for Social Listening - Trusted by the World{"'"}s Biggest Brands.
@@ -32,19 +32,16 @@ const Heros = () => {
 
       <div className="grid grid-cols-1">
         <div className="rounded-6xl shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)]  mt-[80px]">
-          <div className="rounded-6xl bg-navy-200 p-2 ">
-            <div className="flex flex-col items-center justify-start gap-[18px] text-center text-21xl ">
-              <strong className="text-white leading-[56px] capitalize flex items-center justify-center  shrink-0">
+          <div className="rounded-6xl bg-navy-200 py-5">
+            <div className="flex flex-col lg:px-44 px-10 text-white items-center justify-start gap-[18px] text-center">
+              <strong className="lg:text-2xl md:text-xl text-lg lg:leading-[56px] md:leading-[42px] leading-[30px] capitalize flex items-center justify-center mt-1 shrink-0">
                 About RILA GLOBAL CONSULTING
               </strong>
-              <div className=" text-[24px] leading-[50px] text-gainsboro flex items-center p-[20px] shrink-0 [-webkit-text-stroke:1px_#fff] mix-blend-normal">
-                <span className="[line-break:anywhere] w-full">
+              <div className="lg:text-xl md:text-lg text-sm lg:leading-[50px] md:leading-[42px] leading-[30px] font-semibold flex items-center shrink-0">
+                <span className="w-full">
                   <p className="m-0">
                     <span className="capitalize">RILA GLOBAL CONSULTING </span>is a boutique social listening agency
-                    located in
-                  </p>
-                  <p className="m-0">
-                    New York City. We study consumers, brands, markets, and trends, offering tailored research and
+                    located in New York City. We study consumers, brands, markets, and trends, offering tailored research and
                     insight to clients globally.
                   </p>
                 </span>

@@ -28,8 +28,9 @@ body {
   padding: 0;
   color: black;
 }
+
 .container {
-  max-width: 1240px !important;
+  max-width: 80%;
 }
 
 .ReactCollapse--collapse {
