@@ -20,23 +20,30 @@ const Footer = () => {
             <div className="my-[23px] leading-[20px] inline-block">New York, NY</div>
             <div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
               <div className="bg-white w-[257px] flex flex-row items-center justify-between">
-                <Image
-                  width={34}
-                  height={34}
+                <a target="_blank" href="https://www.instagram.com/rilaglobal/">
+                  <Image
+                    width={34}
+                    height={34}
+                    className="relative w-[34px] h-[34px] overflow-hidden shrink-0"
+                    alt=""
+                    src="/images/homepage/riinstagramfill.svg"
+                  />
+                </a>
+
+                <a target="_blank" href={'https://twitter.com/rilaglobal'}>
+                  <Image
+                    width={34}
+                    height={34}
+                    className="relative w-[34px] h-7 overflow-hidden shrink-0"
+                    alt=""
+                    src="/images/homepage/bitwitter.svg"
+                  />
+                </a>
+
+                <Link
+                  href={'https://www.tiktok.com/@rila_global_consulting'}
                   className="relative w-[34px] h-[34px] overflow-hidden shrink-0"
-                  alt=""
-                  src="/images/homepage/riinstagramfill.svg"
-                />
-
-                <Image
-                  width={34}
-                  height={34}
-                  className="relative w-[34px] h-7 overflow-hidden shrink-0"
-                  alt=""
-                  src="/images/homepage/bitwitter.svg"
-                />
-
-                <div className="relative w-[34px] h-[34px] overflow-hidden shrink-0">
+                >
                   <div className="absolute top-[0px] left-[7px] w-7 h-7 overflow-hidden">
                     <div className="absolute top-[4px] left-[0px] bg-white w-[21px] h-6 flex flex-row items-start justify-start">
                       <Image
@@ -48,22 +55,26 @@ const Footer = () => {
                       />
                     </div>
                   </div>
-                </div>
-                <Image
-                  width={34}
-                  height={34}
-                  className="relative w-[35px] h-[35px]"
-                  alt=""
-                  src="/images/homepage/-icon-linkedin.svg"
-                />
+                </Link>
 
-                <Image
-                  width={34}
-                  height={34}
-                  className="relative w-10 h-10 object-cover"
-                  alt=""
-                  src="/images/homepage/image-5@2x.png"
-                />
+                <a target="_blank" href={'https://www.linkedin.com/company/rila-global-consulting/'}>
+                  <Image
+                    width={34}
+                    height={34}
+                    className="relative w-[35px] h-[35px]"
+                    alt=""
+                    src="/images/homepage/-icon-linkedin.svg"
+                  />
+                </a>
+                <a target="_blank" href={'https://www.youtube.com/@rilaglobal/videos'}>
+                  <Image
+                    width={34}
+                    height={34}
+                    className="relative w-10 h-10 object-cover"
+                    alt=""
+                    src="/images/homepage/image-5@2x.png"
+                  />
+                </a>
               </div>
             </div>
 
@@ -90,7 +101,7 @@ const Footer = () => {
                 </li>
                 <li className="mb-4">
                   <Link href="https://tailwindcss.com/" className="hover:underline">
-                    Press
+                    Newsroom
                   </Link>
                 </li>
                 <li className="mb-4">

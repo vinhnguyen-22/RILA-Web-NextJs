@@ -33,17 +33,19 @@ const Contact = () => {
       <div className="rounded-[56px] shado0,_0,_0,_0.25)] ">
         <div className="rounded-[56px] overflow-hidden bg-orange-200 px-[50px] py-[50px]">
           <div className="text-red-400 grid grid-cols-12">
-            <div className="col-span-12 md:col-span-8">
-              <h4 className="text-[48px] leading-[63px] capitalize inline-block text-white font-semibold mb-[38px] ">
+            <div className="col-span-12 md:col-span-8 flex md:inline-block flex-col justify-center items-center">
+              <h4 className="text-[48px] leading-[63px] capitalize md:inline-block text-white font-semibold mb-[38px] ">
                 start your Social Listening journey with RILA now
               </h4>
-
-              <div className="rounded-51xl bg-gray-600 3px] flex flex-row py-4 px-12 box-border items-start justify-start">
+              <Link
+                href="/about"
+                className="rounded-51xl w-[200px] bg-gray-600 flex flex-row py-4 box-border items-center justify-center"
+              >
                 <strong className="relative capitalize">Start Now</strong>
-              </div>
+              </Link>
             </div>
 
-            <div className="col-span-12 md:col-span-4 relative items-center">
+            <div className="col-span-12 md:col-span-4 relative flex items-center justify-center p-[20px] ">
               <Image
                 width={276}
                 height={269}
@@ -72,7 +74,7 @@ const Contact = () => {
                     />
                   );
                 })}
-                <div className="h-[1px] w-full bg-black"></div>
+                <div className="h-[0.5px] w-full bg-darkgray px-2.5 "></div>
               </div>
             </div>
             <div className="col-span-12 md:col-span-5 lg:col-span-5">
@@ -91,10 +93,7 @@ const Contact = () => {
                       <div className="flex flex-row items-start justify-start gap-[8px] text-base text-darkgray">
                         <div className="">
                           <input
-                            className="relative 
-                            rounded-[37px]
-                            placeholder:italic placeholder:text-slate-400
-                            capitalize rounded-18xl bg-gray-100 flex flex-row py-5 px-[18px] box-border items-center justify-start "
+                            className="relative rounded-[37px] placeholder:italic placeholder:text-slate-400 capitalize rounded-18xl bg-gray-100 flex flex-row py-5 px-[18px] box-border items-center justify-start "
                             placeholder="Enter your Email"
                           />
                         </div>
@@ -103,7 +102,7 @@ const Contact = () => {
                           className="rounded-51xl bg-tomato-100 h-[62px] flex flex-row py-5 px-6 box-border items-center justify-center text-white"
                         >
                           <strong className="relative leading-[20px] capitalize inline-block  font-bold shrink-0">
-                            Let’s Talk
+                            Get In Touch
                           </strong>
                         </Link>
                       </div>

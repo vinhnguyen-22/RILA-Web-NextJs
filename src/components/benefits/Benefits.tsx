@@ -40,7 +40,7 @@ const Benefits = () => {
             <div className="flex flex-col items-start justify-start gap-[20px] text-9xl">
               {benefitsItems.map((item, index) => (
                 <div key={index} className="flex items-start justify-center gap-[27px] ">
-                  <div className="w-[35%] h-[75.78px]">
+                  <div className="w-[75%] h-[75.78px]">
                     <Image width={75} height={75.78} alt="" src={item.icon} />
                   </div>
                   <div className="flex flex-col items-start justify-start gap-[15px] ">

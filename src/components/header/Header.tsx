@@ -76,7 +76,9 @@ const Header = () => {
                   href="/about"
                   className="hidden md:flex lg:flex rounded-51xl bg-tomato-100 w-36 h-[40px] flex-row box-border items-center justify-center text-white hover:bg-red-200"
                 >
-                  <span className="relative font-semibold leading-[20px] capitalize inline-block w-[77px] shrink-0">Let’s Talk</span>
+                  <span className="relative font-semibold leading-[20px] capitalize inline-block w-[77px] shrink-0">
+                    Let’s Talk
+                  </span>
                 </Link>
               </li>
             </ul>
@@ -86,7 +88,9 @@ const Header = () => {
                 href="/about"
                 className="rounded-51xl bg-tomato-100 w-[100%] h-[40px] flex flex-row box-border items-center justify-center text-white hover:bg-red-200"
               >
-                <span className="relative font-semibold leading-[20px] capitalize inline-block w-[77px] shrink-0">Let’s Talk</span>
+                <span className="relative font-semibold leading-[20px] capitalize inline-block w-[77px] shrink-0">
+                  Let’s Talk
+                </span>
               </Link>
             </div>
           </div>

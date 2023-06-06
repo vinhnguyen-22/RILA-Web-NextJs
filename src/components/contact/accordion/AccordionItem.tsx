@@ -9,7 +9,7 @@ type AccordionItemProps = {
 };
 const AccordionItem = ({ open, toggle, title, desc }: AccordionItemProps) => (
   <>
-    <div className="h-[1px] w-full bg-black px-2.5 "></div>
+    <div className="h-[1px] w-full bg-darkgray px-2.5 "></div>
     <div className="flex flex-row w-full items-center justify-between" onClick={toggle}>
       <div className="flex flex-row py-8 box-border items-center justify-start">
         <div className="relative leading-[36px] text-xl">{title}</div>

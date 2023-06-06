@@ -71,3 +71,8 @@ body {
   height: 100%;
   object-fit: cover;
 }
+
+.testimonialSwiper {
+  margin: 0px !important;
+  overflow: visible !important;
+}

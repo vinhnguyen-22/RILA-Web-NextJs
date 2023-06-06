@@ -12,9 +12,10 @@ const font = Poppins({
 export const metadata: Metadata = {
   metadataBase: new URL('http://localhost:3000/'),
   title: {
-    default: 'RILA',
+    default: 'RILA GLOBAL CONSULTING',
     template: `%s | RILA Web`,
   },
+
   description: 'This is the description of RILA Web',
   verification: {
     google: '',

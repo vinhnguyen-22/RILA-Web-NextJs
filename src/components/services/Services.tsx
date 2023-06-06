@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import React, { useState } from 'react';
 
 const serviceItems = [
   {
@@ -9,7 +9,7 @@ const serviceItems = [
     content:
       'RILA’s Research Solutions provide insightful research that drives strategic business decisions. Our proven methodologies and data frameworks are built around your business, priorities, and concerns. Our offerings scale to meet your needs.',
     imgArrow: '/images/homepage/arrow-14.svg',
-    color: 'navy-200',
+    color: 'text-navy-200',
   },
 
   {
@@ -18,7 +18,7 @@ const serviceItems = [
     content:
       'We offer a wide range of consultancy capabilities, including Boolean setup for a number of social listening vendors. With over 15 years of experience in professional services, we have built complex setups in numerous languages for the largest brands in the world.',
     imgArrow: '/images/homepage/arrow-141.svg',
-    color: 'red-200',
+    color: 'text-red-200',
   },
 
   {
@@ -27,7 +27,7 @@ const serviceItems = [
     content:
       "Unlock insights across cultures and borders with RILA's Query Writing and Reporting Services. Leverage our expertise in 32+ languages for comprehensive social listening data analysis. Contact our team for the complete list of supported languages and coverage.",
     imgArrow: '/images/homepage/arrow-143.svg',
-    color: 'gray-300',
+    color: 'text-gray-300',
   },
 
   {
@@ -36,7 +36,7 @@ const serviceItems = [
     content:
       'Empower your team with our customized social listening training solutions. Our expert trainers offer tailored user adoption courses to maximize the value of your social listening efforts. Discover success through our personalized training programs.',
     imgArrow: '/images/homepage/arrow-142.svg',
-    color: 'orange-200',
+    color: 'text-orange-200',
   },
 ];
 
@@ -96,17 +96,29 @@ const Services = () => {
                     <div className="rounded-6xl p-[30px] bg-white shadow-[0px_2px_6px_rgba(0,_0,_0,_0.1)]">
                       <div className="flex flex-col items-start justify-between">
                         <div className=" flex flex-row items-center justify-start gap-[20px]">
-                          <Image width={66} height={66} className="relative lg:w-[66px] lg:h-[66px] w-10 h-10" alt="" src={item.icon} />
+                          <Image
+                            width={66}
+                            height={66}
+                            className="relative lg:w-[66px] lg:h-[66px] w-10 h-10"
+                            alt=""
+                            src={item.icon}
+                          />
                           <div className="lg:text-lg text-base relative font-semibold">{item.title}</div>
                         </div>
                         <div className="py-6 text-start w-[100%] text-lg leading-[28px] text-lightslategray inline-block ">
-                          <p className="lg:text-lg md:text-base text-sm m-0 text-gray-800">{item.content}</p>
+                          <p className="leading-[175%] lg:text-lg md:text-base text-sm m-0 text-gray-800">
+                            {item.content}
+                          </p>
                         </div>
                         <Link
                           href="/about"
-                          className={`flex flex-row items-center justify-start gap-[15px] text-${item.color}`}
+                          className={`flex flex-row items-center justify-start gap-[15px] ${item.color}`}
                         >
-                          <span className={`lg:text-lg md:text-base text-sm leading-[28px] font-semibold text-${item.color}`}>Know More</span>
+                          <span
+                            className={`lg:text-lg md:text-base text-sm leading-[28px] font-semibold ${item.color}`}
+                          >
+                            Know More
+                          </span>
                           <Image width={66} height={66} className=" w-[19px] h-[14.73px]" alt="" src={item.imgArrow} />
                         </Link>
                       </div>

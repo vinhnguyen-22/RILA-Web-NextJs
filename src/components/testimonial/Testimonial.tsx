@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 import { useRef } from 'react';
-import { Navigation } from 'swiper';
+import { Navigation, FreeMode } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 const Testimonial = () => {
@@ -56,11 +56,12 @@ const Testimonial = () => {
           spaceBetween={30}
           slidesPerView={2}
           grabCursor={true}
-          modules={[Navigation]}
+          modules={[Navigation, FreeMode]}
           onSlideChange={() => console.log('slide change')}
           onSwiper={(swiper) => {
             swiperRef.current = swiper;
           }}
+          freeMode={true}
           breakpoints={{
             425: {
               slidesPerView: 1,
@@ -75,9 +76,10 @@ const Testimonial = () => {
               spaceBetween: 50,
             },
           }}
+          className="testimonialSwiper md:w-[75%]"
         >
           <SwiperSlide>
-            <div className="m-[10px] rounded-6xl bg-ghostwhite shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] h-[100%] md:h-[390px] flex flex-col pt-8 pb-0 pr-[29px] pl-8 box-border items-start justify-start gap-[19px]">
+            <div className="m-[10px] rounded-6xl bg-ghostwhite shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] h-[100%] md:h-[450px] flex flex-col pt-8 pb-0 pr-[29px] pl-8 box-border items-start justify-start gap-[19px]">
               <div className=" flex flex-row items-start justify-start gap-[20px]">
                 <div className="w-[80px] h-[80px] relative">
                   <Image
@@ -111,7 +113,7 @@ const Testimonial = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="m-[10px] rounded-6xl bg-ghostwhite shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] h-[100%] md:h-[390px] flex flex-col py-8 pr-[19px] pl-8 box-border items-start justify-start gap-[19px]">
+            <div className="m-[10px] rounded-6xl bg-ghostwhite shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] h-[100%] md:h-[450px] flex flex-col py-8 pr-[19px] pl-8 box-border items-start justify-start gap-[19px]">
               <div className="flex flex-row items-start justify-start gap-[20px]">
                 <div className="w-[80px] h-[80px] relative">
                   <Image
@@ -146,7 +148,7 @@ const Testimonial = () => {
           </SwiperSlide>
           <SwiperSlide>
             <div
-              className=" m-[10px] rounded-6xl bg-ghostwhite shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] h-[100%] md:h-[390px] flex flex-col py-8 pr-[73px] pl-8 box-border items-start justify-start gap-[19px]"
+              className=" m-[10px] rounded-6xl bg-ghostwhite shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] h-[100%] md:h-[450px] flex flex-col py-8 pr-[73px] pl-8 box-border items-start justify-start gap-[19px]"
               data-scroll-to="frameContainer"
             >
               <div className="flex flex-row items-start justify-start gap-[20px]">
