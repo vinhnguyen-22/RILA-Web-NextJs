@@ -22,11 +22,11 @@ const organizations = [
 const Organization = () => {
   return (
     <div className="mx-auto container">
-      <h4 className="w-full my-[90px] text-center text-lg capitalize font-medium text-gray-800 text-center inline-block ">
+      <h4 className="w-full my-[90px] text-lg capitalize font-medium text-gray-800 text-center inline-block ">
         TRUSTED BY THE WORLD’S LEADING ORGANIZATIONS
       </h4>
 
-      <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-5 gap-[80px] mb-[150px]">
+      <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-5 gap-[40px] md:gap-[80px]  mb-[100px] md:mb-[150px]">
         {organizations.map((item, index) => (
           <div key={index} className="aspect-video relative">
             <Image fill className="relative object-contain" alt={'alt'} src={item} />

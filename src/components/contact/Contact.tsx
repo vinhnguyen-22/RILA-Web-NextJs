@@ -30,20 +30,20 @@ const Contact = () => {
 
   return (
     <div className="container mx-auto text-5xl">
-      <div className="rounded-[56px] shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] ">
+      <div className="rounded-[56px] shado0,_0,_0,_0.25)] ">
         <div className="rounded-[56px] overflow-hidden bg-orange-200 px-[50px] py-[50px]">
           <div className="text-red-400 grid grid-cols-12">
-            <div className="sm:col-span-12 md:col-span-8">
+            <div className="col-span-12 md:col-span-8">
               <h4 className="text-[48px] leading-[63px] capitalize inline-block text-white font-semibold mb-[38px] ">
                 start your Social Listening journey with RILA now
               </h4>
 
-              <div className="rounded-51xl bg-gray-600 w-[223.3px] flex flex-row py-4 px-12 box-border items-start justify-start">
+              <div className="rounded-51xl bg-gray-600 3px] flex flex-row py-4 px-12 box-border items-start justify-start">
                 <strong className="relative capitalize">Start Now</strong>
               </div>
             </div>
 
-            <div className="sm:col-span-12 md:col-span-4 relative items-center">
+            <div className="col-span-12 md:col-span-4 relative items-center">
               <Image
                 width={276}
                 height={269}
@@ -56,10 +56,10 @@ const Contact = () => {
         </div>
       </div>
 
-      <div className="container my-24 md:px-6">
+      <div className="my-24 mx-0 md:px-6">
         <section className="mb-32">
           <div className="grid grid-cols-12">
-            <div className="sm:col-span-12 md:col-span-8 lg:col-span-8">
+            <div className="col-span-12 md:col-span-7 lg:col-span-7">
               <div className="flex flex-col items-start justify-start ">
                 {questionItems.map((data, index) => {
                   return (
@@ -75,9 +75,9 @@ const Contact = () => {
                 <div className="h-[1px] w-full bg-black"></div>
               </div>
             </div>
-            <div className="sm:col-span-12 md:col-span-4 lg:col-span-4">
-              <div className="mb-12  shrink-0 grow-0 basis-auto md:mb-0 md:w-7/12 md:px-3 lg:px-6">
-                <div className="w-full shrink-0 grow-0 basis-auto md:w-5/12 md:px-3 lg:px-6">
+            <div className="col-span-12 md:col-span-5 lg:col-span-5">
+              <div className="mb-12  shrink-0 grow-0 basis-auto md:mb-0  md:px-3 lg:px-6">
+                <div className="w-full shrink-0 grow-0 basis-auto md:px-3 lg:px-6">
                   <div className="flex flex-col items-start justify-start gap-[42px] text-9xl">
                     <div className="flex flex-col items-start justify-start gap-[32px]">
                       <div className="flex flex-col items-start justify-start gap-[16px]">
@@ -100,22 +100,22 @@ const Contact = () => {
                         </div>
                         <Link
                           href={'/about'}
-                          className="rounded-51xl bg-tomato-100 w-36 h-[62px] flex flex-row py-5 px-6 box-border items-center justify-center text-white"
+                          className="rounded-51xl bg-tomato-100 h-[62px] flex flex-row py-5 px-6 box-border items-center justify-center text-white"
                         >
-                          <strong className="relative leading-[20px] capitalize inline-block w-[77px] font-bold shrink-0">
+                          <strong className="relative leading-[20px] capitalize inline-block  font-bold shrink-0">
                             Let’s Talk
                           </strong>
                         </Link>
                       </div>
                     </div>
-                    <div className="relative w-[119.93px] h-6 text-xl text-tomato-100">
-                      <div className=" [text-decoration:underline] leading-[24px] capitalize inline-block w-[105px]">
+                    <div className="relative h-6 text-xl text-tomato-100">
+                      <div className=" [text-decoration:underline] leading-[24px] capitalize inline-block ">
                         more FAQ
                       </div>
                       <Image
                         width={54}
                         height={12}
-                        className="absolute h-[54.44%] w-[12.45%] top-[25%] right-[0%] bottom-[20.56%] left-[87.55%] max-w-full overflow-hidden max-h-full"
+                        className="absolute h-[54.44%] top-[25%] right-[0%] bottom-[20.56%] left-[87.55%] max-w-full overflow-hidden max-h-full"
                         alt=""
                         src="/images/homepage/vector.svg"
                       />

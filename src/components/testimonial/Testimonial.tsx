@@ -9,7 +9,7 @@ const Testimonial = () => {
 
   return (
     <div className="container mx-auto py-[78px] mt-[21px]">
-      <div className="grid grid-cols-12 mb-[72px]">
+      <div className="grid grid-cols-12 mb-[20px] md:mb-[72px]">
         <div className="col-span-12 lg:col-span-8 md:col-span-8 flex flex-col items-start justify-start gap-[9px] ">
           <h4 className="relative capitalize inline-block text-21xl font-bold">What Our Clients Say about us</h4>
           <div className="relative text-9xl leading-[32px] inline-block shrink-0">
@@ -20,7 +20,7 @@ const Testimonial = () => {
         </div>
 
         <div className="col-span-12 flex items-center justify-center lg:col-span-4 md:col-span-4 relative my-[20px]">
-          <div className="absolute top-0 right-0 flex justify-center sm:w-[100%] md:w-initial">
+          <div className="md:absolute top-0 right-0 flex justify-center  md:w-initial">
             <div
               className="flex cursor-pointer hover:opacity-75 items-center justify-center rounded-[50%]  w-[85px] h-[85px] mr-[20px]"
               onClick={() => swiperRef.current.slidePrev()}
@@ -42,8 +42,8 @@ const Testimonial = () => {
                 className=" bottom-[80.93%] left-[87.92%] max-w-full overflow-hidden max-h-full cursor-pointer"
                 alt=""
                 src="/images/homepage/vector1.svg"
-                width={30}
-                height={30}
+                width={40}
+                height={40}
                 id="vectorIcon1"
               />
             </div>
@@ -77,18 +77,19 @@ const Testimonial = () => {
           }}
         >
           <SwiperSlide>
-            <div className="m-[10px] rounded-6xl bg-ghostwhite shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] sm:h-[450px] h-[390px] flex flex-col pt-8 pb-0 pr-[29px] pl-8 box-border items-start justify-start gap-[19px]">
+            <div className="m-[10px] rounded-6xl bg-ghostwhite shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] h-[100%] md:h-[390px] flex flex-col pt-8 pb-0 pr-[29px] pl-8 box-border items-start justify-start gap-[19px]">
               <div className=" flex flex-row items-start justify-start gap-[20px]">
-                <Image
-                  width={85}
-                  height={85}
-                  className="relative rounded-[50%] w-[85px] h-[85px] object-cover"
-                  alt=""
-                  src="/images/homepage/ellipse-80@2x.png"
-                />
+                <div className="w-[80px] h-[80px] relative">
+                  <Image
+                    fill
+                    className="relative rounded-[50%] object-contain"
+                    alt=""
+                    src="/images/homepage/ellipse-80@2x.png"
+                  />
+                </div>
 
                 <div className="flex-1 flex flex-row items-start justify-start">
-                  <div className="w-80 flex flex-col items-start justify-start gap-[10px]">
+                  <div className="flex flex-col items-start justify-start gap-[10px]">
                     <div className="self-stretch relative capitalize">
                       <span>
                         <strong>TOYOTA</strong>
@@ -110,19 +111,20 @@ const Testimonial = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="m-[10px] rounded-6xl bg-ghostwhite shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] sm:h-[450px] h-[390px] flex flex-col py-8 pr-[19px] pl-8 box-border items-start justify-start gap-[19px]">
+            <div className="m-[10px] rounded-6xl bg-ghostwhite shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] h-[100%] md:h-[390px] flex flex-col py-8 pr-[19px] pl-8 box-border items-start justify-start gap-[19px]">
               <div className="flex flex-row items-start justify-start gap-[20px]">
-                <Image
-                  width={85}
-                  height={85}
-                  className="relative rounded-[50%] w-[85px] h-[85px] object-cover"
-                  alt=""
-                  src="/images/homepage/ellipse-801@2x.png"
-                />
+                <div className="w-[80px] h-[80px] relative">
+                  <Image
+                    fill
+                    className="relative rounded-[50%] object-contain"
+                    alt=""
+                    src="/images/homepage/ellipse-801@2x.png"
+                  />
+                </div>
 
                 <div className="flex flex-col items-start justify-start">
                   <div className="flex flex-col items-start justify-start gap-[10px]">
-                    <div className="relative capitalize inline-block w-[270px]">
+                    <div className="relative capitalize inline-block">
                       <strong>
                         <span>CAPSULE,</span>
                       </strong>
@@ -144,17 +146,18 @@ const Testimonial = () => {
           </SwiperSlide>
           <SwiperSlide>
             <div
-              className=" m-[10px] rounded-6xl bg-ghostwhite shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] sm:h-[450px] h-[390px] flex flex-col py-8 pr-[73px] pl-8 box-border items-start justify-start gap-[19px]"
+              className=" m-[10px] rounded-6xl bg-ghostwhite shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] h-[100%] md:h-[390px] flex flex-col py-8 pr-[73px] pl-8 box-border items-start justify-start gap-[19px]"
               data-scroll-to="frameContainer"
             >
               <div className="flex flex-row items-start justify-start gap-[20px]">
-                <Image
-                  width={85}
-                  height={85}
-                  className="relative rounded-[50%] w-[85px] h-[85px] object-cover"
-                  alt=""
-                  src="/images/homepage/ellipse-802@2x.png"
-                />
+                <div className="w-[80px] h-[80px] relative">
+                  <Image
+                    fill
+                    className="relative rounded-[50%] object-contain"
+                    alt=""
+                    src="/images/homepage/ellipse-802@2x.png"
+                  />
+                </div>
 
                 <div className="flex flex-col items-start justify-start">
                   <div className="flex flex-col items-start justify-start gap-[10px]">
