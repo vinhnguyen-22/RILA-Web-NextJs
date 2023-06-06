@@ -67,9 +67,7 @@ const Activities = () => {
                   </div>
                 </div>
                 <div className="leading-[144%] font-semibold inline-block w-[119px]">{item.title}</div>
-                <div className="text-base leading-[175%] text-lightslategray-200 inline-block shrink-0">
-                  {item.content}
-                </div>
+                <div className="text-base leading-[175%] text-black inline-block shrink-0">{item.content}</div>
               </div>
             </div>
           </div>

@@ -30,10 +30,10 @@ const Benefits = () => {
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
           <div className="relative md:pr-[70px]">
-            <h3 className="font-semibold text-4xl leading-10 leading-[50px]  inline-block w-max-[561.16px]">
+            <h3 className="font-semibold text-4xl leading-[50px]  inline-block w-max-[561.16px]">
               The Benefits Of Social Listening
             </h3>
-            <div className="mt-[20px] mb-[40px] text-lg leading-[30px] text-lightslategray-100 inline-block ">
+            <div className="mt-[20px] mb-[40px] text-lg leading-[30px] text-black inline-block ">
               Our social listening services help you harness actionable insights to enhance brand reputation, uncover
               market trends, and drive strategic decision-making.
             </div>
@@ -45,9 +45,7 @@ const Benefits = () => {
                   </div>
                   <div className="flex flex-col items-start justify-start gap-[15px] ">
                     <div className="relative leading-[38px] font-semibold inline-block">{item.title} </div>
-                    <div className="relative text-lg leading-[28px] text-lightslategray-100 inline-block">
-                      {item.content}
-                    </div>
+                    <div className="relative text-lg leading-[28px] text-black inline-block">{item.content}</div>
                   </div>
                 </div>
               ))}
