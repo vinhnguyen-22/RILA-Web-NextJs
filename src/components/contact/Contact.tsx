@@ -93,7 +93,7 @@ const Contact = () => {
                       <div className="flex flex-row items-start justify-start gap-[8px] text-base text-darkgray">
                         <div className="">
                           <input
-                            className="relative rounded-[37px] placeholder:italic placeholder:text-slate-400 capitalize rounded-18xl bg-gray-100 flex flex-row py-5 px-[18px] box-border items-center justify-start "
+                            className="relative rounded-[37px] outline-none placeholder:italic placeholder:text-lightslategray-200 text-black capitalize rounded-18xl bg-gray-100 flex flex-row py-5 px-[18px] box-border items-center justify-start "
                             placeholder="Enter your Email"
                           />
                         </div>
