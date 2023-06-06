@@ -72,7 +72,7 @@ const boxItems = [
 
 const Services = () => {
   return (
-    <div className="bg-gray-400  text-center mt-[50px]">
+    <div className="bg-gray-400 pb-12 text-center mt-[50px]">
       <div className="container mx-auto">
         <div className="grid grid-cols-12">
           <div className="col-span-12">
