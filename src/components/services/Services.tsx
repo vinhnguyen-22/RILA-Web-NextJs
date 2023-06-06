@@ -77,10 +77,10 @@ const Services = () => {
         <div className="grid grid-cols-12">
           <div className="col-span-12">
             <div className=" w-[100%]  text-gray-200">
-              <div className="text-21xl leading-[50px] font-semibold text-center text-black mt-[52px] mb-[20px]">
+              <div className="lg:text-21xl md:text-3xl text-2xl leading-[50px] font-semibold text-center text-black mt-[52px] mb-[20px]">
                 Our Services
               </div>
-              <div className=" leading-[32px] text-gray-500  inline-block  text-center h-[139px] mb-[42px]">
+              <div className="lg:text-lg md:text-base text-sm leading-[32px] text-gray-500 inline-block text-center h-[139px] mb-[42px]">
                 <p className="m-0 max-w-[700px] mx-auto">
                   RILA is a leading provider of social listening solutions, offering a wide range of services in 32+
                   languages and platforms. We are GDPR compliant and Adverse Events trained.
@@ -90,24 +90,23 @@ const Services = () => {
                   Talkwalker, YouScan, Buzzsumo, Digimind, and Sprinklr.
                 </p>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mt-8">
                 {serviceItems.map((item, index) => (
                   <div key={index} className="flex justify-center p-[20px]">
-                    <div className="rounded-6xl p-[30px] bg-white h-[404.82px] shadow-[0px_2px_6px_rgba(0,_0,_0,_0.1)]">
-                      <div className="h-[323.1px] flex flex-col items-start justify-between">
+                    <div className="rounded-6xl p-[30px] bg-white shadow-[0px_2px_6px_rgba(0,_0,_0,_0.1)]">
+                      <div className="flex flex-col items-start justify-between">
                         <div className=" flex flex-row items-center justify-start gap-[20px]">
-                          <Image width={66} height={66} className="relative w-[66px] h-[66px]" alt="" src={item.icon} />
-
-                          <div className="relative leading-[38px] text-9xl font-semibold">{item.title}</div>
+                          <Image width={66} height={66} className="relative lg:w-[66px] lg:h-[66px] w-10 h-10" alt="" src={item.icon} />
+                          <div className="lg:text-lg text-base relative font-semibold">{item.title}</div>
                         </div>
-                        <div className="text-start w-[100%] text-lg leading-[28px] text-lightslategray inline-block ">
-                          <p className="m-0">{item.content}</p>
+                        <div className="py-6 text-start w-[100%] text-lg leading-[28px] text-lightslategray inline-block ">
+                          <p className="lg:text-lg md:text-base text-sm m-0 text-gray-800">{item.content}</p>
                         </div>
                         <Link
                           href="/about"
                           className={`flex flex-row items-center justify-start gap-[15px] text-${item.color}`}
                         >
-                          <span className={`leading-[28px] font-medium text-${item.color}`}>Know More</span>
+                          <span className={`lg:text-lg md:text-base text-sm leading-[28px] font-semibold text-${item.color}`}>Know More</span>
                           <Image width={66} height={66} className=" w-[19px] h-[14.73px]" alt="" src={item.imgArrow} />
                         </Link>
                       </div>
@@ -116,16 +115,16 @@ const Services = () => {
                 ))}
               </div>
 
-              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6 my-[46px] p-[10px]">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:my-[46px] md:p-[10px]">
                 {boxItems.map((item, index) => (
-                  <div key={index} className={`rounded-6xl bg-${item.color}  text-white`}>
-                    <div className="rounded-6xl h-[281px] flex flex-col items-center justify-center gap-[3px]">
-                      <div className="text-45xl leading-[74px] font-semibold flex items-center justify-center w-[143.16px]">
+                  <div key={index} className={`rounded-6xl bg-${item.color}  md:p-0 p-6 text-white`}>
+                    <div className="rounded-6xl md:h-[281px] flex flex-col items-center justify-center gap-[3px]">
+                      <div className="lg:text-21xl md:text-3xl text-2xl font-semibold flex items-center justify-center md:w-[143.16px]">
                         {item.number}
                       </div>
-                      <div className="text-xl leading-[32px] font-semibold inline-block ">{item.title}</div>
-                      <div className="text-lg leading-[28px] text-gainsboro-200 inline-block w-[182.69px]">
-                        <p className="m-0">{item.content}</p>
+                      <div className="lg:text-xl text-lg leading-[32px] font-semibold inline-block ">{item.title}</div>
+                      <div className="text-lg leading-[28px] text-gainsboro-200 inline-block md:w-[182.69px]">
+                        <p className="m-0 lg:text-lg md:text-base text-sm">{item.content}</p>
                       </div>
                     </div>
                   </div>
