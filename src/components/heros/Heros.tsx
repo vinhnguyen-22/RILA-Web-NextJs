@@ -20,7 +20,9 @@ const Heros = () => {
               href="/about"
               className="mt-[31px] rounded-full bg-red-200 w-[193px] h-[55px] flex flex-row py-5 px-6 box-border items-center justify-center text-white"
             >
-              <strong className="relative lg:text-md text-sm capitalize">Contact Us</strong>
+              <strong className="relative lg:text-lg text-base capitalize">
+                Let’s Talk
+              </strong>
             </Link>
           </div>
         </div>

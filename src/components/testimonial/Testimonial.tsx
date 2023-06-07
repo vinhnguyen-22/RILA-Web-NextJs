@@ -1,42 +1,42 @@
-'use client';
-import Image from 'next/image';
-import { useRef } from 'react';
-import { Navigation, FreeMode } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
+"use client";
+import Image from "next/image";
+import { useRef } from "react";
+import { Navigation, FreeMode } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 // Định nghĩa dữ liệu chứa nội dung các slide
 const slideData = [
   {
-    imageUrl: '/images/homepage/ellipse-80@2x.png',
-    companyName: 'TOYOTA',
-    jobTitle: 'Sr. Vehicle Analyst',
-    name: 'Victoria Ellis',
+    imageUrl: "/images/homepage/ellipse-80@2x.png",
+    companyName: "TOYOTA",
+    jobTitle: "Sr. Vehicle Analyst",
+    name: "Victoria Ellis",
     testimonial:
-      'I’ve received excellent research services from RILA GLOBAL over the past 3 years during my time at Toyota Motor North America. RILA’s professionalism andindustry knowledge is an asset to us and will continue to be to other global social media leaders and partners.',
+      "I’ve received excellent research services from RILA GLOBAL over the past 3 years during my time at Toyota Motor North America. RILA’s professionalism andindustry knowledge is an asset to us and will continue to be to other global social media leaders and partners.",
   },
   {
-    imageUrl: '/images/homepage/image-12@2x.png',
-    companyName: 'DAVY',
-    jobTitle: 'Equity Analytics, DAVY Wealth Management',
-    name: 'Dave R.',
+    imageUrl: "/images/homepage/image-12@2x.png",
+    companyName: "DAVY",
+    jobTitle: "Equity Analytics, DAVY Wealth Management",
+    name: "Dave R.",
     testimonial:
-      'Davy Capital Markets worked with RILA GLOBAL in the first half of 2023. We knew social listening well and recognized the inherent limitations of the major platforms. That’s where RILA GLOBAL came in, and they didn’t disappoint, delivering value-added analytical expertise that really elevated the project deliverables. Awesome!',
+      "Davy Capital Markets worked with RILA GLOBAL in the first half of 2023. We knew social listening well and recognized the inherent limitations of the major platforms. That’s where RILA GLOBAL came in, and they didn’t disappoint, delivering value-added analytical expertise that really elevated the project deliverables. Awesome!",
   },
   {
-    imageUrl: '/images/homepage/ellipse-801@2x.png',
-    companyName: 'CAPSULE',
-    jobTitle: 'Operations Training and Development',
-    name: 'Lilly M.',
+    imageUrl: "/images/homepage/ellipse-801@2x.png",
+    companyName: "CAPSULE",
+    jobTitle: "Operations Training and Development",
+    name: "Lilly M.",
     testimonial:
-      ' RILA was extremely efficient, proactive, and knowledgeable. She explained very well what she was doing and going to do for our organization and helped us achieve it; great communication! She is intelligent, friendly, and well versed in the space. I highly recommend her work!',
+      "RILA was extremely efficient, proactive, and knowledgeable. They explained very well what they were doing and going to do for our organization and helped us achieve it; great communication! The team is intelligent, friendly, and well-versed in the space. I highly recommend their work!",
   },
   {
-    imageUrl: '/images/homepage/ellipse-802@2x.png',
-    companyName: 'GVTC ',
-    jobTitle: 'Communications',
-    name: 'John H.',
+    imageUrl: "/images/homepage/ellipse-802@2x.png",
+    companyName: "GVTC ",
+    jobTitle: "Communications",
+    name: "John H.",
     testimonial:
-      'At GVTC, we take a strategic approach of surrounding ourselves with talented and brilliant partners and then letting them do their thing. RILA GLOBAL is at the very top of the list when it comes to social media analytics and we are so very pleased to have them as a partner.',
+      "At GVTC, we take a strategic approach of surrounding ourselves with talented and brilliant partners and then letting them do their thing. RILA GLOBAL is at the very top of the list when it comes to social media analytics and we are so very pleased to have them as a partner.",
   },
 ];
 
@@ -95,7 +95,7 @@ const Testimonial = () => {
           slidesPerView={2}
           grabCursor={true}
           modules={[Navigation, FreeMode]}
-          onSlideChange={() => console.log('slide change')}
+          onSlideChange={() => console.log("slide change")}
           onSwiper={(swiper) => {
             swiperRef.current = swiper;
           }}
@@ -129,7 +129,12 @@ const Testimonial = () => {
               <div className="m-[10px] rounded-6xl bg-ghostwhite shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] h-[100%] md:h-[500px] lg:h-[700px] xl:h-[500px] flex flex-col pt-8 pb-[20px] pr-[29px] pl-8 box-border items-start justify-start gap-[19px]">
                 <div className=" flex flex-row items-start justify-start gap-[20px]">
                   <div className="w-[80px] h-[80px] relative">
-                    <Image fill className="relative rounded-[50%] object-contain" alt="" src={item.imageUrl} />
+                    <Image
+                      fill
+                      className="relative rounded-[50%] object-contain"
+                      alt=""
+                      src={item.imageUrl}
+                    />
                   </div>
 
                   <div className="flex-1 flex flex-row items-start justify-start">
@@ -143,11 +148,15 @@ const Testimonial = () => {
                           <span>{item.jobTitle}</span>
                         </span>
                       </div>
-                      <div className="relative text-xl capitalize">{item.name}</div>
+                      <div className="relative text-xl capitalize">
+                        {item.name}
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div className="relative text-base leading-[32px] text-gray-500 inline-block ">{item.testimonial}</div>
+                <div className="relative text-base leading-[32px] text-gray-500 inline-block ">
+                  {item.testimonial}
+                </div>
               </div>
             </SwiperSlide>
           ))}
