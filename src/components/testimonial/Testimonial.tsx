@@ -1,8 +1,8 @@
-'use client';
-import Image from 'next/image';
-import { useRef } from 'react';
-import { Navigation, FreeMode } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
+"use client";
+import Image from "next/image";
+import { useRef } from "react";
+import { Navigation, FreeMode } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 const Testimonial = () => {
   const swiperRef = useRef<any>();
@@ -11,7 +11,9 @@ const Testimonial = () => {
     <div className="container mx-auto py-[78px] mt-[21px]">
       <div className="grid grid-cols-12 mb-[20px] md:mb-[72px]">
         <div className="col-span-12 lg:col-span-8 md:col-span-8 flex flex-col items-start justify-start gap-[9px] ">
-          <h4 className="relative capitalize inline-block text-21xl font-bold">What Our Clients Say about us</h4>
+          <h4 className="relative capitalize inline-block text-21xl font-bold">
+            What Our Clients Say about us
+          </h4>
           <div className="relative text-9xl leading-[32px] inline-block shrink-0">
             <span className="capitalize">Fortune 500 clients </span>choose
             <span className="capitalize"> RILA G</span>
@@ -57,7 +59,7 @@ const Testimonial = () => {
           slidesPerView={2}
           grabCursor={true}
           modules={[Navigation, FreeMode]}
-          onSlideChange={() => console.log('slide change')}
+          onSlideChange={() => console.log("slide change")}
           onSwiper={(swiper) => {
             swiperRef.current = swiper;
           }}
@@ -101,14 +103,18 @@ const Testimonial = () => {
                         <span>Sr. Vehicle Analyst</span>
                       </span>
                     </div>
-                    <div className="relative text-xl capitalize">Victoria Ellis</div>
+                    <div className="relative text-xl capitalize">
+                      Victoria Ellis
+                    </div>
                   </div>
                 </div>
               </div>
               <div className="relative text-base leading-[32px] text-gray-500 inline-block ">
-                I’ve received excellent research services from RILA GLOBAL over the past 3 years during my time at
-                Toyota Motor North America. RILA’s professionalism andindustry knowledge is an asset to us and will
-                continue to be to other global social media leaders and partners.
+                I’ve received excellent research services from RILA GLOBAL over
+                the past 3 years during my time at Toyota Motor North America.
+                RILA’s professionalism andindustry knowledge is an asset to us
+                and will continue to be to other global social media leaders and
+                partners.
               </div>
             </div>
           </SwiperSlide>
@@ -140,9 +146,11 @@ const Testimonial = () => {
                 </div>
               </div>
               <div className="relative text-base leading-[32px] text-gray-500 inline-block">
-                RILA was extremely efficient, proactive, and knowledgeable. She explained very well what she was doing
-                and going to do for our organization and helped us achieve it; great communication! She is intelligent,
-                friendly, and well versed in the space. I highly recommend her work!
+                RILA was extremely efficient, proactive, and knowledgeable. She
+                explained very well what she was doing and going to do for our
+                organization and helped us achieve it; great communication! She
+                is intelligent, friendly, and well versed in the space. I highly
+                recommend her work!
               </div>
             </div>
           </SwiperSlide>
@@ -172,9 +180,48 @@ const Testimonial = () => {
                 </div>
               </div>
               <div className="relative text-base leading-[32px] text-gray-500 inline-block">
-                At GVTC, we take a strategic approach of surrounding ourselves with talented and brilliant partners and
-                then letting them do their thing. RILA GLOBAL is at the very top of the list when it comes to social
-                media analytics and we are so very pleased to have them as a partner.
+                At GVTC, we take a strategic approach of surrounding ourselves
+                with talented and brilliant partners and then letting them do
+                their thing. RILA GLOBAL is at the very top of the list when it
+                comes to social media analytics and we are so very pleased to
+                have them as a partner.
+              </div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="m-[10px] rounded-6xl bg-ghostwhite shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] h-[100%] md:h-[450px] flex flex-col py-8 pr-[19px] pl-8 box-border items-start justify-start gap-[19px]">
+              <div className="flex flex-row items-start justify-start gap-[20px]">
+                <div className="w-[80px] h-[80px] relative">
+                  <Image
+                    fill
+                    className="relative rounded-[50%] object-contain"
+                    alt=""
+                    src="/images/homepage/image-12@2x.png"
+                  />
+                </div>
+
+                <div className="flex flex-col items-start justify-start">
+                  <div className="flex flex-col items-start justify-start gap-[10px]">
+                    <div className="relative capitalize inline-block">
+                      <strong>
+                        <span>DAVY,</span>
+                      </strong>
+                      <span className="text-lg">
+                        <strong> </strong>
+                        <span> Equity Analytics</span>
+                      </span>
+                    </div>
+                    <div className="relative text-xl capitalize">Dave R.</div>
+                  </div>
+                </div>
+              </div>
+              <div className="relative text-base leading-[32px] text-gray-500 inline-block">
+                Davy Capital Markets worked with RILA GLOBAL in the first half
+                of 2023. We knew social listening well and recognized the
+                inherent limitations of the major platforms. That’s where RILA
+                GLOBAL came in, and they didn’t disappoint, delivering
+                value-added analytical expertise that really elevated the
+                project deliverables. Awesome!
               </div>
             </div>
           </SwiperSlide>
