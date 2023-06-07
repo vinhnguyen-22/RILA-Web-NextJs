@@ -4,9 +4,9 @@ import React from 'react';
 
 const About = () => {
   return (
-    <section className="bg-white border-2 border-blue-800 ">
+    <section className="bg-white -my-24">
       <div className="flex items-center justify-center h-screen">
-        <div className="flex flex-col items-center justify-center max-w-lg">
+        <div className="flex flex-col items-center justify-center max-w-lg px-12">
           <div className="mb-4">
             <Link href="/">
               <Image
