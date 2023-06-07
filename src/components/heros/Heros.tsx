@@ -6,9 +6,9 @@ import Link from 'next/link';
 const Heros = () => {
   return (
     <div className="container mx-auto lg:px-2 xl:px-4">
-      <div className="grid grid-cols-12 lg:mb-16 mb-10 md:mt-3 mt-32">
+      <div className="grid grid-cols-12 mb-20 lg:mb-40 md:mt-3 mt-32">
         <div className="col-span-12 md:col-span-7 lg:col-span-7">
-          <div className="text-black lg:mr-5 mr-0 mb-12 lg:pr-24 md:pr-12">
+          <div className="text-black mr-0 mb-0 md:mb-12  lg:pr-10 md:pr-12 xl:pr-12">
             <strong className="lg:text-[44px] md:text-3xl text-3xl mb-[20px] lg:leading-[60px] md:leading-[48px] leading-[40px] capitalize inline-block text-black">
               Turn Social Listening data into actionable insights
             </strong>
@@ -25,8 +25,11 @@ const Heros = () => {
           </div>
         </div>
 
-        <div className="col-span-12 md:col-span-5 lg:col-span-5 lg:-mt-8">
-          <Image width={600} height={400} src={'/images/homepage/image-banner.jpg'} alt="" />
+        <div
+          className="relative h-[400px] col-span-12 md:col-span-5 lg:col-span-5 lg:-mt-8 flex justify-start lg:justify-center items-start lg:items-center
+        "
+        >
+          <Image fill className="object-contain" src={'/images/homepage/image-banner.jpg'} alt="" />
         </div>
       </div>
 
