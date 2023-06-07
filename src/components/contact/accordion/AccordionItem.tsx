@@ -12,7 +12,7 @@ const AccordionItem = ({ open, toggle, title, desc }: AccordionItemProps) => (
     <div className="h-[1px] w-full bg-darkgray px-2.5 "></div>
     <div className="flex flex-row w-full items-center justify-between" onClick={toggle}>
       <div className="flex flex-row py-8 box-border items-center justify-start">
-        <div className="relative leading-[36px] text-xl">{title}</div>
+        <div className="md:text-base text-sm relative leading-[36px]">{title}</div>
       </div>
       <div className="text-white font-bold text-xl justify-end">
         {open ? (
@@ -28,7 +28,7 @@ const AccordionItem = ({ open, toggle, title, desc }: AccordionItemProps) => (
     </div>
 
     <Collapse isOpened={open}>
-      <div className="bg-white pb-[20px] text-xl">{desc}</div>
+      <div className="bg-white pb-[20px] md:text-base text-sm">{desc}</div>
     </Collapse>
   </>
 );

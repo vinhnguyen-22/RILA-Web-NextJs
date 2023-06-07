@@ -33,19 +33,23 @@ const Benefits = () => {
             <h3 className="font-semibold text-4xl leading-[50px]  inline-block w-max-[561.16px]">
               The Benefits Of Social Listening
             </h3>
-            <div className="mt-[20px] mb-[40px] text-lg leading-[30px] text-black inline-block ">
+            <div className="md:text-lg text-sm mt-[20px] mb-[40px] text-lg leading-[30px] text-black inline-block ">
               Our social listening services help you harness actionable insights to enhance brand reputation, uncover
               market trends, and drive strategic decision-making.
             </div>
-            <div className="flex flex-col items-start justify-start gap-[20px] text-9xl">
+            <div className="flex flex-col items-start justify-start gap-[20px] text-9xl mb-12">
               {benefitsItems.map((item, index) => (
                 <div key={index} className="flex items-start justify-center gap-[27px] ">
                   <div className="w-[75%] md:w-[100%] h-[75.78px]">
                     <Image width={75} height={75.78} alt="" src={item.icon} />
                   </div>
                   <div className="flex flex-col items-start justify-start gap-[15px] ">
-                    <div className="relative leading-[38px] font-semibold inline-block">{item.title} </div>
-                    <div className="relative text-lg leading-[28px] text-black inline-block">{item.content}</div>
+                    <div className="relative md:text-xl text-lg leading-[38px] font-semibold inline-block">
+                      {item.title}{' '}
+                    </div>
+                    <div className="relative md:text-lg text-sm leading-[28px] text-black inline-block">
+                      {item.content}
+                    </div>
                   </div>
                 </div>
               ))}

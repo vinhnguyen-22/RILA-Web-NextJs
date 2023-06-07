@@ -47,22 +47,24 @@ const Testimonial = () => {
     <div className="container mx-auto py-[78px] mt-[21px]">
       <div className="grid grid-cols-12 mb-[20px] md:mb-[72px]">
         <div className="col-span-12 lg:col-span-8 md:col-span-8 flex flex-col items-start justify-start gap-[9px] ">
-          <h4 className="relative capitalize inline-block text-21xl font-bold">What Our Clients Say about us</h4>
-          <div className="relative text-9xl leading-[32px] inline-block shrink-0">
+          <h4 className="relative capitalize inline-block lg:text-3xl md:text-2xl text-2xl font-bold mb-2">
+            What Our Clients Say about us
+          </h4>
+          <div className="relative lg:text-3xl md:text-2xl text-lg leading-[32px] inline-block shrink-0">
             <span className="capitalize">Fortune 500 clients </span>choose
             <span className="capitalize"> RILA G</span>
             <span className="uppercase">lobal Consulting</span>
           </div>
         </div>
 
-        <div className="col-span-12 flex items-center justify-center lg:col-span-4 md:col-span-4 relative my-[20px]">
+        <div className="col-span-12 flex items-center justify-center lg:col-span-4 md:col-span-4 relative mt-[20px]">
           <div className="md:absolute top-0 right-0 flex justify-center  md:w-initial">
             <div
-              className="flex cursor-pointer hover:opacity-75 items-center justify-center rounded-[50%]  w-[85px] h-[85px] mr-[20px]"
+              className="flex cursor-pointer hover:opacity-75 items-center justify-center rounded-[50%] mr-[20px]"
               onClick={() => swiperRef.current.slidePrev()}
             >
               <Image
-                className="w-[89px] h-[89px]"
+                className="lg:w-[85px] lg:h-[85px] md:w-20 md:h-20 w-16 h-16 "
                 alt=""
                 width={30}
                 height={30}
@@ -71,11 +73,11 @@ const Testimonial = () => {
             </div>
 
             <div
-              className="flex cursor-pointer hover:opacity-75 items-center justify-center rounded-[50%] bg-red-300 shadow-[0px_2px_2px_rgba(0,_0,_0,_0.1)] w-[85px] h-[85px]"
+              className="lg:w-[85px] lg:h-[85px] md:w-20 md:h-20 w-16 h-16 flex cursor-pointer hover:opacity-75 items-center justify-center rounded-[50%] bg-red-300 shadow-[0px_2px_2px_rgba(0,_0,_0,_0.1)]"
               onClick={() => swiperRef.current.slideNext()}
             >
               <Image
-                className=" bottom-[80.93%] left-[87.92%] max-w-full overflow-hidden max-h-full cursor-pointer"
+                className="mt-1.5 left-[87.92%] max-w-full overflow-hidden max-h-full cursor-pointer"
                 alt=""
                 src="/images/homepage/vector1.svg"
                 width={40}
@@ -99,6 +101,10 @@ const Testimonial = () => {
           }}
           freeMode={true}
           breakpoints={{
+            25: {
+              slidesPerView: 1,
+              spaceBetween: 20,
+            },
             425: {
               slidesPerView: 1,
               spaceBetween: 20,
