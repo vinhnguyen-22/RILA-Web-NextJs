@@ -33,8 +33,8 @@ const Contact = () => {
       <div className="rounded-[56px] shado0,_0,_0,_0.25)] ">
         <div className="rounded-[56px] overflow-hidden bg-orange-200 px-[50px] py-[50px]">
           <div className="text-red-400 grid grid-cols-12">
-            <div className="col-span-12 md:col-span-8 flex md:inline-block flex-col justify-center items-center">
-              <h4 className="text-[48px] leading-[63px] capitalize md:inline-block text-white font-semibold mb-[38px] ">
+            <div className="col-span-12 md:col-span-6 lg:col-span-8 flex md:inline-block flex-col justify-center items-center">
+              <h4 className="md:text-[32px] lg:text-[48px] leading-[63px] capitalize md:inline-block text-white font-semibold mb-[38px] ">
                 start your Social Listening journey with RILA now
               </h4>
               <Link
@@ -45,7 +45,7 @@ const Contact = () => {
               </Link>
             </div>
 
-            <div className="col-span-12 md:col-span-4 relative flex items-center justify-center p-[20px] ">
+            <div className="col-span-12 md:col-span-6  lg:col-span-4 relative flex items-center justify-center p-[20px] ">
               <Image
                 width={276}
                 height={269}
@@ -81,7 +81,7 @@ const Contact = () => {
               <div className="mb-12  shrink-0 grow-0 basis-auto md:mb-0  md:px-3 lg:px-6">
                 <div className="w-full shrink-0 grow-0 basis-auto md:px-3 lg:px-6">
                   <div className="flex flex-col items-start justify-start gap-[42px] text-9xl">
-                    <div className="flex flex-col items-start justify-start gap-[32px]">
+                    <div className="flex flex-col items-center justify-center gap-[32px]">
                       <div className="flex flex-col items-start justify-start gap-[16px]">
                         <div className="relative text-black tracking-[0.2px] leading-[52px] capitalize inline-block ">
                           How can We help you?
@@ -90,7 +90,7 @@ const Contact = () => {
                           Contact a member of our team now to discuss your social listening needs.
                         </div>
                       </div>
-                      <div className="flex flex-row items-start justify-start gap-[8px] text-base text-darkgray">
+                      <div className="flex lg:flex-row flex-col  items-center justify-center gap-[8px] text-base text-darkgray">
                         <div className="">
                           <input
                             className="relative rounded-[37px] outline-none placeholder:italic placeholder:text-lightslategray-200 text-black capitalize rounded-18xl bg-gray-100 flex flex-row py-5 px-[18px] box-border items-center justify-start "
@@ -99,7 +99,7 @@ const Contact = () => {
                         </div>
                         <Link
                           href={'/about'}
-                          className="rounded-51xl bg-tomato-100 h-[62px] flex flex-row py-5 px-6 box-border items-center justify-center text-white"
+                          className="rounded-51xl mt-[10px] lg:m-0 bg-tomato-100 h-[62px] flex flex-row py-5 px-6 box-border items-center justify-center text-white"
                         >
                           <strong className="relative leading-[20px] capitalize inline-block  font-bold shrink-0">
                             Get In Touch

@@ -26,7 +26,7 @@ const Organization = () => {
         TRUSTED BY THE WORLD’S LEADING ORGANIZATIONS
       </h4>
 
-      <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-5 gap-[40px] md:gap-[80px]  mb-[100px] md:mb-[150px]">
+      <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-5 gap-[40px] md:gap-[60px] lg:gap-[80px]  mb-[100px] md:mb-[150px]">
         {organizations.map((item, index) => (
           <div key={index} className="aspect-video relative">
             <Image fill className="relative object-contain" alt={'alt'} src={item} />
