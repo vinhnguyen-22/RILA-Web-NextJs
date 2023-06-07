@@ -31,24 +31,24 @@ const Contact = () => {
   return (
     <div className="container mx-auto text-5xl">
       <div className="rounded-[56px] shado0,_0,_0,_0.25)] ">
-        <div className="rounded-[56px] overflow-hidden bg-orange-200 px-[50px] py-[50px]">
+        <div className="rounded-[56px] overflow-hidden bg-orange-200 md:px-[50px] md:py-[30px] px-10 py-8">
           <div className="text-red-400 grid grid-cols-12">
-            <div className="col-span-12 md:col-span-8 flex md:inline-block flex-col justify-center items-center">
-              <h4 className="text-[48px] leading-[63px] capitalize md:inline-block text-white font-semibold mb-[38px] ">
-                start your Social Listening journey with RILA now
+            <div className="sm:col-span-9 col-span-12 flex md:inline-block flex-col md:mt-3">
+              <h4 className="lg:text-3xl md:text-xl text-lg leading-[24px] capitalize md:inline-block text-white font-semibold mb-[38px] ">
+                Start your Social Listening journey with RILA now
               </h4>
               <Link
                 href="/about"
-                className="rounded-51xl w-[200px] bg-gray-600 flex flex-row py-4 box-border items-center justify-center"
+                className="rounded-51xl w-[200px] max-w-full bg-gray-600 flex flex-row md:py-4 py-2 box-border items-center justify-center"
               >
-                <strong className="relative capitalize">Start Now</strong>
+                <strong className="relative lg:text-lg md:text-base text-sm capitalize">Start Now</strong>
               </Link>
             </div>
 
-            <div className="col-span-12 md:col-span-4 relative flex items-center justify-center p-[20px] ">
+            <div className="sm:flex hidden sm:col-span-3 relative justify-end">
               <Image
-                width={276}
-                height={269}
+                width={150}
+                height={150}
                 className="self-center md:right-0 lg:right-0"
                 alt=""
                 src="/images/homepage/group-19053.svg"
