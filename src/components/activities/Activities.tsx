@@ -42,7 +42,7 @@ const activitieItems = [
 const Activities = () => {
   return (
     <div className="md:px-24 px-10 mt-[40px] w-full">
-      <h3 className="font-bold text-3xl leading-144 mb-[60px] mt-[90px] pl-8">How Does RILA Do Social Listening?</h3>
+      <h3 className="font-bold lg:text-21xl md:text-3xl text-2xl leading-144 mb-[60px] mt-[90px] pl-8">How Does RILA Do Social Listening?</h3>
       <div className="text-[36px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {activitieItems.map((item, index) => (
           <div key={index} className={`text-6xl text-${item.color}`}>

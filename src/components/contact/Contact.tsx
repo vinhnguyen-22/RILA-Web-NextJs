@@ -83,17 +83,17 @@ const Contact = () => {
                   <div className="flex flex-col items-start justify-start gap-[42px] text-9xl">
                     <div className="flex flex-col items-start justify-start gap-[32px]">
                       <div className="flex flex-col items-start justify-start gap-[16px]">
-                        <div className="relative text-black tracking-[0.2px] leading-[52px] capitalize inline-block ">
+                        <div className="lg:text-2xl md:text-2xl text-lg mt-5 relative text-black tracking-[0.2px] leading-[52px] capitalize inline-block ">
                           How can We help you?
                         </div>
-                        <div className="relative text-xl leading-[36px] text-gray-500 inline-block opacity-[0.75] mix-blend-normal">
+                        <div className="relative md:text-lg sm:text-base text-base leading-[36px] text-gray-500 inline-block opacity-[0.75] mix-blend-normal">
                           Contact a member of our team now to discuss your social listening needs.
                         </div>
                       </div>
                       <div className="flex flex-row items-start justify-start gap-[8px] text-base text-darkgray">
                         <div className="">
                           <input
-                            className="relative rounded-[37px] outline-none placeholder:italic placeholder:text-lightslategray-200 text-black capitalize rounded-18xl bg-gray-100 flex flex-row py-5 px-[18px] box-border items-center justify-start "
+                            className="md:text-base text-sm relative rounded-[37px] outline-none placeholder:italic placeholder:text-lightslategray-200 text-black capitalize rounded-18xl bg-gray-100 flex flex-row py-5 px-[18px] box-border items-center justify-start "
                             placeholder="Enter your Email"
                           />
                         </div>
@@ -101,9 +101,9 @@ const Contact = () => {
                           href={'/about'}
                           className="rounded-51xl bg-tomato-100 h-[62px] flex flex-row py-5 px-6 box-border items-center justify-center text-white"
                         >
-                          <strong className="relative leading-[20px] capitalize inline-block  font-bold shrink-0">
+                          <p className="relative leading-[20px] capitalize inline-block md:text-base text-sm font-bold shrink-0">
                             Get In Touch
-                          </strong>
+                          </p>
                         </Link>
                       </div>
                     </div>
