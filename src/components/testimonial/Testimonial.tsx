@@ -65,23 +65,27 @@ const Testimonial = () => {
           }}
           freeMode={true}
           breakpoints={{
+            25: {
+              slidesPerView: 1,
+              spaceBetween: 20,
+            },
             425: {
               slidesPerView: 1,
               spaceBetween: 20,
             },
-            768: {
+            1200: {
               slidesPerView: 2,
-              spaceBetween: 40,
+              spaceBetween: 30,
             },
-            1024: {
-              slidesPerView: 2,
-              spaceBetween: 50,
-            },
+            // 1180: {
+            //   slidesPerView: 2,
+            //   spaceBetween: 20,
+            // },
           }}
           className="testimonialSwiper md:w-[75%]"
         >
           <SwiperSlide>
-            <div className="m-[10px] rounded-6xl bg-ghostwhite shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] h-[100%] md:h-[450px] flex flex-col pt-8 pb-0 pr-[29px] pl-8 box-border items-start justify-start gap-[19px]">
+            <div className="m-[10px] rounded-6xl bg-ghostwhite shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] h-[100%] flex flex-col pt-8 pb-0 pr-[29px] pl-8 box-border items-start justify-start gap-[19px]">
               <div className=" flex flex-row items-start justify-start gap-[20px]">
                 <div className="w-[80px] h-[80px] relative">
                   <Image
@@ -94,7 +98,7 @@ const Testimonial = () => {
 
                 <div className="flex-1 flex flex-row items-start justify-start">
                   <div className="flex flex-col items-start justify-start gap-[10px]">
-                    <div className="self-stretch relative capitalize">
+                    <div className="lg:text-lg md:text-base text-sm self-stretch relative capitalize">
                       <span>
                         <strong>TOYOTA</strong>
                       </span>
@@ -103,13 +107,13 @@ const Testimonial = () => {
                         <span>Sr. Vehicle Analyst</span>
                       </span>
                     </div>
-                    <div className="relative text-xl capitalize">
+                    <div className="relative lg:text-lg md:text-base text-sm capitalize">
                       Victoria Ellis
                     </div>
                   </div>
                 </div>
               </div>
-              <div className="relative text-base leading-[32px] text-gray-500 inline-block ">
+              <div className="mb-6 relative md:text-sm text-xs lg:leading-[32px] md:leading-[25px] leading-[22px] text-gray-500 inline-block ">
                 I’ve received excellent research services from RILA GLOBAL over
                 the past 3 years during my time at Toyota Motor North America.
                 RILA’s professionalism andindustry knowledge is an asset to us
@@ -119,7 +123,7 @@ const Testimonial = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="m-[10px] rounded-6xl bg-ghostwhite shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] h-[100%] md:h-[450px] flex flex-col py-8 pr-[19px] pl-8 box-border items-start justify-start gap-[19px]">
+            <div className="m-[10px] rounded-6xl bg-ghostwhite shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] h-[100%] flex flex-col py-8 pr-[19px] pl-8 box-border items-start justify-start gap-[19px]">
               <div className="flex flex-row items-start justify-start gap-[20px]">
                 <div className="w-[80px] h-[80px] relative">
                   <Image
@@ -132,7 +136,7 @@ const Testimonial = () => {
 
                 <div className="flex flex-col items-start justify-start">
                   <div className="flex flex-col items-start justify-start gap-[10px]">
-                    <div className="relative capitalize inline-block">
+                    <div className="lg:text-lg md:text-base text-sm  relative capitalize inline-block">
                       <strong>
                         <span>CAPSULE,</span>
                       </strong>
@@ -141,11 +145,11 @@ const Testimonial = () => {
                         <span>Operations Training and Development</span>
                       </span>
                     </div>
-                    <div className="relative text-xl capitalize">Lilly M.</div>
+                    <div className="relative lg:text-lg md:text-base text-sm capitalize">Lilly M.</div>
                   </div>
                 </div>
               </div>
-              <div className="relative text-base leading-[32px] text-gray-500 inline-block">
+              <div className="relative md:text-sm text-xs lg:leading-[32px] md:leading-[25px] leading-[22px] text-gray-500 inline-block">
                 RILA was extremely efficient, proactive, and knowledgeable. She
                 explained very well what she was doing and going to do for our
                 organization and helped us achieve it; great communication! She
@@ -156,7 +160,7 @@ const Testimonial = () => {
           </SwiperSlide>
           <SwiperSlide>
             <div
-              className=" m-[10px] rounded-6xl bg-ghostwhite shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] h-[100%] md:h-[450px] flex flex-col py-8 pr-[73px] pl-8 box-border items-start justify-start gap-[19px]"
+              className=" m-[10px] rounded-6xl bg-ghostwhite shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] h-[100%] flex flex-col py-8 pr-[73px] pl-8 box-border items-start justify-start gap-[19px]"
               data-scroll-to="frameContainer"
             >
               <div className="flex flex-row items-start justify-start gap-[20px]">
@@ -171,15 +175,15 @@ const Testimonial = () => {
 
                 <div className="flex flex-col items-start justify-start">
                   <div className="flex flex-col items-start justify-start gap-[10px]">
-                    <strong className="relative capitalize inline-block ">
+                    <strong className="lg:text-lg md:text-base text-sm relative capitalize inline-block ">
                       <p className="m-0">GVTC</p>
                       <p className="m-0">Communications</p>
                     </strong>
-                    <div className="relative text-xl capitalize">John H.</div>
+                    <div className="relative lg:text-lg md:text-base text-sm capitalize">John H.</div>
                   </div>
                 </div>
               </div>
-              <div className="relative text-base leading-[32px] text-gray-500 inline-block">
+              <div className="relative md:text-sm text-xs lg:leading-[32px] md:leading-[25px] leading-[22px] text-gray-500 inline-block">
                 At GVTC, we take a strategic approach of surrounding ourselves
                 with talented and brilliant partners and then letting them do
                 their thing. RILA GLOBAL is at the very top of the list when it
@@ -189,7 +193,7 @@ const Testimonial = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="m-[10px] rounded-6xl bg-ghostwhite shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] h-[100%] md:h-[450px] flex flex-col py-8 pr-[19px] pl-8 box-border items-start justify-start gap-[19px]">
+            <div className="m-[10px] rounded-6xl bg-ghostwhite shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] h-[100%] flex flex-col py-8 pr-[19px] pl-8 box-border items-start justify-start gap-[19px]">
               <div className="flex flex-row items-start justify-start gap-[20px]">
                 <div className="w-[80px] h-[80px] relative">
                   <Image
@@ -202,7 +206,7 @@ const Testimonial = () => {
 
                 <div className="flex flex-col items-start justify-start">
                   <div className="flex flex-col items-start justify-start gap-[10px]">
-                    <div className="relative capitalize inline-block">
+                    <div className="lg:text-lg md:text-base text-sm relative capitalize inline-block">
                       <strong>
                         <span>DAVY,</span>
                       </strong>
@@ -211,11 +215,11 @@ const Testimonial = () => {
                         <span> Equity Analytics</span>
                       </span>
                     </div>
-                    <div className="relative text-xl capitalize">Dave R.</div>
+                    <div className="relative lg:text-lg md:text-base text-sm capitalize">Dave R.</div>
                   </div>
                 </div>
               </div>
-              <div className="relative text-base leading-[32px] text-gray-500 inline-block">
+              <div className="relative md:text-sm text-xs lg:leading-[32px] md:leading-[25px] leading-[22px] text-gray-500 inline-block">
                 Davy Capital Markets worked with RILA GLOBAL in the first half
                 of 2023. We knew social listening well and recognized the
                 inherent limitations of the major platforms. That’s where RILA
