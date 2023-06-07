@@ -17,7 +17,7 @@ const slideData = [
   {
     imageUrl: "/images/homepage/image-12@2x.png",
     companyName: "DAVY",
-    jobTitle: "Equity Analytics, DAVY Wealth Management",
+    jobTitle: "Equity Analytics, DAVY",
     name: "Dave R.",
     testimonial:
       "Davy Capital Markets worked with RILA GLOBAL in the first half of 2023. We knew social listening well and recognized the inherent limitations of the major platforms. That’s where RILA GLOBAL came in, and they didn’t disappoint, delivering value-added analytical expertise that really elevated the project deliverables. Awesome!",
