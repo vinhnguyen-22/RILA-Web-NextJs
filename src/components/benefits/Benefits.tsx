@@ -29,7 +29,7 @@ const Benefits = () => {
     <div className="bg-gray-400 mt-[73px] py-[73px]">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
-          <div className="relative md:pr-[70px]">
+          <div className="relative md:pr-[50px] lg:pr-[70px] xl:pr-[70px]">
             <h3 className="font-semibold text-4xl leading-[50px]  inline-block w-max-[561.16px]">
               The Benefits Of Social Listening
             </h3>
@@ -40,7 +40,7 @@ const Benefits = () => {
             <div className="flex flex-col items-start justify-start gap-[20px] text-9xl">
               {benefitsItems.map((item, index) => (
                 <div key={index} className="flex items-start justify-center gap-[27px] ">
-                  <div className="w-[75%] h-[75.78px]">
+                  <div className="w-[75%] md:w-[100%] h-[75.78px]">
                     <Image width={75} height={75.78} alt="" src={item.icon} />
                   </div>
                   <div className="flex flex-col items-start justify-start gap-[15px] ">

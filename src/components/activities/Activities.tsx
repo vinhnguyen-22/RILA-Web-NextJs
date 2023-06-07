@@ -41,12 +41,12 @@ const activitieItems = [
 
 const Activities = () => {
   return (
-    <div className="md:px-24 px-10 mt-[40px] w-full">
+    <div className="md:px-24 lg:px-[20px] xl:p-24 px-10 mt-[40px] w-full">
       <h3 className="font-bold text-3xl leading-144 mb-[60px] mt-[90px] pl-8">How Does RILA Do Social Listening?</h3>
-      <div className="text-[36px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="text-[36px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 xl:gap-8">
         {activitieItems.map((item, index) => (
           <div key={index} className={`text-6xl text-${item.color}`}>
-            <div className="relative mb-[40px] w-[300px] h-[300px] mx-auto">
+            <div className="relative mb-[40px] w-[300px] h-[300px] lg:w-[200px] xl:w-[300px]  lg:h-[200px] xl:h-[300px] mx-auto">
               <Image
                 fill
                 objectFit="contain"
@@ -56,7 +56,7 @@ const Activities = () => {
               />
             </div>
 
-            <div className="md:h-[500px] p-[15px]">
+            <div className="md:h-[500px] lg:h-[630px] xl:[500px] p-[15px]">
               <div className="relative h-[100%] rounded-6xl p-6 bg-white shadow-[0px_10px_50px_rgba(1,_13,_130,_0.12)] flex flex-col items-start justify-start gap-[15px]">
                 <Image height={60} width={60} alt="" src={item.icon} />
                 <div className="absolute top-[-7%] md:right-[-10%] lg:right-[-10%] right-[-3%] w-[53px] h-[53px]">

@@ -30,7 +30,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <GlobalProvider>
           <div className="flex flex-col min-h-[100vh] bg-white">
             <Header />
-            <main className="flex-grow md:mt-40">{children}</main>
+            <main className="flex-grow md:mt-40 lg:mt-[100px] xl:mt-40">{children}</main>
             <Footer />
           </div>
         </GlobalProvider>

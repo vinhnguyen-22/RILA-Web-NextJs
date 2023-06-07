@@ -109,14 +109,18 @@ const Testimonial = () => {
             },
             1024: {
               slidesPerView: 2,
+              spaceBetween: 30,
+            },
+            1440: {
+              slidesPerView: 2,
               spaceBetween: 50,
             },
           }}
-          className="testimonialSwiper md:w-[75%]"
+          className="testimonialSwiper w-[75%] md:w-[75%] lg:w-[85%] xl:w-[75%]"
         >
           {slideData.map((item, index) => (
             <SwiperSlide key={index}>
-              <div className="m-[10px] rounded-6xl bg-ghostwhite shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] h-[100%] md:h-[500px] flex flex-col pt-8 pb-0 pr-[29px] pl-8 box-border items-start justify-start gap-[19px]">
+              <div className="m-[10px] rounded-6xl bg-ghostwhite shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] h-[100%] md:h-[500px] lg:h-[700px] xl:h-[500px] flex flex-col pt-8 pb-[20px] pr-[29px] pl-8 box-border items-start justify-start gap-[19px]">
                 <div className=" flex flex-row items-start justify-start gap-[20px]">
                   <div className="w-[80px] h-[80px] relative">
                     <Image fill className="relative rounded-[50%] object-contain" alt="" src={item.imageUrl} />
