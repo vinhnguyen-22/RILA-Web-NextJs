@@ -99,7 +99,7 @@ const Contact = () => {
                         </div>
                         <Link
                           href={'/about'}
-                          className="w-full  lg:w-[50%] md:w-initial rounded-51xl mt-[10px] lg:m-0 bg-tomato-100 h-[62px] flex flex-row py-5 px-6 box-border items-center justify-center text-white"
+                          className="w-full  lg:w-[60%] md:w-initial rounded-51xl mt-[10px] lg:m-0 bg-tomato-100 h-[62px] flex flex-row py-5 px-6 box-border items-center justify-center text-white"
                         >
                           <p className="relative leading-[20px] capitalize inline-block md:text-base text-sm font-bold shrink-0">
                             Get In Touch
