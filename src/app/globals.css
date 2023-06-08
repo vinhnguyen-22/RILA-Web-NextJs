@@ -33,6 +33,11 @@ body {
   max-width: 80%;
 }
 
+@media (max-width: 1024px) {
+  .container {
+    max-width: 90%;
+  }
+}
 .ReactCollapse--collapse {
   transition: height 500ms;
 }

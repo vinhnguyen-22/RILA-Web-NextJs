@@ -58,7 +58,7 @@ const Contact = () => {
         </div>
       </div>
 
-      <div className="my-24 mx-0 md:px-6">
+      <div className="my-24 mx-0">
         <section className="mb-32">
           <div className="grid grid-cols-12">
             <div className="col-span-12 md:col-span-7 lg:col-span-7">
@@ -90,16 +90,16 @@ const Contact = () => {
                           Contact a member of our team now to discuss your social listening needs.
                         </div>
                       </div>
-                      <div className="flex lg:flex-row flex-col  items-center justify-center gap-[8px] text-base text-darkgray">
-                        <div className="">
+                      <div className="w-full flex lg:flex-row flex-col  items-center justify-center gap-[8px] text-base text-darkgray">
+                        <div className="w-full">
                           <input
-                            className="md:text-base text-sm relative rounded-[37px] outline-none placeholder:italic placeholder:text-lightslategray-200 text-black capitalize rounded-18xl bg-gray-100 flex flex-row py-5 px-[18px] box-border items-center justify-start "
+                            className="w-full md:text-base text-sm relative rounded-[37px] outline-none placeholder:italic placeholder:text-lightslategray-200 text-black capitalize rounded-18xl bg-gray-100 flex flex-row py-5 px-[18px] box-border items-center justify-start "
                             placeholder="Enter your Email"
                           />
                         </div>
                         <Link
                           href={'/about'}
-                          className="rounded-51xl mt-[10px] lg:m-0 bg-tomato-100 h-[62px] flex flex-row py-5 px-6 box-border items-center justify-center text-white"
+                          className="w-full  lg:w-[50%] md:w-initial rounded-51xl mt-[10px] lg:m-0 bg-tomato-100 h-[62px] flex flex-row py-5 px-6 box-border items-center justify-center text-white"
                         >
                           <p className="relative leading-[20px] capitalize inline-block md:text-base text-sm font-bold shrink-0">
                             Get In Touch
