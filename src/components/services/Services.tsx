@@ -134,9 +134,9 @@ const Services = () => {
                       <div className="lg:text-21xl md:text-3xl text-2xl font-semibold flex items-center justify-center md:w-[143.16px]">
                         {item.number}
                       </div>
-                      <div className="lg:text-xl text-lg leading-[32px] font-semibold inline-block ">{item.title}</div>
-                      <div className="text-lg leading-[28px] text-gainsboro-200 inline-block md:w-[182.69px]">
-                        <p className="m-0 lg:text-lg md:text-base text-sm">{item.content}</p>
+                      <div className="lg:text-xl text-lg text-white leading-[32px] font-semibold inline-block ">{item.title}</div>
+                      <div className="text-lg leading-[28px] text-white inline-block md:w-[182.69px]">
+                        <p className="m-0 lg:text-lg md:text-base text-sm text-white">{item.content}</p>
                       </div>
                     </div>
                   </div>

@@ -59,16 +59,16 @@ const Header = () => {
             className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${navbar ? 'block' : 'hidden'}`}
           >
             <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-              <li className="text-md font-semibold leading-[32px] text-gray-300 hover:text-red-300 duration-200">
+              <li className="text-sm font-semibold leading-[32px] text-gray-300 hover:text-red-300 duration-200">
                 <Link href="/about">Home</Link>
               </li>
-              <li className="text-md font-semibold leading-[32px] text-gray-300 hover:text-red-300 duration-200">
+              <li className="text-sm font-semibold leading-[32px] text-gray-300 hover:text-red-300 duration-200">
                 <Link href="/about">About Us</Link>
               </li>
-              <li className="text-md font-semibold leading-[32px] text-gray-300 hover:text-red-300 duration-200">
-                <Link href="/about">Services</Link>
+              <li className="text-sm font-semibold leading-[32px] text-gray-300 hover:text-red-300 duration-200">
+                <Link href="/about">SERVICES</Link>
               </li>
-              <li className="text-md font-semibold leading-[32px] text-gray-300 hover:text-red-300 duration-200">
+              <li className="text-sm font-semibold leading-[32px] text-gray-300 hover:text-red-300 duration-200">
                 <Link href="/about">Resources</Link>
               </li>
               <li>
@@ -76,8 +76,8 @@ const Header = () => {
                   href="/about"
                   className="hidden md:flex lg:flex rounded-51xl bg-tomato-100 w-36 h-[40px] flex-row box-border items-center justify-center text-white hover:bg-red-200"
                 >
-                  <span className="relative font-semibold leading-[20px] capitalize inline-block w-[77px] shrink-0">
-                    Let’s Talk
+                  <span className="text-center text-sm relative font-semibold leading-[20px] capitalize inline-block w-[99px] shrink-0">
+                    Contact Us
                   </span>
                 </Link>
               </li>
@@ -88,8 +88,8 @@ const Header = () => {
                 href="/about"
                 className="rounded-51xl bg-tomato-100 w-[100%] h-[40px] flex flex-row box-border items-center justify-center text-white hover:bg-red-200"
               >
-                <span className="relative font-semibold leading-[20px] capitalize inline-block w-[77px] shrink-0">
-                  Let’s Talk
+                <span className="text-center text-sm relative font-semibold leading-[20px] capitalize inline-block w-[99px] shrink-0">
+                  Contact Us
                 </span>
               </Link>
             </div>

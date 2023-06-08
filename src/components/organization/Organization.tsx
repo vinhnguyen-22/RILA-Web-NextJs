@@ -16,14 +16,14 @@ const organizations = [
   '/images/homepage/image-11@2x.png',
   '/images/homepage/image-13@2x.png',
   '/images/homepage/image-9@2x.png',
-  '/images/homepage/image-12@2x.png',
+  '/images/homepage/image-12@2x.webp',
 ];
 
 const Organization = () => {
   return (
     <div className="mx-auto container">
-      <h4 className="w-full my-[90px] text-lg capitalize font-medium text-gray-800 text-center inline-block ">
-        TRUSTED BY THE WORLD’S LEADING ORGANIZATIONS
+      <h4 className="relative capitalizek lg:text-3xl md:text-2xl text-2xl font-semibold mb-22 w-full my-[90px] text-black text-center inline-block ">
+        Trusted By the World’s Leading Organizations
       </h4>
 
       <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-5 gap-[40px] md:gap-[60px] lg:gap-[80px]  mb-[100px] md:mb-[150px]">
