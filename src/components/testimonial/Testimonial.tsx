@@ -15,6 +15,14 @@ const slideData = [
       "I’ve received excellent research services from RILA GLOBAL over the past 3 years during my time at Toyota Motor North America. RILA’s professionalism andindustry knowledge is an asset to us and will continue to be to other global social media leaders and partners.",
   },
   {
+    imageUrl: "/images/homepage/chevron.png",
+    companyName: "CHEVRON",
+    jobTitle: "Sr. Research Analyst",
+    name: "Maren T.",
+    testimonial:
+      "RILA GLOBAL CONSULTING is by far the most trusted and professional partner I’ve worked with; the team’s knowledge of the global emerging technologies is unprecedented.",
+  },
+  {
     imageUrl: "/images/homepage/image-12@2x.png",
     companyName: "DAVY",
     jobTitle: "Equity Analytics, DAVY",
@@ -23,12 +31,12 @@ const slideData = [
       "Davy Capital Markets worked with RILA GLOBAL in the first half of 2023. We knew social listening well and recognized the inherent limitations of the major platforms. That’s where RILA GLOBAL came in, and they didn’t disappoint, delivering value-added analytical expertise that really elevated the project deliverables. Awesome!",
   },
   {
-    imageUrl: "/images/homepage/ellipse-801@2x.png",
-    companyName: "CAPSULE",
-    jobTitle: "Operations Training and Development",
-    name: "Lilly M.",
+    imageUrl: "/images/homepage/Eve_Lom.png",
+    companyName: "EVE LOM",
+    jobTitle: "Sr. Director of E-commerce",
+    name: "Katya E.",
     testimonial:
-      "RILA was extremely efficient, proactive, and knowledgeable. They explained very well what they were doing and going to do for our organization and helped us achieve it; great communication! The team is intelligent, friendly, and well-versed in the space. I highly recommend their work!",
+      "I can't speak highly enough of RILA. Their expertise in social listening and consumer research has been invaluable to our company. They were able to provide us with unique insights and trends that we would have never been able to uncover on our own. Their team is professional, responsive, and always goes above and beyond to meet our needs.",
   },
   {
     imageUrl: "/images/homepage/ellipse-802@2x.png",
@@ -37,6 +45,14 @@ const slideData = [
     name: "John H.",
     testimonial:
       "At GVTC, we take a strategic approach of surrounding ourselves with talented and brilliant partners and then letting them do their thing. RILA GLOBAL is at the very top of the list when it comes to social media analytics and we are so very pleased to have them as a partner.",
+  },
+  {
+    imageUrl: "/images/homepage/ellipse-801@2x.png",
+    companyName: "CAPSULE",
+    jobTitle: "Operations Training and Development",
+    name: "Lilly M.",
+    testimonial:
+      "RILA was extremely efficient, proactive, and knowledgeable. They explained very well what they were doing and going to do for our organization and helped us achieve it; great communication! The team is intelligent, friendly, and well-versed in the space. I highly recommend their work!",
   },
 ];
 
