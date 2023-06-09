@@ -3,13 +3,12 @@ import FtpDeploy from "ftp-deploy";
 import path from 'path';
 
 dotenv.config({ path: "./.env" });
-console.log("Starting")
 
 async function main() {
   try {
         // Replace "/out" with your build directory which contains all generated static files
         const outDir = path.join(process.cwd(), "/out");
-        console.log("Loading files...")
+        console.log("Uploading files to FTP server...")
         await new FtpDeploy().deploy({
             user: process.env.FTP_USER,
             password: process.env.FTP_PASS,
