@@ -95,17 +95,17 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li className="mb-4">
-                  <Link href="https://tailwindcss.com/" className="hover:underline">
+                  <Link href="/about" className="hover:underline">
                     Careers
                   </Link>
                 </li>
                 <li className="mb-4">
-                  <Link href="https://tailwindcss.com/" className="hover:underline">
+                  <Link href="/about" className="hover:underline">
                     Newsroom
                   </Link>
                 </li>
                 <li className="mb-4">
-                  <Link href="https://tailwindcss.com/" className="hover:underline">
+                  <Link href="/about" className="hover:underline">
                     Contact Us
                   </Link>
                 </li>
@@ -115,22 +115,22 @@ const Footer = () => {
               <h2 className="mb-6 text-lg font-semibold text-gray-200 capitalize ">Resources</h2>
               <ul className="text-lightslategray-200  font-medium">
                 <li className="mb-4">
-                  <Link href="https://github.com/themesberg/flowbite" className="hover:underline ">
+                  <Link href="/about" className="hover:underline ">
                     Our Service
                   </Link>
                 </li>
                 <li className="mb-4">
-                  <Link href="https://discord.gg/4eeurUVvTy" className="hover:underline">
+                  <Link href="/about" className="hover:underline">
                     Case Studies
                   </Link>
                 </li>
                 <li className="mb-4">
-                  <Link href="https://discord.gg/4eeurUVvTy" className="hover:underline">
+                  <Link href="/about" className="hover:underline">
                     Our Work
                   </Link>
                 </li>
                 <li className="mb-4">
-                  <Link href="https://discord.gg/4eeurUVvTy" className="hover:underline">
+                  <Link href="/about" className="hover:underline">
                     Our Blog
                   </Link>
                 </li>
