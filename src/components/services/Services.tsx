@@ -106,7 +106,7 @@ const Services = () => {
                           <div className="lg:text-lg text-base relative font-semibold">{item.title}</div>
                         </div>
                         <div className="py-6 text-start w-[100%] text-lg leading-[28px] text-lightslategray inline-block ">
-                          <p className="leading-[175%] lg:text-lg md:text-base text-sm m-0 text-gray-800">
+                          <p className="leading-[175%] lg:text-lg md:text-base text-sm m-0 text-black">
                             {item.content}
                           </p>
                         </div>
