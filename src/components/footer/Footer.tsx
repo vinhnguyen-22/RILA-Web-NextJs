@@ -1,6 +1,6 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import React from 'react';
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
 
 const Footer = () => {
   return (
@@ -17,9 +17,23 @@ const Footer = () => {
                 src="/images/homepage/logo-transparent2e1551993152468-1@2x.png"
               />
             </Link>
-            <div className="text-sm my-[23px] leading-[20px] inline-block">New York, NY</div>
+            <div className="text-sm my-[23px] leading-[20px] inline-block">
+              New York, NY
+            </div>
             <div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
               <div className="bg-white w-[257px] flex flex-row items-center justify-between">
+                <a
+                  target="_blank"
+                  href={"https://www.facebook.com/rilaglobalconsulting"}
+                >
+                  <Image
+                    width={12}
+                    height={12}
+                    className="relative w-6 h-6 object-cover"
+                    alt=""
+                    src="/images/homepage/icon-facebook.svg"
+                  />
+                </a>
                 <a target="_blank" href="https://www.instagram.com/rilaglobal/">
                   <Image
                     width={18}
@@ -29,8 +43,21 @@ const Footer = () => {
                     src="/images/homepage/riinstagramfill.svg"
                   />
                 </a>
-
-                <a target="_blank" href={'https://twitter.com/rilaglobal'}>
+                <a
+                  target="_blank"
+                  href={
+                    "https://www.linkedin.com/company/rila-global-consulting/"
+                  }
+                >
+                  <Image
+                    width={18}
+                    height={18}
+                    className="relative w-[22px] h-[22px]"
+                    alt=""
+                    src="/images/homepage/-icon-linkedin.svg"
+                  />
+                </a>
+                <a target="_blank" href={"https://twitter.com/rilaglobal"}>
                   <Image
                     width={18}
                     height={18}
@@ -41,7 +68,7 @@ const Footer = () => {
                 </a>
 
                 <Link
-                  href={'https://www.tiktok.com/@rila_global_consulting'}
+                  href={"https://www.tiktok.com/@rila_global_consulting"}
                   className="relative w-[28px] h-[28px] overflow-hidden shrink-0"
                 >
                   <div className="absolute top-[0px] left-[7px] w-7 h-7 overflow-hidden">
@@ -56,17 +83,10 @@ const Footer = () => {
                     </div>
                   </div>
                 </Link>
-
-                <a target="_blank" href={'https://www.linkedin.com/company/rila-global-consulting/'}>
-                  <Image
-                    width={18}
-                    height={18}
-                    className="relative w-[22px] h-[22px]"
-                    alt=""
-                    src="/images/homepage/-icon-linkedin.svg"
-                  />
-                </a>
-                <a target="_blank" href={'https://www.youtube.com/@rilaglobal/videos'}>
+                <a
+                  target="_blank"
+                  href={"https://www.youtube.com/@rilaglobal/videos"}
+                >
                   <Image
                     width={18}
                     height={18}
@@ -82,12 +102,16 @@ const Footer = () => {
               href="/about"
               className="mt-[31px] rounded-51xl bg-red-200 flex flex-row py-3 px-1 box-border items-center justify-center text-white"
             >
-              <strong className="text-sm relative leading-[20px] capitalize">Contact Us</strong>
+              <strong className="text-sm relative leading-[20px] capitalize">
+                Contact Us
+              </strong>
             </Link>
           </div>
           <div className="text-sm grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
             <div>
-              <h2 className="mb-6 text-lg font-semibold text-gray-200 capitalize ">Company</h2>
+              <h2 className="mb-6 text-lg font-semibold text-gray-200 capitalize ">
+                Company
+              </h2>
               <ul className="text-lightslategray-200  font-medium">
                 <li className="mb-4">
                   <Link href="/about" className="hover:underline">
@@ -112,7 +136,9 @@ const Footer = () => {
               </ul>
             </div>
             <div>
-              <h2 className="mb-6 text-lg font-semibold text-gray-200 capitalize ">Resources</h2>
+              <h2 className="mb-6 text-lg font-semibold text-gray-200 capitalize ">
+                Resources
+              </h2>
               <ul className="text-lightslategray-200  font-medium">
                 <li className="mb-4">
                   <Link href="/about" className="hover:underline ">
@@ -137,16 +163,23 @@ const Footer = () => {
               </ul>
             </div>
             <div>
-              <h2 className="mb-6 text-lg font-semibold text-gray-200 capitalize ">Legal</h2>
+              <h2 className="mb-6 text-lg font-semibold text-gray-200 capitalize ">
+                Legal
+              </h2>
               <ul className="text-lightslategray-200  font-medium">
                 <li className="mb-4">
-                  <Link href="#" className="hover:underline">
+                  <Link href="/about" className="hover:underline">
                     Privacy Policy
                   </Link>
                 </li>
                 <li className="mb-4">
-                  <Link href="#" className="hover:underline">
+                  <Link href="/about" className="hover:underline">
                     Terms &amp; Conditions
+                  </Link>
+                </li>
+                <li className="mb-4">
+                  <Link href="/about" className="hover:underline">
+                    Sustainability
                   </Link>
                 </li>
               </ul>

@@ -170,7 +170,7 @@ const Testimonial = () => {
                     </div>
                   </div>
                 </div>
-                <div className="relative text-base leading-[32px] text-gray-500 inline-block ">
+                <div className="relative text-base leading-[32px] text-black inline-block ">
                   {item.testimonial}
                 </div>
               </div>
