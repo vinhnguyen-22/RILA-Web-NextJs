@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('http://localhost:3000/'),
   title: {
     default: 'RILA GLOBAL CONSULTING',
-    template: `%s | RILA `,
+    template: `%s | RILA`,
   },
 
   description: 'This is the description of RILA GLOBAL CONSULTING',

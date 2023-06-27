@@ -22,7 +22,7 @@ const serviceItems = [
   },
 
   {
-    icon: '/images/homepage/group-18998.svg',
+    icon: '/images/homepage/group-18999.svg',
     title: 'Language Packages',
     content:
       "Unlock insights across cultures and borders with RILA's Query Writing and Reporting Services. Leverage our expertise in 32+ languages for comprehensive social listening data analysis. Contact our team for the complete list of supported languages and coverage.",
@@ -31,7 +31,7 @@ const serviceItems = [
   },
 
   {
-    icon: '/images/homepage/group-18999.svg',
+    icon: '/images/homepage/group-18998.svg',
     title: 'Training & Consulting',
     content:
       'Empower your team with our customized social listening training solutions. Our expert trainers offer tailored user adoption courses to maximize the value of your social listening efforts. Discover success through our personalized training programs.',
@@ -134,7 +134,9 @@ const Services = () => {
                       <div className="lg:text-21xl md:text-3xl text-2xl font-semibold flex items-center justify-center md:w-[143.16px]">
                         {item.number}
                       </div>
-                      <div className="lg:text-xl text-lg text-white leading-[32px] font-semibold inline-block ">{item.title}</div>
+                      <div className="lg:text-xl text-lg text-white leading-[32px] font-semibold inline-block ">
+                        {item.title}
+                      </div>
                       <div className="text-lg leading-[28px] text-white inline-block md:w-[182.69px]">
                         <p className="m-0 lg:text-lg md:text-base text-sm text-white">{item.content}</p>
                       </div>
