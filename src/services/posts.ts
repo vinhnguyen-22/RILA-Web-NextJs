@@ -28,6 +28,7 @@ export async function getAllPostsFromNotion() {
       const slug = properties[propertyMap['Slug']][0][0];
       const title = properties[propertyMap['Page']][0][0];
       const categories = properties[propertyMap['Category']][0][0].split(',');
+      console.log(categories);
       const cover = properties[propertyMap['Cover']][0][1][0][1];
       const date = properties[propertyMap['Date']][0][1][0][1]['start_date'];
       const published = properties[propertyMap['Published']][0][0] === 'Yes';

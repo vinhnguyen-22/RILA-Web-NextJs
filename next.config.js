@@ -2,11 +2,25 @@
 const nextConfig = {
   output: 'export',
   images: {
-    domains: ['www.notion.so', 'notion.so', 'images.unsplash.com', 'pbs.twimg.com', 'abs.twimg.com'],
-    formats: ['image/avif', 'image/webp'],
-    dangerouslyAllowSVG: true,
-    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'www.notion.so',
+      },
+    ],
     unoptimized: true,
+  },
+
+  // suppress keyv warning
+  webpack: (config, { webpack }) => {
+    config.plugins.push(
+      new webpack.ContextReplacementPlugin(/\/keyv\//, (data) => {
+        delete data.dependencies[0].critical;
+        return data;
+      })
+    );
+
+    return config;
   },
 };
 

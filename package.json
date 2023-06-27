@@ -10,21 +10,15 @@
     "deploy": "next build && node ./scripts/deploy.mjs"
   },
   "dependencies": {
-    "@notionhq/client": "^2.2.5",
     "@reduxjs/toolkit": "^1.9.5",
-    "@types/got": "^9.6.12",
-    "@types/node": "20.2.5",
     "@types/react": "18.2.7",
     "@types/react-dom": "18.2.4",
     "autoprefixer": "10.4.14",
     "eslint": "8.41.0",
     "eslint-config-next": "13.4.4",
-    "got": "^13.0.0",
-    "next": "13.4.4",
+    "next": "^13.4.7",
     "notion-client": "^6.16.0",
     "notion-types": "^6.16.0",
-    "p-map": "^6.0.0",
-    "p-memoize": "^7.1.1",
     "postcss": "8.4.24",
     "react": "18.2.0",
     "react-collapse": "^5.1.1",
@@ -39,8 +33,16 @@
     "typescript": "5.0.4"
   },
   "devDependencies": {
+    "@types/node": "^20.3.2",
     "@types/react-collapse": "^5.0.1",
     "dotenv": "^16.1.4",
     "ftp-deploy": "^2.4.4"
+  },
+  "browser": {
+    "tls": false,
+    "net": false,
+    "dns": false,
+    "fs": false,
+    "http2": false
   }
 }

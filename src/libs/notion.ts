@@ -2,10 +2,8 @@ import { NotionAPI } from 'notion-client';
 import { Block } from 'notion-types';
 
 const notion = new NotionAPI({
-  authToken: process.env.NOTION_TOKEN,
+  authToken: process.env.NOTION_AUTH_TOKEN,
 });
-
-console.log(process.env.NOTION_TOKEN);
 
 export function getRecordMap(id: string) {
   return notion.getPage(id);

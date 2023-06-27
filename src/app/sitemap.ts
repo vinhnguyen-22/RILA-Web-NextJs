@@ -1,5 +1,17 @@
-export default async function sitemap() {
-  const baseUrl = 'https://localhost:3000/';
+import { MetadataRoute } from 'next';
 
-  return [{ url: baseUrl, lastModified: new Date() }];
+import { getAllPostsFromNotion } from '@/services/posts';
+
+export default async function sitemap() {
+  const allPosts = await getAllPostsFromNotion();
+  const sitemap: MetadataRoute.Sitemap = [];
+
+  for (const post of allPosts) {
+    sitemap.push({
+      url: `${process.env.SITE_URL}/blog/${post.slug}`,
+      lastModified: new Date(post.lastEditedAt),
+    });
+  }
+
+  return sitemap;
 }
