@@ -6,11 +6,17 @@ import { isArticle } from '@/types/guards';
 export default async function sitemap() {
   const articles = await serverSideCmsClient.getDatabaseEntries(process.env.BLOG_DB_ID, isArticle);
 
-  const sitemap: MetadataRoute.Sitemap = [];
+  const sitemap: MetadataRoute.Sitemap = [
+    {
+      url: `${process.env.SITE_URL}`,
+      lastModified: new Date(),
+    },
+  ];
 
   for (const article of articles) {
     sitemap.push({
-      url: `${process.env.SITE_URL}/blog/${article.published.replace(new RegExp('/', 'g'), '-')}/${article.slug}`,
+      url: `${process.env.SITE_URL}/blog/${article.date.replace(new RegExp('/', 'g'), '-')}/${article.slug}`,
+      lastModified: article.lastEditedAt.replace(new RegExp('/', 'g'), '-'),
     });
   }
 

@@ -4,9 +4,11 @@ import { FC, ReactNode } from 'react';
 export interface ChipProps {
   children: ReactNode;
   className?: string;
+  style?: any;
 }
 
-export const Chip: FC<ChipProps> = ({ children, className }) => {
+export const Chip: FC<ChipProps> = (props) => {
+  const { children, className } = props;
   return (
     <div
       className={classNames(
@@ -14,6 +16,7 @@ export const Chip: FC<ChipProps> = ({ children, className }) => {
         ' border-gray-600 ',
         className
       )}
+      {...props}
     >
       {children}
     </div>

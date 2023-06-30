@@ -15,11 +15,10 @@ export const metadata: Metadata = {
     default: 'RILA GLOBAL CONSULTING',
     template: `%s | RILA`,
   },
-
   description: 'This is the description of RILA GLOBAL CONSULTING',
-  verification: {
-    google: '',
-  },
+  // verification: {
+  //   google: '',
+  // },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

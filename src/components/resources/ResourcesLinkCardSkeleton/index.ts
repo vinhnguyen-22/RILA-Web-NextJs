@@ -1,1 +1,0 @@
-export { ResourcesLinkCardSkeleton } from "./ResourcesLinkCardSkeleton";

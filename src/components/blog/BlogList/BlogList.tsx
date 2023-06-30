@@ -13,8 +13,8 @@ export const BlogList: FC<BlogList> = ({ data }) => {
   const fetchData = (query: string) =>
     data
       .filter(
-        ({ title, summary, tags, published }) =>
-          new Date(published) < new Date() &&
+        ({ title, summary, tags, date }) =>
+          new Date(date) < new Date() &&
           (title.toLowerCase().includes(query) ||
             summary.toLowerCase().includes(query) ||
             summary.toLowerCase().includes(query) ||

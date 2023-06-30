@@ -39,7 +39,6 @@ class ServerSideCmsClient {
           id,
         };
       });
-
       return entries.filter(typeGuard);
     }
 
@@ -56,7 +55,6 @@ class ServerSideCmsClient {
       database_id: databaseId,
       filter,
     });
-
     const id = results[0]?.id;
 
     if (id === undefined) throw new Error('No Page Found');

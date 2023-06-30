@@ -1,1 +1,0 @@
-export { ResourcesHeader } from "./ResourcesHeader";

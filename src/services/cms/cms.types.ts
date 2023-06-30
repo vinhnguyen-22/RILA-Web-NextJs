@@ -7,6 +7,7 @@ export enum NotionBlockTypes {
   date = 'date',
   url = 'url',
   files = 'files',
+  checkbox = 'checkbox',
 }
 
 export type SelectColor =
@@ -23,4 +24,4 @@ export type SelectColor =
 
 export type SelectProperty = { color: SelectColor; name: string; id: string };
 
-export type NotionDatabaseProperty = string | SelectProperty | SelectProperty[] | null;
+export type NotionDatabaseProperty = string | SelectProperty | SelectProperty[] | boolean | null;

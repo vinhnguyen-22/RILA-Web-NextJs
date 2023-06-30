@@ -1,7 +1,9 @@
+'use client';
 import { FC } from 'react';
 import { useTheme } from 'next-themes';
 import { NotionRenderer as Renderer } from 'react-notion-x';
 import { ExtendedRecordMap } from 'notion-types';
+import useMounted from '@/hooks/use-mounted';
 
 import Link from 'next/link';
 import Image from 'next/image';
@@ -32,7 +34,7 @@ export interface NotionRendererProps {
 
 export const NotionRenderer: FC<NotionRendererProps> = ({ recordMap }) => {
   const { resolvedTheme } = useTheme();
-
+  const mounted = useMounted();
   return (
     <Renderer
       darkMode={(resolvedTheme ?? 'dark') === 'light'}

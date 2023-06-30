@@ -24,8 +24,14 @@ const notionDatabasePropertyResolver = (prop: PageObjectResponse['properties'][s
       return prop.select;
     case NotionBlockTypes.url:
       return prop.url;
+    case NotionBlockTypes.checkbox:
+      return prop.checkbox;
     case NotionBlockTypes.files:
-      return prop.files[0].file.url && '';
+      if (prop.files[0].type == 'file') {
+        return prop.files[0].file.url;
+      } else if (prop.files[0].type == 'external') {
+        return prop.files[0].external.url;
+      }
     default:
       console.log({ type });
       throw new Error('Notion Block Resolver Not Found');
@@ -53,53 +59,55 @@ export const formatNotionPageAttributes = (
     return { ...acc, [key]: value };
   }, {} as { [key: string]: NotionDatabaseProperty });
 
-export const mapImageUrl = (url: string, block: Block): string | null => {
-  if (!url) {
-    return null;
-  }
+// to fix issue 403 authenticate https://github.com/NotionX/react-notion-x/issues/211
 
-  if (url.startsWith('data:')) {
-    return url;
-  }
+// export const mapImageUrl = (url: string, block: Block): string | null => {
+//   if (!url) {
+//     return null;
+//   }
 
-  // more recent versions of notion don't proxy unsplash images
-  if (url.startsWith('https://images.unsplash.com')) {
-    return url;
-  }
+//   if (url.startsWith('data:')) {
+//     return url;
+//   }
 
-  try {
-    const u = new URL(url);
+//   // more recent versions of notion don't proxy unsplash images
+//   if (url.startsWith('https://images.unsplash.com')) {
+//     return url;
+//   }
 
-    if (u.pathname.startsWith('/secure.notion-static.com') && u.hostname.endsWith('.amazonaws.com')) {
-      if (
-        u.searchParams.has('X-Amz-Credential') &&
-        u.searchParams.has('X-Amz-Signature') &&
-        u.searchParams.has('X-Amz-Algorithm')
-      ) {
-        // if the URL is already signed, then use it as-is
-        return url;
-      }
-    }
-  } catch {
-    // ignore invalid urls
-  }
+//   try {
+//     const u = new URL(url);
 
-  if (url.startsWith('/images')) {
-    url = `https://www.notion.so${url}`;
-  }
+//     if (u.pathname.startsWith('/secure.notion-static.com') && u.hostname.endsWith('.amazonaws.com')) {
+//       if (
+//         u.searchParams.has('X-Amz-Credential') &&
+//         u.searchParams.has('X-Amz-Signature') &&
+//         u.searchParams.has('X-Amz-Algorithm')
+//       ) {
+//         // if the URL is already signed, then use it as-is
+//         return url;
+//       }
+//     }
+//   } catch {
+//     // ignore invalid urls
+//   }
 
-  url = `https://www.notion.so${url.startsWith('/image') ? url : `/image/${encodeURIComponent(url)}`}`;
+//   if (url.startsWith('/images')) {
+//     url = `https://www.notion.so${url}`;
+//   }
 
-  const notionImageUrlV2 = new URL(url);
-  let table = block.parent_table === 'space' ? 'block' : block.parent_table;
-  if (table === 'collection' || table === 'team') {
-    table = 'block';
-  }
-  notionImageUrlV2.searchParams.set('table', table);
-  notionImageUrlV2.searchParams.set('id', block.id);
-  notionImageUrlV2.searchParams.set('cache', 'v2');
+//   url = `https://www.notion.so${url.startsWith('/image') ? url : `/image/${encodeURIComponent(url)}`}`;
 
-  url = notionImageUrlV2.toString();
+//   const notionImageUrlV2 = new URL(url);
+//   let table = block.parent_table === 'space' ? 'block' : block.parent_table;
+//   if (table === 'collection' || table === 'team') {
+//     table = 'block';
+//   }
+//   notionImageUrlV2.searchParams.set('table', table);
+//   notionImageUrlV2.searchParams.set('id', block.id);
+//   notionImageUrlV2.searchParams.set('cache', 'v2');
 
-  return url;
-};
+//   url = notionImageUrlV2.toString();
+
+//   return url;
+// };
