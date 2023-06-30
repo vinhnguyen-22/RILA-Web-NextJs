@@ -1,20 +1,18 @@
 import { notFound } from 'next/navigation';
 import { cache } from 'react';
 
-import { CatchAllPageParams, PageProps } from '@/types/nextjs';
-import { isArticle, isTwoStringArray } from '@/types/guards';
-import { serverSideCmsClient } from '@/services/cms/cms.client';
 import { NotionRenderer } from '@/components/common/NotionRenderer';
+import { serverSideCmsClient } from '@/services/cms/cms.client';
+import { isArticle, isTwoStringArray } from '@/types/guards';
+import { CatchAllPageParams, PageProps } from '@/types/nextjs';
 import { Metadata } from 'next';
-import { BlogList } from '@/components/blog/BlogList';
-import { Article } from '@/types/cms';
 import Image from 'next/image';
 import Link from 'next/link';
 
 export default async function ArticlePage(props: PageProps<CatchAllPageParams>) {
   const pathParams = props?.params?.slug;
   if (!isTwoStringArray(pathParams)) throw notFound();
-  const articles = await serverSideCmsClient.getDatabaseEntries(process.env.BLOG_DB_ID, isArticle);
+  const articles = await serverSideCmsClient.getDatabaseEntries(process.env.NOTION_BLOG_DB_ID, isArticle);
 
   const [date, slug] = pathParams;
   const recordMap = await getArticle(date, slug);
@@ -51,7 +49,7 @@ export default async function ArticlePage(props: PageProps<CatchAllPageParams>) 
 
 const getArticle = cache(async (date: string, slug: string) => {
   try {
-    return await serverSideCmsClient.getPageContent(process.env.BLOG_DB_ID, {
+    return await serverSideCmsClient.getPageContent(process.env.NOTION_BLOG_DB_ID, {
       and: [
         { property: 'date', date: { equals: date } },
         {
@@ -66,13 +64,13 @@ const getArticle = cache(async (date: string, slug: string) => {
 });
 
 export async function generateStaticParams() {
-  const articles = await serverSideCmsClient.getDatabaseEntries(process.env.BLOG_DB_ID, isArticle);
+  const articles = await serverSideCmsClient.getDatabaseEntries(process.env.NOTION_BLOG_DB_ID, isArticle);
 
   return articles.map(({ date, slug }) => ({ slug: [date, slug] }));
 }
 
 export async function generateMetadata({ params: { slug } }: { params: { slug: string } }): Promise<Metadata> {
-  const articles = await serverSideCmsClient.getDatabaseEntries(process.env.BLOG_DB_ID, isArticle);
+  const articles = await serverSideCmsClient.getDatabaseEntries(process.env.NOTION_BLOG_DB_ID, isArticle);
   const article = articles.find((p) => p.date === slug[0] && p.slug === slug[1]);
   return article
     ? {

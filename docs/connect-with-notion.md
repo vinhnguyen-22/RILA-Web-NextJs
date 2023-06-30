@@ -1,23 +1,18 @@
-# Notion Blog with Next.js 13
+# Notion Blog RILA with Next.js 13
 
 <p align="center">
-  <img alt="demo site screenshot" src="public/readme/main.png" width="80%" />
+  <img alt="demo site screenshot" src="/public/readme/main.jpeg" width="80%" />
 </p>
 
 ## Contents
 
-- [Notion Blog with Next.js 13](#notion-blog-with-nextjs-13)
+- [Notion Blog RILA with Next.js 13](#notion-blog-rila-with-nextjs-13)
   - [Contents](#contents)
   - [🚀 Introduction](#-introduction)
-  - [👀 Demo](#-demo)
   - [🌟 Features](#-features)
   - [📦 Major Package Dependencies](#-major-package-dependencies)
   - [🏁 Getting Started](#-getting-started)
     - [Environment Variables](#environment-variables)
-  - [Screenshots](#screenshots)
-    - [Desktop](#desktop)
-    - [Tablet](#tablet)
-    - [Mobile](#mobile)
   - [📝 TODO](#-todo)
 
 ## 🚀 Introduction
@@ -26,78 +21,47 @@ This is a blog template that uses Notion as CMS.<br>
 Upload posts in Notion, share them through your blog!<br>
 **This project uses `App Router` that is now stable in Next.js 13.4.**
 
-## 👀 Demo
-
-Check out the demo site [HERE](https://notion-blog-wildcatco.vercel.app/blog)
-
-<https://www.youtube.com/watch?v=rZgh8a4ZjA8>
-
-[![Video Label](http://img.youtube.com/vi/rZgh8a4ZjA8/1.jpg)](https://youtu.be/rZgh8a4ZjA8)
-
 ## 🌟 Features
 
 - Simple to sync Notion and blog
 - Search posts by name
-- Filter posts by categories
-- Related posts
-- Dark mode
 - Responsive design
 - Sitemap
 
 ## 📦 Major Package Dependencies
 
 - [react-notion-x](https://www.npmjs.com/package/react-notion-x): Renderer for notion pages
-- [notion-client](https://www.npmjs.com/package/notion-client): Unofficial Notion API which is much faster than official Notion API
+
+- [notionhq/client](https://www.npmjs.com/package/@notionhq/client): Import and initialize a client using an integration token or an OAuth access token.
 
 ## 🏁 Getting Started
 
-1. Duplicate [this](https://curved-kale-c2a.notion.site/Blog-6d822373099b4cb5a17f54c71cbdc917) notion blog template to your notion workspace. (Make your notion page public.)
+1. Duplicate [this](https://cultured-alfalfa-a18.notion.site/Next-Notion-Blog-Template-0f9e41ed8e2e4386850a7eb59e03f6f6?pvs=25) notion blog template to your notion workspace. (Make your notion page public.)
 
-   <img alt="duplicate template" src="./public/readme/getting-started/duplicate-template.png" style="width: 60%; margin-top:10px"/>
+   <img alt="duplicate template" src="/public/readme/duplicate-template.png" style="width: 60%; margin-top:10px"/>
 
-2. Visit your notion page with **browser**.
+2. Visit your blog page in notion with **browser**.
 3. Check your database id in the url. (needed as an environment variable)
 
-   <img alt="check database id" src="./public/readme/getting-started/check-database-id.png" style="width: 60%;margin-top: 10px"/>
+   <img alt="check database id" src="/public/readme/check-database-id.png" style="width: 60%;margin-top: 10px"/>
 
 4. Check your auth token in the cookie. (needed as an environment variable)
-
-   <img alt="check auth token" src="./public/readme/getting-started/check-auth-token.png" style="width: 60%;margin-top: 10px"/>
-
+   ![Alt text](image.png)
+   ![Alt text](image-1.png)
 5. Now you can run on local or deploy to [Vercel](https://vercel.com/dashboard) with environment variables listed [below](#environment-variables).
 
 **Slug should be unique because it's used as url of the post page**
 
 ### Environment Variables
 
-`NOTION_DATABASE_ID`: getting started step 3<br>
-`NOTION_AUTH_TOKEN`: getting started step 4<br>
-`SITE_URL`: URL of your site<br>
-`API_SECRET`: Choose your own password for route handler
-
-## Screenshots
-
-### Desktop
-
-<p style="display: flex;">
-  <img src="public/readme/screenshots/desktop-blog.png" style="width: 40%;margin-right: 20px">
-  <img src="public/readme/screenshots/desktop-post.png" style="width: 40%">
-</p>
-
-### Tablet
-
-<p style="display: flex;">
-  <img src="public/readme/screenshots/tablet-blog.png" style="width: 25%;margin-right: 20px">
-  <img src="public/readme/screenshots/tablet-post.png" style="width: 25%">
-</p>
-
-### Mobile
-
-<p style="display: flex;">
-  <img src="public/readme/screenshots/mobile-blog.png" style="width: 20%;margin-right: 20px">
-  <img src="public/readme/screenshots/mobile-post.png" style="width: 20%">
-</p>
+1. Follow the steps in the NotionAPI Docs to create an integration:
+   - give the integration read-only permissions;
+   - share each database you need with that integration (Add connections);
+   - `NOTION_API_INTEGRATION_SECRET` add the Notion integration secret to your .env.local file.
+2. `NOTION_BLOG_DB_ID` Copy the database ids and add them into your .env.local file (NOTION_BLOG_DB_ID).
+3. Open notion in the web and open the network tab when signed in. Check request cookie:
+   - `NOTION_TOKEN_V2` copy token_v2 into your .env.local file;
+   - `NOTION_ACTIVE_USER` copy notion_user_id into your .env.local file.
+     `SITE_URL`: URL of your site
 
 ## 📝 TODO
-
-- [ ] Light mode for code block

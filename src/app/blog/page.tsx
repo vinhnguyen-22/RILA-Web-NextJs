@@ -8,7 +8,7 @@ export const metadata = {
   description: 'All posts are created by notion.',
 };
 export default async function Blog() {
-  const articles = await serverSideCmsClient.getDatabaseEntries(process.env.BLOG_DB_ID, isArticle);
+  const articles = await serverSideCmsClient.getDatabaseEntries(process.env.NOTION_BLOG_DB_ID, isArticle);
   return (
     <div className="flex flex-col mx-auto container">
       <BlogHeader />

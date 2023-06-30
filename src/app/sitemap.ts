@@ -4,7 +4,7 @@ import { PATHS } from './constants';
 import { isArticle } from '@/types/guards';
 
 export default async function sitemap() {
-  const articles = await serverSideCmsClient.getDatabaseEntries(process.env.BLOG_DB_ID, isArticle);
+  const articles = await serverSideCmsClient.getDatabaseEntries(process.env.NOTION_BLOG_DB_ID, isArticle);
 
   const sitemap: MetadataRoute.Sitemap = [
     {
