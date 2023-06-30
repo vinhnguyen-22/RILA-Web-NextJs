@@ -6,18 +6,46 @@ import { isArticle, isTwoStringArray } from '@/types/guards';
 import { serverSideCmsClient } from '@/services/cms/cms.client';
 import { NotionRenderer } from '@/components/common/NotionRenderer';
 import { Metadata } from 'next';
+import { BlogList } from '@/components/blog/BlogList';
+import { Article } from '@/types/cms';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export default async function ArticlePage(props: PageProps<CatchAllPageParams>) {
   const pathParams = props?.params?.slug;
   if (!isTwoStringArray(pathParams)) throw notFound();
+  const articles = await serverSideCmsClient.getDatabaseEntries(process.env.BLOG_DB_ID, isArticle);
 
   const [date, slug] = pathParams;
-  const article = await getArticle(date, slug);
+  const recordMap = await getArticle(date, slug);
+  const article = articles.find((p) => p.slug === slug);
+  if (!article) {
+    return notFound();
+  }
 
+  if (!article.published) {
+    return (
+      <article data-revalidated-at={new Date().getTime()} className="mx-auto mt-40 text-center">
+        <h2 className="mb-4 text-3xl font-bold">Article Not Found</h2>
+        <Link href="/blog">
+          <span className="mr-2">&larr;</span>
+          <span>Go to list page</span>
+        </Link>
+      </article>
+    );
+  }
+  // const relatedArticles: Article[] = articles.filter(
+  //   (p) => p.slug !== slug && p.tags.some((v) => article.tags.includes(v))
+  // );
   return (
-    <div className="mb-8">
-      <NotionRenderer recordMap={article} />
-    </div>
+    <>
+      <article className="mt-4 flex flex-col items-center md:mt-20">
+        <div className="relative aspect-[3/2] w-[90vw] max-w-[900px]">
+          <Image src={article.cover} alt="cover" fill style={{ objectFit: 'contain' }} />
+        </div>
+        <NotionRenderer recordMap={recordMap} />
+      </article>
+    </>
   );
 }
 

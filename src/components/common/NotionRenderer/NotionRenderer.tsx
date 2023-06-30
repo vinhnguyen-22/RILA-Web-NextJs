@@ -40,10 +40,11 @@ export const NotionRenderer: FC<NotionRendererProps> = ({ recordMap }) => {
       darkMode={(resolvedTheme ?? 'dark') === 'light'}
       recordMap={recordMap}
       showCollectionViewDropdown={false}
-      showTableOfContents={false}
+      showTableOfContents={true}
       linkTableTitleProperties={false}
       hideBlockId
       previewImages
+      fullPage
       components={{
         nextImage: Image,
         nextLink: Link,

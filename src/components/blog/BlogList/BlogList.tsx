@@ -20,7 +20,7 @@ export const BlogList: FC<BlogList> = ({ data }) => {
             summary.toLowerCase().includes(query) ||
             tags.some(({ name }) => name.toLowerCase().includes(query)))
       )
-      .sort((a, b) => (a.published > b.published ? -1 : 1));
+      .sort((a, b) => (a.date > b.date ? -1 : 1));
 
   return (
     <SearchList<Article>

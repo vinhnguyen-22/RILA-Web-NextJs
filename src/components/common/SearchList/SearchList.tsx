@@ -42,7 +42,7 @@ export const SearchList = <T,>({
           <div className="mx-1 sm:my-auto my-1">{children}</div>
         </div>
       </div>
-      <div className="mx-1 grid grid-cols-3">
+      <div className="mx-1 grid grid-cols-1 md:grid-cols-3 ">
         {data.map((element) => (
           <ListItem key={keyExtractor(element)} {...element} />
         ))}
