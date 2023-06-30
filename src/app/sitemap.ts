@@ -1,15 +1,16 @@
+import { serverSideCmsClient } from '@/services/cms/cms.client';
 import { MetadataRoute } from 'next';
-
-import { getAllPostsFromNotion } from '@/services/posts';
+import { PATHS } from './constants';
+import { isArticle } from '@/types/guards';
 
 export default async function sitemap() {
-  const allPosts = await getAllPostsFromNotion();
+  const articles = await serverSideCmsClient.getDatabaseEntries(process.env.BLOG_DB_ID, isArticle);
+
   const sitemap: MetadataRoute.Sitemap = [];
 
-  for (const post of allPosts) {
+  for (const article of articles) {
     sitemap.push({
-      url: `${process.env.SITE_URL}/blog/${post.slug}`,
-      lastModified: new Date(post.lastEditedAt),
+      url: `${process.env.SITE_URL}/blog/${article.published.replace(new RegExp('/', 'g'), '-')}/${article.slug}`,
     });
   }
 

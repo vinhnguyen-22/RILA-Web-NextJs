@@ -3,11 +3,11 @@ import { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 
-const Activities = dynamic(() => import('@/components/activities/Activities'));
-const Benefits = dynamic(() => import('@/components/benefits/Benefits'));
-const Services = dynamic(() => import('@/components/services/Services'));
-const Testimonial = dynamic(() => import('@/components/testimonial/Testimonial'));
-const Organization = dynamic(() => import('@/components/organization/Organization'));
+const Activities = dynamic(() => import('@/components/home/activities/Activities'));
+const Benefits = dynamic(() => import('@/components/home/benefits/Benefits'));
+const Services = dynamic(() => import('@/components/home/services/Services'));
+const Testimonial = dynamic(() => import('@/components/home/testimonial/Testimonial'));
+const Organization = dynamic(() => import('@/components/home/organization/Organization'));
 const Heros = dynamic(() => import('@/components/heros/Heros'));
 const Contact = dynamic(() => import('@/components/contact/Contact'));
 

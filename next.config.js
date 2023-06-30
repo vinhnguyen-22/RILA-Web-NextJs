@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
+  reactStrictMode: true,
+  swcMinify: true,
+  staticPageGenerationTimeout: 60,
   images: {
     remotePatterns: [
       {
@@ -12,13 +14,9 @@ const nextConfig = {
   },
 
   // suppress keyv warning
-  webpack: (config, { webpack }) => {
-    config.plugins.push(
-      new webpack.ContextReplacementPlugin(/\/keyv\//, (data) => {
-        delete data.dependencies[0].critical;
-        return data;
-      })
-    );
+  webpack: (config) => {
+    config.resolve.alias.canvas = false;
+    config.resolve.alias.encoding = false;
 
     return config;
   },

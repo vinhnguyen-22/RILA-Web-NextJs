@@ -9,10 +9,21 @@ a {
 * {
   box-sizing: border-box;
 }
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+
+@layer base {
+  :root {
+    --color-primary: 167, 27, 74; /* #A71B4A*/
+    --color-secondary: 74, 76, 90; /* #4a4c5a*/
+
+    --color-bg: 243, 244, 245; /* #f3f4f5*/
+    --color-bg-side: 252, 251, 255; /* #fcfdff*/
+    --color-bg-black: 0, 0, 0;
+    --color-bg-yellow: #ffd60a;
+
+    --color-text-base: 66, 71, 80; /* #424750*/
+    --color-text-muted: 107, 114, 128; /*#6b7280*/
+    --color-text-side: 255, 231, 231; /*#fff*/
+  }
 }
 
 @media (prefers-color-scheme: dark) {

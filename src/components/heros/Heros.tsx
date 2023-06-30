@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
-import Services from '../services/Services';
+import Services from '../home/services/Services';
 import Link from 'next/link';
 
 const Heros = () => {
@@ -20,9 +20,7 @@ const Heros = () => {
               href="/about"
               className="mt-[31px] rounded-full bg-red-200 w-[193px] h-[55px] flex flex-row py-5 px-6 box-border items-center justify-center text-white"
             >
-              <strong className="relative lg:text-lg text-base capitalize">
-                Let’s Talk
-              </strong>
+              <strong className="relative lg:text-lg text-base capitalize">Let’s Talk</strong>
             </Link>
           </div>
         </div>

@@ -10,21 +10,23 @@
     "deploy": "next build && node ./scripts/deploy.mjs"
   },
   "dependencies": {
+    "@notionhq/client": "^2.2.6",
     "@reduxjs/toolkit": "^1.9.5",
     "@types/react": "18.2.7",
     "@types/react-dom": "18.2.4",
     "autoprefixer": "10.4.14",
+    "classnames": "^2.3.2",
     "eslint": "8.41.0",
     "eslint-config-next": "13.4.4",
     "next": "^13.4.7",
+    "next-themes": "^0.2.1",
     "notion-client": "^6.16.0",
-    "notion-types": "^6.16.0",
     "postcss": "8.4.24",
     "react": "18.2.0",
     "react-collapse": "^5.1.1",
     "react-dom": "18.2.0",
     "react-icons": "^4.9.0",
-    "react-notion-x": "^6.16.0",
+    "react-notion-x": "^6.15.7",
     "react-paginate": "^8.2.0",
     "react-redux": "^8.1.0",
     "redux": "^4.2.1",
@@ -33,16 +35,9 @@
     "typescript": "5.0.4"
   },
   "devDependencies": {
-    "@types/node": "^20.3.2",
     "@types/react-collapse": "^5.0.1",
     "dotenv": "^16.1.4",
-    "ftp-deploy": "^2.4.4"
-  },
-  "browser": {
-    "tls": false,
-    "net": false,
-    "dns": false,
-    "fs": false,
-    "http2": false
+    "ftp-deploy": "^2.4.4",
+    "notion-types": "^6.16.0"
   }
 }
