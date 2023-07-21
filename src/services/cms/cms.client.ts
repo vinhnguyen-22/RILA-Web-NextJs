@@ -33,9 +33,9 @@ class ServerSideCmsClient {
     if (results.length === 0) return [];
 
     if (isNonEmptyNonPartialNotionResponse(results)) {
-      const entries: Record<string, NotionDatabaseProperty>[] = results.map(({ id, properties }) => {
+      const entries: Record<string, NotionDatabaseProperty>[] = results.map(({ id, cover, properties }) => {
         return {
-          ...formatNotionPageAttributes(properties),
+          ...formatNotionPageAttributes(properties, cover),
           id,
         };
       });

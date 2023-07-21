@@ -13,11 +13,11 @@ export const BlogLoadingState: FC = () => {
 
   if (path === PATHS.BLOG)
     return (
-      <div className="flex flex-col px-8">
+      <div className="flex flex-col mx-auto container">
         <BlogHeader />
         <BlogList data={[]} />
         <div className="my-4 grid grid-cols-3">
-          {Array.from({ length: 3 }).map((_, i) => (
+          {Array.from({ length: 12 }).map((_, i) => (
             <Skeleton key={`article-skel-${i}`} />
           ))}
         </div>

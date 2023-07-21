@@ -27,10 +27,12 @@ const notionDatabasePropertyResolver = (prop: PageObjectResponse['properties'][s
     case NotionBlockTypes.checkbox:
       return prop.checkbox;
     case NotionBlockTypes.files:
-      if (prop.files[0].type == 'file') {
-        return prop.files[0].file.url;
-      } else if (prop.files[0].type == 'external') {
-        return prop.files[0].external.url;
+      if (prop.files[0]) {
+        if (prop.files[0].type == 'file') {
+          return prop.files[0].file.url;
+        } else if (prop.files[0].type == 'external') {
+          return prop.files[0].external.url;
+        }
       }
     default:
       console.log({ type });
@@ -52,11 +54,13 @@ export const isNonEmptyNonPartialNotionResponse = (
 ): results is PageObjectResponse[] => results[0]?.properties !== undefined;
 
 export const formatNotionPageAttributes = (
-  properties: PageObjectResponse['properties']
+  properties: PageObjectResponse['properties'],
+  cover: any
 ): { [key: string]: NotionDatabaseProperty } =>
   Object.entries(properties).reduce((acc, [key, prop]) => {
     const value = notionDatabasePropertyResolver(prop);
-    return { ...acc, [key]: value };
+    const img = !cover ? '' : cover.external.url;
+    return { ...acc, [key]: value, cover: img };
   }, {} as { [key: string]: NotionDatabaseProperty });
 
 // to fix issue 403 authenticate https://github.com/NotionX/react-notion-x/issues/211
