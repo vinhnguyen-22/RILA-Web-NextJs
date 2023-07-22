@@ -37,9 +37,6 @@ export default async function ArticlePage(props: any) {
   return (
     <>
       <article className="mt-4 flex flex-col items-center md:mt-20">
-        <div className="relative aspect-[3/2] w-[90vw] max-w-[900px]">
-          <Image src={article.cover} alt="cover" fill style={{ objectFit: 'contain' }} />
-        </div>
         <NotionRenderer recordMap={recordMap} />
       </article>
     </>

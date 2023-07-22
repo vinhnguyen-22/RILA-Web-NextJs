@@ -1,9 +1,10 @@
 import ClientOnly from '@/components/ClientOnly/ClientOnly';
-import { BlogHeader } from '@/components/blog/index';
-import { BlogList } from '@/components/blog/index';
+import BlogMediaCard from '@/components/blog/BlogLinkCard/BlogMediaCard';
+import { BlogVerticalList } from '@/components/blog/BlogList/BlogVerticalList';
+import Heros from '@/components/blog/Hero/Heros';
+import { BlogHeader, BlogList } from '@/components/blog/index';
 import { serverSideCmsClient } from '@/services/cms/cms.client';
 import { isArticle } from '@/types/guards';
-import Image from 'next/image';
 
 export const metadata = {
   title: 'Blog',
@@ -13,33 +14,23 @@ export default async function Blog() {
   const articles = await serverSideCmsClient.getDatabaseEntries(process.env.NOTION_BLOG_DB_ID, isArticle);
   return (
     <ClientOnly>
-      <div className="relative h-[528px] text-21xl text-white">
-        <Image className="object-cover" alt="" fill src={'/images/blog/rectangle-38.png'} />
-        <div className="relative grid">
-          <div className="absolute top-[160px] left-[95px] col-span-12 h-52">
-            <strong className="tracking-[0.03em] capitalize">Welcome to RILA&apos;S Blog</strong>
-            <div className="mt-[15px] text-xl tracking-[0.03em] leading-[30px] flex items-center ">
-              Your destination for the latest trends, news, and consumer analyses
-            </div>
-            <div className="mt-[15px] rounded-[66px] flex flex-row justify-between py-1.5 pr-2.5 pl-[30px]  text-lg border-[2px] border-solid border-white">
-              <input
-                className="relative flex font-light items-center w-[283px] shrink-0 outline-none bg-inherit"
-                placeholder="Enter Your Email"
-              />
-              <div className="relative h-[46px] text-center text-xl">
-                <button className="rounded-[47px] bg-red-100 flex flex-row py-2 px-6 items-center justify-center">
-                  <strong className="relative">Subscribe Now</strong>
-                </button>
-              </div>
-            </div>
-            <div className="col-span-6"></div>
+      <Heros />
+      <div className="flex flex-col mx-auto container">
+        <BlogList data={articles.slice(0, 3)} />
+      </div>
+      <section className="flex flex-col mx-auto container mt-[50px]">
+        <div className="grid grid-cols-5 gap-[65px]">
+          <div className="col-span-3 bg-transparent">
+            <BlogMediaCard article={articles[0]} />
+          </div>
+          <div className="col-span-2 bg-transparent">
+            <BlogVerticalList data={articles.slice(0, 4)} />
           </div>
         </div>
-      </div>
-      <div className="flex flex-col mx-auto container">
-        <BlogHeader />
-        <BlogList data={articles} />
-      </div>
+      </section>
+      <section className="flex flex-col mx-auto container mt-[50px]">
+        <BlogList data={articles.slice(0, 6)} />
+      </section>
     </ClientOnly>
   );
 }
