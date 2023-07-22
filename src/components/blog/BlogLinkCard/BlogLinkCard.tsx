@@ -14,26 +14,29 @@ export const BlogLinkCard: FC<BlogLinkCardProps> = ({ slug, tags, title, date, p
 
   return (
     <Link key={slug} className="p-4" href={articleSlug}>
-      <article className="mx-auto flex max-w-[25rem] flex-col overflow-hidden rounded-xl shadow-xl shadow-gray transition-all duration-300 hover:scale-[1.05] hover:shadow-2xl">
-        <div className="relative h-60">
+      <article className="relative min-h-[390px] mx-auto flex max-w-[25rem] flex-col overflow-hidden rounded-xl shadow-xl shadow-gray transition-all duration-300 hover:scale-[1.05] hover:shadow-2xl">
+        <div className="relative h-[212px]">
           <Image src={cover} alt="cover image" fill style={{ objectFit: 'cover' }} />
         </div>
-        <div className="flex h-48 flex-col p-4">
-          <h3 className="line-clamp-2 h-16 text-2xl font-bold">{title}</h3>
-          <time className="mb-4 mt-2 pl-2 text-sm text-black">
+        <div className="flex flex-col p-[15px]">
+          <h3 className="line-clamp-2 text-xl font-bold">{title}</h3>
+          <p className="truncate-overflow text-lg text-gray-800">{summary}</p>
+          <time className="absolute bottom-[15px] left-[15px] mt-[15px] text-base text-black">
             <p>
               <CalendarIcon className="inline-block mr-4" />
               {new Date(date).toLocaleDateString('en-GB')}
             </p>
           </time>
           {tags.length > 0 && (
-            <div className="flex flex-row gap-2 flex-wrap">
+            <div className="absolute top-[14px] left-[11px] flex flex-row gap-2 flex-wrap">
               {tags &&
-                tags.map((tag) => (
-                  <Chip key={tag.name} style={{ backgroundColor: tag.color }}>
-                    {tag.name}
-                  </Chip>
-                ))}
+                tags.map((tag) => {
+                  return (
+                    <Chip key={tag.name} style={{ backgroundColor: `var(--color-chip-${tag.color})` }}>
+                      {tag.name}
+                    </Chip>
+                  );
+                })}
             </div>
           )}
         </div>

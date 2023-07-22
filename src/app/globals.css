@@ -22,6 +22,13 @@ a {
     --color-text-base: 66, 71, 80; /* #424750*/
     --color-text-muted: 107, 114, 128; /*#6b7280*/
     --color-text-side: 255, 231, 231; /*#fff*/
+
+    --color-chip-red: #ec1b24;
+    --color-chip-pink: #ec1b24;
+    --color-chip-orange: #ffb800;
+    --color-chip-yellow: #ffb800;
+    --color-chip-blue: #190885;
+    --color-chip-default: #190885;
   }
 }
 
@@ -30,6 +37,7 @@ a {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
+    --lh: 1.4rem;
   }
 }
 
@@ -90,4 +98,26 @@ body {
 .testimonialSwiper {
   margin: 0px !important;
   overflow: visible !important;
+}
+
+.truncate-overflow {
+  --max-lines: 2;
+  position: relative;
+  max-height: calc(var(--lh) * var(--max-lines));
+  overflow: hidden;
+  padding-right: 8px;
+}
+.truncate-overflow::before {
+  position: absolute;
+  content: '...';
+  bottom: 0;
+  right: 0;
+}
+.truncate-overflow::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 1rem;
+  height: 1rem;
+  background: white;
 }

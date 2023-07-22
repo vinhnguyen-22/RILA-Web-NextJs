@@ -1,6 +1,5 @@
 import { notFound } from 'next/navigation';
 import { cache } from 'react';
-
 import { NotionRenderer } from '@/components/common/NotionRenderer';
 import { serverSideCmsClient } from '@/services/cms/cms.client';
 import { isArticle, isTwoStringArray } from '@/types/guards';

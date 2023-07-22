@@ -1,12 +1,10 @@
 import Image from 'next/image';
-import React from 'react';
-import Services from '../home/services/Services';
 import Link from 'next/link';
 
 const Heros = () => {
   return (
-    <div className="container mx-auto lg:px-2 xl:px-4">
-      <div className="grid grid-cols-12 mb-20 lg:mb-40 md:mt-3 mt-32">
+    <div className="container mt-[23px] mx-auto lg:px-2 xl:px-4">
+      <div className="grid grid-cols-12 mb-20 lg:mb-[80px] md:mt-3 mt-32">
         <div className="col-span-12 md:col-span-7 lg:col-span-7">
           <div className="text-black mr-0 mb-0 md:mb-12  lg:pr-10 md:pr-12 xl:pr-12">
             <strong className="lg:text-[44px] md:text-3xl text-3xl mb-[20px] lg:leading-[60px] md:leading-[48px] leading-[40px] capitalize inline-block text-black">

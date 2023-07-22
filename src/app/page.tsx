@@ -8,7 +8,7 @@ const Benefits = dynamic(() => import('@/components/home/benefits/Benefits'));
 const Services = dynamic(() => import('@/components/home/services/Services'));
 const Testimonial = dynamic(() => import('@/components/home/testimonial/Testimonial'));
 const Organization = dynamic(() => import('@/components/home/organization/Organization'));
-const Heros = dynamic(() => import('@/components/heros/Heros'));
+const Heros = dynamic(() => import('@/components/home/heros/Heros'));
 const Contact = dynamic(() => import('@/components/contact/Contact'));
 
 export default function Home() {

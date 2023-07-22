@@ -93,7 +93,7 @@ const Services = () => {
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mt-8">
                 {serviceItems.map((item, index) => (
-                  <div key={index} className="flex justify-center p-[20px]">
+                  <div key={index} className="relative flex justify-center p-[20px]">
                     <div className="rounded-6xl p-[30px] bg-white shadow-[0px_2px_6px_rgba(0,_0,_0,_0.1)]">
                       <div className="flex flex-col items-start justify-between">
                         <div className=" flex flex-row items-center justify-start gap-[20px]">
@@ -113,7 +113,7 @@ const Services = () => {
                         </div>
                         <Link
                           href="/about"
-                          className={`flex flex-row items-center justify-start gap-[15px] ${item.color}`}
+                          className={`absolute bottom-[35px] flex flex-row items-center justify-start gap-[15px] ${item.color}`}
                         >
                           <span
                             className={`lg:text-lg md:text-base text-sm leading-[28px] font-semibold ${item.color}`}
