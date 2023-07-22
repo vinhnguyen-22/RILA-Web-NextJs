@@ -8,7 +8,7 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default async function ArticlePage(props: PageProps<CatchAllPageParams>) {
+export default async function ArticlePage(props: any) {
   const pathParams = props?.params?.slug;
   if (!isTwoStringArray(pathParams)) throw notFound();
   const articles = await serverSideCmsClient.getDatabaseEntries(process.env.NOTION_BLOG_DB_ID, isArticle);
