@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const Heros = () => {
   return (
-    <div className="container mt-[23px] mx-auto lg:px-2 xl:px-4">
+    <div className="container mt-[100px] mx-auto lg:px-2 xl:px-4">
       <div className="grid grid-cols-12 mb-20 lg:mb-[80px] md:mt-3 mt-32">
         <div className="col-span-12 md:col-span-7 lg:col-span-7">
           <div className="text-black mr-0 mb-0 md:mb-12  lg:pr-10 md:pr-12 xl:pr-12">

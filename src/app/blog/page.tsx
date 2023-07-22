@@ -17,11 +17,11 @@ export default async function Blog() {
         <Image className="object-cover" alt="" fill src={'/images/blog/rectangle-38.png'} />
         <div className="relative grid">
           <div className="absolute top-[160px] left-[95px] col-span-12 h-52">
-            <b className="tracking-[0.03em] capitalize">Welcome to RILA&apos;S Blog</b>
+            <strong className="tracking-[0.03em] capitalize">Welcome to RILA&apos;S Blog</strong>
             <div className="mt-[15px] text-xl tracking-[0.03em] leading-[30px] flex items-center ">
               Your destination for the latest trends, news, and consumer analyses
             </div>
-            <div className="mt-[15px] rounded-[66px] flex flex-row justify-between py-1.5 pr-2.5 pl-[30px]  text-lg border-[2px] border-solid border-gray-700">
+            <div className="mt-[15px] rounded-[66px] flex flex-row justify-between py-1.5 pr-2.5 pl-[30px]  text-lg border-[2px] border-solid border-white">
               <input
                 className="relative flex font-light items-center w-[283px] shrink-0 outline-none bg-inherit"
                 placeholder="Enter Your Email"
