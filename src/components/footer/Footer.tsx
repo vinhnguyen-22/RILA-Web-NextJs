@@ -179,6 +179,11 @@ const Footer = () => {
                 </li>
                 <li className="mb-4">
                   <Link href="/about" className="hover:underline">
+                    Disclaimer
+                  </Link>
+                </li>
+                <li className="mb-4">
+                  <Link href="/about" className="hover:underline">
                     Sustainability
                   </Link>
                 </li>

@@ -12,7 +12,7 @@ const slideData = [
     jobTitle: "Sr. Vehicle Analyst",
     name: "Victoria Ellis",
     testimonial:
-      "I’ve received excellent research services from RILA GLOBAL over the past 3 years during my time at Toyota Motor North America. RILA’s professionalism andindustry knowledge is an asset to us and will continue to be to other global social media leaders and partners.",
+      "I’ve received excellent research services from RILA GLOBAL over the past 3 years during my time at Toyota Motor North America. RILA’s professionalism and industry knowledge is an asset to us and will continue to be to other global social media leaders and partners.",
   },
   {
     imageUrl: "/images/homepage/chevron.png",
