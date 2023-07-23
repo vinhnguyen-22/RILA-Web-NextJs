@@ -17,3 +17,12 @@ type Tag = {
   color: SelectColor;
   name: string;
 };
+
+export type Report = {
+  id: string;
+  cover: string;
+  slug: string;
+  title: string;
+  tags: Tag[];
+  published: boolean;
+};

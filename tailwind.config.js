@@ -80,11 +80,11 @@ module.exports = {
           200: '#f52f2f',
         },
       },
-
       borderRadius: {
         '51xl': '70px',
         '100xl-5': '119.5px',
         '6xl': '25px',
+        lg: '20px',
       },
       fontSize: {
         '23xl': '42px',

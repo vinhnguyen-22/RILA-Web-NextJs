@@ -8,12 +8,17 @@ type Props = {
 
 const Heading = ({ title, subtitle }: Props) => {
   return (
-    <div className="h-[135px] text-21xl mx-auto">
-      <strong className="tracking-[0.03em] flex items-center justify-center ">{title}</strong>
-
-      <div className="text-center text-xl tracking-[0.03em] leading-[30px] text-gray-500 flex items-center justify-center w-[841px]">
-        {subtitle ? subtitle : ''}
-      </div>
+    <div className="text-21xl mx-auto">
+      <h1>
+        <strong className="tracking-[0.03em] flex items-center justify-center">{title}</strong>
+      </h1>
+      {subtitle ? (
+        <div className="text-center text-xl tracking-[0.03em] leading-[30px] text-gray-500 flex items-center justify-center">
+          {subtitle}
+        </div>
+      ) : (
+        <></>
+      )}
       {/* <div className=" w-[868px] h-[60px] text-xl text-gray-700">
         <div className=" rounded-31xl flex flex-row py-[15px] px-[30px] items-center justify-center gap-[15px] text-red-100 border-[2px] border-solid border-red-100">
           <Image className="relative w-5 h-[22px]" alt="" src="/public/group-150.svg" />

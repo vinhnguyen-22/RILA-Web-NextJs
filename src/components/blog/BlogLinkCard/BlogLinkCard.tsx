@@ -14,7 +14,7 @@ export const BlogLinkCard: FC<BlogLinkCardProps> = ({ slug, tags, title, date, p
 
   const truncateText = (text: string, maxLength: number) =>
     text.length <= maxLength ? text : text.slice(0, maxLength - 3) + '...';
-  const maxLength = 70;
+  const maxLength = 60;
   const truncatedText = truncateText(summary, maxLength);
 
   return (

@@ -12,6 +12,7 @@ export const metadata = {
 };
 export default async function Blog() {
   const articles = await serverSideCmsClient.getDatabaseEntries(process.env.NOTION_BLOG_DB_ID, isArticle);
+
   return (
     <ClientOnly>
       <Heros />
