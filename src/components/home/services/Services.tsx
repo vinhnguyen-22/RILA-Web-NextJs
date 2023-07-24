@@ -135,7 +135,7 @@ const Services = () => {
                       <div className="lg:text-21xl md:text-3xl text-2xl font-semibold flex items-center justify-center md:w-[143.16px]">
                         {item.number}
                       </div>
-                      <div className="lg:text-xl text-lg text-white leading-[32px] font-semibold inline-block ">
+                      <div className="lg:text-xl text-lg text-white leading-[32px] font-semibold inline-block px-1">
                         {item.title}
                       </div>
                       <div className="text-lg leading-[28px] text-white inline-block md:w-[182.69px]">
