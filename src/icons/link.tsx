@@ -1,4 +1,4 @@
-export const LinkIcon = (props: JSX.IntrinsicElements["svg"]) => {
+export const LinkIcon = (props: JSX.IntrinsicElements['svg']) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" {...props}>
       <path

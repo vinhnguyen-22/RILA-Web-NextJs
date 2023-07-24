@@ -85,6 +85,7 @@ module.exports = {
         '100xl-5': '119.5px',
         '6xl': '25px',
         lg: '20px',
+        md: '10px',
       },
       fontSize: {
         '23xl': '42px',

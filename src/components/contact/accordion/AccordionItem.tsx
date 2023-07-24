@@ -1,6 +1,7 @@
 import React from 'react';
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
 import { Collapse } from 'react-collapse';
+import classNames from 'classnames';
 type AccordionItemProps = {
   open: boolean;
   toggle: any;
@@ -9,10 +10,11 @@ type AccordionItemProps = {
 };
 const AccordionItem = ({ open, toggle, title, desc }: AccordionItemProps) => (
   <>
-    <div className="h-[1px] w-full bg-darkgray px-2.5 "></div>
     <div className="flex flex-row w-full items-center justify-between" onClick={toggle}>
-      <div className="flex flex-row py-8 box-border items-center justify-start">
-        <div className="md:text-base text-sm relative leading-[36px]">{title}</div>
+      <div className="flex flex-row py-[30px] box-border items-center justify-start">
+        <div className={classNames('md:text-base text-sm relative leading-[36px]', open ? 'font-semibold' : '')}>
+          {title}
+        </div>
       </div>
       <div className="text-white font-bold text-xl justify-end">
         {open ? (

@@ -2,6 +2,7 @@
 
 import { FC, ReactNode, useEffect, useState } from 'react';
 import { SearchIcon } from '@/icons/search';
+import classNames from 'classnames';
 
 interface SearchableListProps<T> {
   children?: ReactNode;
@@ -27,9 +28,9 @@ export const SearchList = <T,>({
 
   return (
     <div>
-      <div className="sticky top-20 w-full  z-10 bg-white dark:bg-gray-900">
+      <div className="top-20 w-full  z-10 bg-white dark:bg-gray-900">
         <div className="flex sm:flex-row flex-col">
-          <div className="relative w-full">
+          <div className={'relative w-full'}>
             <SearchIcon className="absolute w-5 h-5 text-gray-800 left-3 top-3 dark:text-gray-300" />
 
             <input

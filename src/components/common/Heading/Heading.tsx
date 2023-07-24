@@ -13,7 +13,7 @@ const Heading = ({ title, subtitle }: Props) => {
         <strong className="tracking-[0.03em] flex items-center justify-center">{title}</strong>
       </h1>
       {subtitle ? (
-        <div className="text-center text-xl tracking-[0.03em] leading-[30px] text-gray-500 flex items-center justify-center">
+        <div className="max-w-[841px] text-center text-xl tracking-[0.03em] leading-[30px] text-gray-500 flex items-center justify-center">
           {subtitle}
         </div>
       ) : (

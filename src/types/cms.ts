@@ -23,6 +23,9 @@ export type Report = {
   cover: string;
   slug: string;
   title: string;
+  summary: string;
   tags: Tag[];
   published: boolean;
+  date: string;
+  lastEditedAt: string;
 };
