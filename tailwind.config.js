@@ -16,19 +16,6 @@ module.exports = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    // screens: {
-    //   sm: '425px',
-    //   // => @media (min-width: 576px) { ... }
-
-    //   md: '768px',
-    //   // => @media (min-width: 768px) { ... }
-
-    //   lg: '992px',
-    //   // => @media (min-width: 992px) { ... }
-
-    //   xl: '1200px',
-    //   // => @media (min-width: 1200px) { ... }
-    // },
     extend: {
       colors: {
         white: '#fff',
@@ -104,6 +91,7 @@ module.exports = {
       fontFamily: {
         font: 'font',
         poppins: 'Poppins',
+        gochi: "'Gochi Hand'",
       },
       fontWeight: {
         semibold: '600',

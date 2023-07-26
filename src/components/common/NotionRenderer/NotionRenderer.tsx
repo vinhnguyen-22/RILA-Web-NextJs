@@ -35,7 +35,6 @@ export interface NotionRendererProps {
 export const NotionRenderer: FC<NotionRendererProps> = ({ recordMap }) => {
   const { resolvedTheme } = useTheme();
   const mounted = useMounted();
-  console.log(recordMap);
   return (
     <Renderer
       darkMode={(resolvedTheme ?? 'dark') === 'light'}

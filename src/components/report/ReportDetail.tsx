@@ -4,6 +4,8 @@ import React, { FC } from 'react';
 import Contact from '../contact/Contact';
 import BulletCheck from '@/icons/bullet';
 import Link from 'next/link';
+import Image from 'next/image';
+import ArrowPoint from '@/icons/arrow-point';
 
 type ReportDetailProps = Report | any;
 const ReportDetail: FC<ReportDetailProps> = ({ report }) => {
@@ -18,7 +20,7 @@ const ReportDetail: FC<ReportDetailProps> = ({ report }) => {
       <div className="bg-black py-[79px]">
         <div className="container mx-auto">
           <div className="grid md:grid-cols-2 grid-cols-1">
-            <div className="flex flex-col mb-[36px] gap-[15px] text-white ">
+            <div className="relative flex flex-col mb-[36px] gap-[15px] text-white ">
               <h3 className="capitalize font-semibold text-23xl">
                 Get the full <span className="text-red-100">report</span>
               </h3>
@@ -34,30 +36,48 @@ const ReportDetail: FC<ReportDetailProps> = ({ report }) => {
               <ul className="max-w-md space-y-1 list-inside ">
                 <li className="flex items-center leading-7 text-sm gap-[15px]">
                   <BulletCheck />
-                  At least 10 characters
+                  Top neobanks digital performance{' '}
                 </li>
                 <li className="flex items-center leading-7 text-sm gap-[15px]">
                   <BulletCheck />
-                  At least one lowercase character
+                  Consumer behaviors, trends and preferences
                 </li>
                 <li className="flex items-center leading-7 text-sm gap-[15px]">
                   <BulletCheck />
-                  At least one special character, e.g., ! @ # ?
+                  Reasons for switching
                 </li>
                 <li className="flex items-center leading-7 text-sm gap-[15px]">
                   <BulletCheck />
-                  At least 10 characters
+                  Market differences
                 </li>
                 <li className="flex items-center leading-7 text-sm gap-[15px]">
                   <BulletCheck />
-                  At least one lowercase character
+                  Emotion analysis
                 </li>
                 <li className="flex items-center leading-7 text-sm gap-[15px]">
                   <BulletCheck />
-                  At least one special character, e.g., ! @ # ?
+                  Audience segmentation
+                </li>
+                <li className="flex items-center leading-7 text-sm gap-[15px]">
+                  <BulletCheck />
+                  And more!
                 </li>
               </ul>
+              <div className="lg:block hidden absolute bottom-[5%] -right-[4%] rotate-0 text-white font-gochi text-base font-normal leading-7">
+                <div className="absolute -top-[30px] -left-[50px]">
+                  <span className="inline-block -rotate-90">✏️</span> fill this out
+                </div>
+                <ArrowPoint position="right" />
+              </div>
+
+              <div className="max-sm:block hidden absolute bottom-[0%] right-[10%] rotate-0 text-white font-gochi text-base font-normal leading-7">
+                <div className="absolute -top-[30px] -left-[50px]">
+                  <span className="inline-block -rotate-90">✏️</span> fill this out
+                </div>
+                <ArrowPoint position="down" />
+              </div>
             </div>
+
             <div className="flex justify-center items-center">
               <div className="w-[416px] rounded-lg bg-white overflow-hidden">
                 <form className="bg-white shadow-md p-[20px]">

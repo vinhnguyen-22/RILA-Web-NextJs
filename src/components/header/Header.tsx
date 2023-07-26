@@ -60,7 +60,7 @@ const Header = () => {
           >
             <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
               <li className="text-base font-semibold leading-[32px] text-gray-300 hover:text-red-300 duration-200">
-                <Link href="/">Home</Link>
+                <Link href="/about">Home</Link>
               </li>
               <li className="text-base font-semibold leading-[32px] text-gray-300 hover:text-red-300 duration-200">
                 <Link href="/about">About Us</Link>
@@ -73,7 +73,7 @@ const Header = () => {
               </li>
               <li>
                 <Link
-                  href="/about"
+                  href="/contact"
                   className="hidden md:flex lg:flex rounded-51xl bg-tomato-100 w-36 h-[40px] flex-row box-border items-center justify-center text-white hover:bg-red-200"
                 >
                   <span className="text-center text-sm relative font-semibold leading-[20px] capitalize inline-block w-[99px] shrink-0">
