@@ -17,14 +17,14 @@ export default async function Blog() {
     <ClientOnly>
       <Heros />
       <div className="flex flex-col mx-auto container">
-        <BlogList data={articles.slice(0, 3)} />
+        <BlogList data={articles.slice(0, 3)} searchBar />
       </div>
       <section className="flex flex-col mx-auto container mt-[50px]">
-        <div className="grid grid-cols-5 gap-[65px]">
-          <div className="col-span-3 bg-transparent">
+        <div className="grid md:grid-cols-5 grid-cols-1 gap-[65px]">
+          <div className="md:col-span-3 bg-transparent">
             <BlogMediaCard article={articles[0]} />
           </div>
-          <div className="col-span-2 bg-transparent">
+          <div className="md:col-span-2 bg-transparent">
             <BlogVerticalList data={articles.slice(0, 4)} />
           </div>
         </div>

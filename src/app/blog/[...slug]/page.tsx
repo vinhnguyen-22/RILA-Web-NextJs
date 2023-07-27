@@ -7,6 +7,8 @@ import { CatchAllPageParams, PageProps } from '@/types/nextjs';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Article } from '@/types/cms';
+import RelatedActicles from '@/components/blog/RelatedBlog/RelatedBlog';
 
 export default async function ArticlePage(props: any) {
   const pathParams = props?.params?.slug;
@@ -31,13 +33,14 @@ export default async function ArticlePage(props: any) {
       </article>
     );
   }
-  // const relatedArticles: Article[] = articles.filter(
-  //   (p) => p.slug !== slug && p.tags.some((v) => article.tags.includes(v))
-  // );
+  const relatedArticles: Article[] = articles.filter(
+    (p) => p.slug !== slug && p.tags.some((v) => article.tags.includes(v))
+  );
   return (
     <>
       <article className="mt-4 flex flex-col items-center md:mt-20">
         <NotionRenderer recordMap={recordMap} />
+        <RelatedActicles data={relatedArticles} />
       </article>
     </>
   );

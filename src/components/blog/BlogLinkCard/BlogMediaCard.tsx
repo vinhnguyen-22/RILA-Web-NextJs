@@ -1,4 +1,6 @@
+'use client';
 import { Chip } from '@/components/common/Chip';
+import { useMediaQuery } from '@/hooks/useMediaQuery';
 import { CalendarIcon } from '@/icons/calendar';
 import { Article } from '@/types/cms';
 import Image from 'next/image';
@@ -8,7 +10,7 @@ const BlogMediaCard = ({ article }: any) => {
   const truncateText = (text: string, maxLength: number) =>
     text.length <= maxLength ? text : text.slice(0, maxLength - 3) + '...';
 
-  const maxLength = 60;
+  const maxLength = 70;
   const truncatedText = truncateText(article.summary, maxLength);
 
   return (

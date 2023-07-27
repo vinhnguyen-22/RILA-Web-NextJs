@@ -13,3 +13,10 @@ export const questionItems = [
     desc: 'We strive to work around client timelines and urgent requests. If you have an urgent request, please reach out to us immediately so we can help you deliver.',
   },
 ];
+export const awardImages = [
+  '/images/about-us/award/stevie.png',
+  '/images/about-us/award/globan-award.png',
+  '/images/about-us/award/social-intelligence.png',
+  '/images/about-us/award/image-28.png',
+  '/images/about-us/award/screen-shot-2023-07-26-at-9.57-2.png',
+];

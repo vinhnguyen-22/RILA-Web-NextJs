@@ -1,6 +1,6 @@
-import Header from '@/components/header/Header';
+import Header from '@/components/layout/header/Header';
 import { Poppins } from 'next/font/google';
-import Footer from '@/components/footer/Footer';
+import Footer from '@/components/layout/footer/Footer';
 import { Metadata } from 'next';
 import { GlobalProvider } from './GlobalProvider';
 
