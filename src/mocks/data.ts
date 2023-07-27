@@ -20,3 +20,44 @@ export const awardImages = [
   '/images/about-us/award/image-28.png',
   '/images/about-us/award/screen-shot-2023-07-26-at-9.57-2.png',
 ];
+export const CaseStudyBrandImage = [
+  { image: '/images/case-study/toyota.png', alt: 'toyota' },
+  { image: '/images/case-study/evelom.png', alt: 'evelom' },
+  { image: '/images/case-study/gvtc.png', alt: 'gvtc' },
+  { image: '/images/case-study/hershey.png', alt: 'hershey' },
+
+  // { image: '/images/case-study/gsma.png', alt: 'gsma' },
+  // { image: '/images/case-study/lillets.png', alt: 'lillets' },
+  // { image: '/images/case-study/oreo.png', alt: 'oreo' },
+  // { image: '/images/case-study/stantander.png', alt: 'stantander' },
+  // { image: '/images/case-study/unhcr.png', alt: 'unhcr' },
+  // { image: '/images/case-study/vegetarian.png', alt: 'vegetarian' },
+];
+
+export const CaseStudyTabsData = [
+  {
+    label: 'Introduction',
+    link: '/',
+    content:
+      "Eve Lom faced the challenge of effectively reaching their target audience and conveying their brand messaging in the United States market. The brand's online presence was limited, failing to establish a consistent and cohesive brand image. To stand out in the competitive realm of luxury beauty brands, Eve Lom needed a sophisticated marketing strategy that would engage their ideal customers effectively.",
+  },
+  {
+    label: 'Challenge',
+    link: '/',
+    content:
+      "Eve Lom faced the challenge of effectively reaching their target audience and conveying their brand messaging in the United States market. The brand's online presence was limited, failing to establish a consistent and cohesive brand image. To stand out in the competitive realm of luxury beauty brands, Eve Lom needed a sophisticated marketing strategy that would engage their ideal customers effectively.",
+  },
+  {
+    label: 'Solution',
+
+    link: '/',
+    content:
+      "Eve Lom faced the challenge of effectively reaching their target audience and conveying their brand messaging in the United States market. The brand's online presence was limited, failing to establish a consistent and cohesive brand image. To stand out in the competitive realm of luxury beauty brands, Eve Lom needed a sophisticated marketing strategy that would engage their ideal customers effectively.",
+  },
+  {
+    label: 'Outcome',
+    link: '/',
+    content:
+      "Eve Lom faced the challenge of effectively reaching their target audience and conveying their brand messaging in the United States market. The brand's online presence was limited, failing to establish a consistent and cohesive brand image. To stand out in the competitive realm of luxury beauty brands, Eve Lom needed a sophisticated marketing strategy that would engage their ideal customers effectively.",
+  },
+];

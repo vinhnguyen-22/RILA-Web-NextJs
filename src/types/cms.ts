@@ -29,3 +29,14 @@ export type Report = {
   date: string;
   lastEditedAt: string;
 };
+
+export type CaseStudy = {
+  id: string;
+  cover: string;
+  slug: string;
+  title: string;
+  summary: string;
+  published: boolean;
+  date: string;
+  lastEditedAt: string;
+};
