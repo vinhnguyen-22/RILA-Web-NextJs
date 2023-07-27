@@ -5,7 +5,7 @@ export const PATHS = {
   ABOUT: '/about',
   BLOG: '/blog',
   REPORT: '/report',
-  TECH: '/tech',
+  CASESTUDY: '/casestudy',
   RESOURCES: '/resources',
 };
 
@@ -25,5 +25,9 @@ export const NAVBAR_ITEMS: any[] = [
   {
     href: PATHS.REPORT,
     label: 'Report',
+  },
+  {
+    href: PATHS.CASESTUDY,
+    label: 'CaseStudy',
   },
 ];
