@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between md:gap-5 flex flex-col-reverse md:flex-row">
           <div className="mb-6 md:mb-0">
-            <Link href="/about" className="flex items-center">
+            <Link href="/resources" className="flex items-center">
               <Image
                 width={107}
                 height={10}
@@ -86,7 +86,7 @@ const Footer = () => {
             </div>
 
             <Link
-              href="/about"
+              href="/resources"
               className="mt-[31px] rounded-51xl bg-red-200 flex flex-row py-3 px-1 box-border items-center justify-center text-white"
             >
               <strong className="text-sm relative leading-[20px] capitalize">Contact Us</strong>
@@ -102,17 +102,17 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li className="mb-4">
-                  <Link href="/about" className="hover:underline">
+                  <Link href="/resources" className="hover:underline">
                     Careers
                   </Link>
                 </li>
                 <li className="mb-4">
-                  <Link href="/about" className="hover:underline">
+                  <Link href="/resources" className="hover:underline">
                     Newsroom
                   </Link>
                 </li>
                 <li className="mb-4">
-                  <Link href="/about" className="hover:underline">
+                  <Link href="/contact" className="hover:underline">
                     Contact Us
                   </Link>
                 </li>
@@ -122,7 +122,7 @@ const Footer = () => {
               <h2 className="mb-6 text-lg font-semibold text-gray-200 capitalize ">Resources</h2>
               <ul className="text-lightslategray-200  font-medium">
                 <li className="mb-4">
-                  <Link href="/about" className="hover:underline ">
+                  <Link href="/resources" className="hover:underline ">
                     Our Services
                   </Link>
                 </li>
@@ -132,7 +132,7 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li className="mb-4">
-                  <Link href="/about" className="hover:underline">
+                  <Link href="/resources" className="hover:underline">
                     Our Work
                   </Link>
                 </li>
@@ -147,22 +147,22 @@ const Footer = () => {
               <h2 className="mb-6 text-lg font-semibold text-gray-200 capitalize ">Legal</h2>
               <ul className="text-lightslategray-200  font-medium">
                 <li className="mb-4">
-                  <Link href="/about" className="hover:underline">
+                  <Link href="/resources" className="hover:underline">
                     Privacy Policy
                   </Link>
                 </li>
                 <li className="mb-4">
-                  <Link href="/about" className="hover:underline">
+                  <Link href="/resources" className="hover:underline">
                     Terms &amp; Conditions
                   </Link>
                 </li>
                 <li className="mb-4">
-                  <Link href="/about" className="hover:underline">
+                  <Link href="/resources" className="hover:underline">
                     Disclaimer
                   </Link>
                 </li>
                 <li className="mb-4">
-                  <Link href="/about" className="hover:underline">
+                  <Link href="/resources" className="hover:underline">
                     Sustainability
                   </Link>
                 </li>

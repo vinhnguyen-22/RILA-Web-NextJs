@@ -1,7 +1,5 @@
 // import { useEffect, useMemo } from 'react';
 
-// import { search } from '@/utils/search';
-// import { toUniqueArray } from '@/utils/to-unique-array';
 // import { Article } from '@/types/cms';
 
 // const Article_PER_PAGE = 12;
