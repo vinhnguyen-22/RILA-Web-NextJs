@@ -34,7 +34,11 @@ export default async function ArticlePage(props: any) {
     );
   }
   const relatedArticles: Article[] = articles.filter(
-    (p) => p.slug !== slug && p.tags.some((v) => article.tags.includes(v))
+    (p) =>
+      p.slug !== slug &&
+      article.tags.some((v) => {
+        return p.tags.includes(v);
+      })
   );
   return (
     <>

@@ -22,7 +22,7 @@ const Contact = () => {
               <div className="flex flex-col items-start justify-start ">
                 {questionItems.map((data, index) => {
                   return (
-                    <>
+                    <div key={index}>
                       <div className="h-[1px] w-full bg-darkgray px-2.5 "></div>
                       <AccordionItem
                         key={index}
@@ -31,7 +31,7 @@ const Contact = () => {
                         desc={data.desc}
                         toggle={() => toggle(index)}
                       />
-                    </>
+                    </div>
                   );
                 })}
                 <div className="h-[0.5px] w-full bg-darkgray px-2.5 "></div>
