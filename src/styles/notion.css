@@ -5,15 +5,20 @@
 }
 
 .notion-frame {
-  @apply w-[90vw];
+  @apply w-[100%];
+}
+.notion-page {
+  @apply !container !items-center  !justify-center !mx-auto;
 }
 
 .notion {
   @apply !bg-transparent;
 }
-
+.notion-page-content {
+  @apply !gap-[50px] !w-full;
+}
 .notion-aside-table-of-contents {
-  @apply w-2/3 max-w-[300px] bg-transparent px-4 pb-4;
+  @apply max-w-[100%] !w-full bg-transparent px-4 pb-4;
 }
 
 .notion-aside-table-of-contents-header {

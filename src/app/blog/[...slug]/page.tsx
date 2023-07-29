@@ -1,14 +1,11 @@
-import { notFound } from 'next/navigation';
-import { cache } from 'react';
 import { NotionRenderer } from '@/components/common/NotionRenderer';
 import { serverSideCmsClient } from '@/services/cms/cms.client';
-import { isArticle, isTwoStringArray } from '@/types/guards';
-import { CatchAllPageParams, PageProps } from '@/types/nextjs';
-import { Metadata } from 'next';
-import Image from 'next/image';
-import Link from 'next/link';
 import { Article } from '@/types/cms';
-import RelatedActicles from '@/components/blog/RelatedBlog/RelatedBlog';
+import { isArticle, isTwoStringArray } from '@/types/guards';
+import { Metadata } from 'next';
+import Link from 'next/link';
+import { notFound } from 'next/navigation';
+import { cache } from 'react';
 
 export default async function ArticlePage(props: any) {
   const pathParams = props?.params?.slug;
@@ -33,18 +30,21 @@ export default async function ArticlePage(props: any) {
       </article>
     );
   }
-  const relatedArticles: Article[] = articles.filter(
-    (p) =>
-      p.slug !== slug &&
-      article.tags.some((v) => {
-        return p.tags.includes(v);
-      })
-  );
+
+  function getObjectsWithSameTag(targetObject: Article, articles: Article[]) {
+    const targetTag = targetObject.tags[0]; // Assuming each object has only one tag
+    const objectsWithSameTag = articles.filter((article) => {
+      return article.tags.some((tag) => tag.id === targetTag.id);
+    });
+    return objectsWithSameTag;
+  }
+
+  const relatedArticles: Article[] = getObjectsWithSameTag(article, articles);
+
   return (
     <>
       <article className="mt-4 flex flex-col items-center md:mt-20">
-        <NotionRenderer recordMap={recordMap} />
-        <RelatedActicles data={relatedArticles} />
+        <NotionRenderer recordMap={recordMap} relatedArticles={relatedArticles} />
       </article>
     </>
   );

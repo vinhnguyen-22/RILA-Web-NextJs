@@ -1,12 +1,10 @@
 'use client';
 
 import { Report } from '@/types/cms';
-import React, { useEffect, useState } from 'react';
-import ReportCard from './ReportCard';
-import { SearchList } from '../common/SearchList';
-import { SearchIcon } from '@/icons/search';
+import { useEffect, useState } from 'react';
 import { Chip } from '../common/Chip';
 import SearchBar from '../common/SearchBar/SearchBar';
+import ReportCard from './ReportCard';
 type Props = {
   data: Report[];
 };
@@ -53,7 +51,7 @@ const ReportList = ({ data }: Props) => {
         <SearchBar className="lg:w-1/2 mx-auto" setQuery={setQuery} />
       </div>
 
-      <div className="mx-1 grid grid-cols-1 md:grid-cols-3 ">
+      <div className="mx-1 my-5 grid grid-cols-1 md:grid-cols-3 max-sm:gap-[8px] gap-[58px] ">
         {search.map((element, i) => (
           <ReportCard key={i} {...element} />
         ))}

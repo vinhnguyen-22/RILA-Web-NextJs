@@ -12,31 +12,34 @@ const VideoBanner = () => {
   };
 
   return (
-    <div className="relative overflow-hidden">
-      <div className="bg-black">
-        <ReactPlayer
-          height={430}
-          width={'100%'}
-          className="bg-black opacity-50"
-          url="https://www.youtube.com/watch?v=bsEYJL291Tw"
-          controls={false}
-          light={true}
-          playing={playing}
-        />
-      </div>
-
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col md:flex-row w-[60%] justify-center items-center gap-[80px]">
-        <div className="rounded-lg px-[35px] py-[50px] bg-white flex justify-center items-center">
-          <Image src={'/images/case-study/evelom-352.png'} className="" width={352} height={92} alt={'eve logo'} />
+    <div
+      className="relative overflow-hidden py-[60px] flex flex-row justify-center bg-no-repeat bg-cover"
+      style={{ backgroundImage: `url('./images/case-study/banner-video.png')` }}
+    >
+      <div className=" grid md:grid-cols-2 grid-cols-1 w-[60%] place-items-center gap-[43px]">
+        <div className="w-full rounded-2xl relative shadow-lg overflow-hidden">
+          <ReactPlayer
+            height={312}
+            width={'100%'}
+            className=""
+            url="https://www.youtube.com/watch?v=bsEYJL291Tw"
+            controls={false}
+            light={true}
+            playing={playing}
+          />
         </div>
+
         <div className="text-white">
-          <h3 className="text-xl font-semibold">Unveiling Success: The EVE LOM & RILA Social Listening Journey.</h3>
+          <div className="rounded-lg px-[30px] py-[20px] bg-white flex justify-center items-center">
+            <Image src={'/images/case-study/evelom-352.png'} className="" width={352} height={92} alt={'eve logo'} />
+          </div>
+
+          <h3 className="mt-[43px] text-xl font-semibold">
+            Unveiling Success: The EVE LOM & RILA Social Listening Journey.
+          </h3>
           <p className="text-lg leading-7">
             Witness how our data-driven insights supercharged EVE LOM to lower customer acquisition costs.
           </p>
-          <button onClick={onPlay} className="px-[60px] py-[8px] bg-red-100 hover:bg-red-100 rounded-[46px] mt-[20px]">
-            <strong>Watch Video</strong>
-          </button>
         </div>
       </div>
     </div>

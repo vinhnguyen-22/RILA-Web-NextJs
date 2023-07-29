@@ -11,9 +11,9 @@ type ReportCardProps = Report;
 const ReportCard: FC<ReportCardProps> = ({ cover, id, published, slug, tags, title }) => {
   const reportSlug = `${PATHS.REPORT}/${slug}`;
   return (
-    <Link key={slug} className="p-4" href={reportSlug}>
+    <Link key={slug} className="" href={reportSlug}>
       <div
-        className="relative text-white p-[20px] h-[200px] rounded-lg bg-gradient-to-r from-black via-black to-transparent border-black bg-center bg-cover "
+        className="relative text-white p-[20px] md:h-[200px] rounded-lg bg-gradient-to-r from-black via-black to-transparent border-black bg-center bg-cover "
         style={{ backgroundImage: `url('${cover}')` }}
       >
         <div className="absolute right-[22px] bottom-[22px]">
