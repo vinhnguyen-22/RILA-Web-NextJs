@@ -1,6 +1,5 @@
 'use client';
 import Heading from '@/components/common/Heading/Heading';
-import Map from '@/components/common/Map/Map';
 import AccordionItem from '@/components/contact/accordion/AccordionItem';
 import { questionItems } from '@/mocks/data';
 import React, { useState } from 'react';
