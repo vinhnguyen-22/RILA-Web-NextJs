@@ -12,7 +12,7 @@ export type Article = {
   lastEditedAt: string;
 };
 
-type Tag = {
+export type Tag = {
   id: string;
   color: SelectColor;
   name: string;

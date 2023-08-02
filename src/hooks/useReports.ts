@@ -1,15 +1,15 @@
 import { useEffect, useMemo, useState } from 'react';
 
-import { Article } from '@/types/cms';
+import { Report } from '@/types/cms';
 import usePostStore from '@/store/postStore';
 
 const TOTAL_ELEMENT = 9;
 
-export default function useArticles(allArticles: Article[]) {
+export default function useReports(allReports: Report[]) {
   const { page, query, selected, setActive } = usePostStore((state) => state);
-  const allArticlesFiltered = useMemo(
+  const allReportsFiltered = useMemo(
     () =>
-      allArticles
+      allReports
         .filter((post) => {
           if (!post.published) {
             return false;
@@ -35,11 +35,11 @@ export default function useArticles(allArticles: Article[]) {
           return true;
         })
         .sort((a, b) => (a.date > b.date ? -1 : 1)),
-    [allArticles, selected, query]
+    [allReports, selected, query]
   );
   //   useEffect(() => {
   //     const fetchData = (query: string) =>
-  //       allArticles
+  //       allReports
   //         .filter(
   //           ({ title, summary, tags, date }) =>
   //             new Date(date) < new Date() &&
@@ -49,18 +49,18 @@ export default function useArticles(allArticles: Article[]) {
   //               tags.some(({ name }) => name.toLowerCase().includes(query)))
   //         )
   //         .sort((a, b) => (a.date > b.date ? -1 : 1));
-  //   }, [allArticles, query]);
+  //   }, [allReports, query]);
 
-  allArticlesFiltered.sort((postA, postB) => (postA.date > postB.date ? -1 : 1));
+  allReportsFiltered.sort((postA, postB) => (postA.date > postB.date ? -1 : 1));
 
-  const totalPages = Math.ceil(allArticlesFiltered.length / TOTAL_ELEMENT);
+  const totalPages = Math.ceil(allReportsFiltered.length / TOTAL_ELEMENT);
   const offset = (page ? +page - 1 : 0) * TOTAL_ELEMENT;
-  const postsForCurrentPage = allArticlesFiltered.slice(offset, offset + TOTAL_ELEMENT);
+  const reportsForCurrentPage = allReportsFiltered.slice(offset, offset + TOTAL_ELEMENT);
   useEffect(() => {
-    setActive([...new Set(allArticlesFiltered.map((post) => post.tags).flat())]);
-  }, [allArticlesFiltered, setActive]);
+    setActive([...new Set(allReportsFiltered.map((post) => post.tags).flat())]);
+  }, [allReportsFiltered, setActive]);
   return {
-    articles: postsForCurrentPage,
+    reports: reportsForCurrentPage,
     totalPages,
   };
 }

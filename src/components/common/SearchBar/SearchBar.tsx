@@ -1,8 +1,21 @@
-import { SearchIcon } from '@/icons/search';
-import classNames from 'classnames';
-import React from 'react';
+'use client';
 
-const SearchBar = ({ setQuery, className }: any) => {
+import { SearchIcon } from '@/icons/search';
+import usePostStore from '@/store/postStore';
+import classNames from 'classnames';
+import React, { ChangeEvent } from 'react';
+
+const SearchBar = ({ className }: any) => {
+  const { query, setQuery } = usePostStore((state) => state);
+
+  const handleInputClear = () => {
+    setQuery('');
+  };
+
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setQuery(e.target.value);
+  };
+
   return (
     <div className={classNames('flex flex-col justify-center items-center w-full', className)}>
       <div className={'relative w-full'}>
@@ -10,7 +23,7 @@ const SearchBar = ({ setQuery, className }: any) => {
         <input
           aria-label={'Search'}
           type="text"
-          onChange={(e) => setQuery(e.target.value)}
+          onChange={handleInputChange}
           placeholder={'Search'}
           className="block w-full px-10 py-2 text-gray-900 placeholder:text-gray-800 bg-white border border-gray-200 rounded-lg focus:outline-none focus:border-gray-500"
         />

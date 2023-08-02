@@ -3,6 +3,7 @@ import BlogMediaCard from '@/components/blog/BlogLinkCard/BlogMediaCard';
 import { BlogVerticalList } from '@/components/blog/BlogList/BlogVerticalList';
 import Heros from '@/components/blog/Hero/Heros';
 import { BlogHeader, BlogList } from '@/components/blog/index';
+import SearchBar from '@/components/common/SearchBar/SearchBar';
 import { serverSideCmsClient } from '@/services/cms/cms.client';
 import { isArticle } from '@/types/guards';
 
@@ -16,9 +17,12 @@ export default async function Blog() {
   return (
     <ClientOnly>
       <Heros />
-      <div className="flex flex-col mx-auto container">
-        <BlogList data={articles.slice(0, 3)} searchBar />
-      </div>
+      <section className="flex flex-col mx-auto container mt-[50px]">
+        <div className=" max-w-[343px]">
+          <SearchBar />
+        </div>
+      </section>
+
       <section className="flex flex-col mx-auto container mt-[50px]">
         <div className="grid md:grid-cols-5 grid-cols-1 gap-[65px]">
           <div className="md:col-span-3 bg-transparent">
@@ -30,7 +34,7 @@ export default async function Blog() {
         </div>
       </section>
       <section className="flex flex-col mx-auto container mt-[50px]">
-        <BlogList data={articles.slice(0, 6)} />
+        <BlogList data={articles} pagination={true} />
       </section>
     </ClientOnly>
   );

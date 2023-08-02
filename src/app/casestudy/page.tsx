@@ -2,6 +2,7 @@ import CaseStudyList from '@/components/casestudy/CaseStudyList';
 import TabBanner from '@/components/casestudy/TabBanner';
 import VideoBanner from '@/components/casestudy/VideoBanner';
 import Heading from '@/components/common/Heading/Heading';
+import Paginate from '@/components/common/Paginate/Paginate';
 import { CaseStudyBrandImage } from '@/mocks/data';
 import { serverSideCmsClient } from '@/services/cms/cms.client';
 import { isCaseStudy } from '@/types/guards';
@@ -39,13 +40,13 @@ const CaseStudyPage = async () => {
         <VideoBanner />
       </section>
       <section className="container mx-auto">
-        <CaseStudyList data={caseStudies.slice(0, 6)} />
+        <CaseStudyList data={caseStudies} />
       </section>
       <section>
         <TabBanner />
       </section>
       <section className="container mx-auto">
-        <CaseStudyList data={caseStudies.slice(0, 3)} />
+        <CaseStudyList data={caseStudies} />
       </section>
     </>
   );

@@ -1,15 +1,15 @@
 import { useEffect, useMemo, useState } from 'react';
 
-import { Article } from '@/types/cms';
+import { CaseStudy } from '@/types/cms';
 import usePostStore from '@/store/postStore';
 
 const TOTAL_ELEMENT = 9;
 
-export default function useArticles(allArticles: Article[]) {
-  const { page, query, selected, setActive } = usePostStore((state) => state);
-  const allArticlesFiltered = useMemo(
+export default function useCaseStudies(allCaseStudies: CaseStudy[]) {
+  const { page, query } = usePostStore((state) => state);
+  const allCaseStudiesFiltered = useMemo(
     () =>
-      allArticles
+      allCaseStudies
         .filter((post) => {
           if (!post.published) {
             return false;
@@ -19,27 +19,18 @@ export default function useArticles(allArticles: Article[]) {
             const search =
               post.title.toLowerCase().includes(query.toLowerCase()) ||
               post.summary.toLowerCase().includes(query.toLowerCase()) ||
-              post.summary.toLowerCase().includes(query.toLowerCase()) ||
-              post.tags.some(({ name }) => name.toLowerCase().includes(query.toLowerCase()));
-            console.log(search);
+              post.summary.toLowerCase().includes(query.toLowerCase());
             return search;
-          }
-
-          if (selected.length) {
-            const isTagsMatch = selected.every((tag) => post.tags.includes(tag));
-            if (!isTagsMatch) {
-              return false;
-            }
           }
 
           return true;
         })
         .sort((a, b) => (a.date > b.date ? -1 : 1)),
-    [allArticles, selected, query]
+    [allCaseStudies, query]
   );
   //   useEffect(() => {
   //     const fetchData = (query: string) =>
-  //       allArticles
+  //       allCaseStudies
   //         .filter(
   //           ({ title, summary, tags, date }) =>
   //             new Date(date) < new Date() &&
@@ -49,18 +40,16 @@ export default function useArticles(allArticles: Article[]) {
   //               tags.some(({ name }) => name.toLowerCase().includes(query)))
   //         )
   //         .sort((a, b) => (a.date > b.date ? -1 : 1));
-  //   }, [allArticles, query]);
+  //   }, [allCaseStudies, query]);
 
-  allArticlesFiltered.sort((postA, postB) => (postA.date > postB.date ? -1 : 1));
+  allCaseStudiesFiltered.sort((postA, postB) => (postA.date > postB.date ? -1 : 1));
 
-  const totalPages = Math.ceil(allArticlesFiltered.length / TOTAL_ELEMENT);
+  const totalPages = Math.ceil(allCaseStudiesFiltered.length / TOTAL_ELEMENT);
   const offset = (page ? +page - 1 : 0) * TOTAL_ELEMENT;
-  const postsForCurrentPage = allArticlesFiltered.slice(offset, offset + TOTAL_ELEMENT);
-  useEffect(() => {
-    setActive([...new Set(allArticlesFiltered.map((post) => post.tags).flat())]);
-  }, [allArticlesFiltered, setActive]);
+  const postsForCurrentPage = allCaseStudiesFiltered.slice(offset, offset + TOTAL_ELEMENT);
+
   return {
-    articles: postsForCurrentPage,
+    caseStudies: postsForCurrentPage,
     totalPages,
   };
 }

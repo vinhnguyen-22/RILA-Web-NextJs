@@ -1,4 +1,5 @@
 'use client';
+import usePostStore from '@/store/postStore';
 import { useState } from 'react';
 import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai';
 import { FiMoreHorizontal } from 'react-icons/fi';
@@ -11,7 +12,7 @@ export default function Paginate({
   totalPages: number;
   elementToScroll: HTMLElement | null;
 }) {
-  const [page, setPage] = useState(1);
+  const { page, setPage } = usePostStore((state) => state);
 
   const handlePageChange = ({ selected }: { selected: number }) => {
     setPage(selected + 1);
