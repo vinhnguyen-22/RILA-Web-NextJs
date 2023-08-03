@@ -24,6 +24,6 @@
     },
     "strictNullChecks": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/blog/RelatedActicles"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/blog/RelatedArticles"],
   "exclude": ["node_modules"]
 }

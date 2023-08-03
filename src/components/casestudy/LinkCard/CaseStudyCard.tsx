@@ -2,17 +2,15 @@ import { DownLoadIcon } from '@/icons/download';
 import { CaseStudy } from '@/types/cms';
 import Image from 'next/image';
 import React, { FC } from 'react';
-import { Chip } from '../common/Chip';
+import { Chip } from '../../common/Chip';
 import Link from 'next/link';
 import { PATHS } from '@/app/constants';
 
 type CaseStudyCardProps = CaseStudy;
 
 const CaseStudyCard: FC<CaseStudyCardProps> = ({ cover, id, published, summary, date, slug, title }) => {
-  const CaseStudySlug = `${PATHS.CASESTUDY}/${slug}`;
-
   const formattedDate = date.replace(new RegExp('/', 'g'), '-');
-  const articleSlug = `${PATHS.BLOG}/${formattedDate}/${slug}`;
+  const CaseStudySlug = `${PATHS.CASESTUDY}/${formattedDate}/${slug}`;
 
   const truncateText = (text: string, maxLength: number) =>
     text.length <= maxLength ? text : text.slice(0, maxLength - 3) + '...';

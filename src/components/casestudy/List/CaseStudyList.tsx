@@ -2,13 +2,13 @@
 
 import { CaseStudy } from '@/types/cms';
 import React, { useEffect, useState } from 'react';
-import CaseStudyCard from './CaseStudyCard';
-import { SearchList } from '../common/SearchList';
+import CaseStudyCard from '../LinkCard/CaseStudyCard';
+import { SearchList } from '../../common/SearchList';
 import { SearchIcon } from '@/icons/search';
-import { Chip } from '../common/Chip';
-import SearchBar from '../common/SearchBar/SearchBar';
+import { Chip } from '../../common/Chip';
+import SearchBar from '../../common/SearchBar/SearchBar';
 import useCaseStudies from '@/hooks/useCaseStudies';
-import Paginate from '../common/Paginate/Paginate';
+import Paginate from '../../common/Paginate/Paginate';
 type Props = {
   data: CaseStudy[];
 };

@@ -1,4 +1,4 @@
-import CaseStudyList from '@/components/casestudy/CaseStudyList';
+import CaseStudyList from '@/components/casestudy/List/CaseStudyList';
 import TabBanner from '@/components/casestudy/TabBanner';
 import VideoBanner from '@/components/casestudy/VideoBanner';
 import Heading from '@/components/common/Heading/Heading';
@@ -36,17 +36,14 @@ const CaseStudyPage = async () => {
           </div>
         </div>
       </section>
-      <section>
+      <section className="my-[30px]">
         <VideoBanner />
       </section>
       <section className="container mx-auto">
         <CaseStudyList data={caseStudies} />
       </section>
-      <section>
+      <section className="my-[40px]">
         <TabBanner />
-      </section>
-      <section className="container mx-auto">
-        <CaseStudyList data={caseStudies} />
       </section>
     </>
   );

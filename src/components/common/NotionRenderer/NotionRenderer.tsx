@@ -10,7 +10,7 @@ import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import { BlogVerticalList } from '@/components/blog/BlogList/BlogVerticalList';
 import { Article } from '@/types/cms';
-import RelatedActicles from '@/components/blog/RelatedBlog/RelatedBlog';
+import RelatedArticles from '@/components/blog/RelatedBlog/RelatedBlog';
 
 const Code = dynamic(() =>
   import('react-notion-x/build/third-party/code').then(({ Code: NotionCode }) => {
@@ -33,7 +33,7 @@ const Modal = dynamic(
 
 export interface NotionRendererProps {
   recordMap: ExtendedRecordMap;
-  relatedArticles: Article[];
+  relatedArticles?: Article[];
 }
 
 export const NotionRenderer: FC<NotionRendererProps> = ({ recordMap, relatedArticles }) => {
@@ -62,7 +62,7 @@ export const NotionRenderer: FC<NotionRendererProps> = ({ recordMap, relatedArti
               Modal,
               Pdf,
             }}
-            pageAside={<BlogVerticalList data={relatedArticles} />}
+            pageAside={relatedArticles && <BlogVerticalList data={relatedArticles} />}
           />
         </div>
 
@@ -70,8 +70,7 @@ export const NotionRenderer: FC<NotionRendererProps> = ({ recordMap, relatedArti
           <BlogVerticalList data={relatedArticles} />
         </div> */}
       </div>
-
-      <RelatedActicles data={relatedArticles} />
+      {relatedArticles && <RelatedArticles data={relatedArticles} />}
     </>
   );
 };

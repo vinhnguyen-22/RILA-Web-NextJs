@@ -44,7 +44,7 @@ export default function DropdownMenu() {
                     <Link
                       href="/blog"
                       className={classNames(
-                        active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                        active ? 'bg-gray-100 text-red-100' : 'text-gray-700',
                         'block px-4 py-2 text-sm'
                       )}
                     >
@@ -57,7 +57,7 @@ export default function DropdownMenu() {
                     <Link
                       href="#/report"
                       className={classNames(
-                        active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                        active ? 'bg-gray-100 text-red-100' : 'text-gray-700',
                         'block px-4 py-2 text-sm'
                       )}
                     >
@@ -70,7 +70,7 @@ export default function DropdownMenu() {
                     <Link
                       href="/casestudy"
                       className={classNames(
-                        active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                        active ? 'bg-gray-100 text-red-100' : 'text-gray-700',
                         'block px-4 py-2 text-sm'
                       )}
                     >

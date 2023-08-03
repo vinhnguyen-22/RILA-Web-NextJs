@@ -6,7 +6,7 @@ interface BlogList {
   data: Article[];
 }
 
-const RelatedActicles: FC<BlogList> = ({ data }) => {
+const RelatedArticles: FC<BlogList> = ({ data }) => {
   return (
     <div className="">
       <div className="mx-1 grid grid-cols-1 md:grid-cols-3 ">
@@ -18,4 +18,4 @@ const RelatedActicles: FC<BlogList> = ({ data }) => {
   );
 };
 
-export default RelatedActicles;
+export default RelatedArticles;
