@@ -1,5 +1,5 @@
 'use client';
-import { FC, PropsWithChildren } from 'react';
+import { FC } from 'react';
 import { useTheme } from 'next-themes';
 import { NotionRenderer as Renderer } from 'react-notion-x';
 import { ExtendedRecordMap } from 'notion-types';
@@ -8,9 +8,9 @@ import useMounted from '@/hooks/use-mounted';
 import Link from 'next/link';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
-import { BlogVerticalList } from '@/components/common/RelatedPost/PostVerticalList';
+import { BlogVerticalList } from '@/components/blog/BlogList/BlogVerticalList';
 import { Article } from '@/types/cms';
-import RelatedPosts from '@/components/common/RelatedPost/RelatedPosts';
+import RelatedActicles from '@/components/blog/RelatedBlog/RelatedBlog';
 
 const Code = dynamic(() =>
   import('react-notion-x/build/third-party/code').then(({ Code: NotionCode }) => {
@@ -31,13 +31,12 @@ const Modal = dynamic(
   { ssr: false }
 );
 
-export interface NotionRendererProps<T> {
+export interface NotionRendererProps {
   recordMap: ExtendedRecordMap;
-  relatedPosts: T[];
+  relatedArticles: Article[];
 }
 
-export const NotionRenderer = <T,>(props: PropsWithChildren<NotionRendererProps<T>>) => {
-  const { recordMap, relatedPosts } = props;
+export const NotionRenderer: FC<NotionRendererProps> = ({ recordMap, relatedArticles }) => {
   const { resolvedTheme } = useTheme();
   const mounted = useMounted();
   return (
@@ -63,12 +62,16 @@ export const NotionRenderer = <T,>(props: PropsWithChildren<NotionRendererProps<
               Modal,
               Pdf,
             }}
-            pageAside={<BlogVerticalList data={relatedPosts} />}
+            pageAside={<BlogVerticalList data={relatedArticles} />}
           />
         </div>
+
+        {/* <div className="col-span-1">
+          <BlogVerticalList data={relatedArticles} />
+        </div> */}
       </div>
 
-      {relatedPosts && <RelatedPosts data={relatedPosts} />}
+      <RelatedActicles data={relatedArticles} />
     </>
   );
 };

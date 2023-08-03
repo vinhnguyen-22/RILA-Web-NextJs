@@ -3,29 +3,28 @@ import { CalendarIcon } from '@/icons/calendar';
 import { Article } from '@/types/cms';
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { PropsWithChildren } from 'react';
+import React from 'react';
 
-type Props<T> = {
-  post: T;
-  keyExtractor: (element: T) => string;
+type Props = {
+  article: Article;
 };
 
-const BlogTitleCard = <T,>({ post }: Props<T>) => {
-  const formattedDate = post?.date.replace(new RegExp('/', 'g'), '-');
-  const postSlug = `${PATHS.BLOG}/${formattedDate}/${post?.slug}`;
+const BlogTitleCard = ({ article }: Props) => {
+  const formattedDate = article.date.replace(new RegExp('/', 'g'), '-');
+  const articleSlug = `${PATHS.BLOG}/${formattedDate}/${article.slug}`;
   return (
-    <Link key={post?.slug} className="p-4" href={postSlug}>
+    <Link key={article.slug} className="p-4" href={articleSlug}>
       <div className="grid grid-cols-3 gap-[20px] h-[104px]">
         <div className="col-span-1 relative overflow-hidden">
-          <Image className="object-cover absolute" fill src={post?.cover} alt="" />
+          <Image className="object-cover absolute" fill src={article.cover} alt="" />
         </div>
         <div className="col-span-2">
           <div className="flex flex-col">
-            <h3 className="line-clamp-2 text-xl font-semibold">{post?.title}</h3>
+            <h3 className="line-clamp-2 text-xl font-semibold">{article.title}</h3>
             <time className="mt-[15px] text-base text-black">
               <p>
                 <CalendarIcon className="inline-block mr-4" />
-                {new Date(post?.date).toLocaleDateString('en-GB')}
+                {new Date(article.date).toLocaleDateString('en-GB')}
               </p>
             </time>
           </div>
