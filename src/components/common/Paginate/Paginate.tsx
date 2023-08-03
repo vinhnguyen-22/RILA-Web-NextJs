@@ -26,7 +26,7 @@ export default function Paginate({
 
   return (
     <ReactPaginate
-      className="paginate"
+      className="paginate mt-[20px]"
       pageCount={totalPages}
       previousLabel={<AiOutlineLeft />}
       nextLabel={<AiOutlineRight />}

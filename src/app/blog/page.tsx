@@ -29,7 +29,7 @@ export default async function Blog() {
             <BlogMediaCard article={articles[0]} />
           </div>
           <div className="md:col-span-2 bg-transparent">
-            <BlogVerticalList data={articles.slice(0, 4)} />
+            <BlogVerticalList data={articles.slice(0, 3)} />
           </div>
         </div>
       </section>

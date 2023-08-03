@@ -10,6 +10,7 @@
     "deploy": "next build && node ./scripts/deploy.mjs"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.16",
     "@notionhq/client": "^2.2.6",
     "@types/react": "18.2.7",
     "@types/react-dom": "18.2.4",
@@ -24,7 +25,6 @@
     "react": "18.2.0",
     "react-collapse": "^5.1.1",
     "react-dom": "18.2.0",
-    "react-google-maps": "^9.4.5",
     "react-icons": "^4.9.0",
     "react-notion-x": "^6.15.7",
     "react-paginate": "^8.2.0",

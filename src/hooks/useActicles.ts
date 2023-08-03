@@ -3,9 +3,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { Article } from '@/types/cms';
 import usePostStore from '@/store/postStore';
 
-const TOTAL_ELEMENT = 9;
-
-export default function useArticles(allArticles: Article[]) {
+export default function useArticles(allArticles: Article[], totalElement: number = 9) {
   const { page, query, selected, setActive } = usePostStore((state) => state);
   const allArticlesFiltered = useMemo(
     () =>
@@ -53,9 +51,9 @@ export default function useArticles(allArticles: Article[]) {
 
   allArticlesFiltered.sort((postA, postB) => (postA.date > postB.date ? -1 : 1));
 
-  const totalPages = Math.ceil(allArticlesFiltered.length / TOTAL_ELEMENT);
-  const offset = (page ? +page - 1 : 0) * TOTAL_ELEMENT;
-  const postsForCurrentPage = allArticlesFiltered.slice(offset, offset + TOTAL_ELEMENT);
+  const totalPages = Math.ceil(allArticlesFiltered.length / totalElement);
+  const offset = (page ? +page - 1 : 0) * totalElement;
+  const postsForCurrentPage = allArticlesFiltered.slice(offset, offset + totalElement);
   useEffect(() => {
     setActive([...new Set(allArticlesFiltered.map((post) => post.tags).flat())]);
   }, [allArticlesFiltered, setActive]);

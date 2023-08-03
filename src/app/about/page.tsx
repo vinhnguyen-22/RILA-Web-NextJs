@@ -85,7 +85,7 @@ const About = () => {
 
           <div className="container mx-auto mt-[63px] ">
             <div className="aspect-video relative h-[273px] w-full">
-              <Image fill className="relative object-contain" alt={'alt'} src={'images/about-us/image-12.png'} />
+              <Image fill className="relative object-contain" alt={'alt'} src={'/images/about-us/image-12.png'} />
             </div>
           </div>
         </div>
