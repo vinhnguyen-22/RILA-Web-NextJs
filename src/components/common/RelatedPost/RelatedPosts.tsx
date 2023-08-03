@@ -1,12 +1,12 @@
 import { Article } from '@/types/cms';
 import { FC } from 'react';
-import { BlogLinkCard } from '../BlogLinkCard/BlogLinkCard';
+import { BlogLinkCard } from '../../blog/BlogLinkCard/BlogLinkCard';
 
 interface BlogList {
   data: Article[];
 }
 
-const RelatedActicles: FC<BlogList> = ({ data }) => {
+const RelatedPosts: FC<BlogList> = ({ data }) => {
   return (
     <div className="">
       <div className="mx-1 grid grid-cols-1 md:grid-cols-3 ">
@@ -18,4 +18,4 @@ const RelatedActicles: FC<BlogList> = ({ data }) => {
   );
 };
 
-export default RelatedActicles;
+export default RelatedPosts;
