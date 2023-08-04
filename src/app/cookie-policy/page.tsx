@@ -1,6 +1,7 @@
 import Heading from '@/components/common/Heading/Heading';
 import React from 'react';
-export const metadata = {
+import { Metadata } from 'next';
+export const metadata: Metadata = {
   title: 'Cookie and policy',
   description: 'Cookie and policy',
 };

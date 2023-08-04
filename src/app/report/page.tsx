@@ -4,7 +4,8 @@ import ReportList from '@/components/report/ReportList';
 import { serverSideCmsClient } from '@/services/cms/cms.client';
 import { isReport } from '@/types/guards';
 
-export const metadata = {
+import { Metadata } from 'next';
+export const metadata: Metadata = {
   title: 'Report',
   description: 'Report',
 };

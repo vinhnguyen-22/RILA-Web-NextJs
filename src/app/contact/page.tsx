@@ -4,8 +4,9 @@ import Heading from '@/components/common/Heading/Heading';
 import AccordionItem from '@/components/contact/accordion/AccordionItem';
 import { questionItems } from '@/mocks/data';
 import { useState } from 'react';
+import { Metadata } from 'next';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Contact',
   description: 'Contact Us',
 };

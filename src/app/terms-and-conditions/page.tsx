@@ -1,7 +1,8 @@
 import Heading from '@/components/common/Heading/Heading';
 import CookieBanner from '@/components/common/banners/CookieBanner';
 import React from 'react';
-export const metadata = {
+import { Metadata } from 'next';
+export const metadata: Metadata = {
   title: 'Tеrms and Conditions',
   description: 'Tеrms and Conditions',
 };

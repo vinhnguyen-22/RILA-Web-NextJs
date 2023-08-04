@@ -8,7 +8,8 @@ import { serverSideCmsClient } from '@/services/cms/cms.client';
 import { isCaseStudy } from '@/types/guards';
 import Image from 'next/image';
 
-export const metadata = {
+import { Metadata } from 'next';
+export const metadata: Metadata = {
   title: 'Case Study',
   description: 'Case Study',
 };
