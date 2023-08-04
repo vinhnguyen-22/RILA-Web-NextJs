@@ -2,7 +2,7 @@ import ClientOnly from '@/components/ClientOnly/ClientOnly';
 import BlogMediaCard from '@/components/blog/BlogLinkCard/BlogMediaCard';
 import { BlogVerticalList } from '@/components/blog/BlogList/BlogVerticalList';
 import Heros from '@/components/blog/Hero/Heros';
-import { BlogHeader, BlogList } from '@/components/blog/index';
+import { BlogList } from '@/components/blog/index';
 import SearchBar from '@/components/common/SearchBar/SearchBar';
 import { serverSideCmsClient } from '@/services/cms/cms.client';
 import { isArticle } from '@/types/guards';

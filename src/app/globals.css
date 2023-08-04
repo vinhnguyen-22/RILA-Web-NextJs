@@ -56,6 +56,11 @@ body {
   color: black;
 }
 
+p {
+  color: #666;
+  line-height: 1.7em;
+  font-weight: 400;
+}
 .container {
   max-width: 80%;
 }

@@ -96,7 +96,7 @@ module.exports = {
       fontWeight: {
         semibold: '600',
         bold: '700',
-        normal: '300',
+        normal: '400',
       },
     },
   },

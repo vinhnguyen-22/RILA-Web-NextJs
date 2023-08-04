@@ -1,4 +1,5 @@
 'use client';
+
 import Heading from '@/components/common/Heading/Heading';
 import AccordionItem from '@/components/contact/accordion/AccordionItem';
 import { questionItems } from '@/mocks/data';
