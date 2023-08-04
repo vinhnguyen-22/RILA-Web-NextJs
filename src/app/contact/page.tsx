@@ -1,9 +1,5 @@
-'use client';
-
 import Heading from '@/components/common/Heading/Heading';
-import AccordionItem from '@/components/contact/accordion/AccordionItem';
-import { questionItems } from '@/mocks/data';
-import { useState } from 'react';
+import Question from '@/components/contact/question/Question';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -11,13 +7,6 @@ export const metadata: Metadata = {
   description: 'Contact Us',
 };
 const ContactPage = () => {
-  const [open, setOpen] = useState<any>(false);
-
-  const toggle = (index: any) => {
-    if (open === index) return setOpen(null);
-    setOpen(index);
-  };
-
   return (
     <div className="mx-auto md:mt-[50px] mt-[120px]">
       <div className="flex flex-col mx-2">
@@ -92,24 +81,7 @@ const ContactPage = () => {
             </p>
           </div>
           <div className="col-span-7 max-lg:col-span-12">
-            <div className="flex flex-col items-start justify-start border">
-              {questionItems.map((data, index) => {
-                return (
-                  <>
-                    <div className="h-[1px] w-full bg-darkgray px-2.5 "></div>
-                    <div className="px-[15px]">
-                      <AccordionItem
-                        key={index}
-                        open={index === open}
-                        title={data.title}
-                        desc={data.desc}
-                        toggle={() => toggle(index)}
-                      />
-                    </div>
-                  </>
-                );
-              })}
-            </div>
+            <Question />
           </div>
         </div>
       </div>

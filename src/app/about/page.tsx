@@ -1,4 +1,3 @@
-'use client';
 import Heading from '@/components/common/Heading/Heading';
 import Contact from '@/components/contact/Contact';
 import Polygon from '@/icons/polygon';
