@@ -16,7 +16,7 @@ const VideoBanner = () => {
       className="relative overflow-hidden py-[60px] flex flex-row justify-center bg-no-repeat bg-cover"
       style={{ backgroundImage: `url('./images/case-study/banner-video.png')` }}
     >
-      <div className=" grid md:grid-cols-2 grid-cols-1 w-[60%] place-items-center gap-[43px]">
+      <div className=" grid md:grid-cols-2 grid-cols-1 w-[70%] place-items-center gap-[43px]">
         <div className="w-full rounded-2xl relative shadow-lg overflow-hidden">
           <ReactPlayer
             height={312}
