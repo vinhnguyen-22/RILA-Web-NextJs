@@ -55,7 +55,7 @@ export default function DropdownMenu() {
                 <Menu.Item>
                   {({ active }) => (
                     <Link
-                      href="#/report"
+                      href="/report"
                       className={classNames(
                         active ? 'bg-gray-100 text-red-100' : 'text-gray-700',
                         'block px-4 py-2 text-sm'
