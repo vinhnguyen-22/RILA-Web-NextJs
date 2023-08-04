@@ -4,6 +4,11 @@ import ReportList from '@/components/report/ReportList';
 import { serverSideCmsClient } from '@/services/cms/cms.client';
 import { isReport } from '@/types/guards';
 
+export const metadata = {
+  title: 'Report',
+  description: 'Report',
+};
+
 const ReportPage = async () => {
   const reports = await serverSideCmsClient.getDatabaseEntries(process.env.NOTION_REPORT_DB_ID, isReport);
 

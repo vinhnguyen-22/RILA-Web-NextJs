@@ -1,10 +1,12 @@
 import { serverSideCmsClient } from '@/services/cms/cms.client';
 import { MetadataRoute } from 'next';
 import { PATHS } from './constants';
-import { isArticle } from '@/types/guards';
+import { isArticle, isCaseStudy, isReport } from '@/types/guards';
 
 export default async function sitemap() {
   const articles = await serverSideCmsClient.getDatabaseEntries(process.env.NOTION_BLOG_DB_ID, isArticle);
+  const caseStudies = await serverSideCmsClient.getDatabaseEntries(process.env.NOTION_CASESTUDY_DB_ID, isCaseStudy);
+  const reports = await serverSideCmsClient.getDatabaseEntries(process.env.NOTION_REPORT_DB_ID, isReport);
 
   const sitemap: MetadataRoute.Sitemap = [
     {
@@ -17,6 +19,20 @@ export default async function sitemap() {
     sitemap.push({
       url: `${process.env.SITE_URL}/blog/${article.date.replace(new RegExp('/', 'g'), '-')}/${article.slug}`,
       lastModified: article.lastEditedAt.replace(new RegExp('/', 'g'), '-'),
+    });
+  }
+
+  for (const caseStudy of caseStudies) {
+    sitemap.push({
+      url: `${process.env.SITE_URL}/blog/${caseStudy.date.replace(new RegExp('/', 'g'), '-')}/${caseStudy.slug}`,
+      lastModified: caseStudy.lastEditedAt.replace(new RegExp('/', 'g'), '-'),
+    });
+  }
+
+  for (const report of reports) {
+    sitemap.push({
+      url: `${process.env.SITE_URL}/blog/${report.date.replace(new RegExp('/', 'g'), '-')}/${report.slug}`,
+      lastModified: report.lastEditedAt.replace(new RegExp('/', 'g'), '-'),
     });
   }
 

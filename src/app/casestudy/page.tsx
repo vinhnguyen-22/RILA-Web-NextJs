@@ -8,6 +8,11 @@ import { serverSideCmsClient } from '@/services/cms/cms.client';
 import { isCaseStudy } from '@/types/guards';
 import Image from 'next/image';
 
+export const metadata = {
+  title: 'Case Study',
+  description: 'Case Study',
+};
+
 const CaseStudyPage = async () => {
   const caseStudies = await serverSideCmsClient.getDatabaseEntries(process.env.NOTION_CASESTUDY_DB_ID, isCaseStudy);
 

@@ -2,9 +2,12 @@
 import Heading from '@/components/common/Heading/Heading';
 import AccordionItem from '@/components/contact/accordion/AccordionItem';
 import { questionItems } from '@/mocks/data';
-import React, { useState } from 'react';
-import { withGoogleMap, withScriptjs, GoogleMap } from 'react-google-maps';
+import { useState } from 'react';
 
+export const metadata = {
+  title: 'Contact',
+  description: 'Contact Us',
+};
 const ContactPage = () => {
   const [open, setOpen] = useState<any>(false);
 
