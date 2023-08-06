@@ -1,5 +1,5 @@
 'use client';
-import { FC } from 'react';
+import { FC, ReactNode } from 'react';
 import { useTheme } from 'next-themes';
 import { NotionRenderer as Renderer } from 'react-notion-x';
 import { ExtendedRecordMap } from 'notion-types';
@@ -33,10 +33,10 @@ const Modal = dynamic(
 
 export interface NotionRendererProps {
   recordMap: ExtendedRecordMap;
-  relatedArticles?: Article[];
+  related: ReactNode;
 }
 
-export const NotionRenderer: FC<NotionRendererProps> = ({ recordMap, relatedArticles }) => {
+export const NotionRenderer: FC<NotionRendererProps> = ({ recordMap, related }) => {
   const { resolvedTheme } = useTheme();
   const mounted = useMounted();
   return (
@@ -62,7 +62,7 @@ export const NotionRenderer: FC<NotionRendererProps> = ({ recordMap, relatedArti
               Modal,
               Pdf,
             }}
-            pageAside={relatedArticles && <BlogVerticalList data={relatedArticles} />}
+            pageAside={related}
           />
         </div>
 
@@ -70,7 +70,6 @@ export const NotionRenderer: FC<NotionRendererProps> = ({ recordMap, relatedArti
           <BlogVerticalList data={relatedArticles} />
         </div> */}
       </div>
-      {relatedArticles && <RelatedArticles data={relatedArticles} />}
     </>
   );
 };

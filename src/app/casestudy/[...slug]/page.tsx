@@ -1,3 +1,6 @@
+import { BlogVerticalList } from '@/components/blog/BlogList/BlogVerticalList';
+import CaseStudyCard from '@/components/casestudy/LinkCard/CaseStudyCard';
+import { PostVerticalList } from '@/components/casestudy/List/VerticalList';
 import { NotionRenderer } from '@/components/common/NotionRenderer';
 import { serverSideCmsClient } from '@/services/cms/cms.client';
 import { CaseStudy } from '@/types/cms';
@@ -34,7 +37,13 @@ export default async function CaseStudyPage(props: any) {
   return (
     <>
       <article className="mt-4 flex flex-col items-center md:mt-20">
-        <NotionRenderer recordMap={recordMap} />
+        <NotionRenderer recordMap={recordMap} related={<PostVerticalList data={posts.slice(0, 4)} />} />
+
+        <div className="mx-1 grid grid-cols-1 md:grid-cols-3 ">
+          {posts.slice(0, 3).map((element: any, i: number) => (
+            <CaseStudyCard key={i} {...element} />
+          ))}
+        </div>
       </article>
     </>
   );
