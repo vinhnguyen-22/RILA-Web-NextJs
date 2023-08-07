@@ -12,6 +12,7 @@
   "dependencies": {
     "@headlessui/react": "^1.7.16",
     "@notionhq/client": "^2.2.6",
+    "@plaiceholder/next": "^3.0.0",
     "@types/react": "18.2.7",
     "@types/react-dom": "18.2.4",
     "autoprefixer": "10.4.14",
@@ -22,6 +23,7 @@
     "next": "^13.4.7",
     "next-themes": "^0.2.1",
     "notion-client": "^6.16.0",
+    "plaiceholder": "^3.0.0",
     "postcss": "8.4.24",
     "react": "18.2.0",
     "react-collapse": "^5.1.1",
@@ -31,6 +33,7 @@
     "react-notion-x": "^6.15.7",
     "react-paginate": "^8.2.0",
     "react-player": "^2.12.0",
+    "sharp": "^0.32.4",
     "swiper": "^9.3.2",
     "tailwindcss": "3.3.2",
     "typescript": "5.0.4",
@@ -41,5 +44,9 @@
     "dotenv": "^16.1.4",
     "ftp-deploy": "^2.4.4",
     "notion-types": "^6.16.0"
+  },
+  "browser": {
+    "child_process": false,
+    "fs": false
   }
 }

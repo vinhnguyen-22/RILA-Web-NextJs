@@ -8,7 +8,16 @@ import Image from 'next/image';
 
 type BlogLinkCardProps = Article;
 
-export const BlogLinkCard: FC<BlogLinkCardProps> = ({ slug, tags, title, date, published, cover, summary }) => {
+export const BlogLinkCard: FC<BlogLinkCardProps> = ({
+  slug,
+  tags,
+  title,
+  date,
+  published,
+  cover,
+  summary,
+  blurUrl,
+}) => {
   const formattedDate = date.replace(new RegExp('/', 'g'), '-');
   const articleSlug = `${PATHS.BLOG}/${formattedDate}/${slug}`;
 
@@ -21,7 +30,14 @@ export const BlogLinkCard: FC<BlogLinkCardProps> = ({ slug, tags, title, date, p
     <Link key={slug} className="p-4" href={articleSlug}>
       <article className="relative min-h-[390px] mx-auto flex max-w-[25rem] flex-col overflow-hidden rounded-xl shadow-xl shadow-gray transition-all duration-300 hover:scale-[1.05] hover:shadow-2xl">
         <div className="relative h-[212px]">
-          <Image src={cover} alt="cover image" fill style={{ objectFit: 'cover' }} />
+          <Image
+            src={cover}
+            alt="cover image"
+            fill
+            style={{ objectFit: 'cover' }}
+            placeholder="blur"
+            blurDataURL={blurUrl}
+          />
         </div>
         <div className="flex flex-col p-[15px]">
           <h3 className="line-clamp-2 text-xl font-bold">{title}</h3>

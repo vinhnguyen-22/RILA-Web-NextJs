@@ -1,8 +1,11 @@
+import { BlogVerticalList } from '@/components/blog/BlogList/BlogVerticalList';
+import RelatedArticles from '@/components/blog/RelatedBlog/RelatedBlog';
 import { NotionRenderer } from '@/components/common/NotionRenderer';
 import { serverSideCmsClient } from '@/services/cms/cms.client';
 import { Article } from '@/types/cms';
 import { isArticle, isTwoStringArray } from '@/types/guards';
 import { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { cache } from 'react';
@@ -34,7 +37,7 @@ export default async function ArticlePage(props: any) {
   function getObjectsWithSameTag(targetObject: Article, articles: Article[]) {
     const targetTag = targetObject.tags[0]; // Assuming each object has only one tag
     const objectsWithSameTag = articles.filter((article) => {
-      return article.tags.some((tag) => tag.id === targetTag.id);
+      return targetObject.id != article.id && article.published && article.tags.some((tag) => tag.id === targetTag.id);
     });
     return objectsWithSameTag;
   }
@@ -43,8 +46,20 @@ export default async function ArticlePage(props: any) {
 
   return (
     <>
-      <article className="mt-4 flex flex-col items-center md:mt-20">
-        <NotionRenderer recordMap={recordMap} relatedArticles={relatedArticles} />
+      <article data-revalidated-at={new Date().getTime()} className=" flex flex-col items-center max-sm:mt-20">
+        <div className="relative ">
+          <Image
+            src={article.cover}
+            alt="cover"
+            fill
+            style={{ objectFit: 'contain' }}
+            placeholder="blur"
+            blurDataURL={article.blurUrl}
+          />
+        </div>
+
+        <NotionRenderer recordMap={recordMap} related={<BlogVerticalList data={relatedArticles} />} />
+        <RelatedArticles data={relatedArticles} />
       </article>
     </>
   );

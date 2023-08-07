@@ -33,12 +33,16 @@ class ServerSideCmsClient {
     if (results.length === 0) return [];
 
     if (isNonEmptyNonPartialNotionResponse(results)) {
-      const entries: Record<string, NotionDatabaseProperty>[] = results.map(({ id, cover, properties }) => {
-        return {
-          ...formatNotionPageAttributes(properties, cover),
-          id,
-        };
-      });
+      const entries: Record<string, NotionDatabaseProperty>[] = await Promise.all(
+        results.map(async ({ id, cover, properties }) => {
+          const format = await formatNotionPageAttributes(properties, cover);
+
+          return {
+            ...format,
+            id,
+          };
+        })
+      );
       return entries.filter(typeGuard);
     }
 

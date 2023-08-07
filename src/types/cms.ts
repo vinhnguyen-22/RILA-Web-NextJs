@@ -10,6 +10,7 @@ export type Article = {
   published: boolean;
   date: string;
   lastEditedAt: string;
+  blurUrl?: string;
 };
 
 export type Tag = {
@@ -28,6 +29,7 @@ export type Report = {
   published: boolean;
   date: string;
   lastEditedAt: string;
+  blurUrl?: string;
 };
 
 export type CaseStudy = {
@@ -39,4 +41,5 @@ export type CaseStudy = {
   published: boolean;
   date: string;
   lastEditedAt: string;
+  blurUrl?: string;
 };

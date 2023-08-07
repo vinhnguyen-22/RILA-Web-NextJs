@@ -35,3 +35,9 @@
 .notion-table-of-contents-active-item span {
   @apply !text-red-300;
 }
+.notion-page-cover {
+  @apply !h-full !max-h-[70vh];
+}
+.notion-page-cover-wrapper {
+  @apply !h-full !max-h-[70vh];
+}

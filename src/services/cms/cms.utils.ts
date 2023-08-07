@@ -5,6 +5,7 @@ import {
 } from '@notionhq/client/build/src/api-endpoints';
 import { NotionBlockTypes, NotionDatabaseProperty } from './cms.types';
 import { Block } from 'notion-types';
+import { getBlurImage } from '@/utils/getBlurImg';
 
 const notionDatabasePropertyResolver = (prop: PageObjectResponse['properties'][string]): NotionDatabaseProperty => {
   const type = prop['type'];
@@ -53,22 +54,27 @@ export const isNonEmptyNonPartialNotionResponse = (
   // @ts-ignore
 ): results is PageObjectResponse[] => results[0]?.properties !== undefined;
 
-export const formatNotionPageAttributes = (
+export const formatNotionPageAttributes = async (
   properties: PageObjectResponse['properties'],
   cover: any
-): { [key: string]: NotionDatabaseProperty } =>
-  Object.entries(properties).reduce((acc, [key, prop]) => {
+): Promise<{ [key: string]: NotionDatabaseProperty }> => {
+  const formattedAttributes: { [key: string]: NotionDatabaseProperty } = {};
+
+  for (const [key, prop] of Object.entries(properties)) {
     const value = notionDatabasePropertyResolver(prop);
     let img = '';
     if (cover) {
-      cover.type == 'external' ? (img = cover.external.url) : (img = cover.file.url);
+      img = cover.type === 'external' ? cover.external.url : cover.file.url;
     }
-    return { ...acc, [key]: value, cover: img };
-  }, {} as { [key: string]: NotionDatabaseProperty });
 
-// to fix issue 403 authenticate https://github.com/NotionX/react-notion-x/issues/211
+    formattedAttributes[key] = value;
+    formattedAttributes['cover'] = img;
+    formattedAttributes['blurUrl'] = (await getBlurImage(img)).base64;
+  }
 
-export const mapImageUrl = (url: string, block: Block): string | null => {
+  return formattedAttributes;
+};
+export function mapImageUrl(url: string, block: Block): string | null {
   if (!url) {
     return null;
   }
@@ -117,4 +123,4 @@ export const mapImageUrl = (url: string, block: Block): string | null => {
   url = notionImageUrlV2.toString();
 
   return url;
-};
+}
