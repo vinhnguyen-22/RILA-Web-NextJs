@@ -69,7 +69,9 @@ export const formatNotionPageAttributes = async (
 
     formattedAttributes[key] = value;
     formattedAttributes['cover'] = img;
-    formattedAttributes['blurUrl'] = (await getBlurImage(img)).base64;
+    img != ''
+      ? (formattedAttributes['blurUrl'] = (await getBlurImage(img)).base64)
+      : (formattedAttributes['blurUrl'] = '');
   }
 
   return formattedAttributes;
