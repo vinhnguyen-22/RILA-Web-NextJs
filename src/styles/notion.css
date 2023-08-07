@@ -32,6 +32,10 @@
   @apply truncate py-[1px];
 }
 
+.notion-page-content img {
+  position: static !important;
+}
+
 .notion-table-of-contents-active-item span {
   @apply !text-red-300;
 }
