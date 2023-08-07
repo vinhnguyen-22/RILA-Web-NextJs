@@ -59,7 +59,10 @@ export const formatNotionPageAttributes = (
 ): { [key: string]: NotionDatabaseProperty } =>
   Object.entries(properties).reduce((acc, [key, prop]) => {
     const value = notionDatabasePropertyResolver(prop);
-    const img = !cover ? '' : cover.external.url;
+    let img = '';
+    if (cover) {
+      cover.type == 'external' ? (img = cover.external.url) : (img = cover.file.url);
+    }
     return { ...acc, [key]: value, cover: img };
   }, {} as { [key: string]: NotionDatabaseProperty });
 
