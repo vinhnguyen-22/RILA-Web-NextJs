@@ -15,7 +15,7 @@ const Question = () => {
     <div className="flex flex-col items-start justify-start border">
       {questionItems.map((data, index) => {
         return (
-          <>
+          <div key={index}>
             <div className="h-[1px] w-full bg-darkgray px-2.5 "></div>
             <div className="px-[15px]">
               <AccordionItem
@@ -26,7 +26,7 @@ const Question = () => {
                 toggle={() => toggle(index)}
               />
             </div>
-          </>
+          </div>
         );
       })}
     </div>

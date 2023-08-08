@@ -40,7 +40,7 @@ const Heros = () => {
               </strong>
               <div className="lg:text-xl md:text-lg text-sm lg:leading-[50px] md:leading-[42px] leading-[30px] font-semibold flex items-center shrink-0">
                 <span className="w-full">
-                  <p className="m-0">
+                  <p className="m-0 text-white ">
                     <span className="capitalize">RILA GLOBAL CONSULTING </span>
                     is a boutique social listening agency located in New York City. We study consumers, brands, markets,
                     and trends, offering tailored research and insight to clients globally.

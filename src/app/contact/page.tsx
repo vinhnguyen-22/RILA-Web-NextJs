@@ -70,10 +70,8 @@ const ContactPage = () => {
               >
                 <circle cx="16" cy="16" r="16" fill="#EC1B24" />
               </svg>
-              Asked Questions{' '}
-              <span className="absolute max-md:-right-[25px] xl:right-[90px] right-[10px]  max-lg:-right-[30px] max-sm:right-[20px] max-md:bottom-[0px] -bottom-[18px] max-md:text-[60px] text-[100px] text-red-100">
-                ?
-              </span>
+              Asked Questions
+              <span className="absolute -bottom-3 max-md:text-[60px] text-[100px] text-red-100">?</span>
             </h3>
             <p className="text-gray-700 leading-7 text-xl mt-[13px] max-md:text-[14px]">
               These are some of the most commonly asked questions our clients ask us about social listening and our
