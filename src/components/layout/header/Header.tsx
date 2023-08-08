@@ -8,7 +8,7 @@ const Header = () => {
   const [navbar, setNavbar] = useState(false);
 
   return (
-    <nav className="w-full fixed z-10 bg-white shadow">
+    <nav className="w-full fixed z-20 bg-white shadow">
       <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
         <div>
           <div className="flex items-center justify-between py-3 md:block">
