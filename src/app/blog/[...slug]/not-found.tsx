@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from 'next/link';
 
 export default function NotFound() {
   return (
@@ -12,7 +12,7 @@ export default function NotFound() {
       </p>
       <Link
         href="/"
-        className="bg-gray-200 rounded-lg dark:bg-gray-600 mx-auto p-3 hover:ring-2 ring-gray-300 transition-all"
+        className="bg-gray-200 rounded-lg text-white mx-auto p-3 hover:ring-2 ring-gray-300 transition-all"
       >
         Return Home
       </Link>

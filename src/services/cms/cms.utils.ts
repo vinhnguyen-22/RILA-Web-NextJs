@@ -56,7 +56,8 @@ export const isNonEmptyNonPartialNotionResponse = (
 
 export const formatNotionPageAttributes = async (
   properties: PageObjectResponse['properties'],
-  cover: any
+  cover: any,
+  block: Block
 ): Promise<{ [key: string]: NotionDatabaseProperty }> => {
   const formattedAttributes: { [key: string]: NotionDatabaseProperty } = {};
 
@@ -68,7 +69,7 @@ export const formatNotionPageAttributes = async (
     }
 
     formattedAttributes[key] = value;
-    formattedAttributes['cover'] = img;
+    formattedAttributes['cover'] = img ? mapImageUrl(img, block) : '';
     img != ''
       ? (formattedAttributes['blurUrl'] = (await getBlurImage(img)).base64)
       : (formattedAttributes['blurUrl'] = '');

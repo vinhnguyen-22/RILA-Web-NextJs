@@ -35,7 +35,8 @@ class ServerSideCmsClient {
     if (isNonEmptyNonPartialNotionResponse(results)) {
       const entries: Record<string, NotionDatabaseProperty>[] = await Promise.all(
         results.map(async ({ id, cover, properties }) => {
-          const format = await formatNotionPageAttributes(properties, cover);
+          const { block } = await this.notionContentClient.getPage(id);
+          const format = await formatNotionPageAttributes(properties, cover, block[id].value);
 
           return {
             ...format,

@@ -19,7 +19,6 @@ export default function useArticles(allArticles: Article[], totalElement: number
               post.summary.toLowerCase().includes(query.toLowerCase()) ||
               post.summary.toLowerCase().includes(query.toLowerCase()) ||
               post.tags.some(({ name }) => name.toLowerCase().includes(query.toLowerCase()));
-            console.log(search);
             return search;
           }
 

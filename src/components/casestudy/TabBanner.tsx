@@ -11,7 +11,6 @@ const TabBanner = () => {
   const [activeTabIndex, setActiveTabIndex] = useState(0);
   const [tabUnderlineWidth, setTabUnderlineWidth] = useState(0);
   const [tabUnderlineLeft, setTabUnderlineLeft] = useState(0);
-  console.log(media);
   const tabsRef = useRef<any>([]);
 
   useEffect(() => {
