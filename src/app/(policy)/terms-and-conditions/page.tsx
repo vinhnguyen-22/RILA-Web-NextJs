@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 };
 const TermsCondition = () => {
   return (
-    <div className="container mx-auto my-10 max-sm:mt-[100px]">
+    <>
       <div className="flex flex-col justify-center items-center my-[20px]">
         <div className="text-center">
           <Heading title="Terms and Conditions" />
@@ -233,7 +233,7 @@ const TermsCondition = () => {
       </p>
 
       <CookieBanner />
-    </div>
+    </>
   );
 };
 

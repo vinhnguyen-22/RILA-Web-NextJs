@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 };
 const CookiePolicy = () => {
   return (
-    <div className="container mx-auto my-10">
+    <>
       <div className="flex flex-col justify-center items-center my-[20px]">
         <Heading title="COOKIE POLICY" />
 
@@ -98,7 +98,7 @@ const CookiePolicy = () => {
         </a>
       </p>
       <p className="text-justify">For more information, please contact hello@rilaglobal.com</p>
-    </div>
+    </>
   );
 };
 

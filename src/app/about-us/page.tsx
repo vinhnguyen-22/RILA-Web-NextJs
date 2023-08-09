@@ -1,23 +1,50 @@
+'use client';
 import Heading from '@/components/common/Heading/Heading';
 import Contact from '@/components/contact/Contact';
+import AboutImg from '@/icons/about-img';
 import Polygon from '@/icons/polygon';
 import { awardImages } from '@/mocks/data';
 import { Metadata } from 'next';
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
-import Link from 'next/link';
-import React from 'react';
+const ReactPlayer = dynamic(() => import('react-player/lazy'), { ssr: false });
+
 export const metadata: Metadata = {
   title: 'About',
 };
+
+function RectangleWithCircles() {
+  const circleSize = 15;
+  const rectWidth = 6 * circleSize;
+  const rectHeight = 8 * circleSize;
+  const fillColor = '#41436B';
+
+  const circles = [];
+  for (let i = 0; i < 6; i++) {
+    for (let j = 0; j < 8; j++) {
+      const cx = i * circleSize + circleSize / 2;
+      const cy = j * circleSize + circleSize / 2;
+      circles.push(<circle key={`${i}-${j}`} cx={cx} cy={cy} r={circleSize / 2} fill={fillColor} />);
+    }
+  }
+
+  return (
+    <svg width={rectWidth} height={rectHeight} xmlns="http://www.w3.org/2000/svg">
+      {circles}
+    </svg>
+  );
+}
+
 const About = () => {
   return (
     <div className="mt-[40px]">
       <section>
         <div className="grid grid-cols-12 h-[527px] gap-[60px]">
-          <div className="col-span-5 h-full flex flex-col justify-center items-center gap-[15px]">
+          <div className="col-span-5 h-full flex flex-col justify-center items-start gap-[15px] pl-[95px]">
             <h1 className="text-45xl font-semibold spacing-[1.92px]">About Us</h1>
-            <p className="text-xl leading-7 text-center">
-              Unleashing The Power Of Social Listening: Setting The Standard For Data-Driven Insights
+            <p className="text-xl leading-7">
+              <strong className="text-black">Unleashing The Power Of Social Listening:</strong> Setting The Standard For
+              Data-Driven Insights
             </p>
             <button className="bg-red-100 px-6 py-2 text-white rounded-51xl">
               <strong>Request A Demo</strong>
@@ -26,7 +53,16 @@ const About = () => {
           <div className="absolute -bottom-[65%] right-[49px] rounded-md bg-red-100 opacity-50 w-[177.5px] h-[129.248px]"></div>
           <div className="absolute top-[60px] right-[53%] rounded-full bg-orange-200 opacity-50 w-[159.5px] h-[159.5px] "></div>
           <div className="relative col-span-7 h-full  ">
-            <div className="h-full rounded-bl-[178px] bg-slate-700"></div>
+            <div className="h-full overflow-hidden rounded-bl-[178px] bg-slate-700">
+              <ReactPlayer
+                height={'100%'}
+                width={'100%'}
+                className=""
+                url="https://www.youtube.com/watch?v=38fpciTC6JA"
+                controls={false}
+                light={true}
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -104,7 +140,41 @@ const About = () => {
           </div>
         </div>
       </section>
+      <section style={{ background: 'linear-gradient(180deg, #251B00 0%, #010D82 100%)' }}>
+        <div className="container py-[80px] mx-auto">
+          <div className="grid grid-cols-2 gap-[198px]">
+            <div className="text-white flex flex-col gap-4">
+              <h3 className="text-semibold text-3xl">Let&apos;s Start a Conversation!</h3>
+              <p className="text-white">
+                Discover how our advanced social listening solutions can revolutionize your brand&apos;s online
+                presence, drive impactful strategies, and unlock invaluable consumer insights.
+              </p>
+              <form action="" className="flex flex-col gap-[10px]">
+                <input
+                  type="text"
+                  className="placeholder:text-gray-700 outline-none focus:border-red-100 p-[10px] w-full rounded-md"
+                  placeholder="Enter your Email"
+                />
+                <textarea
+                  rows={4}
+                  className="placeholder:text-gray-700 outline-none focus:border-red-100 p-[10px] w-full rounded-md"
+                  placeholder="How can we help?"
+                ></textarea>
 
+                <button className="bg-red-100 px-[25px] py-[8px] text-white font-semibold rounded-51xl w-[40%]">
+                  Contact RILA
+                </button>
+              </form>
+            </div>
+            <div className="relative flex justify-center items-center">
+              <div className="">
+                <AboutImg />
+              </div>
+              <div className="absolute top-0 right-0">{RectangleWithCircles()}</div>
+            </div>
+          </div>
+        </div>
+      </section>
       <Contact />
     </div>
   );

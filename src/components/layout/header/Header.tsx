@@ -64,7 +64,7 @@ const Header = () => {
                 <Link href="/">Home</Link>
               </li>
               <li className="text-base font-semibold leading-[32px] text-gray-300 hover:text-red-300 duration-200">
-                <Link href="/about">About Us</Link>
+                <Link href="/about-us">About Us</Link>
               </li>
               <li className="text-base font-semibold leading-[32px] text-gray-300 hover:text-red-300 duration-200">
                 <Link href="/services">Services</Link>
@@ -86,7 +86,7 @@ const Header = () => {
 
             <div className="mt-3 space-y-2 md:hidden">
               <Link
-                href="/about"
+                href="/about-us"
                 className="rounded-51xl bg-tomato-100 w-[100%] h-[40px] flex flex-row box-border items-center justify-center text-white hover:bg-red-200"
               >
                 <span className="text-center text-sm relative font-semibold leading-[20px] capitalize inline-block w-[99px] shrink-0">

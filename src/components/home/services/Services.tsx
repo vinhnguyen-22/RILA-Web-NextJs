@@ -112,7 +112,7 @@ const Services = () => {
                           </p>
                         </div>
                         <Link
-                          href="/about"
+                          href="/about-us"
                           className={`absolute bottom-[35px] flex flex-row items-center justify-start gap-[15px] ${item.color}`}
                         >
                           <span

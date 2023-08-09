@@ -15,7 +15,7 @@ const Heros = () => {
             </div>
 
             <Link
-              href="/about"
+              href="/about-us"
               className="mt-[31px] rounded-full bg-red-200 w-[193px] h-[55px] flex flex-row py-5 px-6 box-border items-center justify-center text-white"
             >
               <strong className="relative lg:text-lg text-base capitalize">Let’s Talk</strong>

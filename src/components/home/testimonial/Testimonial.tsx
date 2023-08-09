@@ -179,7 +179,7 @@ const Testimonial = () => {
                 Start your Social Listening journey with RILA now
               </h4>
               <Link
-                href="/about"
+                href="/about-us"
                 className="rounded-51xl w-[200px] max-w-full bg-gray-600 flex flex-row md:py-4 py-2 box-border items-center justify-center"
               >
                 <strong className="relative lg:text-lg md:text-base text-sm capitalize">Start Now</strong>
