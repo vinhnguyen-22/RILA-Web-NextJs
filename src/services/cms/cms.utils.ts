@@ -68,7 +68,7 @@ export const formatNotionPageAttributes = async (
       img = cover.type === 'external' ? cover.external.url : cover.file.url;
     }
     formattedAttributes[key] = value;
-    formattedAttributes['cover'] = mapImageUrl(img, block) ? mapImageUrl(img, block) : '';
+    formattedAttributes['cover'] = mapImageUrl(img, block) || img;
     img != ''
       ? (formattedAttributes['blurUrl'] = (await getBlurImage(img)).base64)
       : (formattedAttributes['blurUrl'] = '');
@@ -114,6 +114,7 @@ export function mapImageUrl(url: string, block: Block): string | null {
   url = `https://www.notion.so${url.startsWith('/image') ? url : `/image/${encodeURIComponent(url)}`}`;
 
   const notionImageUrlV2 = new URL(url);
+
   if (block) {
     let table = block.parent_table === 'space' ? 'block' : block.parent_table;
     if (table === 'collection' || table === 'team') {
@@ -123,6 +124,7 @@ export function mapImageUrl(url: string, block: Block): string | null {
     notionImageUrlV2.searchParams.set('id', block.id);
     notionImageUrlV2.searchParams.set('cache', 'v2');
   }
+  notionImageUrlV2.searchParams.set('cache', 'v2');
 
   url = notionImageUrlV2.toString();
 

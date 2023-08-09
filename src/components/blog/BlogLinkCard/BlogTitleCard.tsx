@@ -16,7 +16,14 @@ const BlogTitleCard = ({ article }: Props) => {
     <Link key={article.slug} className="p-4" href={articleSlug}>
       <div className="grid grid-cols-3 gap-[20px] h-[104px]">
         <div className="col-span-1 relative overflow-hidden">
-          <Image className="object-cover absolute" fill src={article.cover} alt="" />
+          <Image
+            className="object-cover absolute"
+            fill
+            src={article.cover}
+            alt=""
+            placeholder="blur"
+            blurDataURL={article.blurUrl}
+          />
         </div>
         <div className="col-span-2">
           <div className="flex flex-col">
