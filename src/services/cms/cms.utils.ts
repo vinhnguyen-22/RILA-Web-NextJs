@@ -57,7 +57,7 @@ export const isNonEmptyNonPartialNotionResponse = (
 export const formatNotionPageAttributes = async (
   properties: PageObjectResponse['properties'],
   cover: any,
-  blockMap: any
+  id: any
 ): Promise<{ [key: string]: NotionDatabaseProperty }> => {
   const formattedAttributes: { [key: string]: NotionDatabaseProperty } = {};
 
@@ -69,7 +69,7 @@ export const formatNotionPageAttributes = async (
     }
 
     formattedAttributes[key] = value;
-    formattedAttributes['cover'] = mapImageUrl(img, blockMap.value) || img;
+    formattedAttributes['cover'] = mapImageUrl(img, id) || '';
     img != ''
       ? (formattedAttributes['blurUrl'] = (await getBlurImage(img)).base64)
       : (formattedAttributes['blurUrl'] = '');
@@ -77,7 +77,7 @@ export const formatNotionPageAttributes = async (
 
   return formattedAttributes;
 };
-export function mapImageUrl(url: string, block: Block): string | null {
+export function mapImageUrl(url: string, id: string): string | null {
   if (!url) {
     return null;
   }
@@ -116,15 +116,8 @@ export function mapImageUrl(url: string, block: Block): string | null {
 
   const notionImageUrlV2 = new URL(url);
 
-  if (block) {
-    let table = block.parent_table === 'space' ? 'block' : block.parent_table;
-    if (table === 'collection' || table === 'team') {
-      table = 'block';
-    }
-    notionImageUrlV2.searchParams.set('table', table);
-    notionImageUrlV2.searchParams.set('id', block.id);
-    notionImageUrlV2.searchParams.set('cache', 'v2');
-  }
+  notionImageUrlV2.searchParams.set('table', 'table');
+  notionImageUrlV2.searchParams.set('id', id);
   notionImageUrlV2.searchParams.set('cache', 'v2');
 
   url = notionImageUrlV2.toString();
