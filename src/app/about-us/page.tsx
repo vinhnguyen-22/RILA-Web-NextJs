@@ -12,23 +12,88 @@ export const metadata: Metadata = {
 };
 
 function RectangleWithCircles() {
-  const circleSize = 15;
-  const rectWidth = 6 * circleSize;
-  const rectHeight = 8 * circleSize;
-  const fillColor = '#41436B';
-
-  const circles = [];
-  for (let i = 0; i < 6; i++) {
-    for (let j = 0; j < 8; j++) {
-      const cx = i * circleSize + circleSize / 2;
-      const cy = j * circleSize + circleSize / 2;
-      circles.push(<circle key={`${i}-${j}`} cx={cx} cy={cy} r={circleSize / 2} fill={fillColor} />);
-    }
-  }
-
   return (
-    <svg width={rectWidth} height={rectHeight} xmlns="http://www.w3.org/2000/svg">
-      {circles}
+    <svg width="400" height="239" viewBox="0 0 400 239" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 375 0)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 375 64)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 375 32)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 375 96)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 295 0)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 295 64)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 295 32)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 295 96)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 335 0)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 335 64)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 335 32)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 335 96)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 215 0)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 215 64)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 215 32)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 215 96)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 255 0)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 255 64)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 255 32)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 255 96)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 135 0)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 135 64)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 135 32)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 135 96)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 175 0)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 175 64)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 175 32)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 175 96)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 55 0)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 55 64)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 55 32)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 55 96)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 95 0)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 95 64)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 95 32)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 95 96)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 15 0)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 15 64)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 15 32)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 15 96)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 375 128)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 375 192)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 375 160)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 375 224)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 295 128)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 295 192)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 295 160)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 295 224)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 335 128)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 335 192)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 335 160)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 335 224)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 215 128)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 215 192)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 215 160)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 215 224)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 255 128)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 255 192)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 255 160)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 255 224)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 135 128)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 135 192)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 135 160)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 135 224)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 175 128)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 175 192)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 175 160)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 175 224)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 55 128)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 55 192)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 55 160)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 55 224)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 95 128)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 95 192)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 95 160)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 95 224)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 15 128)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 15 192)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 15 160)" fill="#41436B" />
+      <circle cx="7.5" cy="7.5" r="7.5" transform="matrix(-1 0 0 1 15 224)" fill="#41436B" />
     </svg>
   );
 }
@@ -113,7 +178,7 @@ const About = () => {
       </section>
       <section style={{ background: 'linear-gradient(180deg, #251B00 0%, #010D82 100%)' }}>
         <div className="container py-[80px] mx-auto">
-          <div className="grid grid-cols-2 gap-[198px]">
+          <div className="grid grid-cols-2 gap-[50px]">
             <div className="text-white flex flex-col gap-4">
               <h3 className="text-semibold text-3xl">Let&apos;s Start a Conversation!</h3>
               <p className="text-white">
@@ -138,10 +203,11 @@ const About = () => {
               </form>
             </div>
             <div className="relative flex justify-center items-center">
-              <div className="">
+              <div className="absolute top-0 right-0 ">{RectangleWithCircles()}</div>
+
+              <div className="relative">
                 <AboutImg />
               </div>
-              <div className="absolute top-0 right-0">{RectangleWithCircles()}</div>
             </div>
           </div>
         </div>

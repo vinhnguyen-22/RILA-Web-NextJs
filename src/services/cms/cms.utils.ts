@@ -4,7 +4,7 @@ import {
   RichTextItemResponse,
 } from '@notionhq/client/build/src/api-endpoints';
 import { NotionBlockTypes, NotionDatabaseProperty } from './cms.types';
-import { Block } from 'notion-types';
+import { Block, BlockMap } from 'notion-types';
 import { getBlurImage } from '@/utils/getBlurImg';
 
 const notionDatabasePropertyResolver = (prop: PageObjectResponse['properties'][string]): NotionDatabaseProperty => {
@@ -57,7 +57,7 @@ export const isNonEmptyNonPartialNotionResponse = (
 export const formatNotionPageAttributes = async (
   properties: PageObjectResponse['properties'],
   cover: any,
-  block: Block
+  blockMap: any
 ): Promise<{ [key: string]: NotionDatabaseProperty }> => {
   const formattedAttributes: { [key: string]: NotionDatabaseProperty } = {};
 
@@ -67,8 +67,9 @@ export const formatNotionPageAttributes = async (
     if (cover) {
       img = cover.type === 'external' ? cover.external.url : cover.file.url;
     }
+
     formattedAttributes[key] = value;
-    formattedAttributes['cover'] = mapImageUrl(img, block) || img;
+    formattedAttributes['cover'] = mapImageUrl(img, blockMap.value) || img;
     img != ''
       ? (formattedAttributes['blurUrl'] = (await getBlurImage(img)).base64)
       : (formattedAttributes['blurUrl'] = '');
