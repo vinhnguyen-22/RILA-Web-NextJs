@@ -68,9 +68,12 @@ const Contact = () => {
                       </div>
                     </div>
                     <div className="relative h-6 text-xl text-tomato-100">
-                      <div className=" [text-decoration:underline] leading-[24px] capitalize inline-block ">
-                        more FAQ
-                      </div>
+                      <Link href="/contact">
+                        <div className=" [text-decoration:underline] leading-[24px] capitalize inline-block ">
+                          more FAQ
+                        </div>
+                      </Link>
+
                       <Image
                         width={54}
                         height={12}

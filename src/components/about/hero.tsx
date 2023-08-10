@@ -18,14 +18,14 @@ const Hero = () => {
           </button>
         </div>
         <div className="absolute -bottom-[65%] right-[49px] rounded-md bg-red-100 opacity-50 w-[177.5px] h-[129.248px]"></div>
-        <div className="absolute top-[60px] right-[53%] rounded-full bg-orange-200 opacity-50 w-[159.5px] h-[159.5px] "></div>
+        <div className="absolute top-[60px] right-[53%] rounded-full bg-yellow-200  opacity-50 w-[159.5px] h-[159.5px] "></div>
         <div className="relative col-span-7 h-full  ">
           <div className="h-full overflow-hidden rounded-bl-[178px] bg-slate-700">
             <ReactPlayer
               height={'100%'}
               width={'100%'}
               className=""
-              url="https://www.youtube.com/watch?v=38fpciTC6JA"
+              url="https://www.youtube.com/watch?v=Ov924EfUDVg"
               controls={false}
               light={true}
             />
