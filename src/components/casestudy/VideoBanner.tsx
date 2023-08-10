@@ -37,7 +37,7 @@ const VideoBanner = () => {
           <h3 className="mt-[43px] text-xl font-semibold">
             Unveiling Success: The EVE LOM & RILA Social Listening Journey.
           </h3>
-          <p className="text-lg leading-7">
+          <p className="text-lg leading-7 text-white">
             Witness how our data-driven insights supercharged EVE LOM to lower customer acquisition costs.
           </p>
         </div>

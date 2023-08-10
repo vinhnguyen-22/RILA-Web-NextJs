@@ -111,8 +111,8 @@ const TabBanner = () => {
                           {tab.label}
                         </button>
                         <Collapse isOpened={idx == activeTabIndex}>
-                          <div className=" text-white font-normal">
-                            <p>{tab.content}</p>
+                          <div className="  font-normal">
+                            <p className="text-white">{tab.content}</p>
 
                             <Link
                               className={
