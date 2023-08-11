@@ -47,9 +47,9 @@ const FormSection = () => {
                   <path
                     d="M44.6667 14.4738H36.3333L30.0833 25.9475L17.5833 3L11.3333 14.4738H3"
                     stroke="white"
-                    stroke-width="5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   />
                 </svg>
               </div>

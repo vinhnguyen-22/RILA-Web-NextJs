@@ -1,9 +1,10 @@
 import FormSection from '@/components/about/FormSection';
+import TeamBioSection from '@/components/about/TeamBioSection';
 import Hero from '@/components/about/hero';
 import Heading from '@/components/common/Heading/Heading';
 import Contact from '@/components/contact/Contact';
 import Polygon from '@/icons/polygon';
-import { awardImages } from '@/mocks/data';
+import { AboutAwardImages } from '@/mocks/about-data';
 import { Metadata } from 'next';
 import Image from 'next/image';
 
@@ -52,21 +53,10 @@ const About = () => {
           <Image src="/images/about-us/dot-blue.svg" width={300} className="my-[27px] -z-10" height={57} alt="" />
         </div>
       </section>
-      <section className="mt-[100px] container mx-auto">
-        <div className="flex flex-col justify-center items-center">
-          <Heading
-            title="Introducing Our Expert Team"
-            subtitle="The Brilliant Minds Behind Data Analysis in Social Listening"
-          />
-          <div className="grid grid-cols-3">
-            <div className="flex justify-center items-center">
-              <Image src="/images/about-us/rectangle-17.png" alt="" width={401} height={404} />
-            </div>
-            <div className="flex justify-center items-center"></div>
-            <div className="flex justify-center items-center"></div>
-          </div>
-        </div>
-      </section>
+
+      <TeamBioSection />
+
+    
 
       <section className="mt-[50px] mx-auto">
         <div className="flex flex-col justify-center items-center">
@@ -88,7 +78,7 @@ const About = () => {
           <Heading title="Awards" subtitle="Global Recognition of RILA’s Excellence" />
 
           <div className="flex md:flex-row flex-col container mx-auto mt-[63px] justify-between items-center ">
-            {awardImages.map((image, index) => (
+            {AboutAwardImages.map((image, index) => (
               <div key={index} className="aspect-video relative h-[100px]">
                 <Image fill className="relative object-contain" alt={'alt'} src={image} />
               </div>
