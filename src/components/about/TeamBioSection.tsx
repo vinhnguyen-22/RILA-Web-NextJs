@@ -1,16 +1,19 @@
 'use client';
 import { AboutTeamBio } from '@/mocks/about-data';
 import Image from 'next/image';
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Navigation, Pagination } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
 import Heading from '../common/Heading/Heading';
 import TeamDot from '@/icons/about/TeamDot';
 
 const TeamBioSection = () => {
   const [indexBio, setIndexBio] = useState<number>(0);
-
   const swiperRef = useRef<any>();
+
+  useEffect(() => {
+    swiperRef.current.slideTo(indexBio);
+  }, [indexBio]);
   return (
     <section className="mt-[100px] mx-auto">
       <div className="flex flex-col justify-center items-center">
@@ -58,6 +61,7 @@ const TeamBioSection = () => {
               ))}
             </Swiper>
           </div>
+
           <div className="flex justify-center items-center flex-wrap gap-[20px]">
             {AboutTeamBio.map(
               (item, index) =>
