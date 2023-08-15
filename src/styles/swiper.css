@@ -30,6 +30,15 @@
   position: absolute;
   bottom: 60px;
 }
+@media (max-width: 767px) {
+  .teamBioSwiper {
+    margin-bottom: 100px;
+  }
+  .teamBioSwiper .swiper-pagination {
+    bottom: -30px;
+  }
+}
+
 .teamBioSwiper .swiper-pagination-bullet {
   width: 20px;
   height: 20px;

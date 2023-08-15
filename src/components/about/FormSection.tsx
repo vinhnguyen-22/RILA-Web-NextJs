@@ -5,11 +5,11 @@ import React from 'react';
 const FormSection = () => {
   return (
     <section className="relative" style={{ background: 'linear-gradient(180deg, #251B00 0%, #010D82 100%)' }}>
-      <div className="absolute top-[90px] right-0 ">
+      <div className="absolute top-[90px] right-0 max-sm:hidden">
         <Image src="/images/about-us/dot.svg" width={400} height={239} alt="" />
       </div>
       <div className="container py-[80px] mx-auto">
-        <div className="grid grid-cols-2 gap-[50px]">
+        <div className="grid md:grid-cols-2 grid-col-1 gap-[50px]">
           <div className="text-white flex flex-col gap-4">
             <h3 className="text-semibold text-3xl">Let&apos;s Start a Conversation!</h3>
             <p className="text-white">
@@ -33,8 +33,8 @@ const FormSection = () => {
               </button>
             </form>
           </div>
-          <div className="relative flex justify-center items-center">
-            <div className="absolute top-0 right-0">
+          <div className="relative flex justify-center items-center max-sm:hidden">
+            <div className="absolute top-0 right-0 ">
               <AboutImg />
             </div>
 
