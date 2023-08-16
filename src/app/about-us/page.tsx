@@ -64,9 +64,9 @@ const About = () => {
           </div>
 
           <div className="container mx-auto mt-[63px] ">
-            <div className="flex md:flex-row flex-col flex-wrap justify-evenly items-center gap-[20px] flex-grow ">
+            <div className="flex flex-row flex-wrap justify-evenly items-center gap-[20px] flex-grow ">
               {AboutNews.map((item, index) => (
-                <div key={index} className="aspect-video relative h-[100px] ">
+                <div key={index} className="aspect-video relative sm:h-[100px] h-[50px] ">
                   <Image fill className="relative object-contain" alt={item.alt} src={item.image} />
                 </div>
               ))}
@@ -79,9 +79,9 @@ const About = () => {
         <div className="flex flex-col ">
           <Heading title="Awards" subtitle="Global Recognition of RILA’s Excellence" />
 
-          <div className="flex md:flex-row flex-col flex-wrap container mx-auto mt-[63px] lg:justify-between justify-center gap-[20px] items-center ">
+          <div className="flex flex-row flex-wrap container mx-auto mt-[63px] lg:justify-between justify-center gap-[20px] items-center ">
             {AboutAwardImages.map((image, index) => (
-              <div key={index} className="aspect-video relative h-[100px]">
+              <div key={index} className="aspect-video relative sm:h-[100px] h-[100px]">
                 <Image fill className="relative object-contain" alt={'alt'} src={image} />
               </div>
             ))}

@@ -2,14 +2,7 @@ import React from 'react';
 
 const AboutImg = () => {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      xmlnsXlink="http://www.w3.org/1999/xlink"
-      width={413}
-      height={411}
-      viewBox="0 0 413 411"
-      fill="none"
-    >
+    <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 413 411" fill="none">
       <path
         d="M406.993 193.575C440.59 310.06 327.653 411 207.749 411 39.551 411 0 313.655 0 193.575 0 73.494 65.943 0 185.847 0c156.078 0 187.549 77.09 221.146 193.575z"
         fill="url(#pattern0)"

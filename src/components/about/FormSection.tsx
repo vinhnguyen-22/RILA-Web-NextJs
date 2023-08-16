@@ -34,7 +34,7 @@ const FormSection = () => {
             </form>
           </div>
           <div className="relative flex justify-center items-center h-[500px]">
-            <div className="sm:absolute block top-0 right-0 ">
+            <div className="sm:absolute block top-0 right-0 sm:w-[413px] sm:h-[413px] w-[320px] h-[320px]">
               <AboutImg />
             </div>
 
@@ -42,7 +42,7 @@ const FormSection = () => {
               <p className="text-black">
                 Thank you for contacting <strong>RILA GLOBAL CONSULTING</strong>. How may I help you?
               </p>
-              <div className="absolute -top-1/2 -right-[10%] px-[17px] py-[26px] bg-red-200 rounded-full">
+              <div className="absolute sm:-top-1/2 sm:-right-[10%] -top-[40%] -right-[35px] px-[17px] py-[26px] bg-red-200 rounded-full">
                 <svg xmlns="http://www.w3.org/2000/svg" width="48" height="29" viewBox="0 0 48 29" fill="none">
                   <path
                     d="M44.6667 14.4738H36.3333L30.0833 25.9475L17.5833 3L11.3333 14.4738H3"
