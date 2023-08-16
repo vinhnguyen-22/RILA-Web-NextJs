@@ -26,24 +26,24 @@
   margin: 0px !important;
   overflow: visible !important;
 }
+.teamBioSwiper {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 50px;
+}
 .teamBioSwiper .swiper-pagination {
   position: absolute;
   bottom: 60px;
 }
+
 @media (max-width: 768px) {
-  .teamBioSwiper {
-    margin-bottom: 100px;
-  }
   .teamBioSwiper .swiper-pagination {
-    bottom: 0;
+    bottom: 0px;
   }
 }
 @media (max-width: 600px) {
-  .teamBioSwiper {
-    margin-bottom: 100px;
-  }
   .teamBioSwiper .swiper-pagination {
-    bottom: -30px;
+    bottom: 0px;
   }
 }
 .teamBioSwiper .swiper-pagination-bullet {
