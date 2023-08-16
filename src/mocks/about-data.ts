@@ -119,3 +119,22 @@ export const AboutTeamBio = [
       'Cherry is our experienced market insights expert, specializing in audience segmentation and data-driven strategies.',
   },
 ];
+
+export const AboutNews = [
+  { image: '/images/about-us/news/news_1.png', alt: 'News 1' },
+  { image: '/images/about-us/news/news_2.png', alt: 'News 2' },
+  { image: '/images/about-us/news/news_3.png', alt: 'News 3' },
+  { image: '/images/about-us/news/news_4.png', alt: 'News 4' },
+  { image: '/images/about-us/news/news_5.png', alt: 'News 5' },
+  { image: '/images/about-us/news/news_6.png', alt: 'News 6' },
+  { image: '/images/about-us/news/news_7.png', alt: 'News 7' },
+  { image: '/images/about-us/news/news_8.png', alt: 'News 8' },
+  { image: '/images/about-us/news/news_9.png', alt: 'News 9' },
+  { image: '/images/about-us/news/news_10.png', alt: 'News 10' },
+  { image: '/images/about-us/news/news_11.png', alt: 'News 11' },
+  { image: '/images/about-us/news/news_12.png', alt: 'News 12' },
+  { image: '/images/about-us/news/news_13.png', alt: 'News 13' },
+  { image: '/images/about-us/news/news_14.png', alt: 'News 14' },
+  { image: '/images/about-us/news/news_15.png', alt: 'News 15' },
+  { image: '/images/about-us/news/news_16.png', alt: 'News 16' },
+];

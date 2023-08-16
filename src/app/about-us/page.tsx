@@ -4,7 +4,7 @@ import Hero from '@/components/about/hero';
 import Heading from '@/components/common/Heading/Heading';
 import Contact from '@/components/contact/Contact';
 import Polygon from '@/icons/polygon';
-import { AboutAwardImages } from '@/mocks/about-data';
+import { AboutAwardImages, AboutNews } from '@/mocks/about-data';
 import { Metadata } from 'next';
 import Image from 'next/image';
 
@@ -48,9 +48,9 @@ const About = () => {
           </div>
         </div>
 
-        <div className="max-sm:hidden absolute top-[73px] left-0">
+        <div className="lg:block hidden absolute top-[73px] left-0">
           <Image src="/images/about-us/dot-blue.svg" width={300} className="" height={57} alt="" />
-          <Image src="/images/about-us/dot-blue.svg" width={300} className="my-[27px] -z-10" height={57} alt="" />
+          <Image src="/images/about-u1s/dot-blue.svg" width={300} className="my-[27px] -z-10" height={57} alt="" />
         </div>
       </section>
 
@@ -64,18 +64,22 @@ const About = () => {
           </div>
 
           <div className="container mx-auto mt-[63px] ">
-            <div className="aspect-video relative h-[273px] w-full">
-              <Image fill className="relative object-contain" alt={'alt'} src={'/images/about-us/image-12.png'} />
+            <div className="flex md:flex-row flex-col flex-wrap justify-evenly items-center gap-[20px] flex-grow ">
+              {AboutNews.map((item, index) => (
+                <div key={index} className="aspect-video relative h-[100px] ">
+                  <Image fill className="relative object-contain" alt={item.alt} src={item.image} />
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      <section className="mt-[50px] mx-auto">
+      <section className="my-[50px] mx-auto">
         <div className="flex flex-col ">
           <Heading title="Awards" subtitle="Global Recognition of RILA’s Excellence" />
 
-          <div className="flex md:flex-row flex-col flex-wrap container mx-auto mt-[63px] justify-between items-center ">
+          <div className="flex md:flex-row flex-col flex-wrap container mx-auto mt-[63px] lg:justify-between justify-center gap-[20px] items-center ">
             {AboutAwardImages.map((image, index) => (
               <div key={index} className="aspect-video relative h-[100px]">
                 <Image fill className="relative object-contain" alt={'alt'} src={image} />

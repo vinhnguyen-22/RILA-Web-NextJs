@@ -24,16 +24,16 @@ const TeamBioSection = () => {
           title="Introducing Our Expert Team"
           subtitle="The Brilliant Minds Behind Data Analysis in Social Listening"
         />
-        <div className="grid sm:grid-cols-3 grid-cols-2 mt-[28px] mb-[62px] ">
-          <div className="relative flex justify-center items-center sm:p-[55px_40px_26px_2px] sm:mb-0 mb-12">
+        <div className="grid lg:grid-cols-3 grid-cols-2 mt-[28px] mb-[62px] ">
+          <div className="relative flex justify-center items-center sm:p-[55px_40px_26px_2px] lg:mb-0 mb-12">
             <div className="absolute top-0 right-0 flex flex-col gap-[17px]">
               <TeamDot />
               <TeamDot />
             </div>
-            <div className="absolute sm:bottom-0 bottom-2 left-0 w-[139px] h-[139px] border-[11px] border-red-600 rounded-full"></div>
+            <div className="absolute lg:bottom-0 bottom-2 left-0 w-[139px] h-[139px] border-[11px] border-red-600 rounded-full"></div>
 
             <div
-              className="relative bg-no-repeat bg-cover overflow-hidden sm:w-[401px] sm:h-[401px] w-[220px] h-[220px] rounded-[169px_0px_169px_169px] bg-white"
+              className="relative bg-no-repeat bg-cover overflow-hidden lg:w-[401px] lg:h-[401px] md:w-[360px] md:h-[360px]  w-[220px] h-[220px] rounded-[169px_0px_169px_169px] bg-white"
               style={{
                 backgroundImage: `url('${AboutTeamBio[indexBio].image}')`,
                 boxShadow: '14px -1px 38px 0px rgba(0, 0, 0, 0.25)',
@@ -41,7 +41,7 @@ const TeamBioSection = () => {
             ></div>
           </div>
 
-          <div className="sm:flex hidden justify-center items-center">
+          <div className="lg:flex hidden justify-center items-center">
             <Swiper
               slidesPerView={1}
               grabCursor={true}
@@ -68,7 +68,7 @@ const TeamBioSection = () => {
             </Swiper>
           </div>
 
-          <div className="flex justify-center items-center flex-wrap sm:gap-[20px] gap-[10px] p-2 sm:mb-0 mb-12">
+          <div className="flex justify-center items-center flex-wrap sm:gap-[20px] gap-[10px] p-2 lg:mb-0 mb-12">
             {AboutTeamBio.map(
               (item, index) =>
                 index != indexBio && (
@@ -89,7 +89,7 @@ const TeamBioSection = () => {
             )}
           </div>
 
-          <div className="sm:hidden flex justify-center items-center col-span-2 p-3">
+          <div className="lg:hidden flex justify-center items-center col-span-2 p-3">
             <Swiper
               slidesPerView={1}
               grabCursor={true}

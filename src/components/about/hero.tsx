@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <section className="">
       <div className="lg:grid grid-cols-12 h-[527px] md:gap-[60px] flex flex-col-reverse ">
-        <div className="md:col-span-5 col-span-12 h-full flex flex-col justify-center items-start gap-[15px] pl-[95px] max-sm:p-5">
+        <div className="md:col-span-5 col-span-12 h-full flex flex-col justify-center items-start gap-[15px] lg:pl-[95px] p-5">
           <h1 className="text-45xl font-semibold spacing-[1.92px] max-sm:text-21xl">About Us</h1>
           <p className="text-xl leading-7">
             <strong className="text-black">Unleashing The Power Of Social Listening:</strong> Setting The Standard For

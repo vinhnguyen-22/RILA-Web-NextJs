@@ -5,7 +5,7 @@ import React from 'react';
 const FormSection = () => {
   return (
     <section className="relative" style={{ background: 'linear-gradient(180deg, #251B00 0%, #010D82 100%)' }}>
-      <div className="absolute top-[90px] right-0 max-sm:hidden">
+      <div className="absolute top-[90px] right-0 sm:block hidden">
         <Image src="/images/about-us/dot.svg" width={400} height={239} alt="" />
       </div>
       <div className="container py-[80px] mx-auto">
@@ -33,8 +33,8 @@ const FormSection = () => {
               </button>
             </form>
           </div>
-          <div className="relative flex justify-center items-center max-sm:hidden">
-            <div className="absolute top-0 right-0 ">
+          <div className="relative flex justify-center items-center h-[500px]">
+            <div className="sm:absolute block top-0 right-0 ">
               <AboutImg />
             </div>
 
