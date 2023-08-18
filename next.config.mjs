@@ -4,7 +4,7 @@ import withPlaiceholder from '@plaiceholder/next';
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  staticPageGenerationTimeout: 60,
+  staticPageGenerationTimeout: 300,
   images: {
     remotePatterns: [
       {
