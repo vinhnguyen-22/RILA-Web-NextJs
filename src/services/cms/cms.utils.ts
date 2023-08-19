@@ -1,13 +1,14 @@
+import { getBlurImage } from '@/utils/getBlurImg';
 import {
   PageObjectResponse,
   PartialPageObjectResponse,
   RichTextItemResponse,
 } from '@notionhq/client/build/src/api-endpoints';
 import { NotionBlockTypes, NotionDatabaseProperty } from './cms.types';
-import { Block, BlockMap } from 'notion-types';
-import { getBlurImage } from '@/utils/getBlurImg';
 
-const notionDatabasePropertyResolver = (prop: PageObjectResponse['properties'][string]): NotionDatabaseProperty => {
+const notionDatabasePropertyResolver = (
+  prop: PageObjectResponse['properties'][string],
+): NotionDatabaseProperty => {
   const type = prop['type'];
 
   switch (type) {
@@ -50,14 +51,13 @@ const titleValueResolver = (prop: RichTextItemResponse[]): string => {
 };
 
 export const isNonEmptyNonPartialNotionResponse = (
-  results: (PageObjectResponse | PartialPageObjectResponse)[]
+  results: (PageObjectResponse | PartialPageObjectResponse)[],
   // @ts-ignore
 ): results is PageObjectResponse[] => results[0]?.properties !== undefined;
 
 export const formatNotionPageAttributes = async (
   properties: PageObjectResponse['properties'],
   cover: any,
-  id: any
 ): Promise<{ [key: string]: NotionDatabaseProperty }> => {
   const formattedAttributes: { [key: string]: NotionDatabaseProperty } = {};
 
@@ -69,7 +69,7 @@ export const formatNotionPageAttributes = async (
     }
 
     formattedAttributes[key] = value;
-    formattedAttributes['cover'] = mapImageUrl(img, id) || '';
+    formattedAttributes['cover'] = cover;
     img != ''
       ? (formattedAttributes['blurUrl'] = (await getBlurImage(img)).base64)
       : (formattedAttributes['blurUrl'] = '');
@@ -77,50 +77,3 @@ export const formatNotionPageAttributes = async (
 
   return formattedAttributes;
 };
-export function mapImageUrl(url: string, id: string): string | null {
-  if (!url) {
-    return null;
-  }
-
-  if (url.startsWith('data:')) {
-    return url;
-  }
-
-  // more recent versions of notion don't proxy unsplash images
-  if (url.startsWith('https://images.unsplash.com')) {
-    return url;
-  }
-
-  try {
-    const u = new URL(url);
-
-    if (u.pathname.startsWith('/secure.notion-static.com') && u.hostname.endsWith('.amazonaws.com')) {
-      if (
-        u.searchParams.has('X-Amz-Credential') &&
-        u.searchParams.has('X-Amz-Signature') &&
-        u.searchParams.has('X-Amz-Algorithm')
-      ) {
-        // if the URL is already signed, then use it as-is
-        return url;
-      }
-    }
-  } catch {
-    // ignore invalid urls
-  }
-
-  if (url.startsWith('/images')) {
-    url = `https://www.notion.so${url}`;
-  }
-
-  url = `https://www.notion.so${url.startsWith('/image') ? url : `/image/${encodeURIComponent(url)}`}`;
-
-  const notionImageUrlV2 = new URL(url);
-
-  notionImageUrlV2.searchParams.set('table', 'table');
-  notionImageUrlV2.searchParams.set('id', id);
-  notionImageUrlV2.searchParams.set('cache', 'v2');
-
-  url = notionImageUrlV2.toString();
-
-  return url;
-}
