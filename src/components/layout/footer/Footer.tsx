@@ -95,7 +95,7 @@ const Footer = () => {
           <div className="text-sm grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
             <div>
               <h2 className="mb-6 text-lg font-semibold text-gray-200 capitalize ">Company</h2>
-              <ul className="text-lightslategray-200  font-medium">
+              <ul className="text-gray-200  font-medium">
                 <li className="mb-4">
                   <Link href="/about-us" className="hover:underline">
                     About Us
@@ -120,7 +120,7 @@ const Footer = () => {
             </div>
             <div>
               <h2 className="mb-6 text-lg font-semibold text-gray-200 capitalize ">Resources</h2>
-              <ul className="text-lightslategray-200  font-medium">
+              <ul className="text-gray-200  font-medium">
                 <li className="mb-4">
                   <Link href="/resources" className="hover:underline ">
                     Our Services
@@ -145,7 +145,7 @@ const Footer = () => {
             </div>
             <div>
               <h2 className="mb-6 text-lg font-semibold text-gray-200 capitalize ">Legal</h2>
-              <ul className="text-lightslategray-200  font-medium">
+              <ul className="text-gray-200  font-medium">
                 <li className="mb-4">
                   <Link href="/cookie-policy" className="hover:underline">
                     Privacy Policy

@@ -25,7 +25,7 @@ const ReportDetail: FC<ReportDetailProps> = ({ report }) => {
                 Get the full <span className="text-red-100">report</span>
               </h3>
               <div className="block w-3/4 h-[1px] bg-red-500"></div>
-              <p className="text-base leading-7 before:content-[' '] before:h-[1px] after:">
+              <p className="text-white text-base leading-7 before:content-[' '] before:h-[1px] after:">
                 2020 will be remembered as the year of change with the first global pandemic to shut down the whole
                 world. One of the key emerging industries that saw increased social media attention and usage since
                 COVID-19, is neobanking. Using cutting edge data technology, in this report we explore:

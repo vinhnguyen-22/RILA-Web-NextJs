@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "next build && node ./scripts/deploy.mjs"
+    "deploy": "next build && node ./scripts/deploy.mjs",
+    "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\""
   },
   "dependencies": {
     "@headlessui/react": "^1.7.16",

@@ -10,14 +10,14 @@ import { useMediaQuery } from '@/hooks/useMediaQuery';
 
 const TeamBioSection = () => {
   const media = useMediaQuery('(max-width: 800px)');
-  console.log(media);
   const [indexBio, setIndexBio] = useState<number>(0);
   const swiperRef = useRef<any>();
-  useEffect(() => {
-    if (indexBio == swiperRef.current.activeIndex) {
-      swiperRef.current.slideTo(indexBio);
-    }
-  }, [indexBio]);
+
+  // useEffect(() => {
+  //   if (indexBio != swiperRef.current.realIndex) {
+  //     swiperRef.current.slideTo(indexBio);
+  //   }
+  // }, [indexBio]);
 
   const RenderSlideContent = () => (
     <div className="lg:col-span-1 col-span-2 flex justify-center items-center">
@@ -33,15 +33,16 @@ const TeamBioSection = () => {
         }}
         className="teamBioSwiper"
         pagination={{ clickable: true, dynamicBullets: true }}
-        loop
         init
         centeredSlides={true}
       >
         {AboutTeamBio.map((item, index) => (
-          <SwiperSlide key={index} className="">
-            <div className="flex justify-center items-center flex-col h-full gap-[20px]">
-              <h3 className="font-semibold text-3xl">{item.name}</h3>
-              <p className="text-black">{item.description}</p>
+          <SwiperSlide key={item.id} className="">
+            <div className="">
+              <div className="flex justify-center items-center flex-col h-full gap-[20px]">
+                <h3 className="font-semibold text-3xl">{item.name}</h3>
+                <p className="text-black">{item.description}</p>
+              </div>
             </div>
           </SwiperSlide>
         ))}
@@ -80,8 +81,9 @@ const TeamBioSection = () => {
                     className="cursor-pointer sm:w-[84px] w-[50px] sm:h-[84px] h-[50px] rounded-full relative overflow-hidden hover:scale-110 hover:opacity-85 shadow-md"
                     onClick={() => {
                       setIndexBio(index);
+                      swiperRef.current.slideTo(index);
                     }}
-                    key={index}
+                    key={item.id}
                   >
                     <Image
                       src={item.image}
@@ -91,7 +93,7 @@ const TeamBioSection = () => {
                       sizes="(max-width: 600px) 100vw, 300px"
                     />
                   </div>
-                )
+                ),
             )}
           </div>
           {!!media ? RenderSlideContent() : <></>}

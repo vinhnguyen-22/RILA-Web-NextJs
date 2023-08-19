@@ -1,9 +1,9 @@
 'use client';
-import Image from 'next/image';
-import React, { useState } from 'react';
-import AccordionItem from './accordion/AccordionItem';
-import Link from 'next/link';
 import { questionItems } from '@/mocks/data';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useState } from 'react';
+import AccordionItem from './accordion/AccordionItem';
 
 const Contact = () => {
   const [open, setOpen] = useState<any>(false);
@@ -43,10 +43,10 @@ const Contact = () => {
                   <div className="flex flex-col items-start justify-start gap-[42px] text-9xl">
                     <div className="flex flex-col items-center justify-center gap-[32px]">
                       <div className="flex flex-col items-start justify-start gap-[16px]">
-                        <div className="lg:text-2xl md:text-2xl text-lg mt-5 relative text-black tracking-[0.2px] leading-[52px] capitalize inline-block ">
+                        <div className="font-semibold lg:text-2xl md:text-2xl text-lg mt-5 relative text-black tracking-[0.2px] leading-[52px] capitalize inline-block ">
                           How can We help you?
                         </div>
-                        <div className="relative md:text-lg sm:text-base text-base leading-[36px] text-gray-500 inline-block opacity-[0.75] mix-blend-normal">
+                        <div className="relative md:text-lg sm:text-base text-base leading-[36px] text-gray-200 inline-block opacity-[0.75] mix-blend-normal">
                           Contact a member of our team now to discuss your social listening needs.
                         </div>
                       </div>

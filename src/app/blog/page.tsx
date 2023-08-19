@@ -12,6 +12,13 @@ export const metadata: Metadata = {
   title: 'Blog',
   description: 'All posts are created by notion.',
 };
+export const config = {
+  api: {
+      bodyParser: {
+          sizeLimit: '4mb' // Set desired value here
+      }
+  }
+}
 export default async function Blog() {
   const articles = await serverSideCmsClient.getDatabaseEntries(process.env.NOTION_BLOG_DB_ID, isArticle);
 

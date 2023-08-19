@@ -20,7 +20,7 @@ export const AboutTeamBio = [
     title: 'VP Professional Services',
     image: '/images/about-us/team/Agata Dec.png',
     description:
-      "Agata, our VP of Professional Services, is a results-driven professional who oversees the delivery of top-notch professional services to RILA's clients",
+      "Agata, our VP of Professional Services, is a results-driven professional who oversees the delivery of top-notch professional services to RILA's clients.",
   },
   {
     name: 'Jessica Thomas',
@@ -28,7 +28,7 @@ export const AboutTeamBio = [
     title: 'VP Strategy',
     image: '/images/about-us/team/Jessica Thomas.png',
     description:
-      "Jessica is a visionary leader who brings a wealth of strategic thinking to the table to RILA's clients",
+      "Jessica is a visionary leader who brings a wealth of strategic thinking to the table to RILA's clients.",
   },
   {
     name: 'Rebecca Evans',
@@ -36,7 +36,7 @@ export const AboutTeamBio = [
     title: 'Sr. Research Analyst',
     image: '/images/about-us/team/Rebecca Evans.png',
     description:
-      'Becky is our seasoned professional with extensive knowledge and experience in conducting in-depth research and providing market insights to our Fortune 500 clients',
+      'Becky is our seasoned professional with extensive knowledge and experience in conducting in-depth research and providing market insights to our Fortune 500 clients.',
   },
   {
     name: 'Ngan Ho',
@@ -44,7 +44,7 @@ export const AboutTeamBio = [
     title: 'Analyst, APAC',
     image: '/images/about-us/team/Ngan Ho.png',
     description:
-      'Ngan is a skilled social listening analyst with a specialization in Vietnamese and APAC language services',
+      'Ngan is a skilled social listening analyst with a specialization in Vietnamese and APAC language services.',
   },
   {
     name: 'Grace Smith',
@@ -60,7 +60,7 @@ export const AboutTeamBio = [
     title: 'Content Production',
     image: '/images/about-us/team/Jamme Wyneth Martinez.png',
     description:
-      'Jamme is our talented content production specialist who brings a unique blend of creativity and technical expertise to our team',
+      'Jamme is our talented content production specialist who brings a unique blend of creativity and technical expertise to our team.',
   },
   {
     name: 'Zara Ahmed',
@@ -76,7 +76,7 @@ export const AboutTeamBio = [
     title: 'Analyst, AfME & GULF',
     image: '/images/about-us/team/Mahetap Khalifa .png',
     description:
-      'Mahetap is a skilled analyst with a specialization in Arabic language services, providing insights into the Gulf and North African markets',
+      'Mahetap is a skilled analyst with a specialization in Arabic language services, providing insights into the Gulf and North African markets.',
   },
   {
     name: 'Sami Khoury',
@@ -84,7 +84,7 @@ export const AboutTeamBio = [
     title: 'Open Source Intelligence',
     image: '/images/about-us/team/Sami Khoury.png',
     description:
-      'Sami specializes in Open Source Intelligence and Big Data, leveraging his extensive knowledge to extract meaningful information and guide business decisions',
+      'Sami specializes in Open Source Intelligence and Big Data, leveraging his extensive knowledge to extract meaningful information and guide business decisions.',
   },
   {
     name: 'Thasya Putri',
@@ -92,7 +92,7 @@ export const AboutTeamBio = [
     title: 'Demand Generation Specialist',
     image: '/images/about-us/team/Thasya Putri.png',
     description:
-      'Skilled demand generation expert, in charge of developing effective strategies to drive customer interest and generate valuable marketing initiatives',
+      'Skilled demand generation expert, in charge of developing effective strategies to drive customer interest and generate valuable marketing initiatives.',
   },
   {
     name: 'Hamish Allen',
@@ -100,7 +100,7 @@ export const AboutTeamBio = [
     title: 'Sr. Research Analyst',
     image: '/images/about-us/team/hamish allen.png',
     description:
-      'Hamish is a seasoned veteran in the social listening industry. With a profound understanding and expertise, he delivers valuable market insights to our clients effectively',
+      'Hamish is a seasoned veteran in the social listening industry. With a profound understanding and expertise, he delivers valuable market insights to our clients effectively.',
   },
   {
     name: 'Clare Busca',
@@ -108,7 +108,7 @@ export const AboutTeamBio = [
     title: 'Sr. Research Analyst',
     image: '/images/about-us/team/Clare Busca.png',
     description:
-      'Clare is our highly experienced and accomplished Senior Research Analyst who brings her extensive analytics experience to the team focusing on the U.S. market',
+      'Clare is our highly experienced and accomplished Senior Research Analyst who brings her extensive analytics experience to the team focusing on the U.S. market.',
   },
   {
     name: 'Cherry Stokes',
@@ -137,4 +137,5 @@ export const AboutNews = [
   { image: '/images/about-us/news/news_14.png', alt: 'News 14' },
   { image: '/images/about-us/news/news_15.png', alt: 'News 15' },
   { image: '/images/about-us/news/news_16.png', alt: 'News 16' },
+  { image: '/images/about-us/news/news_17.png', alt: 'News 17' },
 ];
