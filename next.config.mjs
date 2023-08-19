@@ -13,7 +13,7 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 's3.us-west-2.amazonaws.com',
+        hostname: 's3-us-west-2.amazonaws.com',
       },
     ],
   },
@@ -26,7 +26,7 @@ const nextConfig = {
       new webpack.ContextReplacementPlugin(/\/keyv\//, (data) => {
         delete data.dependencies[0].critical;
         return data;
-      }),
+      })
     );
     return config;
   },

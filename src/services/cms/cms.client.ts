@@ -1,13 +1,13 @@
+import { NotionAPI } from 'notion-client';
 import { Client } from '@notionhq/client';
 import { QueryDatabaseParameters } from '@notionhq/client/build/src/api-endpoints';
-import { NotionAPI } from 'notion-client';
 import { ExtendedRecordMap } from 'notion-types';
-import { NotionDatabaseProperty } from './cms.types';
 import { formatNotionPageAttributes, isNonEmptyNonPartialNotionResponse } from './cms.utils';
+import { NotionDatabaseProperty } from './cms.types';
 
 class ServerSideCmsClient {
-  public notionContentClient: NotionAPI;
-  public notionApiClient: Client;
+  private notionContentClient: NotionAPI;
+  private notionApiClient: Client;
 
   constructor() {
     this.notionContentClient = new NotionAPI({
@@ -22,7 +22,7 @@ class ServerSideCmsClient {
 
   async getDatabaseEntries<T extends Record<string, NotionDatabaseProperty>>(
     databaseId: string | undefined,
-    typeGuard: (value: Record<string, NotionDatabaseProperty>) => value is T,
+    typeGuard: (value: Record<string, NotionDatabaseProperty>) => value is T
   ): Promise<T[]> {
     if (databaseId === undefined) throw new Error('No database id provided');
 
@@ -35,13 +35,13 @@ class ServerSideCmsClient {
     if (isNonEmptyNonPartialNotionResponse(results)) {
       const entries: Record<string, NotionDatabaseProperty>[] = await Promise.all(
         results.map(async ({ id, cover, properties }) => {
-          const format = await formatNotionPageAttributes(properties, cover);
+          const format = await formatNotionPageAttributes(properties, cover, id);
 
           return {
             ...format,
             id,
           };
-        }),
+        })
       );
       return entries.filter(typeGuard);
     }
@@ -51,7 +51,7 @@ class ServerSideCmsClient {
 
   async getPageContent(
     databaseId: string | undefined,
-    filter: QueryDatabaseParameters['filter'],
+    filter: QueryDatabaseParameters['filter']
   ): Promise<ExtendedRecordMap> {
     if (databaseId === undefined) throw new Error('No database id provided');
 

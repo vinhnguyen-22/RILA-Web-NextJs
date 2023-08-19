@@ -6,20 +6,15 @@ import { BlogList } from '@/components/blog/index';
 import SearchBar from '@/components/common/SearchBar/SearchBar';
 import { serverSideCmsClient } from '@/services/cms/cms.client';
 import { isArticle } from '@/types/guards';
+
 import { Metadata } from 'next';
-
-export const dynamic = 'force-dynamic';
-
 export const metadata: Metadata = {
   title: 'Blog',
   description: 'All posts are created by notion.',
 };
 
 export default async function Blog() {
-  const articles = await serverSideCmsClient.getDatabaseEntries(
-    process.env.NOTION_BLOG_DB_ID,
-    isArticle,
-  );
+  const articles = await serverSideCmsClient.getDatabaseEntries(process.env.NOTION_BLOG_DB_ID, isArticle);
 
   return (
     <ClientOnly>
