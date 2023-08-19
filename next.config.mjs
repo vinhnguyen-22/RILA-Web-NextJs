@@ -5,9 +5,6 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   staticPageGenerationTimeout: 300,
-  env: {
-    MAX_FETCH_SIZE: 10, //in MB
-  },
   images: {
     remotePatterns: [
       {
@@ -29,7 +26,7 @@ const nextConfig = {
       new webpack.ContextReplacementPlugin(/\/keyv\//, (data) => {
         delete data.dependencies[0].critical;
         return data;
-      }),
+      })
     );
     return config;
   },
