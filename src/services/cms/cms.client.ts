@@ -1,9 +1,9 @@
-import { NotionAPI } from 'notion-client';
 import { Client } from '@notionhq/client';
 import { QueryDatabaseParameters } from '@notionhq/client/build/src/api-endpoints';
+import { NotionAPI } from 'notion-client';
 import { ExtendedRecordMap } from 'notion-types';
-import { formatNotionPageAttributes, isNonEmptyNonPartialNotionResponse } from './cms.utils';
 import { NotionDatabaseProperty } from './cms.types';
+import { formatNotionPageAttributes, isNonEmptyNonPartialNotionResponse } from './cms.utils';
 
 class ServerSideCmsClient {
   private notionContentClient: NotionAPI;
@@ -22,12 +22,17 @@ class ServerSideCmsClient {
 
   async getDatabaseEntries<T extends Record<string, NotionDatabaseProperty>>(
     databaseId: string | undefined,
-    typeGuard: (value: Record<string, NotionDatabaseProperty>) => value is T
+    typeGuard: (value: Record<string, NotionDatabaseProperty>) => value is T,
   ): Promise<T[]> {
     if (databaseId === undefined) throw new Error('No database id provided');
 
     const { results } = await this.notionApiClient.databases.query({
       database_id: databaseId,
+      filter: {
+        property: 'published',
+        checkbox: { equals: true },
+      },
+      page_size: 50,
     });
 
     if (results.length === 0) return [];
@@ -41,7 +46,7 @@ class ServerSideCmsClient {
             ...format,
             id,
           };
-        })
+        }),
       );
       return entries.filter(typeGuard);
     }
@@ -51,7 +56,7 @@ class ServerSideCmsClient {
 
   async getPageContent(
     databaseId: string | undefined,
-    filter: QueryDatabaseParameters['filter']
+    filter: QueryDatabaseParameters['filter'],
   ): Promise<ExtendedRecordMap> {
     if (databaseId === undefined) throw new Error('No database id provided');
 

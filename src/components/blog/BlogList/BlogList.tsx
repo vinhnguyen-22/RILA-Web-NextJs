@@ -1,12 +1,11 @@
 'use client';
 
-import { SearchList } from '@/components/common/SearchList';
-import { Article } from '@/types/cms';
-import { FC, useEffect, useRef, useState } from 'react';
-import { BlogLinkCard } from '../BlogLinkCard/BlogLinkCard';
+import Paginate from '@/components/common/Paginate/Paginate';
 import SearchBar from '@/components/common/SearchBar/SearchBar';
 import useArticles from '@/hooks/useActicles';
-import Paginate from '@/components/common/Paginate/Paginate';
+import { Article } from '@/types/cms';
+import { FC, useRef } from 'react';
+import { BlogLinkCard } from '../BlogLinkCard/BlogLinkCard';
 
 interface BlogList {
   data: Article[];

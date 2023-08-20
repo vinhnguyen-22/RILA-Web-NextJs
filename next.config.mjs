@@ -2,19 +2,18 @@ import withPlaiceholder from '@plaiceholder/next';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  experimental: {
+    appDir: true,
+  },
   reactStrictMode: true,
   swcMinify: true,
   staticPageGenerationTimeout: 300,
   images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'www.notion.so',
-      },
-      {
-        protocol: 'https',
-        hostname: 's3-us-west-2.amazonaws.com',
-      },
+    domains: [
+      'www.notion.so',
+      's3-us-west-2.amazonaws.com',
+      's3.sa-east-1.amazonaws.com',
+      'images.unsplash.com',
     ],
   },
 
@@ -26,7 +25,7 @@ const nextConfig = {
       new webpack.ContextReplacementPlugin(/\/keyv\//, (data) => {
         delete data.dependencies[0].critical;
         return data;
-      })
+      }),
     );
     return config;
   },

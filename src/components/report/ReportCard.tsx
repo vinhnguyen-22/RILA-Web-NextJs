@@ -1,10 +1,9 @@
+import { PATHS } from '@/app/constants';
 import { DownLoadIcon } from '@/icons/download';
 import { Report } from '@/types/cms';
-import Image from 'next/image';
-import React, { FC } from 'react';
-import { Chip } from '../common/Chip';
 import Link from 'next/link';
-import { PATHS } from '@/app/constants';
+import { FC } from 'react';
+import { Chip } from '../common/Chip';
 
 type ReportCardProps = Report;
 
@@ -24,11 +23,14 @@ const ReportCard: FC<ReportCardProps> = ({ cover, id, published, slug, tags, tit
         <div className=" w-full text-xl tracking-[0.03em] flex items-center">Brand Report</div>
         <div className=" h-[30.77%] w-[28.14%]">
           {tags.length > 0 && (
-            <div className="flex flex-row gap-2 flex-wrap">
+            <div className="flex flex-row gap-2 flex-wrap ">
               {tags &&
-                tags.map((tag: any) => {
+                tags.slice(0, 3).map((tag: any) => {
                   return (
-                    <Chip key={tag.name} style={{ backgroundColor: `var(--color-chip-${tag.color})` }}>
+                    <Chip
+                      key={tag.name}
+                      style={{ backgroundColor: `var(--color-chip-${tag.color})` }}
+                    >
                       {tag.name}
                     </Chip>
                   );

@@ -12,8 +12,8 @@ export const Chip: FC<ChipProps> = (props) => {
   return (
     <div
       className={classNames(
-        'px-2 border-none py-1 text-sm w-fit rounded-2xl font-semibold text-white whitespace-nowrap',
-        className
+        'px-2 border-none py-1 capitalize text-sm w-fit rounded-2xl font-semibold text-white whitespace-nowrap',
+        className,
       )}
       {...props}
     >

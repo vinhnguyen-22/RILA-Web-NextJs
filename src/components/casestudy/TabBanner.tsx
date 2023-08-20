@@ -3,7 +3,7 @@ import { useMediaQuery } from '@/hooks/useMediaQuery';
 import { CaseStudyTabsData } from '@/mocks/data';
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Collapse } from 'react-collapse';
 
 const TabBanner = () => {
@@ -37,11 +37,21 @@ const TabBanner = () => {
             <div className="text-2xl font-semibold text-white leading-10">
               <div className="flex justify-between items-center  gap-[17px]">
                 <div className="bg-white px-[13px] py-[20px] rounded-md">
-                  <Image src="/images/case-study/evelom.png" width={127.5} height={33.32} alt="evelom-small" />
+                  <Image
+                    src="/images/case-study/evelom.png"
+                    width={127.5}
+                    height={33.32}
+                    alt="evelom-small"
+                  />
                 </div>
                 <span className="">X</span>
                 <div className="bg-white px-[13px] py-[20px] rounded-md">
-                  <Image src="/images/homepage/logo-transparent.png" width={104} height={40} alt="evelom-small" />
+                  <Image
+                    src="/images/homepage/logo-transparent.png"
+                    width={104}
+                    height={40}
+                    alt="evelom-small"
+                  />
                 </div>
               </div>
             </div>
@@ -59,7 +69,9 @@ const TabBanner = () => {
                       <button
                         key={idx}
                         ref={(el) => (tabsRef.current[idx] = el)}
-                        className={`pt-2 pb-3 ${idx == activeTabIndex ? 'text-white' : 'text-ghostwhite opacity-50'} `}
+                        className={`pt-2 pb-3 ${
+                          idx == activeTabIndex ? 'text-white' : 'text-ghostwhite opacity-50'
+                        } `}
                         onClick={() => setActiveTabIndex(idx)}
                       >
                         {tab.label}
@@ -73,9 +85,12 @@ const TabBanner = () => {
                 />
               </div>
               <div className="py-4 text-white">
-                <p>{CaseStudyTabsData[activeTabIndex].content}</p>
+                <p className="text-white">{CaseStudyTabsData[activeTabIndex].content}</p>
 
-                <Link className="block mt-[15px] font-semibold" href={CaseStudyTabsData[activeTabIndex].link}>
+                <Link
+                  className="block mt-[15px] font-semibold"
+                  href={CaseStudyTabsData[activeTabIndex].link}
+                >
                   Read more
                   <svg
                     className="ml-[22px] inline-block"
@@ -104,7 +119,9 @@ const TabBanner = () => {
                           key={idx}
                           ref={(el) => (tabsRef.current[idx] = el)}
                           className={`py-1 my-1 ${
-                            idx == activeTabIndex ? 'text-white border-b-4 border-white' : 'text-ghostwhite opacity-50'
+                            idx == activeTabIndex
+                              ? 'text-white border-b-4 border-white'
+                              : 'text-ghostwhite opacity-50'
                           } `}
                           onClick={() => setActiveTabIndex(idx)}
                         >

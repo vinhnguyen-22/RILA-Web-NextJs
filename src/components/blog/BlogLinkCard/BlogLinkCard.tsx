@@ -1,10 +1,10 @@
+import { PATHS } from '@/app/constants';
+import { Chip } from '@/components/common/Chip';
+import { CalendarIcon } from '@/icons/calendar';
+import { Article } from '@/types/cms';
+import Image from 'next/image';
 import Link from 'next/link';
 import { FC } from 'react';
-import { Chip } from '@/components/common/Chip';
-import { Article } from '@/types/cms';
-import { CalendarIcon } from '@/icons/calendar';
-import { PATHS } from '@/app/constants';
-import Image from 'next/image';
 
 type BlogLinkCardProps = Article;
 
@@ -51,9 +51,12 @@ export const BlogLinkCard: FC<BlogLinkCardProps> = ({
           {tags.length > 0 && (
             <div className="absolute top-[14px] left-[11px] flex flex-row gap-2 flex-wrap">
               {tags &&
-                tags.map((tag) => {
+                tags.slice(0, 3).map((tag) => {
                   return (
-                    <Chip key={tag.name} style={{ backgroundColor: `var(--color-chip-${tag.color})` }}>
+                    <Chip
+                      key={tag.name}
+                      style={{ backgroundColor: `var(--color-chip-${tag.color})` }}
+                    >
                       {tag.name}
                     </Chip>
                   );

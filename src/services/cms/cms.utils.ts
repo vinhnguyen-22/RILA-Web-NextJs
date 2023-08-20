@@ -1,13 +1,16 @@
+import { getBlurImage } from '@/utils/getBlurImg';
 import {
   PageObjectResponse,
   PartialPageObjectResponse,
   RichTextItemResponse,
 } from '@notionhq/client/build/src/api-endpoints';
+import { NotionAPI } from 'notion-client';
+import { Block } from 'notion-types';
 import { NotionBlockTypes, NotionDatabaseProperty } from './cms.types';
-import { Block, BlockMap } from 'notion-types';
-import { getBlurImage } from '@/utils/getBlurImg';
 
-const notionDatabasePropertyResolver = (prop: PageObjectResponse['properties'][string]): NotionDatabaseProperty => {
+const notionDatabasePropertyResolver = (
+  prop: PageObjectResponse['properties'][string],
+): NotionDatabaseProperty => {
   const type = prop['type'];
 
   switch (type) {
@@ -50,16 +53,18 @@ const titleValueResolver = (prop: RichTextItemResponse[]): string => {
 };
 
 export const isNonEmptyNonPartialNotionResponse = (
-  results: (PageObjectResponse | PartialPageObjectResponse)[]
+  results: (PageObjectResponse | PartialPageObjectResponse)[],
   // @ts-ignore
 ): results is PageObjectResponse[] => results[0]?.properties !== undefined;
 
 export const formatNotionPageAttributes = async (
   properties: PageObjectResponse['properties'],
   cover: any,
-  id: any
+  id: any,
 ): Promise<{ [key: string]: NotionDatabaseProperty }> => {
   const formattedAttributes: { [key: string]: NotionDatabaseProperty } = {};
+  const api = new NotionAPI();
+  const { block } = await api.getPage(id);
 
   for (const [key, prop] of Object.entries(properties)) {
     const value = notionDatabasePropertyResolver(prop);
@@ -69,17 +74,15 @@ export const formatNotionPageAttributes = async (
     }
 
     formattedAttributes[key] = value;
-    formattedAttributes['cover'] = mapImageUrl(img, id) || '';
-    img != ''
-      ? (formattedAttributes['blurUrl'] = (await getBlurImage(img)).base64)
-      : (formattedAttributes['blurUrl'] = '');
+    formattedAttributes['cover'] = mapImageUrl(img, block[id].value) || '';
+    formattedAttributes['blurUrl'] = img != '' ? (await getBlurImage(img)).base64 : '';
   }
 
   return formattedAttributes;
 };
-export function mapImageUrl(url: string, id: string): string | null {
+export function mapImageUrl(url: string, block: Block): string | null {
   if (!url) {
-    return null;
+    throw new Error("URL can't be empty");
   }
 
   if (url.startsWith('data:')) {
@@ -94,30 +97,34 @@ export function mapImageUrl(url: string, id: string): string | null {
   try {
     const u = new URL(url);
 
-    if (u.pathname.startsWith('/secure.notion-static.com') && u.hostname.endsWith('.amazonaws.com')) {
+    if (
+      u.pathname.startsWith('/secure.notion-static.com') &&
+      u.hostname.endsWith('.amazonaws.com')
+    ) {
       if (
         u.searchParams.has('X-Amz-Credential') &&
         u.searchParams.has('X-Amz-Signature') &&
         u.searchParams.has('X-Amz-Algorithm')
       ) {
-        // if the URL is already signed, then use it as-is
-        return url;
+        url = u.origin + u.pathname;
       }
     }
-  } catch {
-    // ignore invalid urls
-  }
+  } catch {}
 
   if (url.startsWith('/images')) {
     url = `https://www.notion.so${url}`;
   }
 
-  url = `https://www.notion.so${url.startsWith('/image') ? url : `/image/${encodeURIComponent(url)}`}`;
-
+  url = `https://www.notion.so${
+    url.startsWith('/image') ? url : `/image/${encodeURIComponent(url)}`
+  }`;
   const notionImageUrlV2 = new URL(url);
-
-  notionImageUrlV2.searchParams.set('table', 'table');
-  notionImageUrlV2.searchParams.set('id', id);
+  let table = block.parent_table === 'space' ? 'block' : block.parent_table;
+  if (table === 'collection' || table === 'team') {
+    table = 'block';
+  }
+  notionImageUrlV2.searchParams.set('table', table);
+  notionImageUrlV2.searchParams.set('id', block.id);
   notionImageUrlV2.searchParams.set('cache', 'v2');
 
   url = notionImageUrlV2.toString();
