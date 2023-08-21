@@ -1,8 +1,6 @@
 import { getBlurImage } from '@/utils/getBlurImg';
 import { Client } from '@notionhq/client';
-import { QueryDatabaseParameters } from '@notionhq/client/build/src/api-endpoints';
 import { NotionAPI } from 'notion-client';
-import { ExtendedRecordMap } from 'notion-types';
 import { NotionDatabaseProperty } from './cms.types';
 import { formatNotionPageAttributes, isNonEmptyNonPartialNotionResponse } from './cms.utils';
 
@@ -50,7 +48,7 @@ class ServerSideCmsClient {
           return {
             ...format,
             id,
-            blurUrl: (await getBlurImage(img)).base64 || '',
+            blurUrl: img != '' ? (await getBlurImage(img)).base64 : '',
           };
         }),
       );
