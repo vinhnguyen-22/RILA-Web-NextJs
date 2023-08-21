@@ -4,7 +4,11 @@ import { QueryDatabaseParameters } from '@notionhq/client/build/src/api-endpoint
 import { NotionAPI } from 'notion-client';
 import { ExtendedRecordMap } from 'notion-types';
 import { NotionDatabaseProperty } from './cms.types';
-import { formatNotionPageAttributes, isNonEmptyNonPartialNotionResponse } from './cms.utils';
+import {
+  formatNotionPageAttributes,
+  isNonEmptyNonPartialNotionResponse,
+  mapImageUrl,
+} from './cms.utils';
 
 class ServerSideCmsClient {
   private notionContentClient: NotionAPI;
@@ -45,12 +49,16 @@ class ServerSideCmsClient {
           if (cover) {
             img = cover.type === 'external' ? cover.external.url : cover.file.url;
           }
-          const format = await formatNotionPageAttributes(properties, img, id);
+          const format = await formatNotionPageAttributes(properties);
+          const api = new NotionAPI();
+          const { block } = await api.getPage(id);
+          img = mapImageUrl(img, block[id].value) || '';
 
           return {
             ...format,
             id,
             blurUrl: img != '' ? (await getBlurImage(img)).base64 : '',
+            cover: img,
           };
         }),
       );

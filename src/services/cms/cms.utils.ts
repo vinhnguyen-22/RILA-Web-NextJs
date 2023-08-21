@@ -1,10 +1,8 @@
-import
-  {
-    PageObjectResponse,
-    PartialPageObjectResponse,
-    RichTextItemResponse,
-  } from '@notionhq/client/build/src/api-endpoints';
-import { NotionAPI } from 'notion-client';
+import {
+  PageObjectResponse,
+  PartialPageObjectResponse,
+  RichTextItemResponse,
+} from '@notionhq/client/build/src/api-endpoints';
 import { Block } from 'notion-types';
 import { NotionBlockTypes, NotionDatabaseProperty } from './cms.types';
 
@@ -57,23 +55,33 @@ export const isNonEmptyNonPartialNotionResponse = (
   // @ts-ignore
 ): results is PageObjectResponse[] => results[0]?.properties !== undefined;
 
-export const formatNotionPageAttributes = async (
+// export const formatNotionPageAttributes = async (
+//   properties: PageObjectResponse['properties'],
+//   img: string,
+//   id: string,
+// ): Promise<{ [key: string]: NotionDatabaseProperty }> => {
+//   const formattedAttributes: { [key: string]: NotionDatabaseProperty } = {};
+//   const api = new NotionAPI();
+//   const { block } = await api.getPage(id);
+
+//   for (const [key, prop] of Object.entries(properties)) {
+//     const value = notionDatabasePropertyResolver(prop);
+//     formattedAttributes[key] = value;
+//     formattedAttributes['cover'] = mapImageUrl(img, block[id].value) || '';
+//   }
+
+//   return formattedAttributes;
+// };
+
+export const formatNotionPageAttributes = (
   properties: PageObjectResponse['properties'],
-  img: string,
-  id: string,
-): Promise<{ [key: string]: NotionDatabaseProperty }> => {
-  const formattedAttributes: { [key: string]: NotionDatabaseProperty } = {};
-  const api = new NotionAPI();
-  const { block } = await api.getPage(id);
-
-  for (const [key, prop] of Object.entries(properties)) {
+): { [key: string]: NotionDatabaseProperty } =>
+  Object.entries(properties).reduce((acc, [key, prop]) => {
     const value = notionDatabasePropertyResolver(prop);
-    formattedAttributes[key] = value;
-    formattedAttributes['cover'] = img ? mapImageUrl(img, block[id].value) : '';
-  }
 
-  return formattedAttributes;
-};
+    return { ...acc, [key]: value };
+  }, {} as { [key: string]: NotionDatabaseProperty });
+
 export function mapImageUrl(url: string, block: Block): string | null {
   if (!url) {
     throw new Error("URL can't be empty");
