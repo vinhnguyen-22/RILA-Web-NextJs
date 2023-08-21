@@ -61,7 +61,7 @@ export default function DropdownMenu() {
                         'block px-4 py-2 text-sm'
                       )}
                     >
-                      Report
+                      Reports
                     </Link>
                   )}
                 </Menu.Item>
@@ -74,7 +74,7 @@ export default function DropdownMenu() {
                         'block px-4 py-2 text-sm'
                       )}
                     >
-                      Case Study
+                      Case Studies
                     </Link>
                   )}
                 </Menu.Item>
