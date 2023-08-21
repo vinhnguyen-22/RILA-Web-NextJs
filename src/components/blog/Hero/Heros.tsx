@@ -1,6 +1,6 @@
 'use client';
 import { useMediaQuery } from '@/hooks/useMediaQuery';
-import Image from 'next/image';
+import Image from "next/image";
 
 const Heros = () => {
   const media = useMediaQuery('(max-width: 600px)');

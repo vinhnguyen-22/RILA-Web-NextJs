@@ -1,6 +1,6 @@
 'use client';
 import dynamic from 'next/dynamic';
-import Image from 'next/image';
+import Image from "next/image";
 import { useState } from 'react';
 const ReactPlayer = dynamic(() => import('react-player/lazy'), { ssr: false });
 
@@ -31,7 +31,16 @@ const VideoBanner = () => {
 
         <div className="text-white">
           <div className="rounded-lg px-[30px] py-[20px] bg-white flex justify-center items-center">
-            <Image src={'/images/case-study/evelom-352.png'} className="" width={352} height={92} alt={'eve logo'} />
+            <Image
+              src={'/images/case-study/evelom-352.png'}
+              className=""
+              width={352}
+              height={92}
+              alt={'eve logo'}
+              style={{
+                maxWidth: "100%",
+                height: "auto"
+              }} />
           </div>
 
           <h3 className="mt-[43px] text-xl font-semibold">

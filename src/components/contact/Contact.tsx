@@ -1,6 +1,6 @@
 'use client';
 import { questionItems } from '@/mocks/data';
-import Image from 'next/image';
+import Image from "next/image";
 import Link from 'next/link';
 import { useState } from 'react';
 import AccordionItem from './accordion/AccordionItem';
@@ -80,7 +80,10 @@ const Contact = () => {
                         className="absolute h-[54.44%] top-[25%] right-[0%] bottom-[20.56%] left-[87.55%] max-w-full overflow-hidden max-h-full"
                         alt=""
                         src="/images/homepage/vector.svg"
-                      />
+                        style={{
+                          maxWidth: "100%",
+                          height: "auto"
+                        }} />
                     </div>
                   </div>
                 </div>

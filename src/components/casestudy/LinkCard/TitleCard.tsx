@@ -1,7 +1,7 @@
 import { PATHS } from '@/app/constants';
 import { CalendarIcon } from '@/icons/calendar';
 import { CaseStudy } from '@/types/cms';
-import Image from 'next/image';
+import Image from "next/image";
 import Link from 'next/link';
 import React from 'react';
 
@@ -16,7 +16,15 @@ const BlogTitleCard = ({ post }: Props) => {
     <Link key={post.slug} className="p-4" href={postSlug}>
       <div className="grid grid-cols-3 gap-[20px] h-[104px]">
         <div className="col-span-1 relative overflow-hidden">
-          <Image className="object-cover absolute" fill src={post.cover} alt="" />
+          <Image
+            className="object-cover absolute"
+            fill
+            src={post.cover}
+            alt=""
+            style={{
+              maxWidth: "100%",
+              height: "auto"
+            }} />
         </div>
         <div className="col-span-2">
           <div className="flex flex-col">

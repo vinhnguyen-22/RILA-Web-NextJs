@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from "next/image";
 import React from 'react';
 
 const benefitsItems = [
@@ -41,7 +41,15 @@ const Benefits = () => {
               {benefitsItems.map((item, index) => (
                 <div key={index} className="flex items-start justify-center gap-[27px] ">
                   <div className="w-[75%] md:w-[100%] h-[75.78px]">
-                    <Image width={75} height={75.78} alt="" src={item.icon} />
+                    <Image
+                      width={75}
+                      height={75.78}
+                      alt=""
+                      src={item.icon}
+                      style={{
+                        maxWidth: "100%",
+                        height: "auto"
+                      }} />
                   </div>
                   <div className="flex flex-col items-start justify-start gap-[15px] ">
                     <div className="relative md:text-xl text-lg leading-[38px] font-semibold inline-block">
@@ -58,10 +66,26 @@ const Benefits = () => {
 
           <div className="relative h-[700px] text-center">
             <div className="absolute top-0 right-0 ">
-              <Image width={509} height={649} alt="" src={'/images/homepage/rectangle-5358@2x.png'} />
+              <Image
+                width={509}
+                height={649}
+                alt=""
+                src={'/images/homepage/rectangle-5358@2x.png'}
+                style={{
+                  maxWidth: "100%",
+                  height: "auto"
+                }} />
             </div>
             <div className="absolute bottom-0 left-0 bg-white shadow-[0px_20px_70px_rgba(_0,_0,_0,_0.09)] rounded-6xl  p-[20px]">
-              <Image width={293} height={269} alt="" src="/images/homepage/visitor.png" />
+              <Image
+                width={293}
+                height={269}
+                alt=""
+                src="/images/homepage/visitor.png"
+                style={{
+                  maxWidth: "100%",
+                  height: "auto"
+                }} />
             </div>
           </div>
         </div>

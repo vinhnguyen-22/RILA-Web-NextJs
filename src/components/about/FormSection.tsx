@@ -1,12 +1,20 @@
 import AboutImg from '@/icons/about-img';
-import Image from 'next/image';
+import Image from "next/image";
 import React from 'react';
 
 const FormSection = () => {
   return (
     <section className="relative" style={{ background: 'linear-gradient(180deg, #251B00 0%, #010D82 100%)' }}>
       <div className="absolute top-[90px] right-0 sm:block hidden">
-        <Image src="/images/about-us/dot.svg" width={400} height={239} alt="" />
+        <Image
+          src="/images/about-us/dot.svg"
+          width={400}
+          height={239}
+          alt=""
+          style={{
+            maxWidth: "100%",
+            height: "auto"
+          }} />
       </div>
       <div className="container py-[80px] mx-auto">
         <div className="grid md:grid-cols-2 grid-col-1 gap-[50px]">

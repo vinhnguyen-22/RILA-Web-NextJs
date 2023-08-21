@@ -1,7 +1,7 @@
 import { PATHS } from '@/app/constants';
 import { CalendarIcon } from '@/icons/calendar';
 import { Article } from '@/types/cms';
-import Image from 'next/image';
+import Image from "next/image";
 import Link from 'next/link';
 
 type Props = {
@@ -23,7 +23,10 @@ const BlogTitleCard = ({ article }: Props) => {
             alt=""
             placeholder="blur"
             blurDataURL={article.cover}
-          />
+            style={{
+              maxWidth: "100%",
+              height: "auto"
+            }} />
         </div>
         <div className="col-span-2">
           <div className="flex flex-col">

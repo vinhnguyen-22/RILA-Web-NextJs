@@ -1,7 +1,7 @@
 'use client';
 import { useMediaQuery } from '@/hooks/useMediaQuery';
 import { CaseStudyTabsData } from '@/mocks/data';
-import Image from 'next/image';
+import Image from "next/image";
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import { Collapse } from 'react-collapse';
@@ -42,7 +42,10 @@ const TabBanner = () => {
                     width={127.5}
                     height={33.32}
                     alt="evelom-small"
-                  />
+                    style={{
+                      maxWidth: "100%",
+                      height: "auto"
+                    }} />
                 </div>
                 <span className="">X</span>
                 <div className="bg-white px-[13px] py-[20px] rounded-md">
@@ -51,7 +54,10 @@ const TabBanner = () => {
                     width={104}
                     height={40}
                     alt="evelom-small"
-                  />
+                    style={{
+                      maxWidth: "100%",
+                      height: "auto"
+                    }} />
                 </div>
               </div>
             </div>

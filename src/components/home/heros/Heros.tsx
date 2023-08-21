@@ -11,7 +11,8 @@ const Heros = () => {
               Turn Social Listening data into actionable insights
             </strong>
             <div className="lg:text-xl md:text-md font-medium text-sm lg:leading-[38px] md:leading-[28px] leading-[28px] capitalize inline-block pr-6">
-              Professional and Research Services for Social Listening - Trusted by the World&apos;s Biggest Brands.
+              Professional and Research Services for Social Listening - Trusted by the World&apos;s
+              Biggest Brands.
             </div>
 
             <Link
@@ -27,7 +28,16 @@ const Heros = () => {
           className="relative h-[400px] col-span-12 md:col-span-5 lg:col-span-5 lg:-mt-8 flex justify-start lg:justify-center items-start lg:items-center
         "
         >
-          <Image fill className="object-contain" src={'/images/homepage/image-banner.jpg'} alt="" />
+          <Image
+            fill
+            className="object-contain"
+            src={'/images/homepage/image-banner.jpg'}
+            alt=""
+            style={{
+              maxWidth: '100%',
+              height: 'auto',
+            }}
+          />
         </div>
       </div>
 
@@ -42,8 +52,9 @@ const Heros = () => {
                 <span className="w-full">
                   <p className="m-0 text-white ">
                     <span className="capitalize">RILA GLOBAL CONSULTING </span>
-                    is a boutique social listening agency located in New York City. We study consumers, brands, markets,
-                    and trends, offering tailored research and insight to clients globally.
+                    is a boutique social listening agency located in New York City. We study
+                    consumers, brands, markets, and trends, offering tailored research and insight
+                    to clients globally.
                   </p>
                 </span>
               </div>

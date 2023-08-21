@@ -4,7 +4,7 @@ import React, { FC } from 'react';
 import Contact from '../contact/Contact';
 import BulletCheck from '@/icons/bullet';
 import Link from 'next/link';
-import Image from 'next/image';
+import Image from "next/image";
 import ArrowPoint from '@/icons/arrow-point';
 
 type ReportDetailProps = Report | any;

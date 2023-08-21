@@ -6,7 +6,7 @@ import Contact from '@/components/contact/Contact';
 import Polygon from '@/icons/polygon';
 import { AboutAwardImages, AboutNews } from '@/mocks/about-data';
 import { Metadata } from 'next';
-import Image from 'next/image';
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: 'About',
@@ -33,7 +33,10 @@ const About = () => {
                     height={420}
                     width={420}
                     alt=""
-                  />
+                    style={{
+                      maxWidth: "100%",
+                      height: "auto"
+                    }} />
                 </div>
               </div>
             </div>
@@ -57,14 +60,26 @@ const About = () => {
         </div>
 
         <div className="lg:block hidden absolute top-[73px] left-0">
-          <Image src="/images/about-us/dot-blue.svg" width={300} className="" height={57} alt="" />
+          <Image
+            src="/images/about-us/dot-blue.svg"
+            width={300}
+            className=""
+            height={57}
+            alt=""
+            style={{
+              maxWidth: "100%",
+              height: "auto"
+            }} />
           <Image
             src="/images/about-u1s/dot-blue.svg"
             width={300}
             className="my-[27px] -z-10"
             height={57}
             alt=""
-          />
+            style={{
+              maxWidth: "100%",
+              height: "auto"
+            }} />
         </div>
       </section>
 
@@ -82,7 +97,15 @@ const About = () => {
             <div className="flex flex-row flex-wrap justify-evenly items-center gap-[20px] flex-grow ">
               {AboutNews.map((item, index) => (
                 <div key={index} className="aspect-video relative sm:h-[100px] h-[50px] ">
-                  <Image fill className="relative object-contain" alt={item.alt} src={item.image} />
+                  <Image
+                    fill
+                    className="relative object-contain"
+                    alt={item.alt}
+                    src={item.image}
+                    style={{
+                      maxWidth: "100%",
+                      height: "auto"
+                    }} />
                 </div>
               ))}
             </div>
@@ -97,7 +120,15 @@ const About = () => {
           <div className="flex flex-row flex-wrap container mx-auto mt-[63px] lg:justify-between justify-center gap-[20px] items-center ">
             {AboutAwardImages.map((image, index) => (
               <div key={index} className="aspect-video relative sm:h-[100px] h-[100px]">
-                <Image fill className="relative object-contain" alt={'alt'} src={image} />
+                <Image
+                  fill
+                  className="relative object-contain"
+                  alt={'alt'}
+                  src={image}
+                  style={{
+                    maxWidth: "100%",
+                    height: "auto"
+                  }} />
               </div>
             ))}
           </div>

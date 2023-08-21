@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from "next/image";
 import Link from 'next/link';
 
 const MaintenancePage = () => {
@@ -14,7 +14,10 @@ const MaintenancePage = () => {
                 className="w-[107px] h-10 object-cover"
                 alt=""
                 src="/images/homepage/logo-transparent2e1551993152468-1@2x.png"
-              />
+                style={{
+                  maxWidth: "100%",
+                  height: "auto"
+                }} />
             </Link>
           </div>
           <h3 className="mb-3 text-2xl font-bold text-center text-gray-700">We’ll be back soon!</h3>
