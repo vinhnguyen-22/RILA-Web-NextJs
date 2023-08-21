@@ -1,3 +1,4 @@
+import { getBlurImage } from '@/utils/getBlurImg';
 import { Client } from '@notionhq/client';
 import { QueryDatabaseParameters } from '@notionhq/client/build/src/api-endpoints';
 import { NotionAPI } from 'notion-client';
@@ -40,14 +41,20 @@ class ServerSideCmsClient {
     if (isNonEmptyNonPartialNotionResponse(results)) {
       const entries: Record<string, NotionDatabaseProperty>[] = await Promise.all(
         results.map(async ({ id, cover, properties }) => {
-          const format = await formatNotionPageAttributes(properties, cover, id);
+          let img = '';
+          if (cover) {
+            img = cover.type === 'external' ? cover.external.url : cover.file.url;
+          }
+          const format = await formatNotionPageAttributes(properties, img, id);
 
           return {
             ...format,
             id,
+            blurUrl: (await getBlurImage(img)).base64 || '',
           };
         }),
       );
+
       return entries.filter(typeGuard);
     }
 

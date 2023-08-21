@@ -3,7 +3,6 @@ import { CalendarIcon } from '@/icons/calendar';
 import { Article } from '@/types/cms';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
 
 type Props = {
   article: Article;
@@ -12,6 +11,7 @@ type Props = {
 const BlogTitleCard = ({ article }: Props) => {
   const formattedDate = article.date.replace(new RegExp('/', 'g'), '-');
   const articleSlug = `${PATHS.BLOG}/${formattedDate}/${article.slug}`;
+
   return (
     <Link key={article.slug} className="p-4" href={articleSlug}>
       <div className="grid grid-cols-3 gap-[20px] h-[104px]">
@@ -22,7 +22,7 @@ const BlogTitleCard = ({ article }: Props) => {
             src={article.cover}
             alt=""
             placeholder="blur"
-            blurDataURL={article.blurUrl}
+            blurDataURL={article.cover}
           />
         </div>
         <div className="col-span-2">

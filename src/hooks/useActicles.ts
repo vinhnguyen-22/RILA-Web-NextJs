@@ -1,7 +1,7 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo } from 'react';
 
-import { Article } from '@/types/cms';
 import usePostStore from '@/store/postStore';
+import { Article } from '@/types/cms';
 
 export default function useArticles(allArticles: Article[], totalElement: number = 9) {
   const { page, query, selected, setActive } = usePostStore((state) => state);
@@ -32,7 +32,7 @@ export default function useArticles(allArticles: Article[], totalElement: number
           return true;
         })
         .sort((a, b) => (a.date > b.date ? -1 : 1)),
-    [allArticles, selected, query]
+    [allArticles, selected, query],
   );
   //   useEffect(() => {
   //     const fetchData = (query: string) =>
@@ -56,6 +56,7 @@ export default function useArticles(allArticles: Article[], totalElement: number
   useEffect(() => {
     setActive([...new Set(allArticlesFiltered.map((post) => post.tags).flat())]);
   }, [allArticlesFiltered, setActive]);
+
   return {
     articles: postsForCurrentPage,
     totalPages,

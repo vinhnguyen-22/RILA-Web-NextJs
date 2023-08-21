@@ -8,12 +8,16 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { cache } from 'react';
 
+export const dynamicParams = true;
+export const revalidate = 1;
 export default async function ArticlePage(props: any) {
   const pathParams = props?.params?.slug;
   if (!isTwoStringArray(pathParams)) throw notFound();
-  const articles = await serverSideCmsClient.getDatabaseEntries(process.env.NOTION_BLOG_DB_ID, isArticle);
+  const articles = await serverSideCmsClient.getDatabaseEntries(
+    process.env.NOTION_BLOG_DB_ID,
+    isArticle,
+  );
 
   const [date, slug] = pathParams;
   const recordMap = await getArticle(date, slug);
@@ -37,7 +41,11 @@ export default async function ArticlePage(props: any) {
   function getObjectsWithSameTag(targetObject: Article, articles: Article[]) {
     const targetTag = targetObject.tags[0]; // Assuming each object has only one tag
     const objectsWithSameTag = articles.filter((article) => {
-      return targetObject.id != article.id && article.published && article.tags.some((tag) => tag.id === targetTag.id);
+      return (
+        targetObject.id != article.id &&
+        article.published &&
+        article.tags.some((tag) => tag.id === targetTag.id)
+      );
     });
     return objectsWithSameTag;
   }
@@ -46,26 +54,30 @@ export default async function ArticlePage(props: any) {
 
   return (
     <>
-      <article data-revalidated-at={new Date().getTime()} className=" flex flex-col items-center max-sm:mt-20">
+      <article
+        data-revalidated-at={new Date().getTime()}
+        className=" flex flex-col items-center max-sm:mt-20"
+      >
         <div className="relative ">
           <Image
             src={article.cover}
             alt="cover"
             fill
             style={{ objectFit: 'contain' }}
-            placeholder="blur"
-            blurDataURL={article.blurUrl}
           />
         </div>
 
-        <NotionRenderer recordMap={recordMap} related={<BlogVerticalList data={relatedArticles} />} />
+        <NotionRenderer
+          recordMap={recordMap}
+          related={<BlogVerticalList data={relatedArticles} />}
+        />
         <RelatedArticles data={relatedArticles} />
       </article>
     </>
   );
 }
 
-const getArticle = cache(async (date: string, slug: string) => {
+const getArticle = async (date: string, slug: string) => {
   try {
     return await serverSideCmsClient.getPageContent(process.env.NOTION_BLOG_DB_ID, {
       and: [
@@ -79,16 +91,26 @@ const getArticle = cache(async (date: string, slug: string) => {
   } catch {
     throw notFound();
   }
-});
+};
 
 export async function generateStaticParams() {
-  const articles = await serverSideCmsClient.getDatabaseEntries(process.env.NOTION_BLOG_DB_ID, isArticle);
+  const articles = await serverSideCmsClient.getDatabaseEntries(
+    process.env.NOTION_BLOG_DB_ID,
+    isArticle,
+  );
 
   return articles.map(({ date, slug }) => ({ slug: [date, slug] }));
 }
 
-export async function generateMetadata({ params: { slug } }: { params: { slug: string } }): Promise<Metadata> {
-  const articles = await serverSideCmsClient.getDatabaseEntries(process.env.NOTION_BLOG_DB_ID, isArticle);
+export async function generateMetadata({
+  params: { slug },
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  const articles = await serverSideCmsClient.getDatabaseEntries(
+    process.env.NOTION_BLOG_DB_ID,
+    isArticle,
+  );
   const article = articles.find((p) => p.date === slug[0] && p.slug === slug[1]);
   return article
     ? {
@@ -102,6 +124,7 @@ export async function generateMetadata({ params: { slug } }: { params: { slug: s
             },
           ],
         },
+        keywords: article?.tags?.map((tag) => tag.name),
       }
     : {};
 }

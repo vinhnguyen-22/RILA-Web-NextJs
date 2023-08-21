@@ -11,7 +11,7 @@ const nextConfig = {
   images: {
     domains: [
       'www.notion.so',
-      's3-us-west-2.amazonaws.com',
+      's3.us-west-2.amazonaws.com',
       's3.sa-east-1.amazonaws.com',
       'images.unsplash.com',
     ],

@@ -1,14 +1,21 @@
-import { DownLoadIcon } from '@/icons/download';
+import { PATHS } from '@/app/constants';
 import { CaseStudy } from '@/types/cms';
 import Image from 'next/image';
-import React, { FC } from 'react';
-import { Chip } from '../../common/Chip';
 import Link from 'next/link';
-import { PATHS } from '@/app/constants';
+import { FC } from 'react';
 
 type CaseStudyCardProps = CaseStudy;
 
-const CaseStudyCard: FC<CaseStudyCardProps> = ({ cover, id, published, summary, date, slug, title, blurUrl }) => {
+const CaseStudyCard: FC<CaseStudyCardProps> = ({
+  cover,
+  id,
+  published,
+  summary,
+  date,
+  slug,
+  title,
+  blurUrl,
+}) => {
   const formattedDate = date.replace(new RegExp('/', 'g'), '-');
   const CaseStudySlug = `${PATHS.CASESTUDY}/${formattedDate}/${slug}`;
 

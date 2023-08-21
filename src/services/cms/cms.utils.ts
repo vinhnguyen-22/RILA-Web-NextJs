@@ -1,9 +1,9 @@
-import { getBlurImage } from '@/utils/getBlurImg';
-import {
-  PageObjectResponse,
-  PartialPageObjectResponse,
-  RichTextItemResponse,
-} from '@notionhq/client/build/src/api-endpoints';
+import
+  {
+    PageObjectResponse,
+    PartialPageObjectResponse,
+    RichTextItemResponse,
+  } from '@notionhq/client/build/src/api-endpoints';
 import { NotionAPI } from 'notion-client';
 import { Block } from 'notion-types';
 import { NotionBlockTypes, NotionDatabaseProperty } from './cms.types';
@@ -59,8 +59,8 @@ export const isNonEmptyNonPartialNotionResponse = (
 
 export const formatNotionPageAttributes = async (
   properties: PageObjectResponse['properties'],
-  cover: any,
-  id: any,
+  img: string,
+  id: string,
 ): Promise<{ [key: string]: NotionDatabaseProperty }> => {
   const formattedAttributes: { [key: string]: NotionDatabaseProperty } = {};
   const api = new NotionAPI();
@@ -68,14 +68,8 @@ export const formatNotionPageAttributes = async (
 
   for (const [key, prop] of Object.entries(properties)) {
     const value = notionDatabasePropertyResolver(prop);
-    let img = '';
-    if (cover) {
-      img = cover.type === 'external' ? cover.external.url : cover.file.url;
-    }
-
     formattedAttributes[key] = value;
-    formattedAttributes['cover'] = mapImageUrl(img, block[id].value) || '';
-    formattedAttributes['blurUrl'] = img != '' ? (await getBlurImage(img)).base64 : '';
+    formattedAttributes['cover'] = img ? mapImageUrl(img, block[id].value) : '';
   }
 
   return formattedAttributes;
