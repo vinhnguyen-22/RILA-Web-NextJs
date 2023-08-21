@@ -1,5 +1,5 @@
 'use client';
-import Image from "next/image";
+import Image from 'next/image';
 import Link from 'next/link';
 import { useRef } from 'react';
 import { Navigation, FreeMode } from 'swiper';
@@ -86,10 +86,7 @@ const Testimonial = () => {
                 width={30}
                 height={30}
                 src="/images/homepage/group-19049.svg"
-                style={{
-                  maxWidth: "100%",
-                  height: "auto"
-                }} />
+              />
             </div>
 
             <div
@@ -103,10 +100,7 @@ const Testimonial = () => {
                 width={40}
                 height={40}
                 id="vectorIcon1"
-                style={{
-                  maxWidth: "100%",
-                  height: "auto"
-                }} />
+              />
             </div>
           </div>
         </div>
@@ -152,15 +146,7 @@ const Testimonial = () => {
               <div className="m-[10px] rounded-6xl bg-ghostwhite shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] h-[100%] md:h-[500px] lg:h-[700px] xl:h-[500px] flex flex-col pt-8 pb-[20px] pr-[29px] pl-8 box-border items-start justify-start gap-[19px]">
                 <div className=" flex flex-row items-start justify-start gap-[20px]">
                   <div className="w-[80px] h-[80px] relative">
-                    <Image
-                      fill
-                      className="relative rounded-[50%] object-contain"
-                      alt=""
-                      src={item.imageUrl}
-                      style={{
-                        maxWidth: "100%",
-                        height: "auto"
-                      }} />
+                    <Image fill className="relative rounded-[50%] object-contain" alt="" src={item.imageUrl} />
                   </div>
 
                   <div className="flex-1 flex flex-row items-start justify-start">
@@ -207,10 +193,7 @@ const Testimonial = () => {
                 className="self-center md:right-0 lg:right-0"
                 alt=""
                 src="/images/homepage/group-19053.svg"
-                style={{
-                  maxWidth: "100%",
-                  height: "auto"
-                }} />
+              />
             </div>
           </div>
         </div>

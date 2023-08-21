@@ -1,7 +1,7 @@
 import ClientOnly from '@/components/ClientOnly/ClientOnly';
 import { Metadata } from 'next';
 import dynamic from 'next/dynamic';
-import Image from "next/image";
+import Image from 'next/image';
 
 const Activities = dynamic(() => import('@/components/home/activities/Activities'));
 const Benefits = dynamic(() => import('@/components/home/benefits/Benefits'));

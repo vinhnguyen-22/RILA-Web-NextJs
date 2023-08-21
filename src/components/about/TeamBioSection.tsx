@@ -1,6 +1,6 @@
 'use client';
 import { AboutTeamBio } from '@/mocks/about-data';
-import Image from "next/image";
+import Image from 'next/image';
 import React, { useEffect, useRef, useState } from 'react';
 import { Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
@@ -91,10 +91,7 @@ const TeamBioSection = () => {
                       className="object-fill"
                       alt={item.name}
                       sizes="(max-width: 600px) 100vw, 300px"
-                      style={{
-                        maxWidth: "100%",
-                        height: "auto"
-                      }} />
+                    />
                   </div>
                 ),
             )}

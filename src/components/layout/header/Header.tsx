@@ -1,5 +1,5 @@
 'use client';
-import Image from "next/image";
+import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react';
 import DropdownMenu from './dropdown/DropdownMenu';
@@ -19,10 +19,7 @@ const Header = () => {
                 className="w-[90px] h-9"
                 alt="Logo"
                 src="/images/homepage/logo-transparent2e1551993152468-1@2x.png"
-                style={{
-                  maxWidth: "100%",
-                  height: "auto"
-                }} />
+              />
             </Link>
             <div className="md:hidden">
               <button

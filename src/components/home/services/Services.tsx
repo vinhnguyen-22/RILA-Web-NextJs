@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react';
 
@@ -103,10 +103,7 @@ const Services = () => {
                             className="relative lg:w-[66px] lg:h-[66px] w-10 h-10"
                             alt=""
                             src={item.icon}
-                            style={{
-                              maxWidth: "100%",
-                              height: "auto"
-                            }} />
+                          />
                           <div className="lg:text-lg text-base relative font-semibold">{item.title}</div>
                         </div>
                         <div className="py-6 text-start w-[100%] text-lg leading-[28px] text-lightslategray inline-block ">
@@ -123,16 +120,7 @@ const Services = () => {
                           >
                             Know More
                           </span>
-                          <Image
-                            width={66}
-                            height={66}
-                            className=" w-[19px] h-[14.73px]"
-                            alt=""
-                            src={item.imgArrow}
-                            style={{
-                              maxWidth: "100%",
-                              height: "auto"
-                            }} />
+                          <Image width={66} height={66} className=" w-[19px] h-[14.73px]" alt="" src={item.imgArrow} />
                         </Link>
                       </div>
                     </div>

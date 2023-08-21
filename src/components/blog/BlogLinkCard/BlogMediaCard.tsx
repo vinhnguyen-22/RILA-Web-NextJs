@@ -2,7 +2,7 @@
 import { PATHS } from '@/app/constants';
 import { Chip } from '@/components/common/Chip';
 import { CalendarIcon } from '@/icons/calendar';
-import Image from "next/image";
+import Image from 'next/image';
 import Link from 'next/link';
 
 const BlogMediaCard = ({ article }: any) => {
@@ -18,15 +18,7 @@ const BlogMediaCard = ({ article }: any) => {
       <div
         className={`relative h-[392px] bg-gradient-to-r from-black via-transparent to-transparent bg-cover bg-no-repeat bg-lightgray`}
       >
-        <Image
-          src="/images/blog/retangle-32.png"
-          className="absolute top-0 left-0 object-cover "
-          fill
-          alt=""
-          style={{
-            maxWidth: "100%",
-            height: "auto"
-          }} />
+        <Image src="/images/blog/retangle-32.png" className="absolute top-0 left-0 object-cover " fill alt="" />
 
         <div className="absolute bottom-[14px] left-[11px] flex flex-col p-[15px] z-10">
           <time className="text-base text-white">

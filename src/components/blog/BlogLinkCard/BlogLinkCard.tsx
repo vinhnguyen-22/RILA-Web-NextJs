@@ -2,7 +2,7 @@ import { PATHS } from '@/app/constants';
 import { Chip } from '@/components/common/Chip';
 import { CalendarIcon } from '@/icons/calendar';
 import { Article } from '@/types/cms';
-import Image from "next/image";
+import Image from 'next/image';
 import Link from 'next/link';
 import { FC } from 'react';
 
@@ -34,13 +34,10 @@ export const BlogLinkCard: FC<BlogLinkCardProps> = ({
             src={cover}
             alt="cover image"
             fill
+            style={{ objectFit: 'cover' }}
             placeholder="blur"
             blurDataURL={blurUrl}
-            style={{
-              objectFit: 'cover',
-              maxWidth: "100%",
-              height: "auto"
-            }} />
+          />
         </div>
         <div className="flex flex-col p-[15px]">
           <h3 className="line-clamp-2 text-xl font-bold">{title}</h3>

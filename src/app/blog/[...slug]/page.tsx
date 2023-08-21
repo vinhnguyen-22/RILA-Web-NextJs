@@ -5,7 +5,7 @@ import { serverSideCmsClient } from '@/services/cms/cms.client';
 import { Article } from '@/types/cms';
 import { isArticle, isTwoStringArray } from '@/types/guards';
 import { Metadata } from 'next';
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
@@ -59,7 +59,12 @@ export default async function ArticlePage(props: any) {
         className=" flex flex-col items-center max-sm:mt-20"
       >
         <div className="relative ">
-          <Image src={article.cover} alt="cover" layout="fill" style={{ objectFit: 'contain' }} />
+          <Image
+            src={article.cover}
+            alt="cover"
+            fill
+            style={{ objectFit: 'contain' }}
+          />
         </div>
 
         <NotionRenderer

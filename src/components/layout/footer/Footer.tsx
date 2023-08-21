@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
@@ -15,10 +15,7 @@ const Footer = () => {
                 className="w-[107px] h-10 object-cover"
                 alt=""
                 src="/images/homepage/logo-transparent2e1551993152468-1@2x.png"
-                style={{
-                  maxWidth: "100%",
-                  height: "auto"
-                }} />
+              />
             </Link>
             <div className="text-sm my-[23px] leading-[20px] inline-block">New York, NY</div>
             <div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
@@ -30,10 +27,7 @@ const Footer = () => {
                     className="relative w-6 h-6 object-cover"
                     alt="facebook"
                     src="/images/homepage/icon-facebook.svg"
-                    style={{
-                      maxWidth: "100%",
-                      height: "auto"
-                    }} />
+                  />
                 </a>
                 <a target="_blank" href="https://www.instagram.com/rilaglobal/">
                   <Image
@@ -42,10 +36,7 @@ const Footer = () => {
                     className="relative w-[25px] h-[25px] overflow-hidden shrink-0"
                     alt="instagram"
                     src="/images/homepage/riinstagramfill.svg"
-                    style={{
-                      maxWidth: "100%",
-                      height: "auto"
-                    }} />
+                  />
                 </a>
                 <a target="_blank" href={'https://www.linkedin.com/company/rila-global-consulting/'}>
                   <Image
@@ -54,10 +45,7 @@ const Footer = () => {
                     className="relative w-[22px] h-[22px]"
                     alt="linkedin"
                     src="/images/homepage/-icon-linkedin.svg"
-                    style={{
-                      maxWidth: "100%",
-                      height: "auto"
-                    }} />
+                  />
                 </a>
                 <a target="_blank" href={'https://twitter.com/rilaglobal'}>
                   <Image
@@ -66,10 +54,7 @@ const Footer = () => {
                     className="relative w-[28px] h-7 overflow-hidden shrink-0"
                     alt="twitter"
                     src="/images/homepage/bitwitter.svg"
-                    style={{
-                      maxWidth: "100%",
-                      height: "auto"
-                    }} />
+                  />
                 </a>
 
                 <Link
@@ -84,10 +69,7 @@ const Footer = () => {
                         className="relative w-[18px] h-5"
                         alt="tiktok"
                         src="/images/homepage/vector2.svg"
-                        style={{
-                          maxWidth: "100%",
-                          height: "auto"
-                        }} />
+                      />
                     </div>
                   </div>
                 </Link>
@@ -98,10 +80,7 @@ const Footer = () => {
                     className="relative w-8 h-8 object-cover"
                     alt="youtube"
                     src="/images/homepage/image-5@2x.png"
-                    style={{
-                      maxWidth: "100%",
-                      height: "auto"
-                    }} />
+                  />
                 </a>
               </div>
             </div>

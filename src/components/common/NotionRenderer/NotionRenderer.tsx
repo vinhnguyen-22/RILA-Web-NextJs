@@ -1,39 +1,34 @@
 'use client';
-import useMounted from '@/hooks/use-mounted';
-import { useTheme } from 'next-themes';
-import { Block, ExtendedRecordMap } from 'notion-types';
 import { FC, ReactNode } from 'react';
+import { useTheme } from 'next-themes';
 import { NotionRenderer as Renderer } from 'react-notion-x';
+import { Block, ExtendedRecordMap } from 'notion-types';
+import useMounted from '@/hooks/use-mounted';
 
-import dynamic from 'next/dynamic';
-import Image from 'next/image';
 import Link from 'next/link';
+import Image from 'next/image';
+import dynamic from 'next/dynamic';
+import { BlogVerticalList } from '@/components/blog/BlogList/BlogVerticalList';
+import { Article } from '@/types/cms';
+import RelatedArticles from '@/components/blog/RelatedBlog/RelatedBlog';
 
 const Code = dynamic(() =>
   import('react-notion-x/build/third-party/code').then(({ Code: NotionCode }) => {
     return NotionCode;
-  }),
+  })
 );
 const Collection = dynamic(() =>
-  import('react-notion-x/build/third-party/collection').then(
-    ({ Collection: NotionCollection }) => NotionCollection,
-  ),
+  import('react-notion-x/build/third-party/collection').then(({ Collection: NotionCollection }) => NotionCollection)
 );
 const Equation = dynamic(() =>
-  import('react-notion-x/build/third-party/equation').then(
-    ({ Equation: NotionEquation }) => NotionEquation,
-  ),
+  import('react-notion-x/build/third-party/equation').then(({ Equation: NotionEquation }) => NotionEquation)
 );
-const Pdf = dynamic(
-  () => import('react-notion-x/build/third-party/pdf').then(({ Pdf: NotionPdf }) => NotionPdf),
-  {
-    ssr: false,
-  },
-);
+const Pdf = dynamic(() => import('react-notion-x/build/third-party/pdf').then(({ Pdf: NotionPdf }) => NotionPdf), {
+  ssr: false,
+});
 const Modal = dynamic(
-  () =>
-    import('react-notion-x/build/third-party/modal').then(({ Modal: NotionModal }) => NotionModal),
-  { ssr: false },
+  () => import('react-notion-x/build/third-party/modal').then(({ Modal: NotionModal }) => NotionModal),
+  { ssr: false }
 );
 
 export interface NotionRendererProps {
@@ -98,10 +93,7 @@ export function mapImageUrl(url: string, block: Block): string | null {
   try {
     const u = new URL(url);
 
-    if (
-      u.pathname.startsWith('/secure.notion-static.com') &&
-      u.hostname.endsWith('.amazonaws.com')
-    ) {
+    if (u.pathname.startsWith('/secure.notion-static.com') && u.hostname.endsWith('.amazonaws.com')) {
       if (
         u.searchParams.has('X-Amz-Credential') &&
         u.searchParams.has('X-Amz-Signature') &&
@@ -119,9 +111,7 @@ export function mapImageUrl(url: string, block: Block): string | null {
     url = `https://www.notion.so${url}`;
   }
 
-  url = `https://www.notion.so${
-    url.startsWith('/image') ? url : `/image/${encodeURIComponent(url)}`
-  }`;
+  url = `https://www.notion.so${url.startsWith('/image') ? url : `/image/${encodeURIComponent(url)}`}`;
 
   const notionImageUrlV2 = new URL(url);
   let table = block.parent_table === 'space' ? 'block' : block.parent_table;
