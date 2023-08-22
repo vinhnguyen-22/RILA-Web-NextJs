@@ -1,3 +1,4 @@
+import { getBlurImage } from '@/utils/getBlurImg';
 import { Client } from '@notionhq/client';
 import { QueryDatabaseParameters } from '@notionhq/client/build/src/api-endpoints';
 import { NotionAPI } from 'notion-client';
@@ -56,8 +57,7 @@ class ServerSideCmsClient {
           return {
             ...format,
             id,
-            blurUrl:
-              'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAHCAIAAAC+zks0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAA5ElEQVR4nAHZACb/AOPIx7ujo3FST6eTlsGwtOTOzuXN0ObP0uDKzeHIyACUiJBJT2DEvcppcYUzOEzWwMLjyMfhxMXfx8fhycgAHx0lFiA0qpqse2VsEhkpfm9158zJ1bm72r2+2Lu6ABkcJFVCR3pkd19TWDY5QzExO9zKxejZ1OnV0urX1QAwNUcxKzOAcIcmKDQVGSJMTlr77un/+/P/9/D/+fAAFBgjEhUeRz9RDxAWAQMSREJM9+Xc9ebc/O7k+ejfABkZIzYrIkE1LDsyKQoLFlNMUvng1O/XzOPNvtfCriEocd2YPdRbAAAAAElFTkSuQmCC',
+            blurUrl: (await getBlurImage(img)).base64 || '',
             cover: img,
           };
         }),

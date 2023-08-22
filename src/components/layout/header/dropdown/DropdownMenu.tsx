@@ -1,6 +1,6 @@
-import { Fragment } from 'react';
 import { Menu, Transition } from '@headlessui/react';
 import Link from 'next/link';
+import { Fragment } from 'react';
 
 function classNames(...classes: any) {
   return classes.filter(Boolean).join(' ');
@@ -13,6 +13,7 @@ export default function DropdownMenu() {
         <>
           <div>
             <Menu.Button
+              type="button"
               className="inline-flex w-full justify-center items-center gap-x-1.5 rounded-md bg-transparent py-2"
               style={{ color: open ? 'red' : '' }}
             >
@@ -45,7 +46,7 @@ export default function DropdownMenu() {
                       href="/blog"
                       className={classNames(
                         active ? 'bg-gray-100 text-red-100' : 'text-gray-700',
-                        'block px-4 py-2 text-sm'
+                        'block px-4 py-2 text-sm',
                       )}
                     >
                       Blog
@@ -58,7 +59,7 @@ export default function DropdownMenu() {
                       href="/report"
                       className={classNames(
                         active ? 'bg-gray-100 text-red-100' : 'text-gray-700',
-                        'block px-4 py-2 text-sm'
+                        'block px-4 py-2 text-sm',
                       )}
                     >
                       Reports
@@ -71,7 +72,7 @@ export default function DropdownMenu() {
                       href="/casestudy"
                       className={classNames(
                         active ? 'bg-gray-100 text-red-100' : 'text-gray-700',
-                        'block px-4 py-2 text-sm'
+                        'block px-4 py-2 text-sm',
                       )}
                     >
                       Case Studies

@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
 
 const Footer = () => {
   return (
@@ -8,7 +7,7 @@ const Footer = () => {
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between md:gap-5 flex flex-col-reverse md:flex-row">
           <div className="mb-6 md:mb-0">
-            <Link href="/resources" className="flex items-center">
+            <Link href="/" className="flex items-center">
               <Image
                 width={107}
                 height={10}
@@ -38,7 +37,10 @@ const Footer = () => {
                     src="/images/homepage/riinstagramfill.svg"
                   />
                 </a>
-                <a target="_blank" href={'https://www.linkedin.com/company/rila-global-consulting/'}>
+                <a
+                  target="_blank"
+                  href={'https://www.linkedin.com/company/rila-global-consulting/'}
+                >
                   <Image
                     width={18}
                     height={18}
@@ -86,7 +88,7 @@ const Footer = () => {
             </div>
 
             <Link
-              href="/resources"
+              href="/"
               className="mt-[31px] rounded-51xl bg-red-200 flex flex-row py-3 px-1 box-border items-center justify-center text-white"
             >
               <strong className="text-sm relative leading-[20px] capitalize">Contact Us</strong>
@@ -102,12 +104,12 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li className="mb-4">
-                  <Link href="/resources" className="hover:underline">
+                  <Link href="/" className="hover:underline">
                     Careers
                   </Link>
                 </li>
                 <li className="mb-4">
-                  <Link href="/resources" className="hover:underline">
+                  <Link href="/" className="hover:underline">
                     Newsroom
                   </Link>
                 </li>
@@ -119,10 +121,10 @@ const Footer = () => {
               </ul>
             </div>
             <div>
-              <h2 className="mb-6 text-lg font-semibold text-gray-200 capitalize ">Resources</h2>
+              <h2 className="mb-6 text-lg font-semibold text-gray-200 capitalize "></h2>
               <ul className="text-gray-200  font-medium">
                 <li className="mb-4">
-                  <Link href="/resources" className="hover:underline ">
+                  <Link href="/" className="hover:underline ">
                     Our Services
                   </Link>
                 </li>
@@ -132,7 +134,7 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li className="mb-4">
-                  <Link href="/resources" className="hover:underline">
+                  <Link href="/" className="hover:underline">
                     Our Work
                   </Link>
                 </li>
