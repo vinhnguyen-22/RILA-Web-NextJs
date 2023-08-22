@@ -49,7 +49,7 @@ class ServerSideCmsClient {
           if (cover) {
             img = cover.type === 'external' ? cover.external.url : cover.file.url;
           }
-          const format = await formatNotionPageAttributes(properties);
+          const format = formatNotionPageAttributes(properties);
           const api = new NotionAPI();
           const { block } = await api.getPage(id);
           img = mapImageUrl(img, block[id].value) || '';
@@ -57,7 +57,7 @@ class ServerSideCmsClient {
           return {
             ...format,
             id,
-            blurUrl: img != '' ? (await getBlurImage(img)).base64 : '',
+            blurUrl: (await getBlurImage(img)).base64 || '',
             cover: img,
           };
         }),
