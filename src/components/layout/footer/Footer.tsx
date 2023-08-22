@@ -121,7 +121,7 @@ const Footer = () => {
               </ul>
             </div>
             <div>
-              <h2 className="mb-6 text-lg font-semibold text-gray-200 capitalize "></h2>
+              <h2 className="mb-6 text-lg font-semibold text-gray-200 capitalize ">Resources</h2>
               <ul className="text-gray-200  font-medium">
                 <li className="mb-4">
                   <Link href="/" className="hover:underline ">
