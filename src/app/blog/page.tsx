@@ -18,7 +18,7 @@ export default async function Blog() {
     process.env.NOTION_BLOG_DB_ID,
     isArticle,
   );
-
+  console.log(articles);
   return (
     <ClientOnly>
       <Heros />
