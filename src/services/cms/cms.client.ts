@@ -36,7 +36,6 @@ class ServerSideCmsClient {
         property: 'published',
         checkbox: { equals: true },
       },
-      page_size: 50,
     });
 
     if (results.length === 0) return [];
