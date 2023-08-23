@@ -24,14 +24,14 @@ export function useNewsletter() {
       },
       method: 'POST',
     });
-    const { error } = await res.json();
-    if (error) {
-      setForm({
-        state: Form.Error,
-        message: error,
-      });
-      return;
-    }
+    // const { error } = await res.json();
+    // if (error) {
+    //   setForm({
+    //     state: Form.Error,
+    //     message: error,
+    //   });
+    //   return;
+    // }
     inputEl.current!.value = '';
     setForm({
       state: Form.Success,
