@@ -49,7 +49,7 @@ const ContactPage = () => {
               ></textarea>
 
               <button className="bg-red-100 px-[25px] py-[8px] text-white font-semibold rounded-51xl w-[40%]">
-                Sent
+                Send
               </button>
             </form>
           </div>
