@@ -8,6 +8,7 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import { cache } from 'react';
 
 export const dynamicParams = true;
 export const revalidate = 1;
@@ -59,12 +60,7 @@ export default async function ArticlePage(props: any) {
         className=" flex flex-col items-center max-sm:mt-20"
       >
         <div className="relative ">
-          <Image
-            src={article.cover}
-            alt="cover"
-            fill
-            style={{ objectFit: 'contain' }}
-          />
+          <Image src={article.cover} alt="cover" fill style={{ objectFit: 'contain' }} />
         </div>
 
         <NotionRenderer
@@ -77,7 +73,7 @@ export default async function ArticlePage(props: any) {
   );
 }
 
-const getArticle = async (date: string, slug: string) => {
+const getArticle = cache(async (date: string, slug: string) => {
   try {
     return await serverSideCmsClient.getPageContent(process.env.NOTION_BLOG_DB_ID, {
       and: [
@@ -91,7 +87,7 @@ const getArticle = async (date: string, slug: string) => {
   } catch {
     throw notFound();
   }
-};
+});
 
 export async function generateStaticParams() {
   const articles = await serverSideCmsClient.getDatabaseEntries(

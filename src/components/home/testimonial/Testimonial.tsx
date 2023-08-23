@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRef } from 'react';
-import { Navigation, FreeMode } from 'swiper';
+import { FreeMode, Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Định nghĩa dữ liệu chứa nội dung các slide
@@ -106,7 +106,7 @@ const Testimonial = () => {
         </div>
       </div>
 
-      <div className="overflow-x-auto no-scrollbar p-[10px] flex flex-row items-start justify-start gap-[39px] text-9xl">
+      <div className="overflow-x-hidden no-scrollbar p-[10px] flex flex-row items-start justify-start gap-[39px] text-9xl">
         <Swiper
           spaceBetween={30}
           slidesPerView={2}
@@ -146,7 +146,12 @@ const Testimonial = () => {
               <div className="m-[10px] rounded-6xl bg-ghostwhite shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] h-[100%] md:h-[500px] lg:h-[700px] xl:h-[500px] flex flex-col pt-8 pb-[20px] pr-[29px] pl-8 box-border items-start justify-start gap-[19px]">
                 <div className=" flex flex-row items-start justify-start gap-[20px]">
                   <div className="w-[80px] h-[80px] relative">
-                    <Image fill className="relative rounded-[50%] object-contain" alt="" src={item.imageUrl} />
+                    <Image
+                      fill
+                      className="relative rounded-[50%] object-contain"
+                      alt=""
+                      src={item.imageUrl}
+                    />
                   </div>
 
                   <div className="flex-1 flex flex-row items-start justify-start">
@@ -164,7 +169,9 @@ const Testimonial = () => {
                     </div>
                   </div>
                 </div>
-                <div className="relative text-base leading-[32px] text-black inline-block ">{item.testimonial}</div>
+                <div className="relative text-base leading-[32px] text-black inline-block ">
+                  {item.testimonial}
+                </div>
               </div>
             </SwiperSlide>
           ))}
@@ -182,7 +189,9 @@ const Testimonial = () => {
                 href="/about-us"
                 className="rounded-51xl w-[200px] max-w-full bg-gray-600 flex flex-row md:py-4 py-2 box-border items-center justify-center"
               >
-                <strong className="relative lg:text-lg md:text-base text-sm capitalize">Start Now</strong>
+                <strong className="relative lg:text-lg md:text-base text-sm capitalize">
+                  Start Now
+                </strong>
               </Link>
             </div>
 
