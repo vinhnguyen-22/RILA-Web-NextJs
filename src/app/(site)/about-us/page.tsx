@@ -7,6 +7,7 @@ import Polygon from '@/icons/polygon';
 import { AboutAwardImages, AboutNews } from '@/mocks/about-data';
 import { Metadata } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'About',
@@ -81,9 +82,22 @@ const About = () => {
           <div className="container mx-auto mt-[63px] ">
             <div className="flex flex-row flex-wrap justify-evenly items-center gap-[20px] flex-grow ">
               {AboutNews.map((item, index) => (
-                <div key={index} className="aspect-video relative sm:h-[100px] h-[50px] ">
-                  <Image fill className="relative object-contain" alt={item.alt} src={item.image} />
-                </div>
+                <Link
+                  key={index}
+                  href={item.link}
+                  target="_blank"
+                  data-te-toggle="tooltip"
+                  title={item.link}
+                >
+                  <div className="aspect-video relative sm:h-[100px] h-[50px] overflow-hidden bg-cover bg-no-repeat">
+                    <Image
+                      fill
+                      className="relative object-contain transition duration-300 ease-in-out hover:scale-80"
+                      alt={item.alt}
+                      src={item.image}
+                    />
+                  </div>
+                </Link>
               ))}
             </div>
           </div>

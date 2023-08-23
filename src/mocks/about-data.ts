@@ -121,21 +121,89 @@ export const AboutTeamBio = [
 ];
 
 export const AboutNews = [
-  { image: '/images/about-us/news/news_1.png', alt: 'News 1' },
-  { image: '/images/about-us/news/news_2.png', alt: 'News 2' },
-  { image: '/images/about-us/news/news_3.png', alt: 'News 3' },
-  { image: '/images/about-us/news/news_4.png', alt: 'News 4' },
-  { image: '/images/about-us/news/news_5.png', alt: 'News 5' },
-  { image: '/images/about-us/news/news_6.png', alt: 'News 6' },
-  { image: '/images/about-us/news/news_7.png', alt: 'News 7' },
-  { image: '/images/about-us/news/news_8.png', alt: 'News 8' },
-  { image: '/images/about-us/news/news_9.png', alt: 'News 9' },
-  { image: '/images/about-us/news/news_10.png', alt: 'News 10' },
-  { image: '/images/about-us/news/news_11.png', alt: 'News 11' },
-  { image: '/images/about-us/news/news_12.png', alt: 'News 12' },
-  { image: '/images/about-us/news/news_13.png', alt: 'News 13' },
-  { image: '/images/about-us/news/news_14.png', alt: 'News 14' },
-  { image: '/images/about-us/news/news_15.png', alt: 'News 15' },
-  { image: '/images/about-us/news/news_16.png', alt: 'News 16' },
-  { image: '/images/about-us/news/news_17.png', alt: 'News 17' },
+  {
+    image: '/images/about-us/news/news_1.png',
+    link: 'https://elpais.com/economia/2023-06-11/acoso-a-las-empresas-arcoiris-en-estados-unidos.html?autoplay=1',
+    alt: 'elpais',
+  },
+  {
+    image: '/images/about-us/news/news_2.png',
+    link: 'https://ca.news.yahoo.com/pride-becomes-minefield-big-companies-041546709.html',
+    alt: 'yahoo',
+  },
+  {
+    image: '/images/about-us/news/news_3.png',
+    link: 'https://www.dailymail.co.uk/wires/ap/article-12159385/Pride-minefield-big-companies-continue-support.html',
+    alt: 'dailymail',
+  },
+  {
+    image: '/images/about-us/news/news_4.png',
+    link: 'https://www.theguardian.com/world/2023/jun/13/lgbtq-influencers-pride-brands-boycotts-laws',
+    alt: 'theguardian',
+  },
+  {
+    image: '/images/about-us/news/news_5.png',
+    link: 'https://www.youtube.com/watch?v=1MLoi-12O-o',
+    alt: 'youtube',
+  },
+  {
+    image: '/images/about-us/news/news_6.png',
+    link: 'https://www.chicagotribune.com/business/ct-biz-pride-month-businesses-20230605-ewlu53udureivjelstrztnmh3a-story.html',
+    alt: 'chicagotribune',
+  },
+  {
+    image: '/images/about-us/news/news_7.png',
+    link: 'https://apnews.com/article/pride-lgbtq-target-budweiser-corporate-sponsorships-3b5e1bbf57626185493b5e8e65ac8f81',
+    alt: 'apnews',
+  },
+  {
+    image: '/images/about-us/news/news_8.png',
+    link: 'http://www.fox6now.com/news/pride-becomes-minefield-for-big-us-companies-but-many-continue-their-support',
+    alt: 'fox6now',
+  },
+  {
+    image: '/images/about-us/news/news_9.png',
+    link: 'https://www.breitbart.com/news/pride-becomes-a-minefield-for-big-companies-but-many-continue-their-support/',
+    alt: 'breitbart',
+  },
+  {
+    image: '/images/about-us/news/news_10.png',
+    link: 'https://www.bostonglobe.com/2023/06/05/business/pride-becomes-minefield-big-companies-many-continue-their-support/',
+    alt: 'bostonglobe',
+  },
+  {
+    image: '/images/about-us/news/news_11.png',
+    link: 'https://www.newsmax.com/finance/streettalk/pride-lgbtq-target/2023/06/05/id/1122386/',
+    alt: 'newsmax',
+  },
+  {
+    image: '/images/about-us/news/news_12.png',
+    link: 'https://fortune.com/2023/06/05/big-companies-pepsico-general-motors-backing-pride-events-target-bud-light-face-backlash/',
+    alt: 'fortune',
+  },
+  {
+    image: '/images/about-us/news/news_13.png',
+    link: 'https://abcnews.go.com/Business/wireStory/pride-minefield-big-companies-continue-support-99832026',
+    alt: 'abcnews',
+  },
+  {
+    image: '/images/about-us/news/news_14.png',
+    link: 'https://www.washingtonposttoday.com/pride-becomes-a-minefield-for-big-companies-but-many-continue-their-support/',
+    alt: 'washingtonposttoday',
+  },
+  {
+    image: '/images/about-us/news/news_15.png',
+    link: 'https://theindependent.com/news/pride-becomes-a-minefield-for-big-companies-but-many-continue-support-in-the-end-human/article_4d3a8e37-30e9-5882-920f-3964bd05c7db.html',
+    alt: 'theindependent',
+  },
+  {
+    image: '/images/about-us/news/news_16.png',
+    link: 'https://www.forbes.com/sites/pklein/2023/06/16/business-leadership-means-deciding-to-have-a-social-impact/?sh=47c0744867bf',
+    alt: 'forbes',
+  },
+  {
+    image: '/images/about-us/news/news_17.png',
+    link: 'https://www.inc.com/profile/rila-global-consulting',
+    alt: 'inc',
+  },
 ];
