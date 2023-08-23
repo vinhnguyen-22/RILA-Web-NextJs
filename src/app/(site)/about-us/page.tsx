@@ -92,7 +92,7 @@ const About = () => {
                   <div className="aspect-video relative sm:h-[100px] h-[50px] overflow-hidden bg-cover bg-no-repeat">
                     <Image
                       fill
-                      className="relative object-contain transition duration-300 ease-in-out hover:scale-80"
+                      className="relative object-contain transition duration-300 ease-in-out hover:scale-75"
                       alt={item.alt}
                       src={item.image}
                     />
