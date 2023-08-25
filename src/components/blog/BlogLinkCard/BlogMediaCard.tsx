@@ -2,10 +2,14 @@
 import { PATHS } from '@/app/constants';
 import { Chip } from '@/components/common/Chip';
 import { CalendarIcon } from '@/icons/calendar';
+import { Article } from '@/types/cms';
 import Image from 'next/image';
 import Link from 'next/link';
-
-const BlogMediaCard = ({ article }: any) => {
+import { FC } from 'react';
+type Props = {
+  article: Article;
+};
+const BlogMediaCard: FC<Props> = ({ article }) => {
   const formattedDate = article.date.replace(new RegExp('/', 'g'), '-');
   const articleSlug = `${PATHS.BLOG}/${formattedDate}/${article.slug}`;
 
@@ -18,7 +22,14 @@ const BlogMediaCard = ({ article }: any) => {
       <div
         className={`relative h-[392px] bg-gradient-to-r from-black via-transparent to-transparent bg-cover bg-no-repeat bg-lightgray`}
       >
-        <Image src="/images/blog/retangle-32.png" className="absolute top-0 left-0 object-cover " fill alt="" />
+        <Image
+          src={article.cover}
+          placeholder="blur"
+          blurDataURL={article.blurUrl}
+          className="absolute top-0 left-0 object-cover "
+          fill
+          alt={article.title}
+        />
 
         <div className="absolute bottom-[14px] left-[11px] flex flex-col p-[15px] z-10">
           <time className="text-base text-white">
@@ -36,7 +47,10 @@ const BlogMediaCard = ({ article }: any) => {
             {article.tags &&
               article.tags.map((tag: any) => {
                 return (
-                  <Chip key={tag.name} style={{ backgroundColor: `var(--color-chip-${tag.color})` }}>
+                  <Chip
+                    key={tag.name}
+                    style={{ backgroundColor: `var(--color-chip-${tag.color})` }}
+                  >
                     {tag.name}
                   </Chip>
                 );

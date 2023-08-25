@@ -9,8 +9,20 @@ export const DownLoadIcon = (props: JSX.IntrinsicElements['svg']) => {
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-      <path d="M23.5 15L28.5 20L33.5 15" stroke="black" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M28.5 20V8" stroke="black" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+      <path
+        d="M23.5 15L28.5 20L33.5 15"
+        stroke="black"
+        strokeWidth="3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M28.5 20V8"
+        stroke="black"
+        strokeWidth="3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
     </svg>
   );
 };

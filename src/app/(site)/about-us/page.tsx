@@ -87,7 +87,7 @@ const About = () => {
                   href={item.link}
                   target="_blank"
                   data-te-toggle="tooltip"
-                  title={item.link}
+                  title={item.alt}
                 >
                   <div className="aspect-video relative sm:h-[100px] h-[50px] overflow-hidden bg-cover bg-no-repeat">
                     <Image
