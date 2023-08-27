@@ -45,7 +45,7 @@ export default async function ArticlePage(props: any) {
       return (
         targetObject.id != article.id &&
         article.published &&
-        article.tags.some((tag) => tag.id === targetTag.id)
+        article?.tags?.some((tag) => tag.id === targetTag.id)
       );
     });
     return objectsWithSameTag;

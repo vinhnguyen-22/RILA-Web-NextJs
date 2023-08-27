@@ -42,10 +42,10 @@ const BlogMediaCard: FC<Props> = ({ article }) => {
           <p className="text-lg text-white">{truncatedText}</p>
         </div>
 
-        {article.tags.length > 0 && (
+        {article?.tags?.length > 0 && (
           <div className="absolute top-[14px] left-[11px] flex flex-row gap-2 flex-wrap">
             {article.tags &&
-              article.tags.map((tag: any) => {
+              article?.tags?.map((tag: any) => {
                 return (
                   <Chip
                     key={tag.name}
