@@ -166,19 +166,29 @@ const ReportDetail: FC<ReportDetailProps> = ({ report }) => {
 
                     <div className="flex items-center space-x-6">
                       <div className="flex items-center">
-                        <input type="radio" name="radio1" id="radioButton1" className="h-5 w-5" />
+                        <input
+                          type="radio"
+                          name="radio1"
+                          id="radioButton1"
+                          className="w-4 h-4  bg-black border-black "
+                        />
                         <label
                           htmlFor="radioButton1"
-                          className="pl-3 text-base font-medium text-black"
+                          className="pl-3 text-sm font-medium text-black"
                         >
                           Yes
                         </label>
                       </div>
                       <div className="flex items-center">
-                        <input type="radio" name="radio1" id="radioButton2" className="h-5 w-5" />
+                        <input
+                          type="radio"
+                          name="radio1"
+                          id="radioButton2"
+                          className="w-4 h-4  bg-black border-black "
+                        />
                         <label
                           htmlFor="radioButton2"
-                          className="pl-3 text-base font-medium text-black"
+                          className="pl-3 text-sm font-medium text-black"
                         >
                           No
                         </label>
@@ -186,19 +196,27 @@ const ReportDetail: FC<ReportDetailProps> = ({ report }) => {
                     </div>
                   </div>
 
-                  <div className="mb-8 flex justify-start items-center gap-[23px]">
+                  <div className="mb-8 flex justify-start items-center gap-[10px]">
                     <div className="flex items-center">
-                      <input type="radio" name="radio1" id="radioButton1" className="h-5 w-5" />
-                      <label htmlFor="radioButton1" className="pl-3 text-base font-medium">
-                        I’m agree to RILA’s
-                        <Link className="text-blue-700 decoration-clone" href="/">
+                      <input
+                        type="radio"
+                        name="radio2"
+                        id="radioButton3"
+                        className="outline-none h-5 w-5 "
+                      />
+                      <label htmlFor="radioButton1" className="pl-3 text-sm font-medium italic ">
+                        By submitting this form you agree to RILA’s
+                        <Link className="text-blue-700 decoration-clone" href="/cookie-policy">
                           {' '}
-                          updated{' '}
+                          Privacy Policy{' '}
                         </Link>
                         and
-                        <Link className="text-blue-700 decoration-clone" href="/">
+                        <Link
+                          className="text-blue-700 decoration-clone"
+                          href="/terms-and-conditions"
+                        >
                           {' '}
-                          policies.
+                          T&C’s{' '}
                         </Link>
                       </label>
                     </div>
