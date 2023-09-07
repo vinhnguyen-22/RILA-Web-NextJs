@@ -79,7 +79,10 @@ export const formatNotionPageAttributes = (
   Object.entries(properties).reduce((acc, [key, prop]) => {
     const value = notionDatabasePropertyResolver(prop);
 
-    return { ...acc, [key]: value };
+    return {
+      ...acc,
+      [key]: value,
+    };
   }, {} as { [key: string]: NotionDatabaseProperty });
 
 export function mapImageUrl(url: string, block: Block): string | null {

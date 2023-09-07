@@ -11,7 +11,7 @@ export type Article = {
   date: string;
   lastEditedAt: string;
   blurUrl?: string;
-  lang: string;
+  lang?: string;
 };
 
 export type Tag = {
