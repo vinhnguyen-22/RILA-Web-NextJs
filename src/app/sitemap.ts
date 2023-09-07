@@ -25,7 +25,7 @@ export default async function sitemap() {
 
   for (const article of articles) {
     sitemap.push({
-      url: `${process.env.SITE_URL}/blog/${article.date.replace(new RegExp('/', 'g'), '-')}/${
+      url: `${process.env.SITE_URL}/blog/${article?.date.replace(new RegExp('/', 'g'), '-')}/${
         article.slug
       }`,
       lastModified: article.lastEditedAt.replace(new RegExp('/', 'g'), '-'),

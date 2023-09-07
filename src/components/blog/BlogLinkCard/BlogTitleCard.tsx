@@ -9,7 +9,7 @@ type Props = {
 };
 
 const BlogTitleCard = ({ article }: Props) => {
-  const formattedDate = article.date.replace(new RegExp('/', 'g'), '-');
+  const formattedDate = article?.date.replace(new RegExp('/', 'g'), '-');
   const articleSlug = `${PATHS.BLOG}/${formattedDate}/${article.slug}`;
 
   return (

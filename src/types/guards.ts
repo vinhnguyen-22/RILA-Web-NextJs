@@ -1,8 +1,10 @@
 import { NotionDatabaseProperty } from '@/services/cms/cms.types';
-import { Article, Report, CaseStudy } from './cms';
+import { Article, CaseStudy, Report } from './cms';
 
 export const isTwoStringArray = (value: string[] | undefined): value is [string, string] => {
-  return Array.isArray(value) && value.length === 2 && value.every((item) => typeof item === 'string');
+  return (
+    Array.isArray(value) && value.length === 2 && value.every((item) => typeof item === 'string')
+  );
 };
 
 export const isArticle = (obj: { [key: string]: NotionDatabaseProperty }): obj is Article => {
@@ -15,7 +17,8 @@ export const isArticle = (obj: { [key: string]: NotionDatabaseProperty }): obj i
     Array.isArray(obj.tags) &&
     typeof obj.published === 'boolean' &&
     typeof obj.date === 'string' &&
-    typeof obj.lastEditedAt === 'string'
+    typeof obj.lastEditedAt === 'string' &&
+    typeof obj.lang === 'string'
   );
 };
 

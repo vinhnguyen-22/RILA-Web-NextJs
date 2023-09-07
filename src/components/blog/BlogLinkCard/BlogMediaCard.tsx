@@ -10,7 +10,7 @@ type Props = {
   article: Article;
 };
 const BlogMediaCard: FC<Props> = ({ article }) => {
-  const formattedDate = article.date.replace(new RegExp('/', 'g'), '-');
+  const formattedDate = article?.date.replace(new RegExp('/', 'g'), '-');
   const articleSlug = `${PATHS.BLOG}/${formattedDate}/${article.slug}`;
 
   const truncateText = (text: string, maxLength: number) =>

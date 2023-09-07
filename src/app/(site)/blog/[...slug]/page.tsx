@@ -58,6 +58,7 @@ export default async function ArticlePage(props: any) {
       <article
         data-revalidated-at={new Date().getTime()}
         className=" flex flex-col items-center max-sm:mt-20"
+        style={{ direction: article.lang == 'fa' ? 'rtl' : 'ltr' }}
       >
         <div className="relative ">
           <Image src={article.cover} alt="cover" fill style={{ objectFit: 'contain' }} />
