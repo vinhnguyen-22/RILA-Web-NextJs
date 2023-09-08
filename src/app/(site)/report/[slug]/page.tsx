@@ -6,7 +6,10 @@ import { notFound } from 'next/navigation';
 
 export default async function ReportPage(props: any) {
   const slug = props?.params?.slug;
-  const reports = await serverSideCmsClient.getDatabaseEntries(process.env.NOTION_REPORT_DB_ID, isReport);
+  const reports = await serverSideCmsClient.getDatabaseEntries(
+    process.env.NOTION_REPORT_DB_ID,
+    isReport,
+  );
   const report = reports.find((p) => p.slug === slug);
   if (!report) {
     return notFound();
@@ -19,13 +22,23 @@ export default async function ReportPage(props: any) {
 }
 
 export async function generateStaticParams() {
-  const reports = await serverSideCmsClient.getDatabaseEntries(process.env.NOTION_REPORT_DB_ID, isReport);
+  const reports = await serverSideCmsClient.getDatabaseEntries(
+    process.env.NOTION_REPORT_DB_ID,
+    isReport,
+  );
 
   return reports.map(({ slug }) => ({ slug }));
 }
 
-export async function generateMetadata({ params: { slug } }: { params: { slug: string } }): Promise<Metadata> {
-  const reports = await serverSideCmsClient.getDatabaseEntries(process.env.NOTION_REPORT_DB_ID, isReport);
+export async function generateMetadata({
+  params: { slug },
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  const reports = await serverSideCmsClient.getDatabaseEntries(
+    process.env.NOTION_REPORT_DB_ID,
+    isReport,
+  );
   const report = reports.find((p) => p.slug === slug);
   return report
     ? {

@@ -1,8 +1,10 @@
-import Header from '@/components/layout/header/Header';
-import { Poppins } from 'next/font/google';
 import Footer from '@/components/layout/footer/Footer';
+import Header from '@/components/layout/header/Header';
 import { Metadata } from 'next';
+import { Poppins } from 'next/font/google';
 import { GlobalProvider } from './GlobalProvider';
+
+export const revalidate = 60; // revalidate this page every 60 seconds
 
 const font = Poppins({
   subsets: ['latin'],

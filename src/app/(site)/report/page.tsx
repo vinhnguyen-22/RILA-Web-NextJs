@@ -1,4 +1,3 @@
-import { Chip } from '@/components/common/Chip';
 import Heading from '@/components/common/Heading/Heading';
 import ReportList from '@/components/report/ReportList';
 import { serverSideCmsClient } from '@/services/cms/cms.client';
@@ -11,7 +10,10 @@ export const metadata: Metadata = {
 };
 
 const ReportPage = async () => {
-  const reports = await serverSideCmsClient.getDatabaseEntries(process.env.NOTION_REPORT_DB_ID, isReport);
+  const reports = await serverSideCmsClient.getDatabaseEntries(
+    process.env.NOTION_REPORT_DB_ID,
+    isReport,
+  );
 
   return (
     <div className="flex flex-col mx-auto container mt-[50px]">
