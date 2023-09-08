@@ -4,7 +4,7 @@ import { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
 import { GlobalProvider } from './GlobalProvider';
 
-export const revalidate = 60; // revalidate this page every 60 seconds
+export const revalidate = 120; // revalidate this page every 60 seconds
 
 const font = Poppins({
   subsets: ['latin'],
@@ -12,7 +12,7 @@ const font = Poppins({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('http://localhost:3000/'),
+  metadataBase: new URL(process.env.SITE_URL || 'https://localhost:3000'),
   title: {
     default: 'RILA GLOBAL CONSULTING',
     template: `%s | RILA`,
