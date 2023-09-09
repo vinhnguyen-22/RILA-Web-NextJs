@@ -34,7 +34,7 @@ export default async function sitemap() {
 
   for (const caseStudy of caseStudies) {
     sitemap.push({
-      url: `${process.env.SITE_URL}/casestudy/${caseStudy.date.replace(
+      url: `${process.env.SITE_URL}/case-studies/${caseStudy.date.replace(
         new RegExp('/', 'g'),
         '-',
       )}/${caseStudy.slug}`,

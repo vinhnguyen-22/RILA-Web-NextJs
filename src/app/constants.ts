@@ -5,7 +5,7 @@ export const PATHS = {
   ABOUT: '/about-us',
   BLOG: '/blog',
   REPORT: '/report',
-  CASESTUDY: '/casestudy',
+  CASESTUDY: '/case-studies',
 };
 
 export const NAVBAR_ITEMS: any[] = [
