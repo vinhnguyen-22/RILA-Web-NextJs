@@ -1,6 +1,6 @@
-import CaseStudyList from '@/components/casestudy/List/CaseStudyList';
-import TabBanner from '@/components/casestudy/TabBanner';
-import VideoBanner from '@/components/casestudy/VideoBanner';
+import CaseStudyList from '@/components/case-studies/List/CaseStudyList';
+import TabBanner from '@/components/case-studies/TabBanner';
+import VideoBanner from '@/components/case-studies/VideoBanner';
 import Heading from '@/components/common/Heading/Heading';
 import Paginate from '@/components/common/Paginate/Paginate';
 import { CaseStudyBrandImage } from '@/mocks/data';

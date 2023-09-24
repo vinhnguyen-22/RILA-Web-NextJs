@@ -1,6 +1,6 @@
 import { BlogVerticalList } from '@/components/blog/BlogList/BlogVerticalList';
-import CaseStudyCard from '@/components/casestudy/LinkCard/CaseStudyCard';
-import { PostVerticalList } from '@/components/casestudy/List/VerticalList';
+import CaseStudyCard from '@/components/case-studies/LinkCard/CaseStudyCard';
+import { PostVerticalList } from '@/components/case-studies/List/VerticalList';
 import { NotionRenderer } from '@/components/common/NotionRenderer';
 import { serverSideCmsClient } from '@/services/cms/cms.client';
 import { CaseStudy } from '@/types/cms';
@@ -26,7 +26,7 @@ export default async function CaseStudyPage(props: any) {
     return (
       <article data-revalidated-at={new Date().getTime()} className="mx-auto mt-40 text-center">
         <h2 className="mb-4 text-3xl font-bold">CaseStudy Not Found</h2>
-        <Link href="/casestudy">
+        <Link href="/case-studies">
           <span className="mr-2">&larr;</span>
           <span>Go to list page</span>
         </Link>
