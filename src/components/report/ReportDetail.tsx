@@ -5,15 +5,21 @@ import { Report } from '@/types/cms';
 import { useForm, ValidationError } from '@formspree/react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { FC } from 'react';
 import Contact from '../contact/Contact';
 
-const ReportDetail = ({ report }: { report: Report | null }) => {
-  const [state, handleSubmit] = useForm('xwkdoqqq');
+interface Props {
+  report: Report | null;
+}
+
+const ReportDetail: FC<Props> = ({ report }) => {
+  const [state, handleSubmit] = useForm(process.env.FORMSPREE || 'xwkdoqqq');
   const router = useRouter();
 
   if (state.succeeded) {
-    return router.push(report?.PDF ?? '/');
+    router.push(report?.PDF ?? '/');
   }
+
   return (
     <section className="">
       <div
