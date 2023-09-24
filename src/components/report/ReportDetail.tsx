@@ -4,22 +4,23 @@ import BulletCheck from '@/icons/bullet';
 import { Report } from '@/types/cms';
 import { useForm, ValidationError } from '@formspree/react';
 import Link from 'next/link';
-import { FC } from 'react';
+import { useRouter } from 'next/navigation';
 import Contact from '../contact/Contact';
 
-type ReportDetailProps = Report | any;
-const ReportDetail: FC<ReportDetailProps> = ({ report }) => {
+const ReportDetail = ({ report }: { report: Report | null }) => {
   const [state, handleSubmit] = useForm('xwkdoqqq');
+  const router = useRouter();
+
   if (state.succeeded) {
-    return <p>Thanks for joining!</p>;
+    return router.push(report?.PDF ?? '/');
   }
   return (
     <section className="">
       <div
         className="min-h-[460px] flex justify-center items-center bg-cover"
-        style={{ backgroundImage: `url('${report.cover}')` }}
+        style={{ backgroundImage: `url('${report?.cover}')` }}
       >
-        <h1 className="text-23xl text-white text-center">{report.title}</h1>
+        <h1 className="text-23xl text-white text-center">{report?.title}</h1>
       </div>
       <div className="bg-black py-[79px]">
         <div className="container mx-auto">
@@ -132,7 +133,7 @@ const ReportDetail: FC<ReportDetailProps> = ({ report }) => {
                       type="text"
                     />
                   </div>
-                  <div className="mb-6 flex justify-start items-center gap-[23px]">
+                  {/* <div className="mb-6 flex justify-start items-center gap-[23px]">
                     <label
                       className="block text-gray-700 text-sm font-bold mb-2"
                       htmlFor="password"
@@ -154,7 +155,7 @@ const ReportDetail: FC<ReportDetailProps> = ({ report }) => {
                         </svg>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
 
                   <div className="mb-6 flex justify-start items-center gap-[23px]">
                     <label

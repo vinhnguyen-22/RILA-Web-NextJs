@@ -31,6 +31,7 @@ export type Report = {
   date: string;
   lastEditedAt: string;
   blurUrl?: string;
+  PDF?: string;
 };
 
 export type CaseStudy = {

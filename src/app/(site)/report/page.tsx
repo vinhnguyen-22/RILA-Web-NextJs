@@ -14,7 +14,6 @@ const ReportPage = async () => {
     process.env.NOTION_REPORT_DB_ID,
     isReport,
   );
-
   return (
     <div className="flex flex-col mx-auto container mt-[50px]">
       <Heading title="Reports & Analysis" />
