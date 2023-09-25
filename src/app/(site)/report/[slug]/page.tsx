@@ -18,7 +18,7 @@ export default async function ReportPage(props: any) {
   // const relatedReports: Report[] = reports.filter(
   //   (p) => p.slug !== slug && p.tags.some((v) => report.tags.includes(v))
   // );
-  return <ReportDetail report={report ? report : {}} />;
+  return <ReportDetail report={report ? report : null} />;
 }
 
 export async function generateStaticParams() {

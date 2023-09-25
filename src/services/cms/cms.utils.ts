@@ -1,5 +1,7 @@
 import {
+  DatabaseObjectResponse,
   PageObjectResponse,
+  PartialDatabaseObjectResponse,
   PartialPageObjectResponse,
   RichTextItemResponse,
 } from '@notionhq/client/build/src/api-endpoints';
@@ -51,7 +53,7 @@ const titleValueResolver = (prop: RichTextItemResponse[]): string => {
 };
 
 export const isNonEmptyNonPartialNotionResponse = (
-  results: (PageObjectResponse | PartialPageObjectResponse)[],
+  results: (PageObjectResponse | PartialPageObjectResponse | PartialDatabaseObjectResponse | DatabaseObjectResponse)[],
   // @ts-ignore
 ): results is PageObjectResponse[] => results[0]?.properties !== undefined;
 
