@@ -6,7 +6,7 @@ export type Article = {
   slug: string;
   title: string;
   summary: string;
-  tags: Tag[];
+  tags?: Tag[];
   published: boolean;
   date: string;
   lastEditedAt: string;
@@ -26,7 +26,7 @@ export type Report = {
   slug: string;
   title: string;
   summary: string;
-  tags: Tag[];
+  tags?: Tag[] | { id: '<AKV'; name: 'social listening'; color: 'green' };
   published: boolean;
   date: string;
   lastEditedAt: string;

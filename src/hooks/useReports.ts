@@ -1,11 +1,10 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo } from 'react';
 
-import { Report } from '@/types/cms';
 import usePostStore from '@/store/postStore';
 
 const TOTAL_ELEMENT = 9;
 
-export default function useReports(allReports: Report[]) {
+export default function useReports(allReports: any[]) {
   const { page, query, selected, setActive } = usePostStore((state) => state);
   const allReportsFiltered = useMemo(
     () =>
@@ -20,7 +19,9 @@ export default function useReports(allReports: Report[]) {
               post.title.toLowerCase().includes(query.toLowerCase()) ||
               post.summary.toLowerCase().includes(query.toLowerCase()) ||
               post.summary.toLowerCase().includes(query.toLowerCase()) ||
-              post.tags.some(({ name }) => name.toLowerCase().includes(query.toLowerCase()));
+              post.tags.some(({ name }: { name: string }) =>
+                name.toLowerCase().includes(query.toLowerCase()),
+              );
             console.log(search);
             return search;
           }
@@ -35,7 +36,7 @@ export default function useReports(allReports: Report[]) {
           return true;
         })
         .sort((a, b) => (a.date > b.date ? -1 : 1)),
-    [allReports, selected, query]
+    [allReports, selected, query],
   );
   //   useEffect(() => {
   //     const fetchData = (query: string) =>

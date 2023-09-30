@@ -39,7 +39,7 @@ export default async function ArticlePage(props: any) {
     );
   }
 
-  function getObjectsWithSameTag(targetObject: Article, articles: Article[]) {
+  function getObjectsWithSameTag(targetObject: any, articles: Article[]) {
     const targetTag = targetObject.tags[0]; // Assuming each object has only one tag
     const objectsWithSameTag = articles.filter((article) => {
       return (
@@ -48,7 +48,7 @@ export default async function ArticlePage(props: any) {
         article?.tags?.some((tag) => tag.id === targetTag.id)
       );
     });
-    return objectsWithSameTag;
+    return targetTag ? objectsWithSameTag : [];
   }
 
   const relatedArticles: Article[] = getObjectsWithSameTag(article, articles);

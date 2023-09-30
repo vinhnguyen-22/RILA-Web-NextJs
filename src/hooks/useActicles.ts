@@ -1,9 +1,8 @@
 import { useEffect, useMemo } from 'react';
 
 import usePostStore from '@/store/postStore';
-import { Article } from '@/types/cms';
 
-export default function useArticles(allArticles: Article[], totalElement: number = 9) {
+export default function useArticles(allArticles: any[], totalElement: number = 9) {
   const { page, query, selected, setActive } = usePostStore((state) => state);
   const allArticlesFiltered = useMemo(
     () =>
@@ -18,7 +17,9 @@ export default function useArticles(allArticles: Article[], totalElement: number
               post.title.toLowerCase().includes(query.toLowerCase()) ||
               post.summary.toLowerCase().includes(query.toLowerCase()) ||
               post.summary.toLowerCase().includes(query.toLowerCase()) ||
-              post.tags.some(({ name }) => name.toLowerCase().includes(query.toLowerCase()));
+              post.tags.some(({ name }: { name: string }) =>
+                name.toLowerCase().includes(query.toLowerCase()),
+              );
             return search;
           }
 
