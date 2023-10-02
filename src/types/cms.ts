@@ -26,7 +26,7 @@ export type Report = {
   slug: string;
   title: string;
   summary: string;
-  tags?: Tag[] | { id: '<AKV'; name: 'social listening'; color: 'green' };
+  tags?: Tag[];
   published: boolean;
   date: string;
   lastEditedAt: string;

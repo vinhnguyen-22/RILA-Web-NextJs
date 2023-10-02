@@ -22,7 +22,7 @@ const ReportCard: FC<ReportCardProps> = ({ cover, id, published, slug, tags, tit
         <b className=" w-full text-9xl tracking-[0.03em] flex items-center ">{title}</b>
         <div className=" w-full text-xl tracking-[0.03em] flex items-center">Brand Report</div>
         <div className=" h-[30.77%] w-[28.14%]">
-          {tags.length > 0 && (
+          {tags && tags.length > 0 && (
             <div className="flex flex-row gap-2 flex-wrap ">
               {tags &&
                 tags.slice(0, 3).map((tag: any) => {
