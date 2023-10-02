@@ -48,7 +48,7 @@ export const BlogLinkCard: FC<BlogLinkCardProps> = ({
               {new Date(date).toLocaleDateString('en-GB')}
             </p>
           </time>
-          {tags.length > 0 && (
+          {tags && tags.length > 0 && (
             <div className="absolute top-[14px] left-[11px] flex flex-row gap-2 flex-wrap">
               {tags &&
                 tags.slice(0, 3).map((tag) => {
