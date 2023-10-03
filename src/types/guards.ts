@@ -14,7 +14,6 @@ export const isArticle = (obj: { [key: string]: NotionDatabaseProperty }): obj i
     typeof obj.slug === 'string' &&
     typeof obj.title === 'string' &&
     typeof obj.summary === 'string' &&
-    Array.isArray(obj.tags) &&
     typeof obj.published === 'boolean' &&
     typeof obj.date === 'string' &&
     typeof obj.lastEditedAt === 'string' &&
@@ -29,7 +28,6 @@ export const isReport = (obj: { [key: string]: NotionDatabaseProperty }): obj is
     typeof obj.slug === 'string' &&
     typeof obj.title === 'string' &&
     typeof obj.summary === 'string' &&
-    Array.isArray(obj.tags) &&
     typeof obj.published === 'boolean' &&
     typeof obj.date === 'string' &&
     typeof obj.lastEditedAt === 'string'
