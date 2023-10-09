@@ -5,6 +5,7 @@ import { Report } from '@/types/cms';
 import Link from 'next/link';
 import { FC, FormEvent, useState } from 'react';
 import Contact from '../contact/Contact';
+import { Toaster, toast } from 'sonner';
 
 interface Props {
   report: Report | null;
@@ -28,16 +29,16 @@ const ReportDetail: FC<Props> = ({ report }) => {
 
     try {
       console.log(formData);
-      const response = await fetch(`/api/report`, {
-        body: JSON.stringify(formData),
-        method: 'POST',
-      });
+      // const response = await fetch(`/api/report`, {
+      //   body: JSON.stringify(formData),
+      //   method: 'POST',
+      // });
 
-      if (!response.ok) {
-        throw new Error('Failed to submit the data. Please try again.');
-      }
-      const data = await response.json();
-      console.log(data);
+      // if (!response.ok) {
+      //   throw new Error('Failed to submit the data. Please try again.');
+      // }
+      // const data = await response.json();
+      // console.log(data);
     } catch (err) {
       if (err instanceof Error) {
         // ✅ TypeScript knows err is Error
@@ -48,7 +49,7 @@ const ReportDetail: FC<Props> = ({ report }) => {
       }
     } finally {
       setIsLoading(false);
-      alert('Your report has arrived!');
+      toast.success("Your report has arrived!")
       setFormData({
         name: '',
         email: '',
@@ -61,6 +62,7 @@ const ReportDetail: FC<Props> = ({ report }) => {
 
   return (
     <section className="">
+      <Toaster position="bottom-right" />
       <div
         className="min-h-[460px] flex justify-center items-center bg-cover"
         style={{ backgroundImage: `url('${report?.cover}')` }}
@@ -196,20 +198,17 @@ const ReportDetail: FC<Props> = ({ report }) => {
                     </label>
 
                     <div className="flex items-center space-x-6">
-                      <div
-                        className="flex items-center"
-                        // onChange={(event) => {
-                        //   console.log(event.target);
-                        //   // setFormData({ ...formData, company: event.target.value });
-                        // }}
-                      >
+                      <div className="flex items-center">
                         <input
                           type="radio"
                           name="radio1"
                           id="radioButton1"
                           className="w-4 h-4  bg-black border-black "
-                          defaultChecked
+                          // defaultChecked
                           checked={formData.newsletter === true}
+                          onChange={() => {
+                            setFormData({ ...formData, newsletter: true });
+                          }}
                         />
                         <label
                           htmlFor="radioButton1"
@@ -225,6 +224,9 @@ const ReportDetail: FC<Props> = ({ report }) => {
                           id="radioButton2"
                           className="w-4 h-4  bg-black border-black "
                           checked={formData.newsletter === false}
+                          onChange={() => {
+                            setFormData({ ...formData, newsletter: false });
+                          }}
                         />
                         <label
                           htmlFor="radioButton2"
@@ -240,6 +242,7 @@ const ReportDetail: FC<Props> = ({ report }) => {
                     <div className="flex items-center">
                       <input
                         required
+                        defaultChecked
                         type="checkbox"
                         name="radio2"
                         id="radioButton3"

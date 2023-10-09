@@ -17,10 +17,28 @@ export const metadata: Metadata = {
     default: 'RILA GLOBAL CONSULTING',
     template: `%s | RILA`,
   },
-  description: 'This is the description of RILA GLOBAL CONSULTING',
-  // verification: {
-  //   google: '',
-  // },
+  description: 'Professional And Research Services For Social Listening - Trusted By The World\'s Biggest Brands.',
+  openGraph: {
+    title: 'RILA GLOBAL CONSULTING',
+    description: 'Professional And Research Services For Social Listening - Trusted By The World\'s Biggest Brands.',
+    url: new URL(process.env.SITE_URL || 'https://localhost:3000'),
+    siteName: 'RILA GLOBAL CONSULTING',
+    images: [
+      {
+        url: '/Preview.png',
+        width: 800,
+        height: 600,
+      },
+      {
+        url: '/Preview.png',
+        width: 1800,
+        height: 1600,
+        alt: 'My custom alt',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

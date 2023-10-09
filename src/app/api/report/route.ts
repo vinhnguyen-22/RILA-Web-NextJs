@@ -70,6 +70,11 @@ export async function POST(req: Request) {
 
     const resultAddContact = await addContact.json();
     console.log(resultAddContact);
+    if (resultAddContact.message === 'Contact already exist') {
+      return NextResponse.json({
+        status: 201,
+      });
+    }
     if (!addContact.ok) {
       return NextResponse.json(
         { error: resultAddContact.error.email[0] },
