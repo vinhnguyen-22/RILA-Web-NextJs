@@ -2,10 +2,8 @@
 import ArrowPoint from '@/icons/arrow-point';
 import BulletCheck from '@/icons/bullet';
 import { Report } from '@/types/cms';
-import { useForm, ValidationError } from '@formspree/react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
-import { FC } from 'react';
+import { FC, FormEvent, useState } from 'react';
 import Contact from '../contact/Contact';
 
 interface Props {
@@ -13,12 +11,53 @@ interface Props {
 }
 
 const ReportDetail: FC<Props> = ({ report }) => {
-  const [state, handleSubmit] = useForm(process.env.FORMSPREE || 'xwkdoqqq');
-  const router = useRouter();
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string | null>(null);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    company: '',
+    newsletter: true,
+    report: report?.PDF,
+  });
 
-  if (state.succeeded) {
-    router.push(report?.PDF ?? '/');
-  }
+  const submit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setError(null);
+    setIsLoading(true);
+
+    try {
+      console.log(formData);
+      const response = await fetch(`/api/report`, {
+        body: JSON.stringify(formData),
+        method: 'POST',
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to submit the data. Please try again.');
+      }
+      const data = await response.json();
+      console.log(data);
+    } catch (err) {
+      if (err instanceof Error) {
+        // ✅ TypeScript knows err is Error
+        console.error(err.message);
+        setError(err.message);
+      } else {
+        console.error('Unexpected error', err);
+      }
+    } finally {
+      setIsLoading(false);
+      alert('Your report has arrived!');
+      setFormData({
+        name: '',
+        email: '',
+        company: '',
+        newsletter: true,
+        report: report?.PDF,
+      });
+    }
+  };
 
   return (
     <section className="">
@@ -90,7 +129,7 @@ const ReportDetail: FC<Props> = ({ report }) => {
             <div className="flex justify-center items-center">
               <div className="w-[416px] rounded-lg bg-white overflow-hidden">
                 <form
-                  onSubmit={handleSubmit}
+                  onSubmit={submit}
                   method="post"
                   target="_blank"
                   className="bg-white shadow-md p-[20px]"
@@ -106,6 +145,10 @@ const ReportDetail: FC<Props> = ({ report }) => {
                       className="shadow appearance-none border rounded-[10px] w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                       id="name"
                       type="text"
+                      onChange={(event) => {
+                        setFormData({ ...formData, name: event.target.value });
+                      }}
+                      value={formData.name}
                     />
                   </div>
                   <div className="mb-6">
@@ -120,8 +163,11 @@ const ReportDetail: FC<Props> = ({ report }) => {
                       id="email"
                       type="email"
                       name="email"
+                      value={formData.email}
+                      onChange={(event) => {
+                        setFormData({ ...formData, email: event.target.value });
+                      }}
                     />
-                    <ValidationError prefix="Email" field="email" errors={state.errors} />
                   </div>
                   <div className="mb-6">
                     <label
@@ -134,31 +180,12 @@ const ReportDetail: FC<Props> = ({ report }) => {
                       className="shadow appearance-none border rounded-[10px] w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                       id="company"
                       type="text"
+                      value={formData.company}
+                      onChange={(event) => {
+                        setFormData({ ...formData, company: event.target.value });
+                      }}
                     />
                   </div>
-                  {/* <div className="mb-6 flex justify-start items-center gap-[23px]">
-                    <label
-                      className="block text-gray-700 text-sm font-bold mb-2"
-                      htmlFor="password"
-                    >
-                      Country:
-                    </label>
-
-                    <div className="inline-block relative w-64">
-                      <select className="block appearance-none w-full border-b border-gray-500 hover:border-gray-500 px-4 py-2 pr-8 leading-tight focus:outline-none focus:shadow-outline">
-                        <option>-- Choose country</option>
-                      </select>
-                      <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                        <svg
-                          className="fill-current h-4 w-4"
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 20 20"
-                        >
-                          <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-                        </svg>
-                      </div>
-                    </div>
-                  </div> */}
 
                   <div className="mb-6 flex justify-start items-center gap-[23px]">
                     <label
@@ -169,12 +196,20 @@ const ReportDetail: FC<Props> = ({ report }) => {
                     </label>
 
                     <div className="flex items-center space-x-6">
-                      <div className="flex items-center">
+                      <div
+                        className="flex items-center"
+                        // onChange={(event) => {
+                        //   console.log(event.target);
+                        //   // setFormData({ ...formData, company: event.target.value });
+                        // }}
+                      >
                         <input
                           type="radio"
                           name="radio1"
                           id="radioButton1"
                           className="w-4 h-4  bg-black border-black "
+                          defaultChecked
+                          checked={formData.newsletter === true}
                         />
                         <label
                           htmlFor="radioButton1"
@@ -189,6 +224,7 @@ const ReportDetail: FC<Props> = ({ report }) => {
                           name="radio1"
                           id="radioButton2"
                           className="w-4 h-4  bg-black border-black "
+                          checked={formData.newsletter === false}
                         />
                         <label
                           htmlFor="radioButton2"
@@ -203,7 +239,8 @@ const ReportDetail: FC<Props> = ({ report }) => {
                   <div className="mb-8 flex justify-start items-center gap-[10px]">
                     <div className="flex items-center">
                       <input
-                        type="radio"
+                        required
+                        type="checkbox"
                         name="radio2"
                         id="radioButton3"
                         className="outline-none h-5 w-5 "
@@ -227,19 +264,14 @@ const ReportDetail: FC<Props> = ({ report }) => {
                   </div>
                   <div className="flex items-center justify-between">
                     <button
-                      disabled={state.submitting}
                       className="bg-red-100 hover:bg-red-200 w-full text-white font-bold py-[8px] px-[25px] rounded-[10px] focus:outline-none focus:shadow-outline"
                       type="submit"
                     >
-                      {/* {form.state === Form.Loading ? (
-                        <span>Loading...</span>
-                      ) : (
-                        'Get The Full Report'
-                      )} */}
-                      Get The Full Report
+                      {isLoading ? 'Loading...' : 'Get The Full Report'}
                     </button>
                   </div>
                 </form>
+                {error && <div style={{ color: 'red' }}>{error}</div>}
               </div>
             </div>
           </div>
