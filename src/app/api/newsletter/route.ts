@@ -12,17 +12,26 @@ export async function POST(req: Request) {
       },
     );
   }
-  const result = await fetch('https://api.sendinblue.com/v3/contacts', {
+  const addContact = await fetch('https://api.brevo.com/v3/contacts', {
     method: 'POST',
     headers: {
       accept: 'application/json',
       'Content-Type': 'application/json',
-      'api-key': process.env.SENDINBLUE_API_KEY!,
+      'api-key': process.env.BREVO_API_KEY!,
     },
-    body: JSON.stringify({ updateEnabled: false, email: email, listIds: [5] }),
+    body: JSON.stringify({
+      email: email,
+    }),
   });
-  const data = await result.json();
-  if (!result.ok) {
+
+  const data = await addContact.json();
+  console.log(data);
+  if (data.message === 'Contact already exist') {
+    return NextResponse.json({
+      status: 201,
+    });
+  }
+  if (!addContact.ok) {
     return NextResponse.json(
       { error: data.error.email[0] },
       {
@@ -31,6 +40,6 @@ export async function POST(req: Request) {
     );
   }
   return NextResponse.json({
-    status: 201,
+    status: 200,
   });
 }

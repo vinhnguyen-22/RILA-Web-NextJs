@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 export async function POST(req: Request) {
   const body = await req.json();
   console.log(body);
-  const { email, name, company, newsletter, report } = body;
+  const { email, name, company, newsletter, report_link, report_name } = body;
   if (!email) {
     return NextResponse.json(
       { error: 'Email is required' },
@@ -20,9 +20,8 @@ export async function POST(req: Request) {
       'api-key': process.env.BREVO_API_KEY!,
     },
     body: JSON.stringify({
-      sender: {
-        name: 'Duyen Le from RILA',
-        email: 'duyenle.vacl@gmail.com',
+      replyTo: {
+        email: process.env.BREVO_SENDER_EMAIL,
       },
       to: [
         {
@@ -30,13 +29,12 @@ export async function POST(req: Request) {
           name: name,
         },
       ],
-      templateId: 1,
+      templateId: process.env.BREVO_REPORT_TEMPLATE_ID,
       params: {
-        "report_link": report
-      }
-      //   subject: 'Hello world',
-      //   htmlContent:
-      //     '<html><head></head><body><p>Hello,</p>This is my first transactional email sent from Brevo.</p></body></html>',
+        FIRST_NAME: name,
+        REPORT_LINK: report_link,
+        REPORT_NAME: report_name,
+      },
     }),
   });
   const dataSendReport = await sendReport.json();
@@ -50,7 +48,8 @@ export async function POST(req: Request) {
     );
   }
 
-  if (newsletter) { // if user subscribes to newsletter, save to contact list
+  if (newsletter) {
+    // if user subscribes to newsletter, save to contact list
     const addContact = await fetch('https://api.brevo.com/v3/contacts', {
       method: 'POST',
       headers: {
@@ -85,6 +84,6 @@ export async function POST(req: Request) {
     }
   }
   return NextResponse.json({
-    status: 201,
+    status: 200,
   });
 }

@@ -19,7 +19,8 @@ const ReportDetail: FC<Props> = ({ report }) => {
     email: '',
     company: '',
     newsletter: true,
-    report: report?.PDF,
+    report_name: report?.title,
+    report_link: report?.PDF,
   });
 
   const submit = async (event: FormEvent<HTMLFormElement>) => {
@@ -28,17 +29,17 @@ const ReportDetail: FC<Props> = ({ report }) => {
     setIsLoading(true);
 
     try {
-      console.log(formData);
-      // const response = await fetch(`/api/report`, {
-      //   body: JSON.stringify(formData),
-      //   method: 'POST',
-      // });
+      // console.log(formData);
+      const response = await fetch(`/api/report`, {
+        body: JSON.stringify(formData),
+        method: 'POST',
+      });
 
-      // if (!response.ok) {
-      //   throw new Error('Failed to submit the data. Please try again.');
-      // }
-      // const data = await response.json();
-      // console.log(data);
+      if (!response.ok) {
+        throw new Error('Failed to submit the data. Please try again.');
+      }
+      const data = await response.json();
+      console.log(data);
     } catch (err) {
       if (err instanceof Error) {
         // ✅ TypeScript knows err is Error
@@ -49,13 +50,14 @@ const ReportDetail: FC<Props> = ({ report }) => {
       }
     } finally {
       setIsLoading(false);
-      toast.success("Your report has arrived!")
+      toast.success('Your report has arrived!');
       setFormData({
         name: '',
         email: '',
         company: '',
         newsletter: true,
-        report: report?.PDF,
+        report_name: report?.title,
+        report_link: report?.PDF,
       });
     }
   };
@@ -204,7 +206,6 @@ const ReportDetail: FC<Props> = ({ report }) => {
                           name="radio1"
                           id="radioButton1"
                           className="w-4 h-4  bg-black border-black "
-                          // defaultChecked
                           checked={formData.newsletter === true}
                           onChange={() => {
                             setFormData({ ...formData, newsletter: true });
@@ -242,7 +243,6 @@ const ReportDetail: FC<Props> = ({ report }) => {
                     <div className="flex items-center">
                       <input
                         required
-                        defaultChecked
                         type="checkbox"
                         name="radio2"
                         id="radioButton3"
@@ -273,8 +273,8 @@ const ReportDetail: FC<Props> = ({ report }) => {
                       {isLoading ? 'Loading...' : 'Get The Full Report'}
                     </button>
                   </div>
+                  {error && <div className="mt-3 text-red-300 md:text-sm text-xs">hhihihi</div>}
                 </form>
-                {error && <div style={{ color: 'red' }}>{error}</div>}
               </div>
             </div>
           </div>
