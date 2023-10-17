@@ -23,6 +23,10 @@ const ReportDetail: FC<Props> = ({ report }) => {
     report_link: report?.PDF,
   });
 
+  const summaryItems = report?.summary.split('•');
+  const summary = summaryItems?.slice(0,1)
+  const bulletItems = summaryItems?.slice(1);
+
   const submit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setError(null);
@@ -73,61 +77,40 @@ const ReportDetail: FC<Props> = ({ report }) => {
       </div>
       <div className="bg-black py-[79px]">
         <div className="container mx-auto">
-          <div className="grid md:grid-cols-2 grid-cols-1">
-            <div className="relative flex flex-col mb-[36px] gap-[15px] text-white ">
+          <div className="grid md:grid-cols-2 grid-cols-1 gap-x-8">
+            <div className="relative flex flex-col mb-[36px] gap-[12px] text-white ">
               <h3 className="capitalize font-semibold text-23xl">
                 Get the full <span className="text-red-100">report</span>
               </h3>
               <div className="block w-3/4 h-[1px] bg-red-500"></div>
               <p className="text-white text-base leading-7 before:content-[' '] before:h-[1px] after:">
-                {report?.summary}
+                {summary}
               </p>
 
               <div className="block w-3/4 max-md:h-[1px] bg-red-500"></div>
 
               <ul className="max-w-md space-y-1 list-inside ">
-                <li className="flex items-center leading-7 text-sm gap-[15px]">
-                  <BulletCheck />
-                  Top neobanks digital performance{' '}
-                </li>
-                <li className="flex items-center leading-7 text-sm gap-[15px]">
-                  <BulletCheck />
-                  Consumer behaviors, trends and preferences
-                </li>
-                <li className="flex items-center leading-7 text-sm gap-[15px]">
-                  <BulletCheck />
-                  Reasons for switching
-                </li>
-                <li className="flex items-center leading-7 text-sm gap-[15px]">
-                  <BulletCheck />
-                  Market differences
-                </li>
-                <li className="flex items-center leading-7 text-sm gap-[15px]">
-                  <BulletCheck />
-                  Emotion analysis
-                </li>
-                <li className="flex items-center leading-7 text-sm gap-[15px]">
-                  <BulletCheck />
-                  Audience segmentation
-                </li>
-                <li className="flex items-center leading-7 text-sm gap-[15px]">
-                  <BulletCheck />
-                  And more!
-                </li>
+                {bulletItems?.map((key) => (
+                  <li key={key} className="flex items-center gap-[15px]">
+                    <div><BulletCheck /></div>
+                    <p className="leading-7 text-sm text-white">{key}</p>
+                  </li>
+                ))}
               </ul>
-              <div className="lg:block hidden absolute bottom-[5%] -right-[4%] rotate-0 text-white font-gochi text-base font-normal leading-7">
+
+              <div className="lg:block hidden absolute bottom-[8%] -right-[10%] rotate-0 text-white font-gochi text-base font-normal leading-7">
                 <div className="absolute -top-[30px] -left-[50px]">
                   <span className="inline-block -rotate-90">✏️</span> fill this out
                 </div>
                 <ArrowPoint position="right" />
               </div>
 
-              <div className="max-sm:block hidden absolute bottom-[0%] right-[10%] rotate-0 text-white font-gochi text-base font-normal leading-7">
+              {/* <div className="max-sm:block hidden absolute bottom-[0%] right-[10%] rotate-0 text-white font-gochi text-base font-normal leading-7">
                 <div className="absolute -top-[30px] -left-[50px]">
                   <span className="inline-block -rotate-90">✏️</span> fill this out
                 </div>
                 <ArrowPoint position="down" />
-              </div>
+              </div> */}
             </div>
 
             <div className="flex justify-center items-center">
