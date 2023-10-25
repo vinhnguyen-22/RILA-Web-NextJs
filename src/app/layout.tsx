@@ -3,6 +3,7 @@ import Header from '@/components/layout/header/Header';
 import { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
 import { GlobalProvider } from './GlobalProvider';
+import Script from 'next/script';
 
 export const revalidate = 120; // revalidate this page every 60 seconds
 
@@ -17,10 +18,12 @@ export const metadata: Metadata = {
     default: 'RILA GLOBAL CONSULTING',
     template: `%s | RILA`,
   },
-  description: 'Professional And Research Services For Social Listening - Trusted By The World\'s Biggest Brands.',
+  description:
+    "Professional And Research Services For Social Listening - Trusted By The World's Biggest Brands.",
   openGraph: {
     title: 'RILA GLOBAL CONSULTING',
-    description: 'Professional And Research Services For Social Listening - Trusted By The World\'s Biggest Brands.',
+    description:
+      "Professional And Research Services For Social Listening - Trusted By The World's Biggest Brands.",
     url: new URL(process.env.SITE_URL || 'https://localhost:3000'),
     siteName: 'RILA GLOBAL CONSULTING',
     images: [
@@ -44,7 +47,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" dir={'ltr'}>
-      <head></head>
+      <head>
+        <Script
+          src={`https://cdn-cookieyes.com/client_data/b2a0870eceff69ee9396bced/script.js`}
+        ></Script>
+      </head>
       <body suppressHydrationWarning={true} className={font.className}>
         <GlobalProvider>
           <div className="flex flex-col min-h-[100vh] bg-white">

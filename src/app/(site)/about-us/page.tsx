@@ -57,15 +57,9 @@ const About = () => {
           </div>
         </div>
 
-        <div className="lg:block hidden absolute top-[73px] left-0">
-          <Image src="/images/about-us/dot-blue.svg" width={300} className="" height={57} alt="" />
-          <Image
-            src="/images/about-u1s/dot-blue.svg"
-            width={300}
-            className="my-[27px] -z-10"
-            height={57}
-            alt=""
-          />
+        <div className="lg:block hidden absolute top-[58px] left-0">
+          <Image src="/images/about-us/dot-blue.svg" width={200} className="" height={33} alt="" />
+          <Image src="/images/about-us/dot-blue.svg" width={200} className="my-[20px] -z-10" height={33} alt="" />
         </div>
       </section>
 
