@@ -256,7 +256,7 @@ const ReportDetail: FC<Props> = ({ report }) => {
                       {isLoading ? 'Loading...' : 'Get The Full Report'}
                     </button>
                   </div>
-                  {error && <div className="mt-3 text-red-300 md:text-sm text-xs">hhihihi</div>}
+                  {error && <div className="mt-3 text-red-300 md:text-sm text-xs">{error}</div>}
                 </form>
               </div>
             </div>
