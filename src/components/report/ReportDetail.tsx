@@ -24,7 +24,7 @@ const ReportDetail: FC<Props> = ({ report }) => {
   });
 
   const summaryItems = report?.summary.split('•');
-  const summary = summaryItems?.slice(0,1)
+  const summary = summaryItems?.slice(0, 1);
   const bulletItems = summaryItems?.slice(1);
 
   const submit = async (event: FormEvent<HTMLFormElement>) => {
@@ -41,6 +41,17 @@ const ReportDetail: FC<Props> = ({ report }) => {
 
       if (!response.ok) {
         throw new Error('Failed to submit the data. Please try again.');
+      } else {
+        setIsLoading(false);
+        toast.success('Your report has arrived!');
+        setFormData({
+          name: '',
+          email: '',
+          company: '',
+          newsletter: true,
+          report_name: report?.title,
+          report_link: report?.PDF,
+        });
       }
       const data = await response.json();
       console.log(data);
@@ -52,17 +63,6 @@ const ReportDetail: FC<Props> = ({ report }) => {
       } else {
         console.error('Unexpected error', err);
       }
-    } finally {
-      setIsLoading(false);
-      toast.success('Your report has arrived!');
-      setFormData({
-        name: '',
-        email: '',
-        company: '',
-        newsletter: true,
-        report_name: report?.title,
-        report_link: report?.PDF,
-      });
     }
   };
 
@@ -92,7 +92,9 @@ const ReportDetail: FC<Props> = ({ report }) => {
               <ul className="max-w-md space-y-1 list-inside ">
                 {bulletItems?.map((key) => (
                   <li key={key} className="flex items-center gap-[15px]">
-                    <div><BulletCheck /></div>
+                    <div>
+                      <BulletCheck />
+                    </div>
                     <p className="leading-7 text-sm text-white">{key}</p>
                   </li>
                 ))}
