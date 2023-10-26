@@ -6,6 +6,7 @@ const nextConfig = {
   swcMinify: true,
   staticPageGenerationTimeout: 300,
   images: {
+    unoptimized: true,
     domains: [
       'www.notion.so',
       's3.us-west-2.amazonaws.com',
