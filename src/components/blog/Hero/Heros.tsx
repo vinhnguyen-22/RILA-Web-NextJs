@@ -1,5 +1,6 @@
 'use client';
 import { useMediaQuery } from '@/hooks/useMediaQuery';
+import Link from 'next/link';
 import { FormEvent, useState } from 'react';
 import { Toaster, toast } from 'sonner';
 
@@ -55,39 +56,43 @@ const Heros = () => {
     >
       <div className="h-full p-10 flex flex-col justify-center">
         <Toaster position="bottom-right" />
-        <div className="">
+        <div className="md:mt-0 mt-20 lg:pl-20 pl-0">
           <form onSubmit={submit} method="post" target="_blank">
-            <h1 className="tracking-[0.03em] capitalize">
+            <p className="tracking-[0.03em] text-white md:text-4xl text-3xl capitalize">
               <strong>Welcome to RILA&apos;S Blog</strong>
-            </h1>
+            </p>
 
             <div className="mt-[15px] md:text-xl text-base tracking-[0.03em] leading-[30px] flex items-center ">
               Your destination for the latest trends, news, and consumer analyses
             </div>
-            <div className="mt-[15px] rounded-[66px] flex flex-row justify-between py-1.5 pr-2.5 pl-6 text-lg border-[2px] border-solid border-white">
-              <input
-                required
-                className="w-1/2 relative flex md:text-base text-sm font-light items-center shrink-0 outline-none bg-inherit placeholder:text-white "
-                type="email"
-                value={email}
-                onChange={(event) => {
-                  setEmail(event.target.value);
-                }}
-                placeholder="Enter Your Email"
-              />
-              <div className="relative h-[46px] flex place-content-center text-center md:text-xl text-xs max-sm:min-w-[132px]">
-                <button
-                  type="submit"
-                  className="rounded-[47px] bg-red-100 flex flex-row py-2 px-6 items-center justify-center"
-                >
-                  <p className="relative text-white font-base">
-                    {isLoading ? 'Submitting...' : 'Subscribe Now'}
-                  </p>
-                </button>
+            <div className="my-6 flex">
+              <div className="flex lg:w-2/3 w-full border-[1.5px] rounded-[66px] border-solid border-white  py-1.5 pr-1.5 pl-6 text-lg">
+                <div className='flex w-full'>
+                <input
+                  required
+                  className="w-full pr-2 flex md:text-base text-sm font-light items-center shrink-0 outline-none bg-inherit placeholder:text-white "
+                  type="email"
+                  value={email}
+                  onChange={(event) => {
+                    setEmail(event.target.value);
+                  }}
+                  placeholder="Enter Your Email"
+                />
+                </div>
+                <div className="relative h-[46px] flex">
+                  <button
+                    type="submit"
+                    className="rounded-[42px] bg-red-100 flex py-2 px-6 items-center justify-center"
+                  >
+                    <p className="relative text-white text-base">
+                      {isLoading ? 'Submitting...' : 'Subscribe'}
+                    </p>
+                  </button>
+                </div>
               </div>
             </div>
 
-            <div className="m-3 flex justify-start items-center gap-[10px]">
+            <div className="md:w-2/3 m-3 flex justify-start items-center gap-[10px]">
               <div className="flex items-center">
                 <input
                   required
@@ -96,12 +101,16 @@ const Heros = () => {
                   id="radioButton"
                   className="outline-none h-4 w-4"
                 />
-                <label
-                  htmlFor="radioButton1"
-                  className="pl-3 md:text-sm text-xs font-medium italic "
-                >
+                <label htmlFor="radioButton1" className="pl-3 md:text-sm text-xs font-medium">
                   By checking this box, you agree to be contacted by RILA via email and receive
-                  regular updates, in accordance with our Privacy Policy
+                  regular updates, in accordance with our{' '}
+                  <Link className="underline" href="/cookie-policy">
+                    Privacy Policy
+                  </Link>{' '}
+                  and{' '}
+                  <Link className="underline" href="/terms-and-conditions">
+                    T&C’s
+                  </Link>
                 </label>
               </div>
             </div>

@@ -18,7 +18,7 @@ const Contact = () => {
       <div className="my-24 mx-0">
         <section className="mb-32">
           <div className="grid grid-cols-12">
-            <div className="col-span-12 md:col-span-7 lg:col-span-7">
+            <div className="col-span-11">
               <div className="flex flex-col items-start justify-start ">
                 {questionItems.map((data, index) => {
                   return (
@@ -37,7 +37,7 @@ const Contact = () => {
                 <div className="h-[0.5px] w-full bg-darkgray px-2.5 "></div>
               </div>
             </div>
-            <div className="col-span-12 md:col-span-5 lg:col-span-5">
+            {/* <div className="col-span-12 md:col-span-5 lg:col-span-5">
               <div className="mb-12  shrink-0 grow-0 basis-auto md:mb-0  md:px-3 lg:px-6">
                 <div className="w-full shrink-0 grow-0 basis-auto md:px-3 lg:px-6">
                   <div className="flex flex-col items-start justify-start gap-[42px] text-9xl">
@@ -85,7 +85,7 @@ const Contact = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </section>
       </div>
