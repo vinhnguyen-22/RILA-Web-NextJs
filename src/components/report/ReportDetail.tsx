@@ -40,6 +40,7 @@ const ReportDetail: FC<Props> = ({ report }) => {
       });
 
       if (!response.ok) {
+        setIsLoading(false);
         throw new Error('Failed to submit the data. Please try again.');
       } else {
         setIsLoading(false);

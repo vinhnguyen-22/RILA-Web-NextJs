@@ -29,7 +29,7 @@ export async function POST(req: Request) {
           name: name,
         },
       ],
-      templateId: process.env.BREVO_REPORT_TEMPLATE_ID,
+      templateId: parseInt(process.env.BREVO_REPORT_TEMPLATE_ID || ""),
       params: {
         FIRST_NAME: name,
         REPORT_LINK: report_link,
@@ -41,7 +41,7 @@ export async function POST(req: Request) {
   console.log(dataSendReport);
   if (!sendReport.ok) {
     return NextResponse.json(
-      { error: dataSendReport.error.email[0] },
+      { error: dataSendReport.message },
       {
         status: 500,
       },
