@@ -43,5 +43,8 @@
   @apply !h-full !max-h-[70vh];
 }
 .notion-page-cover-wrapper {
-  @apply !h-full !max-h-[70vh];
+  @apply !h-full !min-h-[50vh] !max-h-[100vh];
+}
+.notion-page-cover-wrapper img {
+  @apply !h-full !min-h-[50vh];
 }

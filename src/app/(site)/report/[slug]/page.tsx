@@ -43,6 +43,7 @@ export async function generateMetadata({
   return report
     ? {
         title: report.title,
+        description: report.summary,
         openGraph: {
           images: [
             {

@@ -1,9 +1,7 @@
-import { BlogVerticalList } from '@/components/blog/BlogList/BlogVerticalList';
 import CaseStudyCard from '@/components/case-studies/LinkCard/CaseStudyCard';
 import { PostVerticalList } from '@/components/case-studies/List/VerticalList';
 import { NotionRenderer } from '@/components/common/NotionRenderer';
 import { serverSideCmsClient } from '@/services/cms/cms.client';
-import { CaseStudy } from '@/types/cms';
 import { isCaseStudy, isTwoStringArray } from '@/types/guards';
 import { Metadata } from 'next';
 import Link from 'next/link';
@@ -13,7 +11,10 @@ import { cache } from 'react';
 export default async function CaseStudyPage(props: any) {
   const pathParams = props?.params?.slug;
   if (!isTwoStringArray(pathParams)) throw notFound();
-  const posts = await serverSideCmsClient.getDatabaseEntries(process.env.NOTION_CASESTUDY_DB_ID, isCaseStudy);
+  const posts = await serverSideCmsClient.getDatabaseEntries(
+    process.env.NOTION_CASESTUDY_DB_ID,
+    isCaseStudy,
+  );
 
   const [date, slug] = pathParams;
   const recordMap = await getCaseStudy(date, slug);
@@ -36,8 +37,11 @@ export default async function CaseStudyPage(props: any) {
 
   return (
     <>
-      <article className="mt-4 flex flex-col items-center md:mt-20">
-        <NotionRenderer recordMap={recordMap} related={<PostVerticalList data={posts.slice(0, 4)} />} />
+      <article className="mt-4 flex flex-col items-center ">
+        <NotionRenderer
+          recordMap={recordMap}
+          related={<PostVerticalList data={posts.slice(0, 4)} />}
+        />
 
         <div className="mx-1 grid grid-cols-1 md:grid-cols-3 ">
           {posts.slice(0, 3).map((element: any, i: number) => (
@@ -66,17 +70,28 @@ const getCaseStudy = cache(async (date: string, slug: string) => {
 });
 
 export async function generateStaticParams() {
-  const posts = await serverSideCmsClient.getDatabaseEntries(process.env.NOTION_CASESTUDY_DB_ID, isCaseStudy);
+  const posts = await serverSideCmsClient.getDatabaseEntries(
+    process.env.NOTION_CASESTUDY_DB_ID,
+    isCaseStudy,
+  );
 
   return posts.map(({ date, slug }) => ({ slug: [date, slug] }));
 }
 
-export async function generateMetadata({ params: { slug } }: { params: { slug: string } }): Promise<Metadata> {
-  const posts = await serverSideCmsClient.getDatabaseEntries(process.env.NOTION_CASESTUDY_DB_ID, isCaseStudy);
+export async function generateMetadata({
+  params: { slug },
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  const posts = await serverSideCmsClient.getDatabaseEntries(
+    process.env.NOTION_CASESTUDY_DB_ID,
+    isCaseStudy,
+  );
   const post = posts.find((p) => p.date === slug[0] && p.slug === slug[1]);
   return post
     ? {
         title: post.title,
+        description: post.summary,
         openGraph: {
           images: [
             {
