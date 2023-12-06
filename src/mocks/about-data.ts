@@ -4,6 +4,7 @@ export const AboutAwardImages = [
   '/images/about-us/award/social-intelligence.png',
   '/images/about-us/award/image-28.png',
   '/images/about-us/award/screen-shot-2023-07-26-at-9.57-2.png',
+  '/images/about-us/award/Women in Tech Awards Logo.png',
 ];
 export const AboutTeamBio = [
   {

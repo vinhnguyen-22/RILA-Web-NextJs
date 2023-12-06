@@ -59,7 +59,13 @@ const About = () => {
 
         <div className="lg:block hidden absolute top-[58px] left-0">
           <Image src="/images/about-us/dot-blue.svg" width={200} className="" height={33} alt="" />
-          <Image src="/images/about-us/dot-blue.svg" width={200} className="my-[20px] -z-10" height={33} alt="" />
+          <Image
+            src="/images/about-us/dot-blue.svg"
+            width={200}
+            className="my-[20px] -z-10"
+            height={33}
+            alt=""
+          />
         </div>
       </section>
 
