@@ -42,7 +42,7 @@ class ServerSideCmsClient {
 
     if (isNonEmptyNonPartialNotionResponse(results)) {
       const entries: Record<string, NotionDatabaseProperty>[] = await Promise.all(
-        results.map(async ({ id, cover, properties }) => {
+                results.map(async ({ id, cover, properties }) => {
           let img = '';
           if (cover) {
             img = cover.type === 'external' ? cover.external.url : cover.file.url;
@@ -59,8 +59,8 @@ class ServerSideCmsClient {
               'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAHCAIAAAC+zks0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAA5ElEQVR4nAHZACb/AOPIx7ujo3FST6eTlsGwtOTOzuXN0ObP0uDKzeHIyACUiJBJT2DEvcppcYUzOEzWwMLjyMfhxMXfx8fhycgAHx0lFiA0qpqse2VsEhkpfm9158zJ1bm72r2+2Lu6ABkcJFVCR3pkd19TWDY5QzExO9zKxejZ1OnV0urX1QAwNUcxKzOAcIcmKDQVGSJMTlr77un/+/P/9/D/+fAAFBgjEhUeRz9RDxAWAQMSREJM9+Xc9ebc/O7k+ejfABkZIzYrIkE1LDsyKQoLFlNMUvng1O/XzOPNvtfCriEocd2YPdRbAAAAAElFTkSuQmCC',
             cover: img,
             tags: format.tags
-              ? [{ id: '<AKV', name: 'social listening', color: 'green' }]
-              : format.tags,
+              ? format.tags
+              : [{ id: '<AKV', name: 'social listening', color: 'green' }],
           };
         }),
       );
