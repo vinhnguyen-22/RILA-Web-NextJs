@@ -8,6 +8,8 @@ import { serverSideCmsClient } from '@/services/cms/cms.client';
 import { isCaseStudy } from '@/types/guards';
 import Image from 'next/image';
 
+export const dynamic = "force-dynamic";
+
 import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Case Study',

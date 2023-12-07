@@ -2,8 +2,10 @@ import Heading from '@/components/common/Heading/Heading';
 import ReportList from '@/components/report/ReportList';
 import { serverSideCmsClient } from '@/services/cms/cms.client';
 import { isReport } from '@/types/guards';
-
 import { Metadata } from 'next';
+
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: 'Report',
   description: 'Report',

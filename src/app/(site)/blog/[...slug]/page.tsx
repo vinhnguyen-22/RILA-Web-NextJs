@@ -10,8 +10,8 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { cache } from 'react';
 
-export const dynamicParams = true;
-export const revalidate = 1;
+export const dynamic = "force-dynamic";
+
 export default async function ArticlePage(props: any) {
   const pathParams = props?.params?.slug;
   if (!isTwoStringArray(pathParams)) throw notFound();

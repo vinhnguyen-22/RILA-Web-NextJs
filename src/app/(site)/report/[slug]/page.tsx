@@ -4,6 +4,7 @@ import { isReport } from '@/types/guards';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
+export const dynamic = "force-dynamic";
 export default async function ReportPage(props: any) {
   const slug = props?.params?.slug;
   const reports = await serverSideCmsClient.getDatabaseEntries(

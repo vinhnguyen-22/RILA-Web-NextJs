@@ -4,8 +4,10 @@ import { BlogList } from '@/components/blog/index';
 import SearchBar from '@/components/common/SearchBar/SearchBar';
 import { serverSideCmsClient } from '@/services/cms/cms.client';
 import { isArticle } from '@/types/guards';
-
 import { Metadata } from 'next';
+
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: 'Blog',
   description: 'All posts are created by notion.',
