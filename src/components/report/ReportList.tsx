@@ -7,6 +7,7 @@ import { Chip } from '../common/Chip';
 import Paginate from '../common/Paginate/Paginate';
 import SearchBar from '../common/SearchBar/SearchBar';
 import ReportCard from './ReportCard';
+import usePostStore from '@/store/postStore';
 type Props = {
   data: Report[];
 };
@@ -16,6 +17,7 @@ const ReportList = ({ data }: Props) => {
   const [filteredReport, setFilteredReport] = useState(reports);
   const rootRef = useRef<HTMLDivElement>(null);
   const tags = [...new Set(data.map((item) => item.tags && item.tags[0].name))];
+  const { query } = usePostStore((state) => state);
 
   const filterTag = (tag: string) => {
     if (tag == 'All') {
@@ -49,9 +51,11 @@ const ReportList = ({ data }: Props) => {
       </div>
 
       <div className="mx-1 my-5 grid grid-cols-1 md:grid-cols-3 max-sm:gap-[8px] gap-[58px] ">
-        {filteredReport.map((element, i) => (
-          <ReportCard key={i} {...element} />
-        ))}
+        {query
+          ? filteredReport
+              .filter((r) => r.title.toLowerCase().startsWith(query.toLowerCase()))
+              .map((element, i) => <ReportCard key={i} {...element} />)
+          : filteredReport.map((element, i) => <ReportCard key={i} {...element} />)}
       </div>
 
       <Paginate totalPages={totalPages} elementToScroll={null} />

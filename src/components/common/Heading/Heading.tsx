@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import React from 'react';
 
 type Props = {
@@ -19,24 +18,6 @@ const Heading = ({ title, subtitle }: Props) => {
       ) : (
         <></>
       )}
-      {/* <div className=" w-[868px] h-[60px] text-xl text-gray-700">
-        <div className=" rounded-31xl flex flex-row py-[15px] px-[30px] items-center justify-center gap-[15px] text-red-100 border-[2px] border-solid border-red-100">
-          <Image className="relative w-5 h-[22px]" alt="" src="/public/group-150.svg" />
-          <strong className="relative tracking-[0.03em] leading-[30px]">Industry</strong>
-        </div>
-        <div className=" rounded-31xl flex flex-row py-[15px] px-[30px] items-center justify-center gap-[15px] border-[2px] border-solid border-gray-700">
-          <Image className="relative w-[22px] h-[22px]" alt="" src="/public/group-212.svg" />
-          <strong className="relative tracking-[0.03em] leading-[30px]">Brand</strong>
-        </div>
-        <div className=" rounded-31xl flex flex-row py-[15px] px-[30px] items-center justify-center gap-[15px] border-[2px] border-solid border-gray-700">
-          <Image className="relative w-[18px] h-5" alt="" src="/public/group-211.svg" />
-          <strong className="relative tracking-[0.03em] leading-[30px]">Influencer</strong>
-        </div>
-        <div className=" rounded-31xl flex flex-row py-[15px] px-[30px] items-center justify-center gap-[15px] border-[2px] border-solid border-gray-700">
-          <Image className="relative w-5 h-[22px]" alt="" src="/public/group-210.svg" />
-          <strong className="relative tracking-[0.03em] leading-[30px]">Market Research</strong>
-        </div>
-      </div> */}
     </div>
   );
 };

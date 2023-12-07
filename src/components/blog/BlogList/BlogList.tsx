@@ -21,7 +21,6 @@ export const BlogList: FC<BlogList> = ({ data, searchBar, pagination }) => {
   const rootRef = useRef<HTMLDivElement>(null);
   const { query } = usePostStore((state) => state);
 
-  console.log(query);
   return (
     <>
       {query ? (
