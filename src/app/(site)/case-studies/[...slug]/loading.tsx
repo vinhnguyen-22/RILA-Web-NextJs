@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 export default function Loading() {
   return (
     // <div className="flex flex-col mx-auto container">

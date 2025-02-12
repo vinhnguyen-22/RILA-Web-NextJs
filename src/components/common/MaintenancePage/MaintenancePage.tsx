@@ -21,10 +21,10 @@ const MaintenancePage = () => {
           <p className="text-sm text-center text-gray-300">
             Sorry for the inconvenience but we’re performing some maintenance at the moment. If you need to you can
             always{' '}
-            <Link href="/" className="text-blue-600 hover:underline">
-              Contact us{' '}
+            <Link href="www.linkedin.com/company/rila-global-consulting" className="text-blue-600 hover:underline">
+              Contact us,{' '}
             </Link>
-            , otherwise we’ll be back online shortly! — RILA
+            otherwise we’ll be back online shortly! — RILA
           </p>
         </div>
       </div>

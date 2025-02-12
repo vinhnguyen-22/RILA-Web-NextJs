@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server';
 import { serverSideCmsClient } from '@/services/cms/cms.client';
 import { isArticle } from '@/types/guards';
 
+export const dynamic = 'force-dynamic';
+
 export async function GET() {
   try {
     const articles = await serverSideCmsClient.getDatabaseEntries(process.env.NOTION_BLOG_DB_ID, isArticle);

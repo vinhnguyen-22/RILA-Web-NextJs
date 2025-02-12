@@ -1,5 +1,7 @@
 import Link from 'next/link';
 
+export const dynamic = "force-dynamic";
+
 export default function NotFound() {
   return (
     <div className="flex flex-col justify-between max-w-2xl mx-auto mb-16 px-8">

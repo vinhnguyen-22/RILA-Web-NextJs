@@ -1,4 +1,5 @@
 import ClientOnly from '@/components/ClientOnly/ClientOnly';
+import MaintenancePage from '@/components/common/MaintenancePage/MaintenancePage';
 import { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
@@ -13,14 +14,15 @@ const Contact = dynamic(() => import('@/components/contact/Contact'));
 
 export default function Home() {
   return (
-    <ClientOnly>
-      <Heros />
-      <Services />
-      <Activities />
-      <Benefits />
-      <Organization />
-      <Testimonial />
-      <Contact />
-    </ClientOnly>
+    <MaintenancePage />
+    // <ClientOnly>
+    //   <Heros />
+    //   <Services />
+    //   <Activities />
+    //   <Benefits />
+    //   <Organization />
+    //   <Testimonial />
+    //   <Contact />
+    // </ClientOnly>
   );
 }

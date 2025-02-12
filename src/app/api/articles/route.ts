@@ -1,6 +1,9 @@
 import { serverSideCmsClient } from '@/services/cms/cms.client';
 import { isArticle } from '@/types/guards';
 import { NextResponse } from 'next/server';
+
+export const dynamic = 'force-dynamic';
+
 export async function GET() {
   try {
     const articles = await serverSideCmsClient.getDatabaseEntries(

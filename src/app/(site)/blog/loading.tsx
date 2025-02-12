@@ -1,5 +1,7 @@
 import { BlogHeader, BlogList, BlogLoadingState } from '@/components/blog/index';
 
+export const dynamic = "force-dynamic";
+
 export default function BlogLoading() {
   return (
     // <div className="flex flex-col mx-auto container">

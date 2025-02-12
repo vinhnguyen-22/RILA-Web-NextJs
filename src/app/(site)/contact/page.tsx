@@ -2,6 +2,8 @@ import Heading from '@/components/common/Heading/Heading';
 import Question from '@/components/contact/question/Question';
 import { Metadata } from 'next';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata: Metadata = {
   title: 'Contact',
   description: 'Contact Us',

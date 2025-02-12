@@ -44,6 +44,8 @@ export const metadata: Metadata = {
   },
 };
 
+export const dynamic = 'force-dynamic';
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" dir={'ltr'}>
@@ -55,9 +57,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body suppressHydrationWarning={true} className={font.className}>
         <GlobalProvider>
           <div className="flex flex-col min-h-[100vh] bg-white">
-            <Header />
+            {/* <Header /> */}
             <main className="flex-grow md:mt-[100px] lg:mt-[100px] xl:mt-[60px]">{children}</main>
-            <Footer />
+            {/* <Footer /> */}
           </div>
         </GlobalProvider>
       </body>
